@@ -1,0 +1,239 @@
+<div class="main_container my_accountPages user_account_page change_password apcCash"> 
+  <!-- <div class="AddMoneyPopup">
+    <div class="designBox">
+      <div class="vAlign">
+        <div class="insideDesign">
+
+          <span class="heading">Add amount in your wallet</span>
+          <span class="caption">This amount only can be use in buying</span>
+          <div class="fromGroup">
+            <ul class="form_group">
+              <li class="list">
+                <div class="inputForm">
+                  <label class="label">
+                    <span class="name">Enter Amount in Rs.</span>
+                    <input class="input_box ng-untouched ng-pristine ng-valid" name="addedamt" type="text" id="input-1"
+                      [(ngModel)]="wallet.added_amt" placeholder="Enter Amount" />
+                  </label>
+                </div>
+              </li>
+
+            </ul>
+
+
+
+
+            <ul class="buttons">
+              <li class="list"><a href="javascript:void(0)" (click)="togglePopup()" class="CancelBtn">Cancel</a></li>
+              <li class="list"><a href="javascript:void(0)" (click)="onAddingMoneyHandler()" class="LocationBtn">Add to
+                  wallet</a></li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <app-header></app-header>
+
+  <div class="my_accountSetting">
+
+    <app-my-account-top-panel></app-my-account-top-panel>
+
+    <div class="container">
+      <div class="main_dataPage">
+
+        <app-my-account-left-panel #leftpanel></app-my-account-left-panel>
+
+        <div class="right_pannel">
+
+         
+
+
+          <div class="pannelSTyle">
+
+
+
+
+
+            <!-- <h1 class="page_name">
+              <div class="leftData">
+                <span class="Pagename">APC Cash</span>
+              </div>
+            </h1>
+
+            <div class="mainPage">
+              <div class="MywalletPage">
+
+               
+                <div class="AddingOption">
+                  <div class="leftPart">
+                   
+                    <span class="Amount">Rs. {{wallet.balance}}</span>
+                  </div>
+                 
+                </div>
+               
+
+                <ul class="walletList" *ngIf="wallet.lists.length>0">
+                  <li class="list" *ngFor="let list of wallet.lists">
+                    <div class="style">
+                      <div class="leftPart">
+                        <span class="title">Wallet TXN Id : {{list.transaction_number}}</span>
+                        <span class="msg">{{list.transaction_msg}}</span>
+                        <span class="date">{{list.transaction_date | date:'dd-MM-yyyy'}} {{list.transaction_date |
+                          date:'hh:mm a'}} </span>
+                      </div>
+                      <div class="rightPart">
+                        <span class="price cr" *ngIf="list.credit_amount !=0">+ Rs. {{list.credit_amount}}</span>
+                        <span class="price" *ngIf="list.debit_amount !=0">- Rs. {{list.debit_amount}}</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                </ul>
+
+              </div>
+            </div> -->
+
+            <div class="account_page_title">
+                <div class="left_part">
+                  <div class="heading">
+                    <h2>Reffer History</h2>
+                  </div>
+                </div>
+                <div class="right_part">
+                  
+                </div>
+                
+              </div>
+            <div class="account_content">
+                
+
+                <!-- <div class="total_amount_wrapper">
+             
+                    <div class="right_part">
+                      <div class="total_amount">
+                        <span class="title">APC Cash</span>
+                        <span class="amount">Rs. {{wallet.balance}}</span>
+                      </div>
+                    </div>
+                  </div> -->
+
+                <!-- <div class="notification_wrapper">
+                  <div class="notification_date"><span>2019</span></div>
+                  <ul class="notification_listing">
+                    <li class="notification_list" *ngFor="let list of wallet.lists">
+                      <div class="date_wrapper">
+                        <span class="date">02</span>
+                        <span class="month">Dec</span>
+                      </div>
+                      <div class="enquiry_details">
+                        <span class="enquiry_id"><span class="title">TEXT ID: {{list.transaction_number}}</span> </span>
+                        <span class="enquiry_items">APC Cash for purchasing plan</span>
+                      </div>
+                      <div class="view_more_wrapper">
+                        
+
+                        <span class="price text_green"  *ngIf="list.credit_amount !=0">Added  
+                            <span  class="added_amount"> Rs. {{list.credit_amount}}</span>
+                          </span>
+                           <span class="price text-red"  *ngIf="list.debit_amount !=0"> Debit
+                              <span  class="added_amount"> Rs. {{list.debit_amount}}</span>
+                            
+                            </span>
+                      </div>
+                    </li>
+                    <li class="notification_list">
+                        <div class="date_wrapper">
+                          <span class="date">02</span>
+                          <span class="month">Dec</span>
+                        </div>
+                        <div class="enquiry_details">
+                          <span class="enquiry_id"><span class="title">TEXT ID: 58105784</span> </span>
+                          <span class="enquiry_items">APC Cash for purchasing plan</span>
+                        </div>
+                        <div class="view_more_wrapper">
+                          <span class="text_green">Added</span>
+                          <span class="added_amount">Rs. 1000</span>
+                        </div>
+                      </li>
+                     
+                  </ul>
+                </div> -->
+                <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+                <div class="notification_wrapper">
+                    <div class="notification_date" *ngIf="wallet.lists.length>0"><span>{{wallet.lists[0].added_date | date:'yyyy'}}</span></div>
+                    <ul class="notification_listing">
+                        <li class="notification_list" *ngFor="let list of wallet.lists">
+                            <div class="date_wrapper">
+                              <span class="date">{{list.added_date | date:'dd'}}</span>
+                              <span class="month">{{list.added_date | date:'MMM'}}</span>
+                            </div>
+                            <div class="enquiry_details">
+                              <!-- <span class="enquiry_id"><span class="title">TXN ID: {{list.transaction_number}}</span> </span> -->
+                              <span class="enquiry_items">{{list.referral_name}}</span>
+                            </div>
+                            <div class="view_more_wrapper">
+                              <span class="text_green">Credit</span>
+                              <span class="added_amount" >Rs. {{list.amount}}</span>
+
+                              <!-- <span class="text-red" *ngIf="list.debit_amount !=0">Debit</span>
+                              <span class="added_amount" *ngIf="list.debit_amount !=0">Rs. {{list.debit_amount}}</span> -->
+
+
+                          
+
+
+                            </div>
+                          </li>
+                          <!-- <li class="notification_list">
+                              <div class="date_wrapper">
+                                <span class="date">02</span>
+                                <span class="month">Dec</span>
+                              </div>
+                              <div class="enquiry_details">
+                                <span class="enquiry_id"><span class="title">TEXT ID: 58105784</span> </span>
+                                <span class="enquiry_items">APC Cash for purchasing plan</span>
+                              </div>
+                              <div class="view_more_wrapper">
+                                <span class="text_green">Added</span>
+                                <span class="added_amount">Rs. 1000</span>
+                              </div>
+                            </li>
+                            <li class="notification_list">
+                                <div class="date_wrapper">
+                                  <span class="date">02</span>
+                                  <span class="month">Dec</span>
+                                </div>
+                                <div class="enquiry_details">
+                                  <span class="enquiry_id"><span class="title">TEXT ID: 58105784</span> </span>
+                                  <span class="enquiry_items">APC Cash for purchasing plan</span>
+                                </div>
+                                <div class="view_more_wrapper">
+                                  <span class="text_green">Added</span>
+                                  <span class="added_amount">Rs. 1000</span>
+                                </div>
+                              </li> -->
+                    </ul>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+
+      
+
+
+      </div>
+    </div>
+
+  </div>
+
+ 
+
+  
+</div>
+
+<app-footer></app-footer>

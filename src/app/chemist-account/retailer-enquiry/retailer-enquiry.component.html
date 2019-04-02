@@ -1,0 +1,451 @@
+<div class="view_details_popup" *ngIf="showdetail">
+    <div class="designBOx">
+        <div class="vAlign" >
+            <div class="innerDesign">
+              <a href="javascript:void(0)" (click)="toggleViewDetail()" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <div class="insideBox">
+                    <div class="table_wrapper">
+                        <table class="my_table">
+                            <tbody>
+                                <tr class="row_head">
+                                    <th class="text-left col-md-50">Product name</th>
+                                    <th class="center">MRP</th>
+                                    <th class="center">Qty</th>
+                                    <th class="center">Amount </th>
+                                </tr>
+
+                                <tr *ngFor="let item of itemdetail">
+                                  <td class="text-left">
+                                    <label class="">
+                                      <span class="name">{{item.product_name}}</span>
+                                      <span class="data"> {{item.product_variant}}</span>
+                                      <span class="data"> {{item.company_name}}</span>
+                                    </label>
+                                  </td>
+
+                                  <td class="center">
+                                      <span class="time">Rs.{{item.mrp}}</span>
+                                  </td>
+
+                                  <td class="center">
+                                      <span class="time"> {{item.quantity}}</span>
+                                  </td>
+
+                                  <td  class="center">
+                                    <span class="time">Rs.{{item.sub_total}}</span>
+                                  </td>
+                                </tr>
+ 
+   
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+<!-- <div class="sending_enquiry_popup" *ngIf="confirm_pin.is_process==true">
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img *ngIf="confirm_pin.is_sent==false && status.is_error==false" src="assets/images/sendloader.gif">
+      <img *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false" src="assets/images/form_icon.png">
+      <img *ngIf="confirm_pin.is_error==true" src="assets/images/error.png">
+    </div>
+    <div class="sending_msg_content">
+      <span *ngIf="confirm_pin.is_sent==false && status.is_error==false">{{confirm_pin.process_txt}}</span>
+      <span *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false">{{confirm_pin.sent_txt}}</span>
+      <span *ngIf="confirm_pin.is_error==true">{{confirm_pin.error_txt}}</span>
+    </div>
+    <ul class="noCartbuttons" *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false">
+      <li class="list" (click)="handlePinPopupButtons('close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+     
+    </ul>
+    <ul class="noCartbuttons" *ngIf="confirm_pin.is_error==true">
+      <li class="list" (click)="handlePinPopupButtons('retry')"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Retry Again</a></li>
+      <li class="list" (click)="handlePinPopupButtons('close')"><a class="scndry_btn" href="javascript:void(0)">Close</a></li>
+    </ul>
+  </div>
+</div> -->
+<!-- <div class="sending_enquiry_popup" *ngIf="status.is_confirm_popup==true">
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img src="assets/images/sure.png">
+  
+    </div>
+    <div class="sending_msg_content">
+
+      <span style="font-size: 19px;font-weight: bold">{{status.confirm_txt}}</span>
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list" (click)="onClose('confirmprocess','confirm')"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Yes,
+          I am Sure</a></li>
+      <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="scndry_btn" href="javascript:void(0)">No,
+          Cancel It</a></li>
+    </ul>
+  </div>
+</div> -->
+<div class="popup_design " *ngIf="respdata.is_confirm_delivery" style="display: block;">
+  <div class="designBox">
+    <div class="vAlign">
+      <div class="insideDesign">
+        <div class="heading">
+          <h2>Confirmation PIN</h2>
+        </div>
+        <div class="fromGroup form_wrapper ">
+          
+          <p class="caption">Enter Delivery Confirmation PIN</p>
+          
+          <div class="add_amount  full_w">
+            <ul class="form_listing full_w">
+              <li class="form_list  full_w">
+                <div class="style">
+                  <!-- <span class="lable">Enter Confirmation code</span> -->
+                  <input  class="input " placeholder="" type="text"  id="confirm_otp">
+                </div>
+              </li>
+              <li  class="form_list full_w">
+                <button  class="btn primary large" (click)="onConfirmOTP()"> Confirm PIN</button>
+                <button  class="btn secondary large cancel" (click)="onConfirmDelivery(order)">Cancel</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="sending_enquiry_popup" *ngIf="respdata.is_confirm_delivery" >
+  <div class="enquiry_popup_msg">
+  
+    <div class="sending_msg_content">
+
+      <span style="font-size: 19px;font-weight: bold">Enter Delivery Confirmation PIN</span>
+      <br/>
+      <input type="text" placeholder="Enter Confirmation code" id="confirm_otp" style="
+      padding: 10px;
+      margin: 15px 0px;
+  ">
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list" (click)="onConfirmOTP()"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">
+
+         Confirm PIN</a></li>
+      <li class="list" (click)="onConfirmDelivery(order)"><a class="scndry_btn" href="javascript:void(0)">No,
+          Cancel It</a></li>
+    </ul>
+  </div>
+</div> -->
+<div class="main_container my_accountPages chemist_account_page retailer_enquiry">
+
+  <app-header></app-header>
+
+
+
+  <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+    <div class="enquiry_popup_msg">
+      <div class="sending_msg_gif">
+        <img *ngIf="status.is_sent==false && status.is_error==false" src="assets/images/sendloader.gif">
+        <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+        <img *ngIf="status.is_error==true" src="assets/images/error.png">
+      </div>
+      <div class="sending_msg_content">
+        <span *ngIf="status.is_sent==false && status.is_error==false">{{status.process_txt}}</span>
+        <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+        <span *ngIf="status.is_error==true">{{status.error_txt}}</span>
+      </div>
+      <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+        <li class="list" (click)="onClose('enquiryprocess','close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+        <li class="list" (click)="onClose('enquiryprocess','sendquotation')"><a class="primary_btn" href="javascript:void(0)">Send
+            Quotation</a></li>
+      </ul>
+      <ul class="noCartbuttons" *ngIf="status.is_error==true">
+        <li class="list" (click)="onClose('errorprocess','close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+        <li class="list" (click)="onClose('errorprocess','addmoneytowallet')"><a class="primary_btn" href="javascript:void(0)">Add
+            money to wallet</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sending_enquiry_popup" *ngIf="status.is_confirm_popup==true">
+    <div class="enquiry_popup_msg">
+      <div class="sending_msg_gif">
+        <img src="assets/images/sure.png">
+
+      </div>
+      <div class="sending_msg_content">
+
+        <span style="font-size: 19px;font-weight: bold">{{status.confirm_txt}}</span>
+      </div>
+      <ul class="noCartbuttons">
+        <li class="list" (click)="onClose('confirmprocess','confirm')"><a   class="primary_btn" href="javascript:void(0)">Yes,
+            I want to purchase it</a></li>
+        <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="scndry_btn" href="javascript:void(0)">No,
+            Cancel It</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="my_accountSetting">
+
+
+    <div class="container">
+      <div class="main_dataPage">
+
+        <app-chemist-account-left-panel></app-chemist-account-left-panel>
+
+     <div class="right_pannel">
+
+
+          <div class="pannelSTyle">
+
+            <div class="account_page_title">
+              <div class="left_part">
+                <div class="heading">
+                  <h2>Orders</h2>
+                </div>
+              </div>
+              <div class="right_part">
+                <button class="btn assent medium" routerLink="/chemist-account/order-history">Order History</button>
+              </div>
+            </div>
+
+            <div class="mainPage">
+              <div class="">
+
+                <ul class="orderTabs meterBar">
+                  <li class="list" id="type1" (click)="onSwitchTab('new')"><a href="javascript:void(0)" class="name">New
+                      <!-- <span class="">({{enquiry.total_pending_enquiries}})</span> -->
+                     </a></li>
+
+
+                  <li class="list" id="type2" (click)="onSwitchTab('active')"><a href="javascript:void(0)"
+                      class="name">Active
+                      <!-- <span class="">({{enquiry.total_replied_enquiries}})</span>  -->
+                    </a></li>
+                  <li class="list" id="type3" (click)="onSwitchTab('awarded')"><a href="javascript:void(0)"
+                      class="name">Awarded
+                      <!-- <span class="">({{enquiry.total_closed_enquiries}})</span>  -->
+                    
+                    </a></li>
+                  <li class="list active" id="type0" (click)="onSwitchTab('delivered')"><a href="javascript:void(0)"
+                      class="name">Delivered
+                      <!-- <span class="">({{enquiry.total_enquiries}})</span> -->
+                     </a></li>
+                </ul>
+
+                <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+                <div class="account_content">
+                  <div class="notification_wrapper">
+                    <div class="notification_date" *ngIf="enquiry.enquiries.length>0"><span>Year {{enquiry.enquiries[0].order_date | date:'yyyy'}}</span></div>
+                    <ul class="notification_listing" *ngIf="isnodatafound==false && (enquiry.type=='new' || enquiry.type=='active')">
+                      <li class="notification_list" *ngFor="let enquiry of enquiry.enquiries">
+                        <div class="enquiryDetail-wrapper">
+                          <div class="date_wrapper">
+                            <span class="date">{{enquiry.order_date | date:'dd'}}</span>
+                            <span class="month">{{enquiry.order_date | date:'MMM'}}</span>
+                          </div>
+                          <div class="enquiry_details">
+                            <span class="enquiry_id"><span class="title">Order : 
+                              <span class="text-theme">#{{enquiry.order_no}}</span> 
+                            
+                            </span> </span>
+                            <span class="direct_order" *ngIf="enquiry.direct_enquiry==1">Direct Order</span>
+                            <!-- <span class="enquiry_items">{{enquiry.area | titlecase}}, {{enquiry.payment_city |titlecase}},{{enquiry.payment_pincode |titlecase}}</span> -->
+                           
+                              <span class="distance" *ngIf="enquiry.vendor_distance!=''">{{enquiry.vendor_distance}} Away</span>
+                              
+                          </div>
+                          <div class="enquiry_details no-border">
+                            <span class="enquiry_id"><span class="title">Amount </span> </span>
+                            <span class="enquiry_items">Rs. {{enquiry.enquiry_original_grand_total}}</span>
+                          </div>
+                          <div class="enquiry_details no-border text-align-right">
+                            <span class="enquiry_id"><span class="title">{{enquiry.total_count}} Items </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="d-text-flex justify-content-btw">
+                          <span *ngIf="enquiry.delivery_type==0">Home Delivery</span>
+                          <span *ngIf="enquiry.delivery_type==1">Self Pickup</span>
+                          <div class="mrgn0">
+                             
+                                
+                              <!-- <button class="btn assent small mr10" (click)="onBuyNow(enquiry)"  *ngIf="enquiry.reply_status=='0' && enquiry.bid_made==0 && enquiry.emquiry_order_status != '2'" >Buy Now</button> -->
+                              <!-- <button class="btn assent small mr10"  [routerLink]="['/chemist-account/retailer-enquiry-detail']"
+                              [queryParams]="{enquiryid:enquiry.enquiry_id,replystatus:enquiry.reply_status,enquirytype:enquiry.enquiry_order_type}"
+                                *ngIf="enquiry.reply_status=='0' && enquiry.bid_made==1 && enquiry.emquiry_order_status != '2'" >Reply</button> -->
+
+                            <button class="btn assent small" routerLink="/chemist-account/retailer-enquiry-detail"
+                            [queryParams]="{enquiryid:enquiry.enquiry_id,replystatus:enquiry.reply_status,enquirytype:enquiry.enquiry_order_type}">View Details</button>
+                          </div>
+                           
+                        </div>
+                        <div class="location_status">
+                          <div class="left_part">
+                            <span class="location">{{enquiry.area | titlecase}}, {{enquiry.payment_city |titlecase}},{{enquiry.payment_pincode |titlecase}}</span>
+                          </div>
+                          <div class="right_part">
+                           
+                            <span class="status text-theme mr10" *ngIf="enquiry.reply_status=='1'">Replied
+                              <img src="assets/images/icon/check.png">
+                            </span>
+                            <span class="status text-red mr10" *ngIf="enquiry.reply_status=='0' && enquiry.bid_made==1 && enquiry.emquiry_order_status != '2'" >Not Replied
+                                <img src="assets/images/icon/block-icon.png">
+                              </span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- <li class="notification_list">
+                        <div class="enquiryDetail-wrapper">
+                          <div class="date_wrapper">
+                            <span class="date">02</span>
+                            <span class="month">Dec</span>
+                          </div>
+                          <div class="enquiry_details">
+                            <span class="enquiry_id"><span class="title">Enquiry : <span
+                                  class="text-theme">{{enquiry.order_no}}</span> </span> </span>
+                            <span class="enquiry_items">Karol Bagh</span>
+                          </div>
+                          <div class="enquiry_details no-border">
+                            <span class="enquiry_id"><span class="title">Amount </span> </span>
+                            <span class="enquiry_items">Rs. {{enquiry.enquiry_original_grand_total}}</span>
+                          </div>
+
+                          <div class="enquiry_details no-border text-align-right">
+                            <span class="enquiry_id"><span class="title">{{enquiry.total_number_of_items}} items </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="d-text-flex mt15">
+                          <span>Home Delivery</span>
+                          <span class="text-theme">Replied
+                            <img src="assets/images/icon/check.png">
+                          </span>
+                        </div>
+                      </li>
+                      <li class="notification_list">
+                        <div class="enquiryDetail-wrapper">
+                          <div class="date_wrapper">
+                            <span class="date">02</span>
+                            <span class="month">Dec</span>
+                          </div>
+                          <div class="enquiry_details">
+                            <span class="enquiry_id"><span class="title">Enquiry : <span
+                                  class="text-theme">{{enquiry.order_no}}</span> </span> </span>
+                            <span class="enquiry_items">Karol Bagh</span>
+                          </div>
+                          <div class="enquiry_details no-border">
+                            <span class="enquiry_id"><span class="title">Amount </span> </span>
+                            <span class="enquiry_items">Rs. {{enquiry.enquiry_original_grand_total}}</span>
+                          </div>
+                          <div class="enquiry_details no-border text-align-right">
+                            <span class="enquiry_id"><span class="title">{{enquiry.total_number_of_items}} items </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="d-text-flex mt15">
+                          <span>Home Delivery</span>
+                          <span class="text-red">No Replied
+                            <img src="assets/images/icon/block.png">
+                          </span>
+                        </div>
+                      </li> -->
+                    </ul>
+
+                    <ul class="notification_listing" *ngIf="isnodatafound==false &&  (enquiry.type=='awarded' || enquiry.type=='delivered')">
+                        <li class="notification_list awarded" *ngFor="let order of enquiry.enquiries"   routerLink="/chemist-account/retailer-order-track" [queryParams]="{'id':order.order_id}" href="javascript:void(0)">
+                          <div class="enquiryDetail-wrapper">
+                            <div class="date_wrapper">
+                              <span class="date">{{order.order_date | date:'dd'}}</span>
+                              <span class="month">{{order.order_date | date:'MMM'}}</span>
+                            </div>
+                            <div class="enquiry_details">
+                              <span class="enquiry_id"><span class="title">ORDER ID : 
+                                <span class="text-theme">#{{order.order_no}}</span> 
+                              
+                              </span> </span>
+                              <span class="direct_order" *ngIf="order.direct_enquiry==1">Direct Order</span>
+                              
+                             
+                                <span class="distance" *ngIf="order.vendor_distance!=''">{{order.vendor_distance}} Away</span>
+                              <!-- <span class="enquiry_items">{{order.area}}</span> -->
+                            </div>
+                            <div class="enquiry_details no-border">
+                              <span class="enquiry_id"><span class="title">Amount </span> </span>
+                              <span class="enquiry_items">Rs. {{order.grand_total}}</span>
+                            </div>
+                            <div class="enquiry_details no-border text-align-right">
+                              <span class="enquiry_id"><span class="title">{{order.total_items}} items </span>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="d-text-flex justify-content-btw">
+                            <div class="mrgn0">
+                                <span *ngIf="order.delivery_type==0" class="d-text-block">Home Delivery</span>
+                                <span *ngIf="order.delivery_type==1" class="d-text-block">Self Pickup</span>
+                                <span class="enquiry_id d-text-block">
+                                      <span class="title">Delivery Date : 
+                                        <span class="text-theme">{{order.delivery_date}} {{order.delivery_time}}</span> 
+                                      </span> 
+                                </span>
+                            </div>
+                                    
+                            <div class="mrgn0" *ngIf="order.modify_access==3">
+                               <span class="modified_status"><img src="assets/images/icon/modifyorder.png"> Modified</span>
+                               <!-- <span class="direct_order_status "><img src="assets/images/icon/direct-order.png"></span> -->
+                                <!-- <button class="btn assent small mr10" routerLink="/chemist-account/add-view-bill" [queryParams]="{'id':order.order_id}" *ngIf="order.delivery_confirmation =='0'" >Upload Bill</button>
+                                <button class="btn assent small mr10"   (click)="onConfirmDelivery(order)"  *ngIf="enquiry.order_status == 'OS04' && order.delivery_confirmation ==0" >Confirm Delivery</button> -->
+  
+                              <!-- <button class="btn assent small"  routerLink="/chemist-account/retailer-order-track" [queryParams]="{'id':order.order_id}" href="javascript:void(0)">View Details</button> -->
+                            </div>
+                             
+                          </div>
+                          <div class="location_status">
+                              <div class="left_part">
+                                <span class="location">{{order.area | titlecase}}, {{order.payment_city |titlecase}},{{order.payment_pincode |titlecase}}</span>
+                              </div>
+                              <div class="right_part">
+                                
+                                  <span class="status text-red mr10" *ngIf="order.order_status=='OS01' && order.invoice_file==0">Bill Pending</span>
+                                  <span class="status text-theme mr10" *ngIf="order.order_status=='OS01' && order.invoice_file==1">Ready To Deliver </span>
+                                  <span class="status text-brown mr10" *ngIf="order.order_status=='OS04' && order.delivery_confirmation==0">On The Way </span>
+                                  <span class="status text-theme mr10" *ngIf="order.order_status=='OS04' && order.delivery_confirmation==1">Delivered </span>
+                                     
+                                   
+                                <span class="status text-theme mr10" *ngIf="enquiry.reply_status=='1'">Replied
+                                  <img src="assets/images/icon/check.png">
+                                </span>
+                                <span class="status text-red mr10" *ngIf="enquiry.reply_status=='0' && enquiry.bid_made==1 && enquiry.emquiry_order_status != '2'" >Not Replied
+                                    <img src="assets/images/icon/block-icon.png">
+                                  </span>
+                              </div>
+                            </div>
+                        </li>
+                    </ul>
+                        
+                        
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

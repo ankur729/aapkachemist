@@ -1,0 +1,37 @@
+<div class="no_page_found no_page_foundbody" *ngIf="noconnection=='' || noconnection ==undefined">
+  <div class="container ">
+        <div class="content">
+              <div class="logo_wrapper">
+                  <img src="assets/images/logo.png">
+              </div>
+              <div class="no_page_foundImg">
+                  <img src="assets/images/404.png">
+                  <div class="home_page_linkBtn">
+                      <a href="javascript:void(0)" routerLink="/home">Go To Home page</a>
+                  </div>
+              </div>  
+              
+        </div>
+  </div>
+</div>
+ 
+  <div class="no_page_found no_internet" *ngIf="no_internet_connection">
+    <div class="container ">
+          <div class="content">
+                <div class="logo_wrapper">
+                    <img src="assets/images/logo.png">
+                </div>
+                <div class="no_page_foundImg">
+                    <img src="assets/images/icon/no_internet.png">
+                    <h2>No Internet Connection</h2>
+                    <!-- <div class="home_page_linkBtn">
+                        <a href="javascript:void(0)" (click)="checkInternetConnection()">Retry</a>
+                    </div> -->
+                     <div class="mt10 home_page_linkBtn">
+                        <a href="javascript:void(0)" (click)="checkInternetConnection()" class="btn primary large">Retry</a>
+                    </div>
+                </div>  
+                
+          </div>
+    </div>
+  </div>

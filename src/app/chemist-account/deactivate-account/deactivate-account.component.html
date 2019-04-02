@@ -1,0 +1,89 @@
+
+<div class="main_container my_accountPages chemist_account_page">
+
+  <app-header ></app-header>
+    
+    <div class="my_accountSetting">
+ 
+      <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+        <div class="enquiry_popup_msg">
+          <div class="sending_msg_gif">
+            <img *ngIf="status.is_sent==false && status.is_error==false" src="assets/images/sendloader.gif">
+            <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+            <img *ngIf="status.is_error==true" src="assets/images/error.png">
+          </div>
+          <div class="sending_msg_content">
+            <span *ngIf="status.is_sent==false && status.is_error==false">{{status.process_txt}}</span>
+            <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+            <span *ngIf="status.is_error==true">{{status.error_txt}}</span>
+          </div>
+          <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+            <li class="list" (click)="onClose('enquiryprocess','close')"><a _ngcontent-c2="" class="Download" href="javascript:void(0)">Close</a></li>
+            <li class="list" (click)="onClose('enquiryprocess','sendquotation')"><a class="Email" href="javascript:void(0)">Send
+                Quotation</a></li>
+          </ul>
+          <ul class="noCartbuttons" *ngIf="status.is_error==true">
+            <li class="list" (click)="onClose('errorprocess','close')"><a _ngcontent-c2="" class="Download" href="javascript:void(0)">Close</a></li>
+            <li class="list" (click)="onClose('errorprocess','addmoneytowallet')"><a class="Email" href="javascript:void(0)">Add
+                money to wallet</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sending_enquiry_popup"  >
+        <div class="enquiry_popup_msg">
+          <div class="sending_msg_gif">
+            <img src="assets/images/sure.png">
+    
+          </div>
+          <div class="sending_msg_content">
+    
+            <span style="font-size: 19px;font-weight: bold">{{status.confirm_txt}}</span>
+          </div>
+          <ul class="noCartbuttons">
+            <li class="list" (click)="onClose('confirmprocess','confirm')"><a _ngcontent-c2="" class="Download" href="javascript:void(0)">Yes,
+                I am Sure</a></li>
+            <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="Email" href="javascript:void(0)">No,
+                Cancel It</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+    
+        
+<div class="right_pannel update_password_page">
+<div class="pannelSTyle">
+  <h1 class="page_name">
+    <div class="leftData">
+        <!-- <ul _ngcontent-c2="" _ngcontent-c10="" class="breadCrubs"><li _ngcontent-c2="" _ngcontent-c10="" class="list"><a _ngcontent-c2="" _ngcontent-c10="" _ngcontent-c7="" class="link" href="#0">Home</a></li><li _ngcontent-c2="" _ngcontent-c10="" class="list"><span _ngcontent-c2="" _ngcontent-c10="" _ngcontent-c7="" class="current">Cart</span></li></ul> -->
+      <span class="Pagename">Deactivating account</span>
+    </div>
+  </h1>
+
+  <div class="mainPage">
+    <div class="form_pages">
+    <div class="DeliverySetupProfile">
+ 
+  
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+  
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer></app-footer>
+
+

@@ -1,0 +1,345 @@
+<app-header #child></app-header>
+
+
+
+<div class="medicalDetail_page bodySetting bannerpd">
+
+    <div class="banner_wrapper"><div class="banner_bg"></div></div>
+
+  <div class="container">
+
+    <div class="medicine_details">
+      <div class="left_section">
+          <div class="medicine_details_wrapper">
+              <div class="section section_1">
+                  <div class="breadCrumbs_wrapper full_w">
+                      <ul  class="breadCrubs">
+                        <li class="list">
+                          <a  class="link" href="/home" ng-reflect-router-link="/home" routerlink="/home">Home</a>
+                          <i  aria-hidden="true" class="fa fa-angle-right"></i>
+                        </li>
+                        <li class="list">
+                          <a class="link" href="javascript:void(0)">
+                            <span class="current">Chemist Listing</span>
+                          </a><i  aria-hidden="true" class="fa fa-angle-right"></i>
+                        </li>
+                        <li  class="list">
+                          <span _ class="current">Details</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                   <div class="items_details_wrapper"> 
+                     <div class="left_part"> 
+                        <div class="item_img_wrapper"> 
+                            <div class="cart_img"> 
+                                <img src="{{respdata.productdata.product_img_path}}"> 
+                            </div> 
+                        </div> 
+                     
+                        <div class="itm_price_wrapper"> 
+                          <div class="item_price">
+
+                           
+                            
+                           
+                          </div>
+                        </div>
+                     </div>
+                     <div class="right_part">
+                       
+                          <div class="med_price_details full_w">
+                              <div class="item_name_wrapper">
+                                  <span class="item_name">{{respdata.productdata.product_name}}</span>
+                              </div>
+                              <div class="price_wrapper">
+                                  <span class="item_name">Rs. {{respdata.productdata.price}}</span>
+                              </div>
+                              <div class="btn_wrapper full_w">
+                                  <button class="btn medium primary" id="addorgotocart" (click)="addToCart()">Add to cart</button>
+                              </div>
+                           </div>
+                          <ul class="item_details_listing full_w">
+                              <h3 class="Medicine_heading">General Details</h3>
+                              <li class="item_details_list">
+                                  <span class="titile">Composition</span>
+                                 
+                                  <span class="name"> ({{respdata.productdata.product_generic_name}}) </span>
+                              </li>
+                              <li class="item_details_list">
+                                  <span class="titile">Manufacture by</span>
+                                  <span class="name"> {{respdata.productdata.company_name }} </span>
+                              </li>
+                              <li class="item_details_list">
+                                  <span  class="titile"> Item</span>
+                                  <span class="name"> {{respdata.productdata.option_val}} </span>
+                              </li>
+                          </ul>
+
+                    </div>
+                   </div>
+                   
+              </div>
+              
+
+              
+
+              <div class="section_2 section " *ngIf="respdata.similar_product.length>0">
+                  <div class="detailsHeading"><h2 >Similar Salt Medicine</h2></div>
+                  <div class="similar_salts">
+                      <ul class="similar_salts_listing">
+                          <li class="similar_salts_list" *ngFor="let list of respdata.similar_product"
+             
+                          [routerLink]="['/medicine-detail/'+list.seo_url]">
+                            <div class="left_part">
+                                <span class="med_name">{{list.product_name}}</span>
+                                <span class="med-qty">{{list.company_name}} </span>
+                                <span class="med-qty">{{list.option_val}}</span>
+                            </div>
+                            <div class="right_part">
+                                <span class="amount">Rs. {{list.price}}</span>
+                                <span class="discount">{{list.mrp_for_single_txt}}</span>
+                            </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="right_panel">
+          <div class="section section_1">
+              <div class="Sectionheading">
+                <span class="colored">Articles</span>
+              </div>
+              <ul class="ArticlesListing">
+                <li class="list" *ngFor="let article of respdata.blog_data">
+                  <a href="{{article.guid}}" target="_blank" class="style">
+                    <span class="thumb"><img src="{{article.img_link}}"></span>
+                    <div class="content full_w">
+                      <span class="title">
+                        
+                       
+                      
+                        {{ (article.post_title.length>40)? (article.post_title |
+                          slice:0:40)+'..':(article.post_title) }} 
+                      </span>
+                      <span class="text">
+                      
+                        {{ (article.post_excerpt.length>40)? (article.post_excerpt |
+                          slice:0:40)+'..':(article.post_excerpt) }} 
+                      </span>
+                    </div>
+                  </a>
+                </li>
+               
+              </ul>
+            </div>
+      </div>
+      
+    </div>
+
+    <!-- <div class="leftPanel">
+      <div class="section_1">
+         
+          <div class="pagesNamePart">
+              <div class="container">
+                <div class="headPart">
+                  <ul class="breadCrubs">
+                    <li class="list"><a href="javascript:void(0)" class="link" routerLink="/home">Home</a></li>
+                    <li class="list"><span class="current"  >Listing</span></li>
+                    <li class="list"><span class="current"  >Medicine Detail</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+          <div class="leftPart">
+              <span class="img"> <img src="{{respdata.productdata.product_img_path}}"></span>
+            <div class="Prodetails">
+            
+              <h1 class="product_name">{{respdata.productdata.product_name}}</h1>
+              <span class="category">Composition</span>
+              <span *ngIf="respdata.productdata.product_generic_name !=''">({{respdata.productdata.product_generic_name}})</span>
+              <span class="category">{{respdata.productdata.company_name }}</span>
+             
+              <span class="companyName">{{respdata.productdata.manufacturer_name}} 
+              </span>
+
+              <div class="small_disc">
+                 
+                  <span class="text">
+                    {{respdata.productdata.description}}
+                  </span>
+                </div>
+            </div>
+
+            <ul class="featureBuyOption">
+                <li class="list">
+                    <span class="title">Item</span>
+                    <span class="data">{{respdata.productdata.option_val}}</span>
+                </li>
+                <li class="list">
+                    <span class="title">Price</span>
+                    <span class="data">Rs. {{respdata.productdata.price}}</span>
+                </li>
+                <li class="list">
+                    <span class="Add_button  primary_btn" (click)="addToCart()">Add To List</span>
+                </li>
+            </ul>
+          
+   
+
+          </div>
+          
+        </div>
+  
+        
+    <div class="pageSetting">
+      <div class="main_design">
+
+
+      
+
+        <section class="SimilarSaltsection" *ngIf="respdata.similar_product.length>0">
+          <div class="dealsListinset">
+            <div class="headingPart">
+
+              <div class="Sectionheading">
+                Similar Salt <span class="colored">Medicine</span>
+              </div>
+            </div>
+
+            <ul class="QuotesLiting">
+              <li class="list" style="cursor:pointer" *ngFor="let list of respdata.similar_product"
+             
+                [routerLink]="['/medicine-detail/'+list.seo_url]"
+                
+              >
+                <div class="style">
+                  <div class="leftPart">
+                    <span class="name">{{list.product_name}}</span>
+                    <div class="avail">
+                        <span class="">{{list.company_name}}  </span><br>
+                      <span class="number">{{list.option_val}}</span>
+                       </div>
+                  </div>
+                  <div class="rightPart">
+                    <span class="price">Rs. {{list.price}}</span>
+                    <span class="discount"  >{{list.mrp_for_single_txt}}</span>
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </section>
+
+        </div>
+
+
+        <div class="pageSetting">
+        
+        <div class="section_2">
+
+          <div class="seaTabs">
+            <div class="seaTabs_switch">
+
+              <div class="seaTabs_tab" *ngFor="let generic of respdata.generic_info;let i=index" [ngClass]="i == 0 ? 'seaTabs_switch_active' : ''">{{generic.group_name}}</div>
+              <div class="seaTabs_tab" *ngIf="respdata.product_faqs.length>0">Faq</div>
+              
+            </div>
+
+            <div class="seaTabs_content">
+             
+
+              <div class="seaTabs_item" *ngFor="let generic of respdata.generic_info;let i=index" [ngClass]="i == 0 ? 'seaTabs_content_active' : ''">
+                <div [innerHTML]="generic.group_description"></div>
+
+              </div>
+
+
+
+
+              
+
+
+
+              <div class="seaTabs_item" *ngIf="respdata.product_faqs.length>0">
+
+
+
+
+                <div data-addui='accordion' class="accordionStyle">
+                  <ng-container *ngFor="let faq of respdata.product_faqs">
+                    <div role='header'>{{faq.faq_question}}</div>
+                    <div role='content'>
+                      <div class="contentDiv" [innerHTML]="faq.faq_answer">
+
+                      </div>
+                    </div>
+
+                  </ng-container>
+
+
+                </div>
+
+
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        </div>
+
+
+
+    </div>
+    </div> -->
+
+    <!-- <div class="rightPanel">
+
+
+
+      
+       
+            <div class="section_3">
+              <div class="Sectionheading">
+                <span class="colored">Articles</span>
+              </div>
+              <ul class="ArticlesListing">
+                <li class="list" *ngFor="let article of respdata.blog_data">
+                  <a href="{{article.guid}}" target="_blank" class="style">
+                    <span class="thumb"><img src="{{article.img_link}}"></span>
+                    <div class="content">
+                      <span class="title">
+                        
+                       
+                      
+                        {{ (article.post_title.length>40)? (article.post_title |
+                          slice:0:40)+'..':(article.post_title) }} 
+                      </span>
+                      <span class="text">
+                      
+                        {{ (article.post_excerpt.length>40)? (article.post_excerpt |
+                          slice:0:40)+'..':(article.post_excerpt) }} 
+                      </span>
+                    </div>
+                  </a>
+                </li>
+               
+              </ul>
+            </div>
+            
+    </div> -->
+
+
+
+  </div>
+
+</div>
+<app-footer></app-footer>

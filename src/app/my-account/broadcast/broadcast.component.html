@@ -1,0 +1,210 @@
+<div class="main_container my_accountPages user_account_page change_password apcCash notificationPage">
+
+    <app-header></app-header>
+      
+      <div class="my_accountSetting">
+      
+      <app-my-account-top-panel></app-my-account-top-panel>
+      
+        <div class="container">
+          <div class="main_dataPage">
+      
+            <app-my-account-left-panel #leftpanel></app-my-account-left-panel>
+      
+            <div class="right_pannel">
+                <div class="pannelSTyle">
+                
+               
+                <div class="account_page_title">
+                    <div class="left_part">
+                      <div class="heading">
+                      <h2>Broadcast {{enquires.length}}</h2>
+                      </div>
+                    </div>
+        
+                    <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+                    <div class="right_part">
+                      
+                    </div>
+                    
+                    </div>
+                     <div class="account_content">
+                      <div class="broadcarst">
+                          <ul class="broadcast_listing">
+                              <!-- <li class="broadcarst_list">
+                                  <div class="style">
+                                      <div class="video_thumb broadcast_text_wrapper">
+                                          <div class="broadcast_text">
+                                              <h2>Our Broadcast</h2>
+                                          </div>
+                                      </div>
+                                      <div class="content">
+                                          <div class="title">
+                                              <span>our Broadcast</span>
+                                          </div>
+                                          <div class="date_time">
+                                              <span>13-03-2019, <span class="time">2:00:31</span></span>
+                                          </div>
+                                          <div class="short_description">
+                                              <p>Smartphones have change the way business is conducted these. Companies from all inductries are convert</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+        
+                              <li class="broadcarst_list">
+                                  <div class="style">
+                                      <div class="video_thumb">
+                                          <i _ngcontent-c2="" aria-hidden="true" class="fa fa-play"></i>
+                                          <img src="assets/images/icon/boardcast_detail.png">
+                                      </div>
+                                      <div class="content">
+                                          <div class="title">
+                                              <span>our Broadcast</span>
+                                          </div>
+                                          <div class="date_time">
+                                              <span>13-03-2019, <span class="time">2:00:31</span></span>
+                                          </div>
+                                          <div class="short_description">
+                                              <p>Smartphones have change the way business is conducted these. Companies from all inductries are convert</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+        
+                              <li class="broadcarst_list">
+                                  <div class="style">
+                                      <div class="video_thumb">
+                                          <img src="assets/images/icon/boardcast_detail.png">
+                                      </div>
+                                      <div class="content">
+                                          <div class="title">
+                                              <span>our Broadcast</span>
+                                          </div>
+                                          <div class="date_time">
+                                              <span>13-03-2019, <span class="time">2:00:31</span></span>
+                                          </div>
+                                          <div class="short_description">
+                                              <p>Smartphones have change the way business is conducted these. Companies from all inductries are convert</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+         -->
+                              <li class="broadcarst_list" *ngFor="let list of enquires" (click)="onNavigate(list)"> 
+                                  <div class="style">
+                                      <div class="video_thumb broadcast_text_wrapper" *ngIf="list.blogtype==3">
+                                          <div class="broadcast_text">
+                                              <h2>{{list.title}}</h2>
+                                          </div>
+                                      </div>
+                                      <div class="video_thumb"  *ngIf="list.blogtype!=3">
+                                          <i  aria-hidden="true" class="fa fa-play" *ngIf="list.blogtype==2"></i>
+                                          <img src="{{list.image_file}}">
+                                      </div>
+                                      <div class="content">
+                                          <div class="title">
+                                              <span>{{list.title}}</span>
+                                          </div>
+                                          <div class="date_time">
+                                              <span>{{list.date_time | date:'dd-MM-yyyy'}}, <span class="time">{{list.date_time | date:'hh:mm a'}}</span></span>
+                                          </div>
+                                          <div class="short_description">
+                                              <p> 
+      
+                                                  {{ (list.description.length>100)? (list.description |
+                                                    slice:0:100)+'..':(list.description) }}
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+        
+                          </ul>
+                      </div>
+                      <!-- <div class="notification_wrapper broadcast_block">
+                       
+                        <ul class="notification_listing">
+                        <li class="notification_list" *ngFor="let list of enquires" routerLink="/chemist-account/broadcast-detail" [queryParams]="{'id':list.id}">
+                          <div class="date_wrapper">
+                          <span class="date">{{list.date_time | date:'dd'}}</span>
+                          <span class="month">{{list.date_time | date:'MMM'}}</span>
+                          </div>
+                          <div class="enquiry_details">
+                          
+                          <span class="enquiry_items">{{list.message}}</span>
+                          <span class="d-text-block text-grey title_para">Smart phones have changed the way business is conducted these.</span>
+                          </div>
+                          <div class="broadcast_media">
+                            <div class="media_thumbnail">
+                                <img *ngIf="list.type==2" src="assets/images/icon/boardcast_video.png">
+                                <img *ngIf="list.type==1" src="assets/images/icon/boardcast_image.png">
+                                <img *ngIf="list.type==3" src="assets/images/icon/boardcast_doc.png">
+                            </div>
+                          </div>
+                         
+                        </li>
+                     
+                         
+                        </ul>
+                      </div> -->
+                
+                     
+                      </div>
+                    <!-- <div class="account_content">
+                      
+                      <div class="notification_wrapper">
+                        <div class="notification_date" *ngIf="enquires.length>0"><span>{{enquires[0].notification_date | date:'yyyy'}}</span></div>
+                        <ul class="notification_listing">
+                        <li class="notification_list" *ngFor="let list of enquires">
+                          <div class="date_wrapper">
+                          <span class="date">{{list.notification_date | date:'dd'}}</span>
+                          <span class="month">{{list.notification_date | date:'MMM'}}</span>
+                          </div>
+                          <div class="enquiry_details">
+                          <span class="enquiry_id"><span class="title">{{list.notification_date | date:'dd-MM-yyyy'}}:  {{list.notification_date | date:'hh:mm a'}}</span> </span>
+                          <span class="enquiry_items">{{list.message}}</span>
+                          </div>
+                         
+                        </li>
+                     
+                         
+                        </ul>
+                      </div>
+                
+                     
+                      </div> -->
+                <!-- <div class="mainPage">
+                  <div class="NotificationPage">
+                    <ul class="notificationListing">
+        
+                      <li class="list" *ngFor="let enquiry of enquires" [ngClass]="enquiry.read_status == '0' ? 'unreadNoti' : ''">
+                        <a href="javascript:void(0)" class="style">
+                          <div class="leftPart">
+                            <span class="notiTitle">Enquiry ID {{enquiry.additional_data.enquiry_id}}</span>
+                            <span class="msg">{{enquiry.message}}</span>
+                          </div>
+                          <div class="rightPart">
+                            <span class="time">
+                            {{enquiry.notification_date | date:'dd-MM-yyyy'}}<br>  <span class="notification_time">{{enquiry.notification_date | date:'hh:mm a'}}</span>
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+              
+                    </ul>
+                  </div>
+                </div> -->
+        
+              </div>
+              </div>
+            
+          </div>
+        </div>
+      
+      </div>
+      
+        
+      </div>
+  
+      <app-footer></app-footer>

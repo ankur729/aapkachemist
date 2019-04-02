@@ -1,0 +1,224 @@
+<div class="main_container my_accountPages chemist_account_page retailer_orders">
+
+    <app-header></app-header>
+  
+    <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img *ngIf="status.is_sent==false && status.is_error==false" src="assets/images/sendloader.gif">
+          <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+          <img *ngIf="status.is_error==true" src="assets/images/error.png">
+        </div>
+        <div class="sending_msg_content">
+          <span *ngIf="status.is_sent==false && status.is_error==false">{{status.process_txt}}</span>
+          <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+          <span *ngIf="status.is_error==true">{{status.error_txt}}</span>
+        </div>
+        <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+          <li class="list" (click)="onClose('enquiryprocess','close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+          <li class="list" routerLink="/chemist-account/dashboard"><a class="primary_btn" href="javascript:void(0)">Go to Dashboard</a></li>
+        </ul>
+        <ul class="noCartbuttons" *ngIf="status.is_error==true">
+          <li class="list" (click)="onClose('errorprocess','close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+          <li class="list" (click)="onClose('errorprocess','addmoneytowallet')"><a class="primary_btn" href="javascript:void(0)">Add
+              money to wallet</a></li>
+        </ul>
+      </div>
+    </div>
+  
+
+    <div class="sending_enquiry_popup" *ngIf="confirm_pin.is_process==true">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img *ngIf="confirm_pin.is_sent==false && status.is_error==false" src="assets/images/sendloader.gif">
+          <img *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false" src="assets/images/form_icon.png">
+          <img *ngIf="confirm_pin.is_error==true" src="assets/images/error.png">
+        </div>
+        <div class="sending_msg_content">
+          <span *ngIf="confirm_pin.is_sent==false && status.is_error==false">{{confirm_pin.process_txt}}</span>
+          <span *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false">{{confirm_pin.sent_txt}}</span>
+          <span *ngIf="confirm_pin.is_error==true">{{confirm_pin.error_txt}}</span>
+        </div>
+        <ul class="noCartbuttons" *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false">
+          <li class="list" (click)="handlePinPopupButtons('close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+          <!-- <li class="list" routerLink="/chemist-account/dashboard"><a class="Email" href="javascript:void(0)">Go to Dashboard</a></li> -->
+        </ul>
+        <ul class="noCartbuttons" *ngIf="confirm_pin.is_error==true">
+          <li class="list" (click)="handlePinPopupButtons('retry')"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Retry Again</a></li>
+          <li class="list" (click)="handlePinPopupButtons('close')"><a class="scndry_btn" href="javascript:void(0)">Close</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="sending_enquiry_popup" *ngIf="status.is_confirm_popup==true">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img src="assets/images/sure.png">
+  
+        </div>
+        <div class="sending_msg_content">
+  
+          <span style="font-size: 19px;font-weight: bold">{{status.confirm_txt}}</span>
+        </div>
+        <ul class="noCartbuttons">
+          <li class="list" (click)="onClose('confirmprocess','confirm')"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Yes,
+              I am Sure</a></li>
+          <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="scndry_btn" href="javascript:void(0)">No,
+              Cancel It</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sending_enquiry_popup" *ngIf="respdata.is_confirm_delivery" >
+      <div class="enquiry_popup_msg">
+        <!-- <div class="sending_msg_gif">
+          <img src="assets/images/sure.png">
+  
+        </div> -->
+        <div class="sending_msg_content">
+  
+          <span style="font-size: 19px;font-weight: bold">Enter Delivery Confirmation PIN</span>
+          <br/>
+          <input type="text" placeholder="Enter Confirmation code" id="confirm_otp" style="
+          padding: 10px;
+          margin: 15px 0px;
+      ">
+        </div>
+        <ul class="noCartbuttons">
+          <li class="list" (click)="onConfirmOTP()"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">
+
+             Confirm PIN</a></li>
+          <li class="list" (click)="onConfirmDelivery(order)"><a class="scndry_btn" href="javascript:void(0)">No,
+              Cancel It</a></li>
+        </ul>
+      </div>
+    </div>
+  
+
+      <div class="my_accountSetting">
+   
+      
+        <div class="container">
+          <div class="main_dataPage">
+      
+            <app-chemist-account-left-panel></app-chemist-account-left-panel>
+      
+            <div class="right_pannel">
+
+              
+
+
+                <div class="pannelSTyle" >
+                   
+              <h1 class="page_name">
+                <div class="leftData">
+                    <!-- <ul class="breadCrubs"><li class="list"><a  class="link" href="#0">Home</a></li><li  class="list"><span  class="current">Cart</span></li></ul> -->
+                  <span class="Pagename">Received Orders</span>
+                </div>
+              </h1>
+      
+              <div class="mainPage">
+                <div class="myOrderListingPage">
+                    <div class="profileStepsMeter">
+                  <ul class="orderTabs meterBar">
+                    <li class="list" id="order_open"><a href="javascript:void(0)" (click)="onSwitchTab('OS01')" class="name">Open <span class="">({{respdata.total_open_order}})</span> </a></li>
+                    
+                    <li class="list" id="order_readytodel"><a href="javascript:void(0)" (click)="onSwitchTab('OS02')" class="name">Ready to deliver <span class="">({{respdata.total_ready_to_deliver}})</span> </a></li>
+                    <li class="list" id="order_ontheway"><a href="javascript:void(0)" (click)="onSwitchTab('OS03')" class="name">On the way <span class="">({{respdata.total_on_the_way}})</span> </a></li>
+                    <li class="list" id="order_delivered"><a href="javascript:void(0)" (click)="onSwitchTab('OS04')" class="name">Delivered <span class="">({{respdata.total_delivered}})</span> </a></li>
+                    <!-- <li class="list"><a href="javascript:void(0)" class="name">Rejected <span class="number">(2)</span> </a></li> -->
+                  </ul>
+                  </div>
+
+                  <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+
+                  <ul class="orderListing" *ngIf="isnodatafound==false">
+                    <li class="list" *ngFor="let order of respdata.allorders">
+                        <div class="style">
+                            <div class="leftPart">
+                              <span class="orderId">ORDER ID - {{order.order_no}}</span>
+                              <span class="orderTime">{{order.order_date | date:'dd-MM-yyyy'}}, {{order.order_date | date:'hh:mm a'}}
+
+                                
+                                  <span *ngIf="order.delivery_type==0" class="delivered_at">Delivered At - Home
+                                </span>
+                                <span *ngIf="order.delivery_type==1"  class="delivered_at">Delivered At - Shop
+                              </span>
+                              </span>
+
+                            </div>
+                            <div class="rightPart">
+                              <span class="price">Rs. {{order.grand_total}}</span>
+                              <span class="itemsCount">{{order.total_items}} Items inside</span>
+                            </div>
+                            <div class="orderStatus">
+
+                              <div class="left_section">
+                              <span class="title blue">Delivery Date :</span>
+                              <span class="data">{{order.delivery_date}} {{order.delivery_time}}</span>
+                            </div>
+                            <div class="right_section">
+                              <a  routerLink="/chemist-account/retailer-order-track" [queryParams]="{'id':order.order_id}" href="javascript:void(0)" class="trackBtn">View Detail</a>
+                              <a  href="javascript:void(0)" (click)="onConfirmDelivery(order)" class="trackBtn" *ngIf="respdata.type == 'OS04' && order.delivery_confirmation =='0'">Confirm Delivery</a>
+                              <a *ngIf="respdata.type == status.order_status.confirm"  href="javascript:void(0)" class="trackBtn" (click)="onUpdateOrderStatus(order)">Ready to delivery</a>
+                              <a *ngIf="respdata.type == status.order_status.ready_to_del"  href="javascript:void(0)" class="trackBtn" (click)="onUpdateOrderStatus(order)">On the way</a>
+                              <a *ngIf="respdata.type == status.order_status.on_the_way"  href="javascript:void(0)" class="trackBtn" (click)="onUpdateOrderStatus(order)">Delivered</a>
+                            </div>
+
+                            </div>
+                          </div>
+                    </li>
+                    <!-- <li class="list">
+                      <div class="style">
+                        <div class="leftPart">
+                          <span class="orderId">Enquiry ID - 12345640</span>
+                          <span class="orderTime">10 Sep 2018, 02.00 PM</span>
+                        </div>
+                        <div class="rightPart">
+                          <span class="price">Rs. 1200</span>
+                          <span class="itemsCount">4 Items inside</span>
+                        </div>
+                        <div class="orderStatus">
+                          <a  href="javascript:void(0)" routerLink="/chemist-account/retailer-order-detail" class="trackBtn">View details</a>
+                          <span class="title green">Accepted</span>
+                          <span class="title grey">10 Sep 2018, 02.00 PM</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list">
+                      <div class="style">
+                        <div class="leftPart">
+                          <span class="orderId">Enquiry ID - 12345640</span>
+                          <span class="orderTime">10 Sep 2018, 02.00 PM</span>
+                        </div>
+                        <div class="rightPart">
+                          <span class="price">Rs. 1200</span>
+                          <span class="itemsCount">4 Items inside</span>
+                        </div>
+                        <div class="orderStatus">
+                          <a  href="javascript:void(0)" routerLink="/chemist-account/retailer-order-detail" class="trackBtn">View details</a>
+                          <span class="title red">Rejected By</span>
+                          <span class="title grey">10 Sep 2018, 02.00 PM</span>
+                        </div>
+                      </div>
+                    </li> -->
+                    
+                  </ul>
+      
+                </div>
+              </div>
+      </div>
+            </div>
+      
+    
+      
+          </div>
+        </div>
+      
+      </div>
+      
+        
+      </div>
+  
+      <app-footer></app-footer>

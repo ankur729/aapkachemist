@@ -1,0 +1,157 @@
+<div class="main_container my_accountPages  update_profile">
+
+    <app-header #child></app-header>
+      
+      <div class="my_accountSetting">
+      
+    
+  <!--   
+          <app-my-account-top-panel></app-my-account-top-panel> -->
+      
+        <div class="container">
+          <div class="main_dataPage">
+      
+            <app-chemist-account-left-panel #appleftpanel></app-chemist-account-left-panel>
+      
+            <div class="right_pannel profile_updatepage">
+                <div class="pannelSTyle">
+              <!-- <h1 class="page_name">
+                <div class="leftData">
+                      <ul _ngcontent-c2="" _ngcontent-c10="" class="breadCrubs"><li _ngcontent-c2="" _ngcontent-c10="" class="list"><a _ngcontent-c2="" _ngcontent-c10="" _ngcontent-c7="" class="link" href="#0">Home</a></li><li _ngcontent-c2="" _ngcontent-c10="" class="list"><span _ngcontent-c2="" _ngcontent-c10="" _ngcontent-c7="" class="current">Cart</span></li></ul>
+                  <span class="Pagename">Update Profile</span>
+                </div>
+              </h1> -->
+              <div class="account_page_title">
+                  <div class="left_part">
+                    <div class="heading">
+                      <h2>Update Profile</h2>
+                    </div>
+                  </div>
+                  <div class="right_part">
+                    
+                  </div>
+                  
+                </div>
+                <div class="account_content">
+                    <div class="form_wrapper full_w">
+      
+                  
+                     <ul class="form_listing full_w">
+                        <li class="form_list">
+                            <div class="inputForm">
+                                <label class="UploadImg label">
+                               
+                                <div class="thumbImg">
+                                      <img id="profimg" *ngIf="profiledata.user_image !=''" src="{{profiledata.user_image_path}}"   style="height:100%" >
+                                      <img id="profimg" *ngIf="profiledata.user_image ==''" src="assets/images/no-image.png"   style="height:100%" >
+                                      
+                                      <img class="default_pic" src="assets/images/defaultpic01.png">
+                                      <span class="select_file">
+                                        <i class="fa fa-camera" aria-hidden="true"></i>
+                                      </span>
+                                      <span  class="select_file"><i aria-hidden="true" class="fa fa-camera"></i></span> 
+                                </div>
+                                <!-- <span  class="name">Please upload your profile picture (.jpg/.png)</span> -->
+                                  <input type="file"  name="img" (change)="onChangeImage($event)" accept="image/x-png,image/jpeg">
+                                
+                            </label>    
+                            </div>
+                        </li>
+                        <li class="form_list full">
+                          <div class="style">
+                              <span class="lable">Name</span>
+                              <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="profiledata.name" >
+                          </div>
+                        </li>
+                        <li class="form_list full">
+                            <div class="style">
+                                <span class="lable">Mobile Number</span>
+                                <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="profiledata.mobile" readonly  >
+                            </div>
+                          </li>
+                          <li class="form_list full">
+                              <div class="style">
+                                  <span class="lable">Email Address</span>
+                                  <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="profiledata.email" readonly >
+                              </div>
+                            </li>
+      
+                     </ul> 
+                     <div  class="btn_wrapper full_w">
+                        <button class="btn primary large" (click)="onUpdateProfile()">Update</button>
+                      </div>
+                    </div>
+                  </div>
+              <!-- <div class="mainPage">
+                
+                <div class="form_pages">    
+                      <div class="DeliverySetupProfile">  
+                                 <div class="fromGroup">
+                                <ul class="form_group">
+                                  <li class="list profilepic_wrapper">
+                                      <div class="inputForm">
+                                      <label class="UploadImg label">
+                                         
+                                        <span  class="name">Please upload your profile picture (.jpg/.png)</span>
+                                          
+                                          <div class="thumbImg">
+  
+                                              <img id="profimg" *ngIf="profiledata.user_image!=''" src="{{profiledata.user_image_path}}" style="height:100%">
+                                              <img id="profimg" *ngIf="profiledata.user_image==''" src="assets/images/no-image.png" style="height:100%">
+                                              <img class="default_pic" src="assets/images/defaultpic01.png">
+                                              <span class="select_file">
+                                                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i></span> 
+                                             </div>
+                                          <input type="file"  name="img" (change)="onChangeImage($event)" accept="image/x-png,image/jpeg">
+                                      </label>
+                                  </div>
+                                  </li>
+                                  <li class="list">
+                                          <div class="inputForm">
+                                              <label class="label">
+                                                      <span class="name">Name</span>
+                                      <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-1" [(ngModel)]="profiledata.name"  />
+                                  </label>
+                                      </div>
+                                  </li>
+                                  <li class="list"> 
+                                          <div class="inputForm">
+                                                  <label class="label">
+                                                          <span class="name">Number</span>
+                                       <span class="verified">
+                                      <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-3" [(ngModel)]="profiledata.mobile" readonly/>
+                                    <i class="fa fa-check" aria-hidden="true"></i></span>
+                                      </label>
+                                      </div>
+                                  </li>
+                                  <li class="list">
+                                          <div class="inputForm">
+                                                  <label class="label">
+                                                          <span class="name">Email</span>
+                                       <span class="verified">
+                                          <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-3" [(ngModel)]="profiledata.email" readonly/>
+                                      <i class="fa fa-check" aria-hidden="true"></i></span>
+                                      </label>
+                                      </div>
+                                  </li>
+                                  <li class="list">
+                                      <input type="button" name="" value="Update" class="primary_btn" (click)="onUpdateProfile()">
+                                  </li>
+                              </ul>
+  
+                </div>
+              </div>
+              </div>
+           </div> -->
+            </div>
+      
+          </div>
+        </div>
+        
+      </div>
+      
+        
+      </div>
+  
+      
+  <app-footer></app-footer>

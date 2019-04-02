@@ -1,0 +1,333 @@
+@media screen and (max-width: 1150px){
+    .chemist_list_wrapper .chamListing .style .section1 .left_section{    width: 83%;}
+    .chemist_list_wrapper .chamListing .style .section1 .imageSet{width:17%;}
+    .download_section .right_section .text_part{    margin-bottom: 30px;}
+.download_section .right_section{  text-align: left;}
+.download_section .right_section .text_part .heading{line-height: 70px;    font-size: 26px;}
+.download_section .left_section img{    height: 300px;}
+}
+
+@media screen and (max-width: 1050px){
+.chemistDetail_page .chemist_details .left_section .section_1 .chemName_discount .chemName{    display: block;margin: 5px 0;}
+.chemistDetail_page .chemist_details .left_section .section_1 .chem_add{    margin: 5px 0;}
+.videoSection{width: 97%;    max-width: initial;left: 1.5%;}
+footer .sectionLinks .list .title, footer .contact_with .title{    font-size: 18px;    margin-bottom: 5px;}
+footer .sectionLinks .list.newsletter .newsletter_form .mainList p{font-size: 14px;    line-height: 20px;}
+
+.btn.assent.large{    padding: 10px 15px;font-size: 13px;}
+.btn.assent.medium{    padding: 10px 12px;font-size: 11px;}
+.btn.assent.small{    padding: 2px 10px; font-size: 11px;}
+
+.btn.primary.large{    padding: 10px 12px;font-size: 13px;}
+.btn.primary.medium{    padding: 10px 12px;font-size: 11px;}
+.btn.primary.small{    padding: 2px 10px; font-size: 11px;}
+
+.btn.secondary.large{    padding: 10px 12px; font-size: 13px;}
+.btn.secondary.medium{    padding: 10px 12px; font-size: 11px;}
+.btn.secondary.small{    padding: 2px 10px; font-size: 11px;}
+
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart{    width: 50%;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart .sortBy_name{    width: 180px;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart .name span{display: block;margin-top: 5px;}
+}
+
+/******** Amit(07-02-2019) *********/
+
+@media (max-width:991px){
+    footer .sectionLinks .list{width: calc(33.33% - 0px)!important;display: inline-block;padding-bottom: 20px;min-height: 184px;
+    margin-bottom: 0;}
+    footer .sectionLinks{padding-bottom: 5px;}
+    footer .sectionLinks .list:last-child{padding-bottom:5px;}
+    footer .sectionLinks .list:nth-child(3){padding-right:0;}
+    
+    }
+    
+    /**********************************/
+
+@media screen and (max-width: 980px){
+    .chemistDetail_page .chemist_details .left_section{    padding-right: 15px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemName_discount .chemName{    font-size: 22px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chem_add span{    font-size: 14px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chem_rating span{    height: 30px;width: 30px;    line-height: 30px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chemdistance_open .distance{font-size: 14px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chemdistance_open .shop_status{font-size: 12px; }
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chem_rating{    width: 30px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .right_part .loca_trusted_wrapper .chem_loc{font-size: 12px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .right_part .vender_type{font-size: 12px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemName_discount .chemDiscount{    padding: 5px 10px;font-size: 12px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chem_discount_name_wrapper{margin-bottom: 5px;}
+    .chemistDetail_page .chemist_details .left_section .section .detailsHeading h2{font-size: 18px;}
+    .chemistDetail_page .chemist_details .left_section .section .chemist_aditionalDetailsList .DetailsList .DetailsListheading{    font-size: 12px;}
+    .chemistDetail_page .chemist_details .left_section .section .chemist_aditionalDetailsList .DetailsList span.chem{font-size: 14px;}
+    .chemistDetail_page .chemist_details .right_section .section_2 .chem_order_title h2{font-size: 16px;}
+    .chemistDetail_page .chemist_details .right_section .section_1 .chemName_wrapper .left_part .chem_name{    font-size: 16px;}
+    .chemistDetail_page .chemist_details .right_section .section_1 .chemName_wrapper .left_part .chem_loc{font-size: 12px;}
+    .chemistDetail_page .chemist_details .right_section .section_1 .chem-enquiry_wrapper .btn.primary.large{    padding: 10px 20px;font-size: 12px;}
+    .chemistDetail_page .banner_wrapper .banner_bg{height: 200px;}
+    .chemistDetail_page .chemist_details{top: -100px;}
+    .home_Page .how_its_work .its_work_list .list .style .work_icon img{width: 55px;}
+    .home_Page .how_its_work .its_work_list .list .style .work_heading{font-size: 16px;}
+    .home_Page .how_its_work .its_work_list .list .style .work_description, .home_Page .how_its_work .its_work_list .list .style .work_subdescrition{font-size: 12px;}
+   
+    .Chemistlisting_Page .main_design .leftPanel{padding-right: 10px;  width: 230px;}
+    
+}
+
+@media screen and (max-width: 890px){
+    .chemistDetail_page .chemist_details .left_section .section_1 .chem_add span{    line-height: 20px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chem_add{margin-top:10px; }
+    .chemistDetail_page .chemist_details .left_section .section .chemist_aditionalDetailsList .DetailsList{width: 50%;}
+    .home_Page .how_its_work .its_work_list .list .style .work_icon img{width: 45px;}
+    .home_Page .how_its_work .its_work_list .list .style .work_heading{font-size: 14px;}
+    .home_Page .how_its_work .its_work_list .list .style .work_description, .home_Page .how_its_work .its_work_list .list .style .work_subdescrition{    font-size: 11px;}
+    .home_Page .how_its_work .its_work_list .list .style{padding-right:0;}
+    .chemist_list_wrapper .chamListing{width:50%;}
+    /******** Amit(07-02-2019) *********/
+
+    .loginPopups .designBox .vAlign{min-height: 100%;margin-top:3rem;}
+    .loginPopups .designBox .innerDesign .insideBox {margin-top: 50px;height: 100%;float: none; display: block; }
+    .loginPopups .designBox .innerDesign .left_data {float: none; width: 100%;display: block;    margin-bottom: 30px;}
+    .loginPopups .designBox .innerDesign .left_data .inside_data{float:none;}
+    .loginPopups .designBox .innerDesign .right_data { float: none; width: 100%;display: block; margin-top: 7px;    max-width: 440px;}
+    .loginPopups .designBox .innerDesign .right_data .login_steps {  position: static!important;float: none!important;width: 100%!important;max-width: 420px;margin: 0 auto;top: auto!important;left: auto!important;padding:30px;}
+    .loginPopups .designBox .innerDesign .left_data .content_part {float: none;width: 100%;}
+    .loginPopups .designBox .innerDesign .left_data .content_part .data {float: none;width: 100%;}
+    .loginPopups .designBox .innerDesign .left_data .content_part .data .mainHead {float: none;display: block;line-height: normal;margin-bottom: 10px;}
+    .loginPopups .designBox .innerDesign .left_data .content_part .data .text {width: 100%;float: none;}
+    .loginPopups .designBox .innerDesign .left_data .social_media .list{float:none;display: inline-block;}
+
+
+
+    /**********************************/
+    .Chemistlisting_Page .chemist_list_wrapper .chamListing{width: 100%;}
+    .login_bd_wrapper .content_wrapper .left_part .social_media .list img{height: 40px;}
+    .login_bd_wrapper .content_wrapper .left_part{    padding-right: 10px;}
+    .login_bd_wrapper .content_wrapper .left_part .content_part .mainHead{    line-height: 50px;    font-size: 30px;margin-bottom: 0px;}
+    .login_bd_wrapper .content_wrapper .left_part .content_part p{    font-size: 14px;line-height: 22px;}
+   
+}
+
+@media screen and (max-width: 800px){
+    .chemistDetail_page .chemist_details .right_section{display: block;    float: left;}
+    .chemistDetail_page .chemist_details .left_section{    float: left;width:100%;padding-right: 0;}
+    .chemistDetail_page .chemist_details .left_section .section .chemist_aditionalDetailsList .DetailsList{width:33.3%;}
+    header .mainHeader .insideDesign .right_part .icon_menu{padding-left:0;}
+    header .mainHeader .insideDesign .right_part .icon_menu .list.location_search_wrapper{       background: none;display: block;float: left;width: 100%;box-sizing: border-box;padding: 5px 10px;border-radius: 4px;color: #b4b4be;border: 1px solid #dedede;box-shadow: 0 2px 4px 0 hsla(0,0%,85.5%,.5);}
+    .mainHeader .searchLocation_wrapper{display:none;}
+    header .topHeader{display:none;}
+    header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper{    vertical-align: middle;    display: table-cell;}
+    
+     header .mainHeader .insideDesign .right_part .icon_menu .list.desktop_login_btn{display:none;}
+     header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper li.viewcart_btn{    display: inline-block; vertical-align: middle;}
+     header .mainHeader .insideDesign .right_part .icon_menu .list.desktop_cart_btn{    display: none;float: right;width: 10%;}
+     header .mainHeader .container{padding: 0;}
+     header .mainHeader .insideDesign .left_part{    float: left;width: 100%;display: table;background: #fafafa;border: 1px solid #f0f0f5;padding-left: 15px;padding-right: 15px;}
+     header .mainHeader .insideDesign .right_part{    width: 100%;display: block;margin-bottom: 0px;float: left;background: #fff;    padding: 15px;}
+     .mobile_searchLocation .location_icon img{    height: 14px; margin-right: 5px;vertical-align: middle;}
+     .mobile_searchLocation .header-location-text{font-size: 13px;  margin-right: 5px;}
+     header .mainHeader .insideDesign .right_part .icon_menu .list .input_box#headersearch{    background: #fff url(../images/icon/search.png) no-repeat 5px center;border-left:none;    padding-left: 30px;}
+     header .mainHeader .insideDesign .right_part .icon_menu .list .search_design{    width: 100%;    max-width: 100%;}
+     /* header .mainHeader .insideDesign .right_part .icon_menu .list:last-child {position: absolute; top: 10px; right: 15px;display:none;} */
+     header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper .mobile_viewProfileMenu_btn{display: inline-block;vertical-align: middle;}
+     header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper .mobile_viewProfileMenu_btn .cart{    display: block;position: relative;float: right;}
+     header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper .mobile_viewProfileMenu_btn .cart .menuBtn{    width: 10px;overflow: hidden; height: 25px;padding: 0px 15px; float: right; transform: scale(1);}
+     header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper .mobile_viewProfileMenu_btn .cart .menuBtn .MList{    width: 6px; height: 6px;    background: #000;border-radius: 100%; float: left; margin: 1px;}
+     header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper li.login_btn{font-size: 14px;color: #000;display: inline-block;vertical-align: middle;}
+     .mobile_searchLocation .viewcart_btn{    display: inline-block; float: right; position: static;vertical-align: top;margin-bottom: 10px;}
+     header .mainHeader .insideDesign .right_part .icon_menu .desktop_viewProfileMenu_btn{display: none;}
+     .mobile_searchLocation{display:table;    width: 100%;}
+     .mobile_searchLocation .MviewLocation_wrapper{display:table-cell;vertical-align: middle;}
+     .mobile_searchLocation .viewcart_btn{display:table-cell;vertical-align: middle;}
+     header .mainHeader .mobile_searchLocation .MviewLocation_wrapper .left_part{background: none;border: none; width: auto;}
+     .mainHeader .searchLocation_wrapper.search_loc{    background: #fff;z-index: 1000;   top: 0; left: 0;    height: 100%;position: fixed;display:block;width: 100%;}
+     .mainHeader .searchLocation_wrapper.search_loc .searchLocation{display: block;  float: none;  width: 80%;  margin: auto; top: 20px;}
+     .mainHeader .searchLocation_wrapper.search_loc .searchLocation h2{    text-align: center;  margin-bottom: 20px; color: #212121;font-weight: bold;display: block;    z-index: 1;}
+     .mainHeader .searchLocation_wrapper.search_loc  .location_icon{    line-height: 40px;}
+     .mainHeader .searchLocation_wrapper.search_loc  .location_icon img{vertical-align: middle;}
+     .mainHeader .searchLocation_wrapper.search_loc  #locsearch{border: 2px solid #ccc;text-indent: 30px;padding: 0;  padding-right: 40px;  height: 40px;}
+     .mainHeader .searchLocation_wrapper.search_loc  .caret_icon.location_target{height: 37px;  width: 40px; line-height: 37px;}
+     .mainHeader .searchLocation_wrapper.search_loc  .caret_icon.location_target img{    vertical-align: middle;}
+     .mainHeader .searchLocation_wrapper.search_loc .close{position: absolute; left: 15px; top: 15px; background: #e5e5e5; padding: 8px 10px;display: block;}
+      /******** Amit(07-02-2019) *********/
+
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle{padding-bottom:10px;}
+    .Chemistlisting_Page .main_design .leftPanel .filter_section_1 .filter_title_wrapper .left_part{padding-top:0;}
+
+    /**********************************/   
+    .home_Page.bodySetting{    padding-top: 0;}
+
+
+}
+
+@media screen and (max-width: 767px){
+    .videoSection{    padding: 20px;}
+    .videoSection .videoList .list{width:100%;display:block;}
+    .videoSection .videoList .about_video .heading{    margin-bottom: 5px;    font-size: 16px;    line-height: 20px;}
+    .videoSection .videoList .about_video p{font-size: 14px;    line-height: 20px;    margin-bottom: 10px;}
+    .videoSection .videoList .list .btn.primary.large{    padding: 10px 10px;font-size: 12px;    margin-bottom: 15px;}
+    .home_Page .section_1{    padding-bottom: 280px;}
+    .download_section .right_section .text_part .heading{    line-height: 50px;font-size: 22px;}
+    .download_section .right_section .text_part p{    font-size: 14px; line-height: 20px;}
+    .download_section .right_section .input_section .input_field .numbe_input{width: 50%;    height: 40px;}
+    .download_section .right_section .input_section .input_field .numbe_input p{font-size: 12px;    width: 20%;line-height: 36px;}
+    .download_section .right_section .input_section .input_field .numbe_input .input_text{width: 80%;    line-height: 34px;}
+    .download_section .right_section .input_section .input_field .submit_input{height: 40px;}
+    .download_section .right_section .input_section .input_field .submit_input .btn.primary.large{    padding: 10px 20px;font-size: 12px;}
+    .download_section .right_section .button .list img{    height: 40px;}
+    .heading_wrapper .heading{    font-size: 16px;line-height: 20px;margin-bottom:5px;}
+    .heading_wrapper .sub_heading{    font-size: 14px; line-height: 20px;}
+
+    /******** Amit(07-02-2019) *********/
+
+    footer {padding-top: 30px;}
+    footer .contact_with {padding-bottom: 20px;}
+    footer .siteMapSection {padding: 20px 0px;}
+    footer .sectionLinks .list .title, footer .contact_with .title {font-size: 15px;}
+    footer .sectionLinks .list .usefull .mainList .link {font-size: 13px;}
+    footer .sectionLinks .list .usefull .mainList{line-height:21px;}
+    footer .siteMapSection .list .catList .nList .link {font-size: 13px;line-height:normal;}
+    footer .siteMapSection .list {margin-bottom: 8px;}
+    footer .copywrightDiv .left_part ul li{margin-right:19px;font-size: 13px;}
+    footer .sectionLinks .list.newsletter .newsletter_form .mainList p{margin-bottom: 8px;}
+
+    /************************************/
+   
+    .Chemistlisting_Page .main_design .leftPanel{display:none;}
+    .Chemistlisting_Page .chemist_list_wrapper .chamListing{    width: 50%;}
+    .Chemistlisting_Page .mobile_filter_wrapper{display:block;    margin-bottom: 10px;border-radius: 3px;}
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart{display:none;}
+    .Chemistlisting_Page .main_design .leftPanel.mobileView_filter{    position: fixed; top: 0; left: 0; width: 100%; background: #fff; display: block; z-index: 10; height: 100%;  padding-right: 0;}
+    .Chemistlisting_Page .main_design .leftPanel.mobileView_filter .filter_part .panel_heading{     float: left; width: 100%;  display: table; position: fixed;top: 0; left: 0; z-index: 2;}
+    .Chemistlisting_Page .main_design .leftPanel.mobileView_filter .filter_part .panel_heading h2{display: table-cell; vertical-align: middle;}
+    .Chemistlisting_Page .main_design .leftPanel.mobileView_filter .filter_part .panel_heading  button{display: table-cell;
+    vertical-align: middle;    float: right;}
+    .Chemistlisting_Page  .filter_icon.btn.primary.medium{display:block;border-radius: 100%;padding: 0;height: 40px;width: 40px;position: fixed;right: 10px;z-index: 10;bottom: 50px;}
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle{    margin-top: 0px;  padding-left: 5px;height: auto;}
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart .name span{    margin-top: 0;}
+    .Chemistlisting_Page .mobile_filter_wrapper .right_part .sortBy_name{    padding: 10px 5px;}
+    .Chemistlisting_Page .main_design .leftPanel .filter_section_1{    float: left; width: 100%; padding: 15px 10px;background: #fff;position: absolute; padding-top: 80px; z-index: 1; height: 100%;  overflow: auto;}
+
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart .name span{    display: inline-block;}
+
+    .login_bd_wrapper .login_inner_wrapper .content_wrapper .left_part:first-child{display:none;}
+    .login_bd_wrapper .content_wrapper .right_part{    text-align: center;}
+    .login_bd_wrapper .content_wrapper .right_part .right_inner_wrapper{max-width: 400px;  float: none;  margin: 50px auto;}
+    .login_bd_wrapper{background-size: auto;overflow: auto;    position: fixed;}
+      
+}
+
+@media screen and (max-width: 680px){
+    .chemist_list_wrapper .chamListing .chemist_dtls .section2 .chemAdd_chemName .name{font-size: 15px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section2 .chemAdd_chemName .chem-add{    font-size: 11px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section2 .primium .primium_icon img{    width: 17px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section1, .chemist_list_wrapper .chamListing .chemist_dtls .section2{    padding: 5px 7px 5px 7px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section3{padding: 5px 7px 5px 7px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section3 .discount span{font-size: 12px;    padding: 3px 5px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section3 .open_status_distance .area{    font-size: 12px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section3 .open_status_distance .right_content{font-size: 12px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section3{    min-height: 40px;}
+    .download_section .left_section img{height: 200px;}
+    .home_Page .section_2{padding-top: 195px;}
+    .videoSection {bottom: -190px;}
+    .home_Page .section_2 .MedicinTypeList{width: 75%;}
+    .heading_wrapper{    margin: 20px 0 20px;}
+
+    footer .sectionLinks{    padding-left: 5px; padding-right: 5px;}
+}
+
+
+/******** Amit(07-02-2019) *********/
+
+@media (max-width:640px){
+    footer .sectionLinks .list{width: calc(50% - 0px)!important;    min-height: auto;}
+    footer .sectionLinks .list:nth-child(3) , footer .sectionLinks .list:nth-child(4){padding-bottom:8px;}
+    footer .contact_with .list{padding-top:8px;}
+    footer .copywrightDiv .left_part {display: block;}
+    footer .copywrightDiv .right_part {display: block;width: 100%;}
+    footer .copywrightDiv .right_part ul {float: none;text-align: center;margin-top: 10px;}
+    footer .copywrightDiv .left_part ul {margin-bottom: 2px;}
+    footer .copywrightDiv .left_part p {line-height: 18px; }
+    
+    }
+    
+/**********************************/
+
+@media screen and (max-width: 600px){
+    .chemistDetail_page .chemist_details .left_section .section .chemist_aditionalDetailsList .DetailsList{width:50%;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemName_discount .chemName{font-size: 18px;margin-top: 0;line-height: 20px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemName_discount .chemDiscount{padding: 4px 5px;font-size: 11px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chem_add{    margin-top: 5px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chem_add span{font-size: 12px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chem_rating span{    height: 20px; width: 20px; line-height: 20px; font-size: 12px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chem_rating{width: 20px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chemdistance_open .distance{font-size: 12px;    line-height: initial;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .left_part .rating-wrapper .chemdistance_open .shop_status{    font-size: 11px;}
+    .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .right_part .loca_trusted_wrapper .chem_loc, .chemistDetail_page .chemist_details .left_section .section_1 .chemRating .right_part .vender_type{    font-size: 11px;    line-height: initial;}
+    .chemistDetail_page .chemist_details .left_section .section .detailsHeading h2{    font-size: 16px;margin-bottom: 10px;    padding-bottom: 5px;}
+    .download_section .left_section{display:none;}
+    .home_Page .section_5{    padding: 10px 0;}
+    .home_Page .section_1{    padding-bottom: 300px;}
+    .home_Page .section_2 .MedicinTypeList{width: 95%;}
+    .home_Page .section_2 .MedicinTypeList .list .style .icon img{width: 40px;}
+    .home_Page .section_2 .MedicinTypeList .list .style .title{    font-size: 14px;}
+
+}
+
+/******** Amit(07-02-2019) *********/
+
+@media (max-width:576px){
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle {display: block;height: auto;padding-bottom: 0px;}
+    .Chemistlisting_Page .main_design .left_part {padding: 0 0 8px;}
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart{text-align:left;width: auto;}
+    .Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart .name{font-size:18px;}
+    .Chemistlisting_Page .chemist_list_wrapper .chamListing{padding:0 5px;}
+    .chemist_list_wrapper .chamListing .style .section1 .left_section .vendorType{font-size: 12px;}
+    
+    }
+    
+    /**********************************/
+
+@media screen and (max-width: 500px){
+    .chemistDetail_page .chemist_details .right_section{max-width:500px;width:100%;}
+    .download_section .right_section .input_section .input_field .numbe_input{width: 60%;}
+    .videoSection .videoList .list .sizeFix iframe{    height: 180px;}
+    .home_Page .section_1{    padding-bottom: 190px;}
+    .chemist_list_wrapper .chamListing, .Chemistlisting_Page .chemist_list_wrapper .chamListing{    width: 100%;padding: 0;}
+    .chemist_list_wrapper{    width: 100%; margin: auto; display: block;  float: none;  padding: 0 5px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section2 .primium{    width: 20px;}
+    .chemist_list_wrapper .chamListing .chemist_dtls .section2 .chem_rating{    float: right;}
+
+    /******** Amit(07-02-2019) *********/
+
+    footer .sectionLinks .list:first-child{width: calc(100% - 0px)!important;}
+
+    /************************************/
+    .container{    padding: 0px 5px;}
+    header .mainHeader .insideDesign .left_part{padding-left: 5px; padding-right: 5px;}
+    header .mainHeader .insideDesign .right_part{padding-left: 5px; padding-right: 5px;}
+    .Chemistlisting_Page .main_design .leftPanel{    width: 230px;padding-right: 10px;}
+    .login_bd_wrapper .content_wrapper .right_part .right_inner_part{    padding: 20px 15px;}
+    .login_bd_wrapper .content_wrapper .right_part .right_inner_wrapper{    padding: 0px 15px;}
+    .login_bd_wrapper .content_wrapper .right_part{    padding: 0 10px;}
+    .login_bd_wrapper .content_wrapper .right_part .right_inner_part .form_title h2{font-size: 16px;}
+    .login_bd_wrapper .login_inner_wrapper .login_register_header .back_btn{    width: 15%;}
+    .login_bd_wrapper .login_inner_wrapper .login_register_header .logo_wrapper{    width: 85%;float: left;}
+    .login_bd_wrapper .login_inner_wrapper .login_register_header .conatct_number{display:none;}
+}   
+
+@media screen and (max-width: 420px){
+    .download_section .right_section .input_section .input_field .submit_input{padding-left:0;margin-top:10px;}
+    .download_section .right_section .input_section .input_field .numbe_input{width: 240px;}
+    .download_section .right_section .text_part{margin-bottom: 20px;}
+}
+
+@media screen and (max-width: 375px){
+    .chemistDetail_page .gallery-items{       width: 100px !important;height: 100px !important;}
+    .home_Page .section_1{padding-bottom: 230px;}
+}
+
+@media screen and (orientation: landscape){
+    .inquirypopup, .launch_popup, .vender_launch_popup, .loginPopups{    overflow: auto;   }
+    .inquirypopup .designBOx, .vender_launch_popup .designBox .vAlign .innerDesign{margin: 30px auto;}
+    
+}

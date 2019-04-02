@@ -1,0 +1,100 @@
+<div class="main_container my_accountPages user_account_page change_password">
+
+  <app-header></app-header>
+
+  <div class="my_accountSetting">
+
+    <app-my-account-top-panel></app-my-account-top-panel>
+
+    <div class="container">
+      <div class="main_dataPage">
+
+        <app-my-account-left-panel></app-my-account-left-panel>
+
+
+        <div class="right_pannel">
+
+          <div class="enquiry-id-section">
+              <h1 class="page_name">
+                  <div class="leftData">
+                      <!-- <ul _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" class="breadCrubs"><li _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" class="list"><a _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" _ngcontent-c7="" class="link" href="#0">Home</a></li><li _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" class="list"><span _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" _ngcontent-c7="" class="current">Cart</span></li></ul> -->
+                      <span class="Pagename">ORDER ID - {{data.order_no}}</span>
+                  </div>
+              </h1>
+          </div>
+
+          <div class="mainPage">
+              <div class="orderDetailPage">
+
+                  <section class="uploadBill-section section">
+                      <div class="uploadBill-block">
+                          <h3>Upload Bill</h3>
+                          <form>
+                              <div class="form-group">
+                                  <label>Total MRP</label>
+                                  <input type="text" name="mrp" class="input-fields" placeholder="" value="{{data.total_bill_mrp}}" [(ngModel)]="data.total_bill_mrp">
+                              </div>
+                              <div class="form-group">
+                                  <label>Final Bill Amount</label>
+                                  <input type="text" name="billamount" class="input-fields" placeholder="" value="{{data.total_bil_amount}}" [(ngModel)]="data.total_bil_amount" >
+                              </div>
+                          </form>
+                          <ul class="uploadbill-list">
+                              <li>
+                                  <div class="bill-page">
+                                      <div class="bill-image-box">
+                                          <label class="UploadImg label">
+                                              <div class="thumbImg">
+                                                  <img src="{{data.invoice_file_path}}" id="firstimg">
+                                                  <span class="select_file">
+                                                      <i class="fa fa-camera" aria-hidden="true"></i>
+                                                  </span>
+                                              </div>
+                                              
+                                          </label>
+                                          <label>Image of bill page 1</label>
+                                      </div>
+                                    <a href="{{data.invoice_file_path}}" target="_blank"> <button class="primary_btn" *ngIf="data.invoice_file2!=''">View</button></a> 
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="bill-page">
+                                      <div class="bill-image-box">
+                                          <label class="UploadImg label">
+                                              <div class="thumbImg">
+                                                  <img src="{{data.invoice_file2_path}}" id="secondimg">
+                                                  <span class="select_file">
+                                                      <i class="fa fa-camera" aria-hidden="true"></i>
+                                                  </span>
+                                              </div>
+                                             
+                                          </label>
+                                          <label>Image of bill page 2</label>
+                                      </div>
+                                    <a href="{{data.invoice_file2_path}}" target="_blank">  <button class="primary_btn" *ngIf="data.invoice_file!=''">View</button></a>
+                                  </div>
+                              </li>
+                          </ul>
+                          <!-- <div class="btnsubmit">
+                              <button class="primary_btn" (click)="SubmitInvoice()">Submit</button>
+                          </div> -->
+                      </div>
+                  </section>
+
+              </div>
+          </div>
+
+      </div>
+
+ 
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

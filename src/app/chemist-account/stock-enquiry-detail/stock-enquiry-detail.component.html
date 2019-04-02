@@ -1,0 +1,268 @@
+
+<div class="main_container my_accountPages">
+
+  <app-header></app-header>
+	<div class="sending_enquiry_popup" *ngIf="status.is_process==true" >
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+            <img *ngIf="status.is_sent==false" src="assets/images/sendloader.gif">
+            <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+        </div>
+        <div class="sending_msg_content">
+            <span *ngIf="status.is_sent==false">{{status.process_txt}}</span>
+            <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+        </div>
+        <ul  class="noCartbuttons" *ngIf="status.is_sent==true">
+          <li class="list" (click)="onClose('enquiryprocess')"><a _ngcontent-c2="" class="Download" href="javascript:void(0)">Close</a></li>
+          <li class="list"  routerLink="/home"><a  class="Email" href="javascript:void(0)">Go to home</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sending_enquiry_popup"  *ngIf="status.is_confirm_popup==true">
+        <div class="enquiry_popup_msg">
+          <div class="sending_msg_gif">
+              <img  src="assets/images/sure.png">
+           
+          </div>
+          <div class="sending_msg_content">
+              
+              <span  >{{status.confirm_txt}}</span>
+          </div>
+          <ul  class="noCartbuttons"  >
+            <li class="list" (click)="onConfirmOrder()"><a _ngcontent-c2="" class="Download" href="javascript:void(0)">Yes, Confirm It</a></li>
+            <li class="list"  (click)="onClose('confirmprocess')"><a  class="Email" href="javascript:void(0)">No, Cancel It</a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="my_accountSetting">
+ 
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel	>
+          
+		  <div class="right_pannel">
+				<h1 class="page_name">
+				  <div class="leftData">
+					<span class="Pagename">Enquiry ID - {{enquiry.enquiry_detail.order_no}}</span>
+				  </div>
+				  <div class="rightData">
+					<div class="CheckoutDiv">
+					  <a href="javascript:void(0)"    class="checkOutbtn" (click)="onConfirmOrder()">
+						<span class="Amount">Rs. {{enquiry.enquiry_detail.grand_total}}</span>
+						<span class="title"  *ngIf="this.enquiry.enquiry_detail.app_confirm_flag =='0'" >Confirm</span>
+					  </a>
+					</div>
+				  </div>
+				</h1>
+		
+				<div class="mainPage">
+				  <div class="orderDetailPage">	
+					
+		
+		
+					<section class="section">
+					  <div class="headingPart">
+						<div class="leftPart">
+						  <span class="name">{{enquiry.enquiry_detail.vendor_name}}</span>
+						</div>
+						<div class="rightPart">
+						  <span class="price">{{enquiry.enquiry_detail.payment_method }}</span>
+						</div>
+					  </div>
+		
+					  <div class="MainOrder">
+						<div class="leftPart">
+						  <span class="orderTime">{{enquiry.enquiry_detail.order_date | date:'dd-MM-yyyy'}}, {{enquiry.enquiry_detail.order_date | date:'hh:mm a'}}</span>
+						  <span class="orderId"> {{enquiry.enquiry_detail.area}}</span>
+						</div>
+						<div class="rightPart">
+						  <span class="itemsCount" *ngIf="enquiry.enquiry_detail.delivery_time!=''">{{enquiry.enquiry_detail.delivery_time}} Hour Delivery Time</span>
+						  <span class="price green">{{enquiry.enquiry_detail.total_discount | number:0}}% Discount</span>
+						</div>
+					  </div>
+		
+					  <!-- <div class="youSave">You Save <span class="red">Rs. 199</span></div> -->
+		
+		
+					</section>
+			  <!-- 			
+					<section class="section">
+					  <div class="headingPart">
+						<div class="leftPart">
+						  <span class="name">Payment Mode</span>
+						</div>
+						<div class="rightPart">
+						  <span class="sortBtn">Change</span>
+						</div>
+					  </div>
+					  <ul class="familyTreeListing">
+						<li class="list">
+						  <div class="style">
+							<div class="Address">
+							  Cash on Delivery
+							</div>
+						  </div>
+						</li>
+					  </ul>
+					</section> -->
+		
+		
+					
+					<table class="my_table" cellspacing="0" cellpadding="0">
+					  <!-- heading start here -->
+						<tr>
+						  <tr class="row_head">
+						  <th class="text-left col-md-50">Items</th>
+						  <!-- <th class="center">MRP</th> -->
+						  <th class="center">Discount</th>
+						  <th class="center">QTY</th>
+						  <th class="center">Amount</th>
+						</tr>
+					  <!-- heading end here -->
+		
+		
+						<tr *ngFor="let item of enquiry.enquiry_item_detail">
+						  <td class="text-left">
+							<span class="name">{{item.product_name}}</span>
+							<span class="data">{{item.product_variant}}</span>
+							<span class="data" *ngIf="item.company_name !=''">{{item.company_name}}</span>
+							<span class="shopName">MRP - Rs.{{item.mrp}}</span>
+						  </td>
+						  <!-- <td class="center"><span class="amount">Rs. {{item.mrp}}</span></td> -->
+						  <td class="center">
+							<!-- <span class="amount">Rs. {{item.discounted_amount}}</span> -->
+							<span class="caption"> <i class="green"> {{item.discounted_precent | number:0}}%</i></span>
+						  </td>
+						  <td class="center"><span class="amount">{{item.quantity}}</span></td>
+						  <td class="center">
+							<span class="time">Rs. {{item.net_amount}}</span>
+						  </td>
+						</tr>
+		
+		
+						<!-- <tr>
+						  <td class="text-left">
+							<span class="name">Aspirin</span>
+							<span class="data">1 Bottle of 250 Capsules</span>
+							<span class="shopName">Brand Name</span>
+						  </td>
+						  <td class="center"><span class="amount">Rs. 100</span></td>
+						  <td class="center">
+							<span class="amount">Rs. 16</span>
+							<span class="caption"> <i class="green"> 5%</i></span>
+						  </td>
+						  <td class="center"><span class="amount">5</span></td>
+						  <td class="center">
+							<span class="time">Rs. 500</span>
+						  </td>
+						</tr>
+		
+						<tr>
+						  <td class="text-left">
+							<span class="name b">Your Total</span>
+						  </td>
+						  <td class="center">
+							<span class="time b">Rs.200</span>
+						  </td>
+						  <td class="center">
+							<span class="time b">Rs.32</span>
+							<span class="caption"> <i class="green"> 5% Overall</i></span>
+						  </td>
+						  <td class="center">
+							<span class="time b">10</span>
+						  </td>
+						  <td class="center">
+							<span class="time b">Rs.1000</span>
+						  </td>
+						</tr> -->
+		
+		
+						<tr>
+						  <td class="text-left" colspan="3">
+							<span class="name b">Sub Total</span>
+						  </td>
+						  <td class="center">
+							<span class="time b">Rs.{{enquiry.enquiry_detail.sub_total}}</span>
+						  </td>
+						</tr>
+		
+						<tr>
+						  <td class="text-left" colspan="3">
+							<span class="name b">Delivery Charges </span>
+						  </td>
+						  <td class="center">
+							<span class="time b">Rs.{{enquiry.enquiry_detail.delivery_charge}}</span>
+						  </td>
+						</tr>
+		
+						<tr>
+						  <td class="text-left" colspan="3">
+							<span class="name b">App Ka Chemist Discount</span>
+						  </td>
+						  <td class="center">
+							<span class="time b green">( - ) Rs.{{(enquiry.enquiry_detail.enquiry_original_grand_total * enquiry.enquiry_detail.total_discount)/100 | number : '1.0'}}</span>
+						  </td>
+						</tr>
+		
+						<tr>
+						  <td class="text-left" colspan="3">
+							<span class="name b">Total Payable</span>
+						  </td>
+						  <td class="center">
+							<span class="time b">Rs.{{enquiry.enquiry_detail.grand_total}}</span>
+						  </td>
+						</tr>
+		
+					</table>
+		
+					<section class="section" *ngIf="enquiry.shipping_detail.address.length !=0">
+							<div class="headingPart">
+							<div class="leftPart">
+								<span class="name">Delivery Address</span>
+							</div><!-- 
+							<div class="rightPart">
+								<span class="sortBtn">Change</span>
+							</div> -->
+							</div>
+							<ul class="familyTreeListing">
+							<li class="list">
+								<div class="style">
+								<span class="name">{{enquiry.shipping_detail.name}}
+									
+									<!-- <i>(Brother)</i> -->
+								
+								</span>
+								<!-- <span class="age">25 Year <i>(Male)</i></span> -->
+								<div class="Address">
+									{{enquiry.shipping_detail.address}}
+									
+									<!-- <br>
+									Delhi - 110091 -->
+								</div> 
+								<!-- <span class="Phone">+91 7838414681</span> -->
+								</div>
+							</li>
+							</ul>
+						</section>
+		
+				  </div>
+				</div>
+		
+			  </div>
+			  
+		   
+		 
+  
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+	<app-footer></app-footer>

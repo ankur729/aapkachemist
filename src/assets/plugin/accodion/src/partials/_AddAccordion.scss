@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+.addui-Accordion {
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+  overflow: hidden;
+
+  .addui-Accordion-header {
+    display: block;
+    background: neutral(2);
+    color: text(neutral(2));
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid text(neutral(), 4);
+    position: relative;
+
+    &.addui-Accordion-last {
+      border-bottom: 0;
+    }
+
+    &::after {
+      content: '\e5c5';
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 32px;  /* Preferred icon size */
+      display: inline-block;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0) rotate(0deg);
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      transition: transform 0.4s;
+    }
+
+    &.addui-Accordion-open::after {
+      transform: translate(0, 0) rotate(180deg);
+    }
+  }
+
+  .addui-Accordion-content {
+    background: neutral(4);
+    color: text(neutral(4));
+    padding: 16px;
+    border-bottom: 1px solid text(neutral(), 4);
+
+    &.addui-Accordion-last {
+      border-bottom: 0;
+      border-top: 1px solid text(neutral(), 4);
+    }
+  }
+}

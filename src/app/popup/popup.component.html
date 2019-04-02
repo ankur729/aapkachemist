@@ -1,0 +1,197 @@
+ 
+    <div class="popup_design popup_msgs loader_popup" *ngIf="popup.type=='process'" >
+
+        <div class="designBox ">
+            <div class="vAlign">
+              <div class="insideDesign">
+             
+              <div class="popup_content loder-new">
+                  <div class="error-wrp"> 
+                    <div class="sending_msg_gif">
+                      <img src="assets/images/ScooterAnimation.gif">
+                    </div> 
+                  </div>
+                  
+                  <div class="content_part">
+                      <h2 class="heading dotsanim">Please wait..<span>.</span><span>.</span><span>.</span></h2>
+                      <p>{{popup.confirm_txt}}</p>
+                  </div>
+                 
+              </div>  
+            </div> 
+            </div> 
+        </div> 
+    
+ 
+  <!-- <div class="designBox">
+      <div class="vAlign">
+        <div class="insideDesign">
+         <div class="insideDesign">
+            <div  class="heading"><h2>{{popup.confirm_txt}}</h2></div>
+        </div> 
+        <div class="popup_content">
+            <div class="sending_msg_gif">
+                <img  src="assets/images/sendloader.gif">
+            </div> 
+             
+           
+        </div>  
+      </div> 
+      </div> 
+  </div>  -->
+ <!-- <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img  src="assets/images/sendloader.gif">
+      
+    </div>
+    <div class="sending_msg_content">
+      <span *ngIf="status.is_sent==false">{{status.process_txt}}</span>
+      
+    </div>
+  
+  </div>  -->
+</div>
+
+<div class="popup_design popup_msgs" *ngIf="popup.type=='confirm' || popup.type=='confirm2' || popup.type=='confirm3'">
+    <div class="designBox">
+        <div class="vAlign">
+          <div class="insideDesign">
+           <div class="insideDesign">
+              <div  class="heading  success"><h2>Confirm</h2></div>
+          </div> 
+          <div class="popup_content">
+              <div class="error-wrp"> 
+            <div class="sending_msg_gif">
+                <img src="assets/images/sure.png">
+              </div> 
+              <div class="left-error"> <p>{{popup.confirm_txt}}</p>
+                 </div> 
+
+
+              </div>
+              <ul class="noCartbuttons mt10 btn_half" >
+                <li class="list">
+                  <button (click)="actionPerformed(1,popup.type)"  class="btn primary medium mr10 custome-pd" href="javascript:void(0)">
+                    {{popup.primary_btn_txt}}
+                  </button>
+                  <button class="btn secondary medium cancel custome-pd" (click)="actionPerformed(0,popup.type)" href="javascript:void(0)">
+                      {{popup.secondary_btn_txt}}
+                      </button> 
+                </li>
+                     
+              </ul>   
+             
+          </div>  
+        </div> 
+        </div> 
+    </div> 
+
+  <!-- <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img src="assets/images/sure.png">
+
+    </div>
+    <div class="sending_msg_content">
+
+      <span>{{popup.confirm_txt}}</span>
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list" (click)="actionPerformed(1,'confirm')"><a _ngcontent-c2="" class="Download primary_btn" href="javascript:void(0)">{{popup.primary_btn_txt}}</a></li>
+      <li class="list" (click)="actionPerformed(0,'confirm')"><a class="Email scndry_btn" href="javascript:void(0)">{{popup.secondary_btn_txt}}</a></li>
+    </ul>
+  </div> -->
+</div>
+
+<div class="popup_design popup_msgs" *ngIf="popup.type=='success' || popup.type=='success2' || popup.type=='success3' || popup.type=='success4'">
+    <div class="designBox">
+        <div class="vAlign">
+          <div class="insideDesign">
+           <div class="insideDesign">
+              <div  class="heading success"><h2>Success</h2></div>
+          </div> 
+          <div class="popup_content">
+              <div class="error-wrp"> 
+              <div class="sending_msg_gif">
+ 
+                  <img  src="assets/images/form_icon.png">
+                </div> 
+
+                <div class="left-error"> <p>{{popup.sent_txt}}</p> </div> 
+
+                  </div>    
+                <ul class="noCartbuttons mt10" >
+                    <li class="list"   >
+                      <button  class="btn secondary medium cancel full_w" (click)="actionPerformed(0,popup.type)"  *ngIf="popup.secondary_btn_txt!='' &&  popup.type!='success4'" href="javascript:void(0)">{{popup.secondary_btn_txt}}</button>
+                      <button  class="btn secondary medium cancel mr10" (click)="actionPerformed(0,popup.type)"  *ngIf="popup.secondary_btn_txt!='' &&  popup.type=='success4'" href="javascript:void(0)">{{popup.secondary_btn_txt}}</button>
+                      <button class="btn primary medium" (click)="actionPerformed(1,popup.type)"  href="javascript:void(0)" *ngIf="popup.primary_btn_txt!=''">{{popup.primary_btn_txt}}</button>
+                    </li>
+                  
+                  </ul>
+                
+             
+         
+        </div>
+        </div>
+    </div>
+  <!-- <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+ 
+      <img  src="assets/images/form_icon.png">
+    </div>
+    <div class="sending_msg_content">
+ 
+      <span >{{popup.sent_txt}}</span>
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list"  (click)="actionPerformed(0,'success')" *ngIf="popup.secondary_btn_txt!=''"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">{{popup.secondary_btn_txt}}</a></li>
+      <li class="list"  (click)="actionPerformed(1,'success')" *ngIf="popup.primary_btn_txt!=''"><a class="primary_btn" href="javascript:void(0)">{{popup.primary_btn_txt}}</a></li>
+    </ul>
+  </div> -->
+</div>
+</div>
+
+<div class="popup_design popup_msgs " *ngIf="popup.type=='error' || popup.type=='error2'">
+    <div class="designBox">
+        <div class="vAlign">
+          <div class="insideDesign error-pg">
+           <div class="insideDesign">
+              <div  class="heading"><h2>Failure</h2></div>
+          </div> 
+          <div class="popup_content">
+            <div class="error-wrp"> 
+            <div class="sending_msg_gif">
+                  <img src="assets/images/error.png"> 
+                </div> 
+
+                <div class="left-error">
+                  <p>{{popup.sent_txt}}</p>
+                </div>
+              </div>  
+
+
+                <ul class="noCartbuttons mt10" >
+                    <li class="list"  (click)="actionPerformed(0,'error')" *ngIf="popup.secondary_btn_txt!=''"><button  class="btn secondary medium cancel full_w" href="javascript:void(0)">{{popup.secondary_btn_txt}}</button></li>
+                    <li class="list" (click)="actionPerformed(1,'error')" *ngIf="popup.primary_btn_txt!=''"><button class="btn primary medium " href="javascript:void(0)">{{popup.primary_btn_txt}}</button></li>
+                  </ul>
+              <!-- <div class="btn_wrapper full_w mt10"> 
+                <button class="btn secondary large cancel">Close</button> 
+              </div>  -->
+          </div> 
+        </div>
+        </div>
+    </div>
+  <!-- <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+ 
+      <img src="assets/images/error.png">
+    </div>
+    <div class="sending_msg_content">
+ 
+      <span >{{popup.sent_txt}}</span>
+    </div>
+    <ul class="noCartbuttons" >
+      <li class="list"  (click)="actionPerformed(0,'error')" *ngIf="popup.secondary_btn_txt!=''"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">{{popup.secondary_btn_txt}}</a></li>
+      <li class="list" (click)="actionPerformed(1,'error')" *ngIf="popup.primary_btn_txt!=''"><a class="primary_btn" href="javascript:void(0)">{{popup.primary_btn_txt}}</a></li>
+    </ul>
+  </div> -->
+</div>

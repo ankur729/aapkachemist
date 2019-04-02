@@ -1,0 +1,166 @@
+<div class="main_container my_accountPages chemist_account_page">
+
+    <app-header></app-header>
+  
+    <div class="my_accountSetting">
+  
+      <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+  
+      <div class="container">
+          <div class="main_dataPage">
+              <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+              <app-chemist-account-left-panel></app-chemist-account-left-panel>
+      
+      
+              <div class="right_pannel">
+                <div class="pannelSTyle">
+      
+      
+                  <div class="account_page_title">
+                    <div class="left_part">
+                      <div class="heading">
+                        <h2>Complaint Box</h2>
+                      </div>
+                    </div>
+                    <div class="right_part">
+      
+                    </div>
+      
+                  </div>
+      
+                  <div class="account_content">
+                    <div class="complaint_section">
+                      <div class="form_wrapper full_w ">
+                        <ul class="form_listing full_w">
+                          <li class="form_list full">
+                            <div class="style">
+                              <select class="select_option" [(ngModel)]="complaint.parameters_id">
+                                <option value="">--Select your issue--</option>
+                                <option value="{{parameter.id}}" *ngFor="let parameter of complaint.parameters"> {{parameter.parameter_name}} </option>
+                                <!-- <option> Delivery Related </option> -->
+                              </select>
+                            </div>
+                          </li>
+                          <li class="form_list full">
+                            <div class="style">
+                              <span class="lable">Enter subject</span>
+                              <input type="text" class="input" [(ngModel)]="complaint.subject">
+                            </div>
+      
+                          </li>
+                          <li class="form_list textarea_form_list">
+                            <div class="style">
+                              <span class="lable">Specify your problem</span>
+      
+                              <textarea class="input" [(ngModel)]="complaint.message"></textarea>
+                            </div>
+      
+                          </li>
+      
+                          <!-- <div class="updatedFields max-wt-100 pr0">
+                                      <label class="attachment">
+                                        <input type="file" id="docimg1" name="docimg1" class="dp-none"
+                                          (change)="onChangeImage($event,'1')" accept="image/jpeg, image/png">
+                                        <div class="icon"><span>Upload Document</span> <img src="assets/images/icon/attech.png"></div>
+                  
+                  
+                                      </label>
+                  
+                                    </div> -->
+      
+      
+                        </ul>
+                        <div class="updateDetils-block f-left w-100">
+                          <h5 class="upload_head">Attach your screenshot</h5>
+                          <ul class="updateDetils-list f-left w-100">
+                            <li *ngFor="let image of complaint.images_arr">
+                              <div class="updateDetils-img">
+                                <img src="{{image.file_Path}}">
+                                <span class="removeimg">
+                                  <button class="btn primary small" (click)="onRemoveImage(image)">
+                                    <img src="assets/images/icon/cross-icon.png">
+                                  </button>
+                                </span>
+                              </div>
+                            </li>
+                            <li id="imgadd">
+                              <div class="updateDetils-img">
+                                <img src="assets/images/doc_upload.png" accept="image/jpeg, image/png" >
+                                <input type="file" (change)="onChangeImage($event)">
+                                <span class="addimg">
+                                  <button class="btn primary small">
+                                    <img src="assets/images/icon/plus-icon.png">
+                                  </button>
+                                </span>
+                              </div>
+                            </li>
+                            <!-- <li class="style" *ngFor="let prescription of prescription.images_arr">
+                                   
+              
+                              <div class="Prescription_" >
+                                  <img src="{{prescription.file_Path}}">
+                                 
+                              </div>
+                             
+                            
+                        <span class="cross_btn" (click)="onRemoveImage(prescription)"><img src="assets/images/icon/cross.png"></span>
+                      </li> -->
+      
+      
+                            <!-- <li>
+                              <div class="updateDetils-img">
+                                <img src="assets/images/doc_upload.png">
+                                <input type="file">
+                                <span class="addimg">
+                                  <button class="btn primary small">
+                                    <img src="assets/images/icon/plus-icon.png">
+                                  </button>
+                                </span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="updateDetils-img">
+                                <img src="assets/images/doc_upload.png">
+                                <input type="file">
+                                <span class="addimg">
+                                  <button class="btn primary small">
+                                    <img src="assets/images/icon/plus-icon.png">
+                                  </button>
+                                </span>
+                              </div>
+                            </li>
+                            <li>
+                                <div class="updateDetils-img">
+                                  <img src="assets/images/doc_upload.png">
+                                  <input type="file">
+                                  <span class="addimg">
+                                    <button class="btn primary small">
+                                      <img src="assets/images/icon/plus-icon.png">
+                                    </button>
+                                  </span>
+                                </div>
+                              </li> -->
+                          </ul>
+                        </div>
+                        <div class="mt20 f-left w-100">
+                          <button class="btn primary medium" (click)="onAddComplaint()">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+      
+      
+      
+      
+            </div>
+      </div>
+  
+    </div>
+  
+  
+  </div>
+  
+  <app-footer></app-footer>

@@ -1,0 +1,56 @@
+<app-header #child></app-header>
+<div class="bodySetting">
+<div class="main_container my_accountPages">
+    <div class="subcontainer">
+       <div class="mediaReleasePage">
+          <div class="mediaDetails">
+             <div class="mainHead">
+                <!-- <span class="type">Press Release</span> -->
+                <span class="date">{{data.created_date}}</span>
+                <h1 class="title">{{data.event_title}}</h1>
+             </div>
+             <div class="fullBanner">
+                <span class="image"><img src="{{data.image_banner}}"></span>
+                <div class="smallcontainer">
+                   <div class="content">				
+                    {{data.event_description}}
+                   </div>
+                </div>
+               <div class="mediaGallery clearfix">
+                 <h4 class="mt0">Images Gallery</h4>
+                 <div class="flax-boxcontainer p-3"  >
+                   <div class="fg-gallery" *ngIf="data.image_gallery.length>0"> 
+                      <img src="{{data.image_url}}{{gallery.image}}" alt="" *ngFor="let gallery of data.image_gallery">
+                    
+                     
+                   </div>
+                    <!-- <img src="assets/images/media/applepro1.jpg" alt="">
+                     <img src="assets/images/media/applepro2.jpg" alt="">
+                     <img src="assets/images/media/applepro3.jpg" alt="">
+                     <img src="assets/images/media/applepro4.jpg" alt=""> -->
+               </div>
+               <!-- <h4>Video Gallery</h4>
+               <div class="videogallery">
+                 <ul class="videogallery-list">
+                   <li>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/PKHZoUQ5a4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   </li>
+                   <li>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/PKHZoUQ5a4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   </li>
+                   <li>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/PKHZoUQ5a4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   </li>
+                   <li>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/PKHZoUQ5a4M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   </li>
+                 </ul>
+               </div> -->
+            </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+</div>
+<app-footer></app-footer> 

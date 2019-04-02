@@ -1,0 +1,123 @@
+<div class="main_container my_accountPages dashboard_page add_offer_page">
+
+        <app-header></app-header>
+          
+          <div class="my_accountSetting">
+          
+        
+       
+            <div class="container">
+              <div class="main_dataPage">
+          
+                <app-chemist-account-left-panel></app-chemist-account-left-panel>
+                
+                <div class="right_pannel">
+      
+                  <!-- <div class="enquiry-id-section">
+                      <h1 class="page_name">
+                          <div class="leftData">
+          
+                              <span class="Pagename">ORDER ID - {{data.order_no}}</span>
+                          </div>
+                      </h1>
+                  </div> -->
+                  <div class="pannelSTyle">
+                      <div class="account_page_title  no-border">
+                          <div class="left_part">
+                              <div class="heading">
+                              <h2>ORDER ID - {{data.order_no}}</h2>
+                              </div>
+                          </div>
+                          <div class="right_part">
+                          </div>
+                      </div>
+      
+                      <div class="account_content">
+                          <div class="orderDetailPage">
+      
+                              <section class="uploadBill-section section">
+                                  <div class="uploadBill-block">
+                                      <h3>Upload Bill</h3>
+                                      <div class="form_wrapper full_w">
+                                              <ul class="form_listing full_w">
+                                                  <li class="form_list full">
+                                                      <div class="style">
+                                                          <span class="lable">Total MRP</span>
+                                                          <input class="input"  type="text" value="{{data.total_bill_mrp}}" [(ngModel)]="data.total_bill_mrp">
+                                                      </div>
+                                                  </li>
+                                                  <li class="form_list  full">
+                                                      <div class="style">
+                                                          <span class="lable">Final Bill Amount</span>
+                                                          <input class="input"  type="text"  value="{{data.total_bil_amount}}" [(ngModel)]="data.total_bil_amount" >
+                                                      </div>
+                                                  </li>
+                                              </ul>
+                                              <!-- <div  class="btn_wrapper full_w" (click)="onSubmit()">
+                                                <button class="btn primary large">Update</button>
+                                              </div> -->
+                                          </div>
+                                      <!-- <form>
+                                          <div class="form-group">
+                                              <label>Total MRP</label>
+                                              <input type="text" name="mrp" class="input-fields" placeholder="" value="{{data.total_bill_mrp}}" [(ngModel)]="data.total_bill_mrp">
+                                          </div>
+                                          <div class="form-group">
+                                              <label>Final Bill Amount</label>
+                                              <input type="text" name="billamount" class="input-fields" placeholder="" value="{{data.total_bil_amount}}" [(ngModel)]="data.total_bil_amount" >
+                                          </div>
+                                      </form> -->
+                                      <ul class="uploadbill-list">
+                                          <li>
+                                              <div class="bill-page">
+                                                  <div class="bill-image-box">
+                                                      <label class="UploadImg label">
+                                                          <div class="thumbImg">
+                                                              <img src="{{data.invoice_file_path}}" id="firstimg">
+                                                              <span class="select_file">
+                                                                  <i class="fa fa-camera" aria-hidden="true"></i>
+                                                              </span>
+                                                          </div>
+                                                          <input type="file" (change)="onChangeImage($event,'1')" accept="image/x-png,image/jpeg">
+                                                      </label>
+                                                      <label>Image of bill page 1</label>
+                                                  </div>
+                                                  <a href="{{data.invoice_file_path}}" target="_blank" class="mrgn0"> <button class="btn primary medium">View</button></a> 
+                                              <!-- <a href="{{data.invoice_file_path}}" target="_blank" class="mrgn0"> <button class="btn primary medium" *ngIf="data.invoice_file2!=''">View</button></a>  -->
+                                              </div>
+                                          </li>
+                                          <li>
+                                              <div class="bill-page">
+                                                  <div class="bill-image-box">
+                                                      <label class="UploadImg label">
+                                                          <div class="thumbImg">
+                                                              <img src="{{data.invoice_file2_path}}" id="secondimg">
+                                                              <span class="select_file">
+                                                                  <i class="fa fa-camera" aria-hidden="true"></i>
+                                                              </span>
+                                                          </div>
+                                                          <input type="file" (change)="onChangeImage($event,'2')" accept="image/x-png,image/jpeg">
+                                                      </label>
+                                                      <label>Image of bill page 2</label>
+                                                  </div>
+                                                  <a href="{{data.invoice_file2_path}}" target="_blank" class="mrgn0">  <button class="btn primary medium">View</button></a>
+                                              <!-- <a href="{{data.invoice_file2_path}}" target="_blank" class="mrgn0">  <button class="btn primary medium" *ngIf="data.invoice_file!=''">View</button></a> -->
+                                              </div>
+                                          </li>
+                                      </ul>
+                                      <div class="btnsubmit f-left w-100 mt10">
+                                          <button class="btn assent medium" (click)="SubmitInvoice()">Submit</button>
+                                      </div>
+                                  </div>
+                              </section>
+          
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                
+      </div>
+      </div>
+      </div>
+      </div>
+      <app-footer></app-footer>

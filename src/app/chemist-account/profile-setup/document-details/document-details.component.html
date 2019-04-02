@@ -1,0 +1,84 @@
+<div class="DeliverySetupProfile">
+		<div class="fromGroup">
+	
+				
+	
+						<section class="content form_wrapper full_w ">
+								<div class="profile_step_heading">
+										<h2 class="heading">Document Details</h2>
+								</div>
+			
+				<ul class="form_listing full_w">
+					<li class="form_list">
+						<div class="style">
+						
+								<span class="lable">GST Number</span>
+								<input class="input " maxlength="30" type="text" id="input-1"  [(ngModel)]="docdetail.gst_number" placeholder="" maxlength="16"/>
+						
+							
+						</div>
+					</li>
+	
+						
+				<li class="form_list">
+					<div class="style">
+							
+							
+								<span class="lable">PAN Card Number </span>
+								<input class="input " maxlength="20" type="text" id="pan_no" [(ngModel)]="docdetail.pan_no" placeholder=" " maxlength="10"/>
+							
+						
+					</div>
+				</li>
+				
+				<li class="form_list">
+					<div class="style">
+						
+					
+								<select class="select_option "  id="input-2"  [(ngModel)]="docdetail.id_proff_name"  >
+									<option value="">--Registration Proof--</option>
+									<option value="Aadhar card" >  Aadhar Card </option>
+									<option value="Driving license" >  Driving Licence </option>
+									<option value="Passport" >  Passport </option>
+									<option value="Voter card" >  Voter Card </option>
+									
+									</select>
+							
+					
+					</div>
+				</li>
+							</ul>
+					
+						 
+							<ul class="form_group full_w">
+								<li class="list full">
+										<div class="updatedFields">
+												<label class="attachment">
+													<input type="file" id="docimg" name="docimg" class="dp-none" (change)="onChangeImage($event)" accept="image/jpeg, image/png" />
+													<div class="icon"><span>Upload Document</span> <img src="assets/images/icon/attech.png"></div>
+										 
+													<!-- <span class="name" *ngIf="docdetail.filename==''">Upload Document  (.jpg, .png)</span> -->
+													<span class="name" *ngIf="docdetail.filename!=''">{{docdetail.filename}}</span>
+													
+												</label>
+												<a href="javscript:void(0)" class="fg-gallery"> 
+														<img  id="idimg" *ngIf="idproffimage!=''" src ="{{docdetail.id_proff_image_path}}" />
+													</a>
+											</div>
+								</li>
+									
+							</ul>
+						 
+	 
+					</section>
+					<div class="btn_wrapper full_w mt20">
+							<button class="btn primary large"  (click)="onNext()" >Next</button>
+					 </div>
+			
+	
+	
+		</div>
+	</div>  
+	
+	
+	

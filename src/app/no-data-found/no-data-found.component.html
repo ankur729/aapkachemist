@@ -1,0 +1,45 @@
+<!-- <div class="no_data_found_arapper">
+  <img src="assets/images/no_inquiry.png">
+  <h3 class="no_data_text">{{nodataobj.txt}}</h3>
+</div> -->
+
+<div class="no_itemFOundPage" >
+    <div class="container">
+      <div class="graphicPart">
+         
+          <div class="contentPart">
+         
+              <div class="main-fav-wrap">
+                  <div class="inner-fav">
+                  <img *ngIf="nodataobj.img_url==undefined" src="assets/images/no_item.png"> 
+                  <img *ngIf="nodataobj.img_url!=undefined" src="{{nodataobj.img_url}}">
+                  <h4>{{nodataobj.txt}}</h4>
+                  </div>
+                  </div>
+          
+        </div>
+      </div>
+   
+  
+    </div>
+  </div> 
+  
+<!-- <div class="no_itemFOundPage" >
+  <div class="container">
+    <div class="graphicPart">
+      <div class="image">
+        <img *ngIf="nodataobj.img_url==undefined" src="assets/images/no_item.png">
+        <img *ngIf="nodataobj.img_url!=undefined" src="{{nodataobj.img_url}}">
+        <div class="contentPart">
+       
+          <div class="text">
+            <span class="big">{{nodataobj.txt}} </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+
+  </div>
+</div>  -->

@@ -1,0 +1,136 @@
+<div class="main_container my_accountPages chemistaccount_address_page plan_detail_page">
+
+        <app-header></app-header>
+        <div class="my_accountSetting">
+              
+            <!-- <div class="sending_enquiry_popup" *ngIf="payment.status!=undefined">
+                <div class="enquiry_popup_msg">
+                  <div class="sending_msg_gif">
+                      <img *ngIf="payment.status=='success'"  src="assets/images/form_icon.png">
+                      <img *ngIf="payment.status=='failure'"  src="assets/images/error.png">
+                  </div>
+                  <div class="sending_msg_content">
+                      
+                      <span *ngIf="payment.status=='success'" >Transaction successfull</span>
+                      <span  *ngIf="payment.status=='failure'"> Transaction Failed</span>
+                      
+                  </div>
+                  <ul  class="noCartbuttons"  >
+                    <li class="list" (click)="onClosePaymentPopup()"><a _ngcontent-c2="" class="Download scndry_btn" href="javascript:void(0)">Close</a></li>
+               
+                  </ul>
+                </div>
+              </div>
+               -->
+               <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+            <div class="container">
+              <div class="main_dataPage">
+                  <app-chemist-account-left-panel></app-chemist-account-left-panel>
+                  
+        
+        
+                  <div class="right_pannel">
+    
+                        <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+    
+                      <div class="pannelSTyle" *ngIf="isnodatafound==false">
+                          
+                            <div class="account_page_title">
+                                    <div class="left_part">
+                                      <div class="heading">
+                                        <h2>Plan History</h2>
+                                      </div>
+                                    </div>
+                                    <div class="right_part">
+                                      
+                                    </div>
+                                    
+                                  </div>
+                                  <div class="account_content">
+                                    
+                                        <div class="notification_wrapper">
+                                          <div class="notification_date"><span>2019</span></div>
+                                          <ul class="notification_listing">
+                                            <li class="notification_list" *ngFor="let plan of plan_history" [ngClass]="plan.status == 1 ? 'active' : '' || plan.status == 0 ? 'expired' : '' ">
+                                              <div class="date_wrapper">
+                                                <span class="date">{{plan.purchase_date |date:'dd'}}</span>
+                                                <span class="month">{{plan.purchase_date |date:'MMM'}}</span>
+                                              </div>
+                                              <div class="enquiry_details">
+                                                <span class="enquiry_id"><span class="title" *ngIf="plan.plan_time==4">Monthly</span>
+                                                <span class="title" *ngIf="plan.plan_time==3">Quaterly</span>
+                                                <span class="title" *ngIf="plan.plan_time==2">Half Yearly</span>
+                                                <span class="title" *ngIf="plan.plan_time==1">Yearly</span>
+                                                 <span class="plan_type">{{plan.plan_name}}</span> 
+                                                </span>
+                                                <span class="enquiry_items">Rs. {{plan.plan_amount}}</span>
+                                              </div>
+                                              <div class="view_more_wrapper">
+                                                  <span class="text_green" *ngIf="plan.status ==1">Active <img src="assets/images/icon/check.png"></span>
+                                                  <span class="text_red" *ngIf="plan.status ==0">Inactive <img src="assets/images/icon/block-icon.png"></span>
+                                                  <span class="validity">Valid Upto {{plan.plan_deactivation_date  | date:'dd-MM-yyyy'}}</span>
+                                                  <span class="validity" *ngIf="plan.expired==1">Expired</span>
+                                                </div>
+                                            </li>
+                                           
+                                             
+                                          </ul>
+                                        </div>
+                        
+                              
+                                      </div>
+                           </div>
+                            <!-- <div class="mainPage">
+                                    <ul class="planHistoryListing">
+    
+                                        <ng-container>
+    
+                                                <li class="list" *ngFor="let plan of plan_history" [ngClass]="plan.status == 1 ? 'active' : '' || plan.status == 0 ? 'expired' : '' ">
+                                                        <div class="style">
+                                                            <div class="setStyle">
+                                                                <div class="leftPart">
+                                                                    <span class="planType">{{plan.plan_name}}</span>
+                                                                    <span class="status" *ngIf="plan.status ==1">(active Now)</span>
+                                                                    <span class="status" *ngIf="plan.status ==0">(inactive)</span>
+                                                                </div>
+                                                                <div class="rightPart">
+                                                                    <span class="buyTitle">Purchased Date</span>
+                                                                    <span class="date">{{plan.purchase_date | date:'dd-MM-yyyy'}}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="setStyle last">
+                                                                <div class="leftPart">
+    
+                                                                    <span class="price">Rs. {{plan.plan_amount}}</span>
+                                                                </div>
+                                                                <div class="rightPart">
+                                                                    <a href="javascript:void(0)" *ngIf="plan.plan_time==4" routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'monthly'}" class="primary_btn">View Details</a>
+                                                                    <a href="javascript:void(0)" *ngIf="plan.plan_time==3" routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'quaterly'}" class="primary_btn">View Details</a>
+                                                                    <a href="javascript:void(0)" *ngIf="plan.plan_time==2" routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'halfyearly'}" class="primary_btn">View Details</a>
+                                                                    <a href="javascript:void(0)" *ngIf="plan.plan_time==1" routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'yearly'}" class="primary_btn">View Details</a>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="bottom_style">
+                                                                <span class="title" *ngIf="plan.plan_time==4">Monthly</span>
+                                                                <span class="title" *ngIf="plan.plan_time==3">Quaterly</span>
+                                                                <span class="title" *ngIf="plan.plan_time==2">Half Yearly</span>
+                                                                <span class="title" *ngIf="plan.plan_time==1">Yearly</span>
+            
+                                                                <span class="expireBy" *ngIf="plan.expired==0">Expire by : {{plan.plan_deactivation_date  | date:'dd-MM-yyyy'}}</span>
+                                                                <span class="expireBy" *ngIf="plan.expired==1">Expired</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                        </ng-container>
+                  
+                                        
+                                        </ul>
+                            </div> -->
+                       </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+        <app-footer></app-footer>

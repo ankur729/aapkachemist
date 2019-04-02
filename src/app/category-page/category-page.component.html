@@ -1,0 +1,202 @@
+<app-header  #child></app-header>
+
+ 
+
+
+<div class="home_Page bodySetting categoryPage">
+
+
+
+    <div class="categoryBanner">
+    
+    
+      <div class="pageTitle">
+          <div class="container">
+          <h1 class="title" *ngIf="respdata.name !=undefined">{{respdata.name | titlecase}}</h1>
+          <h1 class="title" *ngIf="respdata.name ==undefined">All Categories</h1>
+          <div class="pagesNamePart">
+            <div class="headPart">
+              <h1 class="pageName">Medicine Listing </h1>
+              <ul class="breadCrubs">
+                <li class="list">
+                  <a class="link" href="javascript:void(0)" routerLink="/home">Home</a>
+                </li>
+                <li class="list">
+                  <span class="current">Categories</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <ul class="banner">
+        <li class="list" *ngFor="let banner of respdata.categories_banner_list">
+          <span class="thumb">
+            <img src="{{banner.banner_image_path}}">
+          </span>
+        </li>
+       
+        
+      </ul>
+      
+    </div>
+    
+    
+    
+    <section class="section_1">
+      <div class="container">
+        
+
+
+        
+
+        <ul class="medCatListing">
+          <li class="list"  style="cursor:pointer" *ngFor="let category of respdata.categories_list" (click)="navigate(category)"
+           
+          >
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="{{category.category_image_path}}"></span>
+                <span class="text">{{category.category_name}}</span>
+         
+               
+              </div>
+            </div>
+          </li>		
+          <!-- <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/5.png"></span>
+                <span class="text">Mother Care</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/6.png"></span>
+                <span class="text">Sexual Wellness</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/7.png"></span>
+                <span class="text">Baby Care</span>
+              </div>
+            </div>
+          </li>	
+          
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/4.png"></span>
+                <span class="text">Skin Care</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/5.png"></span>
+                <span class="text">Mother Care</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/6.png"></span>
+                <span class="text">Sexual Wellness</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/7.png"></span>
+                <span class="text">Baby Care</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/4.png"></span>
+                <span class="text">Skin Care</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/5.png"></span>
+                <span class="text">Mother Care</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/6.png"></span>
+                <span class="text">Sexual Wellness</span>
+              </div>
+            </div>
+          </li>		
+          <li class="list" routerLink="/medicine-listing">
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon"><img src="assets/images/icon/product/7.png"></span>
+                <span class="text">Baby Care</span>
+              </div>
+            </div>
+          </li>			 -->
+        </ul>
+      </div>
+    
+    
+    </section>
+    
+    
+    
+    <!-- <section class="section_3" *ngIf="respdata.top_offer_list.length>0">
+      <div class="container">
+        <ul class="tilesBanner">
+            <li class="list"> <a href="#0" class="link"><span class="thumb"><img src="assets/images/slider/19.jpg"></span></a> </li>
+            <li class="list"> <a href="#0" class="link"><span class="thumb"><img src="assets/images/slider/19.jpg"></span></a> </li>
+            <li class="list"> <a href="#0" class="link"><span class="thumb"><img src="assets/images/slider/19.jpg"></span></a> </li>
+        </ul>
+    </div>
+    </section> -->
+    
+    
+    <!-- <section class="section_4" *ngIf="respdata.top_selling_products_list.length>0">
+      <div class="container">
+        <div class="Sectionheading">
+          Top Selling Products
+        </div>
+          <ul class="topSellingsList">
+          <li class="list" *ngFor="let offer of respdata.top_selling_products_list"
+          routerLink="/medicine-detail" [queryParams]="{'productid':offer.product_id }"
+          >
+            <a href="javascript:void(0)" class="style">
+              <span class="image"><img src="{{offer.product_img_path}}"></span>
+              <span class="name">{{offer.product_name}}</span> 
+            </a>
+          </li>
+          
+        </ul>
+    
+    
+    
+      </div>
+    </section>
+     -->
+    
+    
+    </div>
+    
+
+<app-footer></app-footer>

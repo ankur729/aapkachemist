@@ -1,0 +1,450 @@
+<div class="main_container my_accountPages retailer_enquiry_details_page order_details cartpage_1">
+
+    <app-header></app-header>
+    <!-- <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img *ngIf="status.is_sent==false" src="assets/images/sendloader.gif">
+          <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+        </div>
+        <div class="sending_msg_content">
+          <span *ngIf="status.is_sent==false">{{status.process_txt}}</span>
+          <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+        </div>
+        <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+          <li class="list" (click)="onClose('enquiryprocess','')"><a _ngcontent-c2="" class="Download scndry_btn" href="javascript:void(0)">Close</a></li>
+          <li class="list" routerLink="/home"><a class="Email primary_btn" href="javascript:void(0)">Go to home</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sending_enquiry_popup" *ngIf="status.is_confirm_popup==true">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img src="assets/images/sure.png">
+  
+        </div>
+        <div class="sending_msg_content">
+  
+          <span>{{status.confirm_txt}}</span>
+        </div>
+        <ul class="noCartbuttons">
+          <li class="list" (click)="onSubmitQuotation()"><a _ngcontent-c2="" class="Download primary_btn" href="javascript:void(0)">Yes,
+              Please Send It</a></li>
+          <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="Email scndry_btn" href="javascript:void(0)">No,
+              Cancel It</a></li>
+        </ul>
+      </div>
+    </div> -->
+  
+    <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+  
+    <div class="my_accountSetting">
+  
+  
+      <div class="container">
+        <div class="main_dataPage">
+  
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+  
+          <div class="right_pannel">
+  
+              <div class="enquiry-id-section pannelSTyle no-border pd0">
+                  <h1 class="page_name account_content">
+                            <div class="leftData">
+                              <span class="Pagename" >Enquiry Id - #{{enquiry.enquiry_detail.order_no}}</span>
+                            </div>
+                          </h1>
+                  <div class="account_content pt0">
+                      <div class="notification_wrapper">
+                          <ul class="notification_listing">
+                              <li class="notification_list mb0">
+                                  <div class="enquiryDetail-wrapper">
+                                      <div class="date_wrapper">
+                                          <span class="date">{{enquiry.enquiry_detail.order_date | date:'dd'}}</span>
+                                          <span class="month">{{enquiry.enquiry_detail.order_date | date:'MMM'}}</span>
+                                      </div>
+                                      <div class="enquiry_details">
+                                          <span class="enquiry_id">
+                                        <span class="title ">
+          
+                                            {{enquiry.enquiry_detail.order_date | date:'MMM'}} {{enquiry.enquiry_detail.order_date | date:'yyyy'}}
+                                        </span>
+                                          </span>
+                                          <span class="enquiry_items text-theme">{{enquiry.enquiry_detail.order_date | date:'hh:mm a'}}</span>
+                                      </div>
+                                      <div class="enquiry_details no-border text-align-right">
+                                          <span class="enquiry_id"><span class="title">Order Amount </span> </span>
+                                          <span class="text-theme enquiry_items"> Rs.{{enquiry.enquiry_detail.enquiry_original_grand_total - enquiry.enquiry_detail.customer_discount | number:'1.2-2'}}</span>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="action_buttons_block w-100 f-left">
+                          <ul class="w-100">
+                                  <li (click)="onBuyNow()"  *ngIf="enquiry.enquiry_detail.reply_status=='0' && enquiry.enquiry_detail.bid_made==0 ">
+                                          <div class="action_buttons_images">
+                                              <img src="assets/images/icon/confirm-bill-icon.png" class="w-100">
+                                          </div>
+                                          <div class="mt10 actions_link">
+                                              <a href="javascript:void(0)" > Buy Now</a>
+                                          </div>
+                                      </li>
+  
+                             <!--  <li>
+                                  <div class="action_buttons_images">
+                                      <img src="assets/images/icon/view-bill-icon.png" class="w-100">
+                                  </div>
+                                  <div class="mt10 actions_link">
+                                      <a href="javascript:void(0)">View bill</a>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="action_buttons_images">
+                                      <img src="assets/images/icon/confirm-bill-icon.png" class="w-100">
+                                  </div>
+                                  <div class="mt10 actions_link">
+                                      <a href="javascript:void(0)">Confirm delivery pin</a>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="action_buttons_images">
+                                      <img src="assets/images/icon/view-prescription-icon.png" class="w-100">
+                                  </div>
+                                  <div class="mt10 actions_link">
+                                      <a href="javascript:void(0)">View prescription</a>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="action_buttons_images">
+                                      <img src="assets/images/icon/upload-bill-icon.png" class="w-100">
+                                  </div>
+                                  <div class="mt10 actions_link">
+                                      <a href="javascript:void(0)">Upload bill</a>
+                                  </div>
+                              </li> -->
+                          </ul>
+                  </div>
+                      <div class="address_wrapper full_w"  >
+                          <ul class="address_listing full_w">
+                              <li class="address_list full_w">
+                                  <div class="style">
+          
+                                      <div class="left_part address_wrapper w-100 d-text-block f-left"  *ngIf="enquiry.shipping_detail.name!='' && enquiry.enquiry_detail.bid_made==1">
+                                          <div class="d-text-flex justify-content-btw">
+                                              <div class="mrgn0">
+                                                  <div class="text-theme fontbold fontsize-17">Customer Detail</div>
+                                                  <div class="name_wrapper mb5 mt10">
+                                                      <span class="name">{{enquiry.shipping_detail.name}}  </span>
+                                                  </div>
+                  
+                                                  <div class="address_wrapper full_w pd0">
+                                                      <span class="address d-text-block">{{enquiry.shipping_detail.address}}</span>
+                  
+                                                  </div>
+                                              </div>
+                                              <div class="mrgn0">
+                                                  <button class="btn assent medium" *ngIf="enquiry.enquiry_detail.reply_status==0 && enquiry.enquiry_detail.bid_made==1" (click)="onSubmitQuotation()">Send Quotation</button>
+                                              </div>
+                                          </div>
+                                                  
+                                          <!-- <div class="number mt10 f-left pt0">
+                                              <span class="fontbold">+91 - 9999999999</span>
+                                          </div> -->
+                                      </div>
+                                      <div class="delivery_timing w-100 d-text-block f-left">
+                                          <span class="title" *ngIf="enquiry.enquiry_detail.delivery_type==0">Home Delivery by</span>
+                                          <span class="title" *ngIf="enquiry.enquiry_detail.delivery_type==1">Self Pickup by</span>
+                                          <span class="delivery_time">{{enquiry.enquiry_detail.delivery_date | date:'dd'}}, {{enquiry.enquiry_detail.delivery_date | date:'MMM'}} {{enquiry.enquiry_detail.delivery_date | date:'yyyy'}} | {{enquiry.enquiry_detail.delivery_time}}</span>
+                                          <span class="title" *ngIf="enquiry.enquiry_detail.delivery_type==0">Payment Mode</span>
+                                          <span class="delivery_time">{{enquiry.enquiry_detail.payment_method}}</span> 
+                                      </div>
+                                  </div>
+                              </li>
+          
+                          </ul>
+          
+                      </div>
+                  </div>
+          
+              </div>
+          
+              <div class="mainPage">
+                  <div class="orderDetailPage">
+          
+                      <section class="section table_wrapper common-pd cart_details">
+                          <div class="rate_quantity-block left_section">
+                              <ul class="rate_quantity-listing  cart_dtails_wrapper">
+          
+                                  <li class="heading">
+                                      <div class="d-text-flex justify-content-btw product_details_wrapper ">
+                                          <div class="med-details mrgn0">
+                                              <div class="text-black fontbold"><span>Items</span></div>
+                                          </div>
+                                          <div class="product_discount mrgn0">
+                                              <div class="discount_wrappe">
+                                                  <div class="discount">
+                                                      <div class="text-black fontbold text-center"><span>Units</span></div>
+          
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="product_discount mrgn0">
+                                              <div class="discount_wrappe">
+                                                  <div class="discount">
+                                                      <div class="text-black fontbold text-center"><span>Discount</span></div>
+          
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          
+                                          <div class="med-rating mrgn0 text-align-right">
+                                              <div class="text-black fontbold amount"><span>Amount</span></div>
+          
+                                          </div>
+                                      </div>
+                                  </li>
+          
+                                  <li *ngFor="let enquirydata of enquiry.enquiry_item_detail"> 
+                                      <div class="d-text-flex justify-content-btw product_details_wrapper ">
+                                          <div class="med-details mrgn0">
+                                              <div class="text-black fontbold" *ngIf="enquirydata.product_name !=''">{{enquirydata.product_name}}</div>
+                                              <div class="text-black fontbold" *ngIf="enquirydata.product_name ==''">Product name not available</div>
+                                              <div class="text-grey" *ngIf="enquirydata.product_variant !=''">{{enquirydata.product_variant}}</div>
+                                              <div class="text-grey" *ngIf="enquirydata.company_name !=''">{{enquirydata.company_name}}</div>
+                                              <div class="text-theme fontbold">MRP Rs.{{enquirydata.mrp}} 
+                                                <!-- X 5 -->
+                                              </div>
+                                          </div>
+                                          <div class="product_discount mrgn0 text-align-center pd10">
+                                              <div class="text-black fontbold">{{enquirydata.quantity}}</div>
+                                          </div>
+                                          <div class="product_discount mrgn0"*ngIf="enquiry.enquiry_detail.reply_status==1">
+                                              <div class="product_qty">
+  
+                                                
+                                                  <div class="qty_wrappe no-border pd0">
+                                                    <div class="qtyController" >
+                                               
+                                                      <div class="qty">
+                                                        <input name="" class="fontbold fontsize-17" readonly maxlength="2" 
+                                                         name="" value="{{enquirydata.discounted_precent}}">
+                                                      </div>
+                                                      
+                                
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          </div>
+  
+                                          <div class="product_discount mrgn0"  *ngIf="enquiry.enquiry_detail.reply_status==0 &&  enquirydata.discount_display_flag==1 ">
+                                              <div class="product_qty">
+  
+                                                
+                                                  <div class="qty_wrappe no-border pd0">
+                                                    <div class="qtyController" >
+                                               
+                                                      <div class="qty">
+                                                        <input name="" class="fontbold fontsize-17" readonly maxlength="2" 
+                                                        name="" value="{{enquirydata.discounted_precent}}">
+                                                      </div>
+                                                      
+                                
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          </div>
+  
+                                          <div class="product_discount mrgn0" *ngIf="enquiry.enquiry_detail.reply_status==0  && enquirydata.discount_display_flag==0">
+                                              <div class="product_qty">
+  
+                                                
+                                                  <div class="qty_wrappe">
+                                                    <div class="qtyController" >
+                                                      <div class="minus" (click)="onUpdateDiscount(enquirydata,'-')">
+                                                        <img alt="" src="assets/images/icon/qty_minus.png">
+                                                      </div>
+                                                      <div class="qty">
+                                                        <input name="" readonly maxlength="2" id="input_{{enquirydata.enquiry_child_id}}"
+                                                        (focus)="onFocusInputbox(enquirydata.enquiry_child_id,'discountinput')" name="" value="{{enquirydata.discounted_precent}}">
+                                                      </div>
+                                                      <div class="plus" (click)="onUpdateDiscount(enquirydata,'+')">
+                                                        <img alt="" src="assets/images/icon/qty_plus.png">
+                                                      </div>
+                                
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          </div>
+                                          <div class="med-rating mrgn0 text-align-right" *ngIf="enquiry.enquiry_detail.enquiry_order_type==0 && enquiry.enquiry_detail.reply_status==0">
+                                              <div class="text-black fontbold">Rs. {{enquirydata.temptotal}}</div>
+                                              <!-- <div class="text-grey"><del>Rs.300</del></div> -->
+                                          </div>
+                                          <div class="med-rating mrgn0 text-align-right" *ngIf="enquiry.enquiry_detail.reply_status==1">
+                                              <div class="text-black fontbold">Rs.  {{enquirydata.mrp* enquirydata.quantity | number:'1.2-2'}}</div>
+                                              <!-- <div class="text-grey"><del>Rs.300</del></div> -->
+                                          </div>
+  
+                                      </div>
+                                  </li>
+          
+                              </ul>
+                          </div>
+                          <div class="right_section total_amount-section clearfix">
+                              <div class="section_2">
+                                  <div class="estimate_details">
+                                      <div class="left_part">
+          
+                                          <span class="estimate_title">Sub Total</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price">Rs. {{enquiry.enquiry_detail.enquiry_original_grand_total}}</span>
+                                      </div>
+                                  </div>
+                                  <div class="estimate_details">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Discount</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme" *ngIf="enquiry.enquiry_detail.reply_status==0">-Rs. {{enquiry.enquiry_detail.customer_discount | number:'1.2-2'}}</span>
+                                          <span class="price text-theme"  *ngIf="enquiry.enquiry_detail.reply_status==1">-Rs. {{
+                                              enquiry.enquiry_detail.customer_discount | number:'1.2-2'}}</span>
+  
+                                      </div>
+                                  </div>
+                                  <div class="estimate_details total_amount" *ngIf="enquiry.enquiry_detail.reply_status==0">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Billing Amount</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme">Rs. {{enquiry.enquiry_detail.enquiry_original_grand_total - enquiry.enquiry_detail.customer_discount | number:'1.2-2'}}</span>
+                                      </div>
+                                  </div>
+                                  <div class="estimate_details total_amount" *ngIf="enquiry.enquiry_detail.reply_status==1">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Billing Amount</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme">Rs. {{enquiry.enquiry_detail.enquiry_original_grand_total - enquiry.enquiry_detail.customer_discount | number:'1.2-2'}}</span>
+                                      </div>
+                                  </div>
+                                  <!-- <div class="estimate_details">
+                                      <div class="left_part">
+                                          <span class="estimate_title">APC Cash Used</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme">-Rs. 645</span>
+                                      </div>
+                                  </div>
+          
+                                  <div class="estimate_details">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Delivery Charges</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price">Rs. 3</span>
+                                      </div>
+                                  </div>
+          
+                                  <div class="estimate_details total_amount">
+                                      <div class="left_part">
+                                          <span class="estimate_title text-black">
+          
+                                                   Amount to Pay
+                                                </span>
+          
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price">Rs. 46</span>
+                                      </div>
+                                  </div>
+                                  <div class="chem-enquiry_wrapper full-w">
+                                      <button class="btn assent medium">Cancel Order</button>
+                                  </div>
+                                   -->
+                              </div>
+                          </div>
+          
+                          <div class="apc_contribution_wrapper">
+                              <div class="contribution_discount">
+                                  <div class="left_part">
+                                      <span>APC Contribution to Discount*</span>
+                                  </div>
+                                  <div class="right_part">
+                                      <span>Rs.{{enquiry.enquiry_detail.total_apc_discount_amount | number:'1.2-2'}}</span>
+                                  </div>
+                              </div>
+                              <div class="contribution_discount" *ngIf="enquiry.enquiry_detail.apc_cash_used !=0 && enquiry.enquiry_detail.apc_cash_used !=0.00 ">
+                                  <div class="left_part">
+                                      <span>Customer APC Used*</span>
+                                  </div>
+                                  <div class="right_part">
+                                      <span>Rs.{{enquiry.enquiry_detail.apc_cash_used}}</span>
+                                  </div>
+                              </div>
+                              <div class="contribution_discount">
+                                  <div class="left_part">
+                                      <span>APC Cashback*</span>
+                                  </div>
+                                  <div class="right_part">
+                                      <span>Rs. {{enquiry.enquiry_detail.vendor_cashback_amount}}</span>
+                                  </div>
+                              </div>
+                          </div>
+          
+                          <div class="payment_descr">
+                              <p>* Amount will be credited to wallet after order process completion.</p>
+                          </div>
+          
+                      </section>
+          
+                      <!-- <section class="section common-pd" *ngIf="enquiry.shipping_detail.name!='' && enquiry.enquiry_detail.bid_made==1">
+          
+                          <div class="address_wrapper full_w">
+                              <ul class="address_listing full_w">
+          
+                                  <li class="address_list full_w">
+                                      <div class="style">
+          
+                                          <div class="left_part address_wrapper">
+                                              <div class="text-theme fontbold fontsize-17">Customer Detail</div>
+                                              <div class="name_wrapper mb5 mt10">
+                                                  <span class="name">{{enquiry.shipping_detail.name}}
+                                                   
+          
+                                                  </span>
+                                              </div>
+          
+                                              <div class="address_wrapper full_w pd0">
+                                                  <span class="address d-text-block">{{enquiry.shipping_detail.address}} </span>
+                                            
+          
+                                              </div>
+                                            
+                                          </div>
+          
+                                      </div>
+                                  </li>
+          
+                              </ul>
+          
+                          </div>
+          
+                      </section> -->
+          
+                  </div>
+              </div>
+          
+          </div>
+  
+  
+        </div>
+      </div>
+  
+    </div>
+  
+  
+  </div>
+  
+  <app-footer></app-footer>

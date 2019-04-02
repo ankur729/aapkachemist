@@ -1,0 +1,562 @@
+<app-header #child></app-header>
+
+
+<app-launch-popup [launchdata]='launchdata' (onCloseLaunchPopup)="onCloseLaunchPopup()" *ngIf="state.maintenance.maintenance_status==1"></app-launch-popup>
+
+<!-- <div class="cart_Page bodySetting">
+
+
+
+  <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+    <div class="enquiry_popup_msg">
+      <div class="sending_msg_gif">
+        <img *ngIf="status.is_sent==false" src="assets/images/sendloader.gif">
+        <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+      </div>
+      <div class="sending_msg_content">
+        <span *ngIf="status.is_sent==false">{{status.process_txt}}</span>
+        <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+      </div>
+      
+      <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+        <li class="list" (click)="onRedirect('my-enquiries')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Go
+            to my enquiries</a></li>
+        <li class="list" (click)="onRedirect('home')"><a class="primary_btn" href="javascript:void(0)">Go to home</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="pageSetting">
+
+      <div class="stepPage_1">
+
+
+
+        <div class="tableDesign">
+          <div class="leftDesign">
+
+            <h4 class="heading_name">
+              <span class="name">
+                <app-cart-header></app-cart-header>Delivery Details
+              </span>
+              <div class="RightPart">
+                <span class="Cartprice">Rs. {{state.cartdata.net_payble_amount}}</span>
+                <span class="label">Total List Amount</span>
+              </div>
+            </h4>
+
+
+
+            <ul class="deliveryOptionList">
+              <li class="list " (click)="toggleDeliveryOptions('0')">
+                <div class="style active" id="pickfromshop">
+                  <span class="icon"><img src="assets/images/icon/home.png"></span>
+                  <span class="name">Home Delivery</span>
+                </div>
+              </li>
+              <li class="list" (click)="toggleDeliveryOptions('1')">
+                <div class="style " id="dropathome">
+                  <span class="icon"><img src="assets/images/icon/shop.png"></span>
+                  <span class="name">Self Pickup</span>
+                </div>
+              </li>
+
+            </ul>
+
+            <ul class="billingArea">
+            
+              <li class="list">
+                <div class="left_part">
+                  <span class="name">Delivery Address</span>
+                  <span class="data" *ngIf="respdata.default_addr.id!=''">{{respdata.default_addr.default_addr}}</span>
+                  <span class="data" *ngIf="respdata.default_addr.id==''">No Address available</span>
+                </div>
+                <div class="right_part">
+                  <a href="javascript:void(0)" class="scndry_btn" (click)="navigate('select-address')" *ngIf="respdata.default_addr.id!=''">Change</a>
+                  <a href="javascript:void(0)" class="scndry_btn" (click)="navigate('add-address')" *ngIf="respdata.default_addr.id==''">Add</a>
+                </div>
+              </li>
+
+
+            </ul>
+
+
+
+
+
+
+            <h4 class="Subheading_name">Select Delivery Date </h4>
+
+
+            <ul class="selectDate">
+              <li class="list" id="{{slot.day}}{{slot.weekday}}" *ngFor="let slot of respdata.dayslots;let i=index"
+                (click)="setDayTimeSlots('date',slot)" [ngClass]="i==0?'active':''">
+                <div class="style">
+                  <span class="dayNAme">{{slot.weekday}}</span>
+                  <span class="date">{{slot.day}}</span>
+                </div>
+              </li>
+
+            </ul>
+
+            <h4 class="Subheading_name">Select Delivery Time</h4>
+
+            <ul class="TimeSlot">
+              <ng-container  *ngFor="let time of respdata?.time_arr">
+              <li class="list" *ngIf="time.is_available=='1'" id="time_{{time.id}}" [ngClass]="time.is_available=='0'?'notAvail':''" (click)="setDayTimeSlots('time',time)">
+                <div class="style">
+                  <span class="time">{{time.time_from}} to {{time.time_to}}</span>
+                </div>
+              </li>
+            </ng-container>
+            </ul>
+
+
+            <h4 class="Subheading_name" style="display:none">Select Payment Mode </h4>
+
+
+
+            <ul class="payment_mode_select" style="display:none">
+              <li class="list" *ngFor="let mode of respdata.payment_modes" (click)="setPaymentMode(mode)">
+                <label class="choose_btn" id="mode_{{mode.id}}"> <img src="{{mode.parameter_image_path}}"> </label>
+                <span class="name">{{mode.parameter_name}}</span>
+              </li>
+            </ul>
+
+
+
+          </div>
+
+
+
+          <div class="right_design">
+            <div class="cart_right_section">
+
+              <div class="cartSummryview">
+                <div class="mainHeading">Estimated Summary <span class="items">({{state.cartdata.items.length}} Items)</span></div>
+                <ul class="cartLists">
+                  <li class="list" *ngFor="let cart of state.cartdata.items">
+                    <span class="name">{{cart.product_name}}</span>
+                    <div class="designSetting">
+                      <span class="left_Data">Quantity : {{cart.product_qty}}</span>
+                      <span class="right_Data">Rs. {{cart.price * cart.product_qty |number:'1.2-2'}}</span>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+
+              <ul class="summry_design">
+                <li class="list">
+                  <div class="labelPart">Total MRP</div>
+                  <div class="dataPart">Rs. {{state.cartdata.cart_amount}}</div>
+                </li>
+                <li class="list" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+                  <div class="labelPart">APC Cash</div>
+                  <div class="dataPart"> Rs.{{state.cartdata.customer_discount_wallet_amount}} </div>
+                </li>
+                <li class="list">
+                  <div class="labelPart">Discount</div>
+                  <div class="dataPart"> Rs.{{state.cartdata.total_product_discount_amount}} </div>
+                </li>
+                <li class="list">
+                  <div class="labelPart">Delivery Charges</div>
+                  <div class="dataPart">Rs. {{state.cartdata.delivery_amount}}</div>
+                </li>
+                <li class="list">
+                  <div class="labelPart b">Amount to be paid</div>
+                  <div class="dataPart b">Rs. {{state.cartdata.net_payble_amount}}</div>
+                </li>
+              </ul>
+              <div class="checkoutBtnDiv">
+                <div class="buttonList">
+                  <a href="javascript:void(0)" routerLink="/cart-step-one" class="scndry_btn">Go Back</a>
+                </div>
+                <div class="buttonList"  *ngIf="state.maintenance.maintenance_status==0" >
+                  <a href="javascript:void(0)" (click)="onSubmitEnquiry()" class="primary_btn">Enquire Now</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+</div>
+ -->
+
+ 
+ <div class="bodySetting cartpage_1 cartpage_2 bannerpd">
+    <!-- <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img *ngIf="status.is_sent==false" src="assets/images/sendloader.gif">
+          <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+        </div>
+        <div class="sending_msg_content">
+          <span *ngIf="status.is_sent==false">{{status.process_txt}}</span>
+          <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+        </div>
+        <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+          <li class="list" (click)="onRedirect('my-enquiries')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Go
+              to my enquiries</a></li>
+          <li class="list" (click)="onRedirect('home')"><a class="primary_btn" href="javascript:void(0)">Go to home</a></li>
+        </ul>
+      </div>
+    </div> -->
+
+		<div class="banner_wrapper">
+			<div class="banner_bg">	</div>
+    </div>
+    
+    <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+		<div class="container">
+			<div class="cart_details">
+				<div class="left_section">
+					<div class="cart_dtails_wrapper">
+						<div class="section_1">
+								<div class="breadCrumbs_wrapper full_w">
+									<ul  class="breadCrubs">
+										<li class="list">
+											<a  class="link" href="/home" ng-reflect-router-link="/home" routerlink="/home">Home</a>
+											<i  aria-hidden="true" class="fa fa-angle-right"></i>
+										</li>
+										<li class="list">
+											<a class="link" href="javascript:void(0)">
+												<span class="current">Chemist Listing</span>
+											</a><i  aria-hidden="true" class="fa fa-angle-right"></i>
+										</li>
+										<li  class="list">
+											<span _ class="current">Chemist Details</span>
+										</li>
+									</ul>
+								</div>
+								<div class="estimate_items">
+									<div class="left_part">
+											<h1  class="medName">Items</h1>
+											<span  class="estimate_itm"> {{state.cartdata.items.length}}</span>
+									</div>
+									
+									<div class="total_value right_part">
+										<span>Total Value</span>
+										<span class="price">Rs. {{state.cartdata.net_payble_amount}}</span>
+									</div>
+								</div>
+
+								<div class="delivery_option">
+                 
+                    <div class="cart_2_heading">
+                      <div class="left_part">
+                        <h2>Select Delivery by</h2>
+                      </div>
+                     
+                    </div>
+                 
+                  <div class="delivery_option_wrapper">
+                    
+                      <ul class="delivery_listing">
+                        
+                          <li class="home_delivery" (click)="toggleDeliveryOptions('0')">
+                              <label class="radio btn">Home Delivery
+                                  <input type="radio" checked="checked" name="radio">
+                                  <span class="checkmark"  id="dropathome"></span>
+                                </label>
+                          </li>
+                          <li class="home_delivery" (click)="toggleDeliveryOptions('1')">
+                              <label class="radio btn" >Self Pickup
+                                  <input type="radio" checked="checked"  name="radio">
+                                  <span class="checkmark" id="pickfromshop"></span>
+                                </label>
+                          </li>
+                          
+                      </ul>
+                  </div>
+                </div>
+
+               <div class="delivery_address">
+                  <div class="cart_2_heading">
+                      <div class="left_part">
+                        <h2>Delivery Address</h2>
+                      </div>
+                      <div class="right_part">
+                          <button class="btn assent small"  (click)="navigate('select-address')" *ngIf="respdata.default_addr.id!=''">Change</button>
+                          <button class="btn assent small"   (click)="navigate('add-address')" *ngIf="respdata.default_addr.id==''">Add</button>
+                        </div>
+                    </div>
+
+                  <div class="delivery_address_wrapper">
+                      <ul class="address">
+                          <li class="name" *ngIf="respdata.default_addr.id !=''">
+                            <span>
+                              
+                              {{respdata.default_addr.default_fullname}}
+
+                              <!-- <span>(Self)</span> -->
+                            </span>
+                          </li>
+                          <li class="address"  *ngIf="respdata.default_addr.id!=''">
+                            <!-- <span>K-368,<br> 300-400 gali no. Jahagir Puri, <br>delhi 110033</span> -->
+                            {{respdata.default_addr.default_addr}}
+                            <span class="data" *ngIf="respdata.default_addr.id==''">No Address available</span>
+                          </li>
+                          <li class="conct_number" *ngIf="respdata.default_addr.id!=''">+91 -  {{respdata.default_addr.default_mobile}}
+                            </li>
+                      </ul>
+                  </div>
+                </div> 
+
+                <div class="delivery_date">
+                    <div class="cart_2_heading">
+                        <div class="left_part">
+                          <h2>Delivery date</h2>
+                        </div>
+                        <div class="right_part">
+                            <span class="text_part">{{respdata.d_date_right}}</span>
+                        </div>
+                      </div>
+
+                      <div class="delicery-days">
+                          <ul class="days">
+                              <li class="day_list" id="{{slot.day}}{{slot.weekday}}" *ngFor="let slot of respdata.dayslots;let i=index" (click)="setDayTimeSlots('date',slot)" [ngClass]="i==0?'active':''">
+                                  <div class="day">
+                                    <span>{{slot.weekday}}</span>
+                                  </div>
+                                  <div class="date">
+                                    <button class="btn secondary medium"   >
+                                      {{slot.day}}
+                                      <!-- {{ getMonthNameFromNumber(slot.month)}} -->
+                                    </button>
+                                  </div>
+                                </li>
+                              <!-- </li>
+                              <li class="day_list ">
+                                  <div class="day">
+                                    <span>Tue</span>
+                                  </div>
+                                  <div class="date">
+                                    <button class="btn primary medium">2</button>
+                                  </div>
+                                </li>
+                                <li class="day_list">
+                                    <div class="day">
+                                      <span>Wed</span>
+                                    </div>
+                                    <div class="date">
+                                      <button class="btn secondary medium">3</button>
+                                    </div>
+                                  </li>
+                                  <li class="day_list">
+                                      <div class="day">
+                                        <span>Thu</span>
+                                      </div>
+                                      <div class="date">
+                                        <button class="btn secondary medium">4</button>
+                                      </div>
+                                    </li>
+                                    <li class="day_list">
+                                        <div class="day">
+                                          <span>Fri</span>
+                                        </div>
+                                        <div class="date">
+                                          <button class="btn secondary medium">5</button>
+                                        </div>
+                                      </li>
+                                      <li class="day_list">
+                                          <div class="day">
+                                            <span>Sat</span>
+                                          </div>
+                                          <div class="date">
+                                            <button class="btn secondary medium">6</button>
+                                          </div>
+                                        </li>
+                                    <li class="day_list">
+                                        <div class="day">
+                                          <span>Sun</span>
+                                        </div>
+                                        <div class="date">
+                                          <button class="btn secondary medium">7</button>
+                                        </div>
+                                      </li> -->
+                          </ul>
+                      </div>
+                </div>
+
+                <div class="delivery_time">
+                    <div class="cart_2_heading">
+                        <div class="left_part">
+                          <h2>Delivery Time</h2>
+                        </div>
+                        <div class="right_part">
+                            <span class="text_part">{{respdata.d_time_right}}</span>
+                        </div>
+                      </div>
+
+                      <div class="delivery_time-wrapper">
+                       
+                        <ul class="time_listing">
+                            <ng-container  *ngFor="let time of respdata?.time_arr">
+                            <li class="time_list"  *ngIf="time.is_available=='1'" id="time_{{time.id}}" [ngClass]="time.is_available=='0'?'notAvail':''" (click)="setDayTimeSlots('time',time)"><div class="style ">{{time.time_from}} - {{time.time_to}}</div></li>
+                            <!-- <li class="time_list"><div class="style active">12:00 - 14:00</div></li>
+                            <li class="time_list"><div class="style">14:00 - 16:00</div></li>
+                            <li class="time_list"><div class="style">16:00 - 18:00</div></li>
+                            <li class="time_list"><div class="style">18:00 - 20:00</div></li> -->
+                          </ng-container>
+                        </ul>
+                      
+                      </div>
+
+                </div>
+
+            </div>
+         
+					</div>
+				</div>
+
+				<div class="right_section">
+					<div class="section_1">
+						<div class="chem_order_title">
+							<h2>Your Order ({{state.cartdata.items.length}} Items)</h2>
+						</div>
+					
+						<div class="chemName_wrapper"  *ngFor="let cart of state.cartdata.items">
+							
+							
+								<div class="left_part">
+									<div class="med_name">
+										<span class="name">{{cart.product_name}}</span>
+										<span class="med_qty">{{cart.product_variant}}</span>
+										<span class="med_company">{{cart.description}}</span>
+									</div>
+								</div>
+								<div class="right_part">
+									<span class="itm_qty">{{cart.product_qty}}</span>
+									<span class="itm_price">Rs. {{cart.price * cart.product_qty |number:'1.2-2'}}</span>
+								</div>
+							</div>
+					</div>
+					<div class="section_2">
+						<div class="chem_order_title">
+							<h2>Your Order </h2>
+						</div>
+						<div class="estimate_details">
+							<div class="left_part">
+								<span class="estimate_title">Subtotal</span>
+							</div>
+							<div class="right_part">
+								<span class="price">Rs. {{state.cartdata.cart_amount}}</span>
+							</div>
+						</div>
+
+							<!-- <div class="estimate_details" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+								<div class="left_part">
+									<span class="estimate_title">APC Cashback</span>
+								</div>
+								<div class="right_part">
+									<span class="price  discount_text">-Rs. {{state.cartdata.customer_discount_wallet_amount}}</span>
+								</div>
+							</div> -->
+          
+							<div class="estimate_details">
+								<div class="left_part">
+									<span class="estimate_title">Discount</span>
+								</div>
+								<div class="right_part">
+									<span class="price">- Rs. {{state.cartdata.total_product_discount_amount}} </span>
+								</div>
+              </div>
+              <div class="estimate_details" *ngIf="state.cartdata.apc_cash_used!=0">
+                  <div class="left_part">
+                    <span class="estimate_title">APC Cash Used</span>
+                  </div>
+                  <div class="right_part">
+                    <span class="price">- Rs.{{state.cartdata.apc_cash_used}} </span>
+                  </div>
+                </div>
+              <div class="estimate_details total_amount">
+									<div class="left_part">
+										<span class="estimate_title">Billing Amount</span>
+									</div>
+									<div class="right_part">
+										<span class="price">Rs. {{state.cartdata.cart_amount - state.cartdata.total_product_discount_amount |number:'1.2-2'}}</span>
+									</div>
+                </div>
+            
+              <!-- <div class="estimate_details" *ngIf="state.cartdata.apc_cash_used!=0">
+                  <div class="left_part">
+                    <span class="estimate_title">APC Cash Used</span>
+                  </div>
+                  <div class="right_part">
+                    <span class="price">- Rs.{{state.cartdata.apc_cash_used}} </span>
+                  </div>
+                </div> -->
+              
+							<div class="estimate_details">
+								<div class="left_part">
+									<span class="estimate_title">Delivery Charges</span>
+								</div>
+								<div class="right_part">
+                  <span class="price">
+                    <!-- <span>(CJM250)</span>  -->
+                  - Rs. {{state.cartdata.delivery_amount}}</span>
+								</div>
+							</div>
+
+							<!-- <div class="estimate_details">
+								<div class="left_part">
+									<span class="estimate_title">Coupon Applied</span>
+								</div>
+								<div class="right_part">
+									<span class="price">Rs. 10.00</span>
+								</div>
+							</div> -->
+
+							<div class="estimate_details total_amount">
+								<div class="left_part">
+									<span class="estimate_title">Amount to Pay</span>
+								</div>
+								<div class="right_part">
+									<span class="price">Rs. {{state.cartdata.net_payble_amount}}</span>
+								</div>
+              </div>
+              
+              <div class="estimate_details" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+                  <div class="left_part">
+                    <span class="estimate_title">APC Cashback*</span>
+                  </div>
+                  <div class="right_part">
+                    <span class="price">
+                  
+                      Rs.{{state.cartdata.customer_discount_wallet_amount}}</span>
+                  </div>
+                </div>
+
+
+							<div class="chem-enquiry_wrapper full_w">
+         
+                  <button class="btn primary medium full_w"  (click)="onNext()"> Continue </button>
+                <!-- <button class="btn secondary medium"  routerLink="/cart-step-one">Go Back</button>
+                <button class="btn primary medium"  (click)="onSubmitEnquiry()"> Order Now </button> -->
+                <!-- <button class="btn primary medium"  *ngIf="state.maintenance.maintenance_status==0" >Enquire Now</button> -->
+               
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+
+
+
+
+<app-footer></app-footer>

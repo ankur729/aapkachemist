@@ -1,0 +1,239 @@
+<app-header #child></app-header>
+
+
+
+<div class="medicalDetail_page bodySetting">
+
+  <div class="pagesNamePart">
+    <div class="container">
+      <div class="headPart">
+        <h1 class="pageName">Medicine Details</h1>
+        <ul class="breadCrubs">
+          <li class="list"><a href="javascript:void(0)" class="link" routerLink="/home">Home</a></li>
+          <li class="list"><span class="current"  >medicine detail</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+
+    <div class="leftPanel">
+      <div class="section_1">
+         
+
+    
+          <div class="leftPart">
+              <span class="img"> <img src="{{respdata.productdata.product_img_path}}"></span>
+            <div class="Prodetails">
+                <div class="pagesNamePart">
+                    <div class="container">
+                      <div class="headPart">
+                        <ul class="breadCrubs">
+                          <li class="list"><a href="javascript:void(0)" class="link" routerLink="/home">Home</a></li>
+                          <li class="list"><span class="current" routerLink="/cart">Cart</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+              <span class="category">{{respdata.productdata.company_name }}</span>
+              <h1 class="product_name">{{respdata.productdata.product_name}}</h1>
+              <span class="companyName">{{respdata.productdata.manufacturer_name}} <span *ngIf="respdata.productdata.product_generic_name !=''">({{respdata.productdata.product_generic_name}})</span>
+              </span>
+
+              <div class="small_disc">
+                  <!-- <span class="label">PreCaution</span> -->
+                  <span class="text">
+                    {{respdata.productdata.description}}
+                  </span>
+                </div>
+            </div>
+
+            <ul class="featureBuyOption">
+                <li class="list">
+                    <span class="title">Item</span>
+                    <span class="data">{{respdata.productdata.option_val}}</span>
+                </li>
+                <li class="list">
+                    <span class="title">Price</span>
+                    <span class="data">Rs. {{respdata.productdata.price}}</span>
+                </li>
+                <li class="list">
+                    <span class="Add_button" (click)="addToCart()">Add To Cart</span>
+                </li>
+            </ul>
+          
+   
+
+          </div>
+          
+        </div>
+  
+        
+    <div class="pageSetting">
+      <div class="main_design">
+
+
+      
+
+        <section class="SimilarSaltsection" *ngIf="respdata.similar_product.length>0">
+          <div class="dealsListinset">
+            <div class="headingPart">
+
+              <div class="Sectionheading">
+                Similar Salt <span class="colored">Medicine</span>
+              </div>
+            </div>
+
+            <ul class="QuotesLiting">
+              <li class="list" style="cursor:pointer" *ngFor="let list of respdata.similar_product"
+                routerLink="/medicine-detail" [queryParams]="{'productid':list.product_id}"
+              >
+                <div class="style">
+                  <div class="leftPart">
+                    <span class="name">{{list.product_name}}</span>
+                    <div class="avail">
+                        <span class="">{{list.company_name}}  </span><br>
+                      <span class="number">{{list.option_val}}</span>
+                       </div>
+                  </div>
+                  <div class="rightPart">
+                    <span class="price">Rs. {{list.price}}</span>
+                    <span class="discount"  >{{list.mrp_for_single_txt}}</span>
+                  </div>
+
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </section>
+
+        </div>
+
+
+        <div class="pageSetting">
+        <!-- section 2 start here -->
+        <div class="section_2">
+
+          <div class="seaTabs">
+            <div class="seaTabs_switch">
+
+              <div class="seaTabs_tab" *ngFor="let generic of respdata.generic_info;let i=index" [ngClass]="i == 0 ? 'seaTabs_switch_active' : ''">{{generic.group_name}}</div>
+              <div class="seaTabs_tab" *ngIf="respdata.product_faqs.length>0">Faq</div>
+              <!-- <div class="seaTabs_tab">Use</div>
+              <div class="seaTabs_tab">Warning</div> -->
+            </div>
+
+            <div class="seaTabs_content">
+              <!-- active tab start here -->
+
+              <div class="seaTabs_item" *ngFor="let generic of respdata.generic_info;let i=index" [ngClass]="i == 0 ? 'seaTabs_content_active' : ''">
+                <div [innerHTML]="generic.group_description"></div>
+
+              </div>
+
+
+
+
+              <!-- active tab end here -->
+
+
+
+              <div class="seaTabs_item" *ngIf="respdata.product_faqs.length>0">
+
+
+
+
+                <div data-addui='accordion' class="accordionStyle">
+                  <ng-container *ngFor="let faq of respdata.product_faqs">
+                    <div role='header'>{{faq.faq_question}}</div>
+                    <div role='content'>
+                      <div class="contentDiv" [innerHTML]="faq.faq_answer">
+
+                      </div>
+                    </div>
+
+                  </ng-container>
+
+
+                </div>
+
+
+              </div>
+
+              <!-- <div class="seaTabs_item">
+                  <div class="text" [innerHTML]="respdata.productdata.product_generic_use">
+                    
+                  </div>
+                </div>
+                  
+              <div class="seaTabs_item">
+                  <div class="text" [innerHTML]="respdata.productdata.product_generic_warning">
+                 
+                  </div>
+                </div> -->
+
+            </div>
+          </div>
+        </div>
+        <!-- section 2 end here -->
+        </div>
+
+
+
+    </div>
+    </div>
+
+    <div class="rightPanel">
+
+
+
+      
+        <!-- section 3 start here -->
+            <div class="section_3">
+              <div class="Sectionheading">
+                Related <span class="colored">Articles</span>
+              </div>
+              <ul class="ArticlesListing">
+                <li class="list" *ngFor="let article of respdata.related_articles">
+                  <a href="{{article.articles_url}}" class="style">
+                    <span class="thumb"><img src="{{article.article_image_path}}"></span>
+                    <div class="content">
+                      <span class="title">{{article.articles_name}}</span>
+                      <span class="text">{{article.article_description}}</span>
+                    </div>
+                  </a>
+                </li>
+                <!-- <li class="list">
+                  <a href="" class="style">
+                    <span class="thumb"><img src="assets/images/articals/1.jpg"></span>
+                    <div class="content">
+                      
+                      <span class="title">Are You Using The Right Anti-Pollution Mask?</span>
+                      <span class="text">It is a long established fact that a reader will be distracted by the readable.</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="" class="style">
+                    <span class="thumb"><img src="assets/images/articals/1.jpg"></span>
+                    <div class="content">
+                      <span class="title">Are You Using The Right Anti-Pollution Mask?</span>
+                      <span class="text">It is a long established fact that a reader will be distracted by the readable.</span>
+                    </div>
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+            <!-- section 3 end here -->
+    </div>
+
+
+
+  </div>
+
+</div>
+<app-footer></app-footer>

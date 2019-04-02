@@ -1,0 +1,254 @@
+<div class="main_container my_accountPages dashboard_page add_offer_page">
+
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+  
+ 
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+    
+          <div class="right_pannel">
+            <div class="pannelSTyle">
+              <h1 class="page_name">
+                <div class="leftData">
+                    <span class="Pagename">Edit offer</span>
+                </div>
+              </h1>
+              <div class="account_content">
+                <div class="form_wrapper full_w">
+              <ul class="form_listing full_w">
+                <li class="form_list">
+                    <div class="style">
+                       
+                    <span class="lable">Product Name</span>
+                    <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="offer.offer_title">
+                
+                    </div>
+                </li>
+                <li class="form_list">
+                        <div class="style">
+                           
+                                <span class="lable">MRP</span>
+                                <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="offer.target_amount">
+                            
+                        </div>
+                    </li>
+                <li class="form_list">
+                    <div class="style">
+                        
+                            <span class="lable">Discount</span>
+                            <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="offer.discount">
+                        
+                    </div>
+                </li>
+                <li class="form_list">
+                    <div class="style">
+                      
+                            <span class="lable">Deal Price</span>
+                            <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="offer.deal_price">
+                        
+                    </div>
+                </li>
+               
+
+              
+                <li class="form_list">
+                        <div class="style">
+                            
+                                <span class="lable">PTR</span>
+                                <input class="input" placeholder="" type="text" [(ngModel)]="offer.ptr">
+                            
+                        </div>
+                    </li>
+                    <li class="form_list">
+                        <div class="style">
+                           
+                                <span class="lable">Stock Quantity</span>
+                                <input class="input" placeholder="" type="text" [(ngModel)]="offer.stock_quantity" >
+                            
+                        </div>
+                    </li>
+                   
+                      
+                <li class="form_list">
+
+                      <div class="updatedFields">
+                        <label class="attachment">
+                           
+                          <input type="file" id="docimg1" name="docimg" class="dp-none" (change)="onChangeImage($event)" accept="image/jpeg, image/png" > 
+                          <div class="icon"> <span class="name" >{{offer.img_name}}</span>  <span>Upload Document</span> <img src="assets/images/icon/attech.png"></div>
+                          
+                             
+                          </label>
+                         <a href="javascript:void(0)" class="fg-gallery"> 
+                             <img src="{{offer.img_name}}" id="img1" alt="" style="width:50px;height:50px;margin-left: 0px" ></a>
+                      </div>
+  
+                  </li>
+                <li class="form_list">
+                        <div class="style">
+                            
+                               
+                                <span class="lable">Offer Start Date</span>
+                                <input type="text" autocomplete="off" id="datepicker" class="calendar input" [(ngModel)]="offer.offer_start_date" />
+                                <!-- <input class="input" type="text" id="datepicker" autocomplete="off"
+                                placeholder=""  placeholder="" [(ngModel)]="offer.offer_start_date" /> -->
+                            
+                           
+                            
+                        </div>
+                    </li>
+                    <li class="form_list full">
+                          <div class="style">
+                              
+                                  <span class="lable">Description in maximum 200 words</span>
+                                  <textarea class="input text_area ng-pristine ng-valid ng-touched" maxlength="200" placeholder="" [(ngModel)]="offer.offer_description"></textarea>
+                              
+                          </div>
+                      </li>
+                   
+
+                
+              
+              
+                
+               
+            </ul>
+
+           
+
+            <div class="btn_wrapper full_w mb20 mt20">
+              <!-- <input class="primary_btn" name="" type="submit" value="Save" (click)="onSubmit()"> -->
+              <button class="btn assent medium"  (click)="onSubmit()" >SAVE</button>
+            </div>
+          </div>
+          </div>
+              <!-- <div class="mainPage">
+                <div class="fromGroup">
+              <ul class="add_offer form_group">
+                <li class="list full">
+                    <div class="inputForm">
+                        <label class="label">
+                            <span class="name">Product Name</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" placeholder="Enter offer Name" type="text" [(ngModel)]="offer.offer_title">
+                        </label>
+                    </div>
+                </li>
+                <li class="list full">
+                        <div class="inputForm">
+                            <label class="label">
+                                <span class="name">MRP</span>
+                                <input class="input_box ng-untouched ng-pristine ng-valid" placeholder="Enter MRP" type="text" [(ngModel)]="offer.target_amount">
+                            </label>
+                        </div>
+                    </li>
+                <li class="list full">
+                    <div class="inputForm">
+                        <label class="label">
+                            <span class="name">Discount</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" placeholder="Enter Discount Percentage" type="text" [(ngModel)]="offer.discount">
+                        </label>
+                    </div>
+                </li>
+                <li class="list full">
+                    <div class="inputForm">
+                        <label class="label">
+                            <span class="name">Deal Price</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" placeholder="Enter Deal Price" type="text" [(ngModel)]="offer.deal_price">
+                        </label>
+                    </div>
+                </li>
+               
+
+              
+                <li class="list full">
+                        <div class="inputForm">
+                            <label class="label">
+                                <span class="name">PTR</span>
+                                <input class="input_box" placeholder="Enter PTR" type="text" [(ngModel)]="offer.ptr">
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list full">
+                        <div class="inputForm">
+                            <label class="label">
+                                <span class="name">Stock Quantity</span>
+                                <input class="input_box " placeholder="Enter Qty" type="text" [(ngModel)]="offer.stock_quantity" >
+                            </label>
+                        </div>
+                    </li>
+                <li class="list offer_days_wrapper">
+                        <div class="inputForm">
+                            <label class="label">
+                               <div class="offer_date">
+                                <span class="name">Offer Start Date</span>
+                                <input class="input_box" type="text" id="datepicker" autocomplete="off"
+                                placeholder=""  placeholder="Offer start date" [(ngModel)]="offer.offer_start_date" />
+                            </div>
+                           
+                            </label>
+                        </div>
+                    </li>
+                    <li class="list offer_days_wrapper">
+                        <div class="inputForm">
+                            <label class="label">
+                              
+                            <div class="offer_days">
+                                    <span class="name">Offer Duration Days</span>
+                            
+                                <div class="qtyController">
+                                      <span class="minus" (click)="onUpdateOfferDuration('-')">-</span><span  class="qty">
+                                      <input value="1"  name="" readonly="" type="text" [(ngModel)]="offer.offer_duration_days" ></span>
+                                      <span  class="plus" (click)="onUpdateOfferDuration('+')">+</span>
+                                </div>
+                            </div>
+                            </label>
+                        </div>
+                    </li>
+ 
+
+                <li class="list full">
+                    <div class="inputForm">
+                        <label class="label">
+                            <span class="name">Description in maximum 200 words</span>
+                            <textarea class="text_area ng-pristine ng-valid ng-touched" maxlength="200" placeholder="Description in maximum 200 words" [(ngModel)]="offer.offer_description"></textarea>
+                        </label>
+                    </div>
+                </li>
+              
+                <li class="list full">
+
+                    <div class="updatedFields inputForm">
+                      <label class="label attachment">
+                         
+                        <input type="file" id="docimg1" name="docimg" class="dp-none" (change)="onChangeImage($event)" accept="image/jpeg, image/png" > 
+                            <span class="icon"></span>
+                         <span class="name" >Upload Image  (.jpg, .png)</span> 
+                           
+                        </label>
+                       <a href="javascript:void(0)"> <img src="{{offer.img_name}}" id="img1" alt="" style="width:50px;height:50px;margin-left: 0px" ></a>
+                    </div>
+
+                </li>
+               
+            </ul>
+
+           
+
+            <div class="btn_wrapper">
+              <input class="primary_btn" name="" type="submit" value="Update" (click)="onSubmit()">
+             
+            </div>
+          </div>
+          </div> -->
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,87 @@
+
+<div class="main_container my_accountPages">
+
+  <app-header></app-header>
+ 
+    <div class="my_accountSetting">
+ 
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+          <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+
+
+		
+        <div class="right_pannel">
+
+
+          <div class="pannelSTyle">
+
+            <div class="account_page_title">
+              <div class="left_part">
+                <div class="heading">
+                  <h2>Sent Enquiries</h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="mainPage">
+              <div class="">
+ 
+                <div class="account_content">
+                  <div class="notification_wrapper">
+                    <div class="notification_date"><span>Year 2019</span></div>
+                    <ul class="notification_listing">
+                      <li class="notification_list" *ngFor="let enquiry of enquires">
+                        <div class="enquiryDetail-wrapper">
+                          <div class="date_wrapper">
+                            <span class="date">{{enquiry.order_date |date:'dd'}}</span>
+                            <span class="month">{{enquiry.order_date |date:'MMM'}}</span>
+                          </div>
+                          <div class="enquiry_details">
+                            <span class="enquiry_id"><span class="title">Enquiry : <span
+                                  class="text-theme">#{{enquiry.order_no}}</span> </span> </span>
+                            <!-- <span class="enquiry_items">Karol Bagh</span> -->
+                          </div>
+                          <div class="enquiry_details no-border">
+                            <span class="enquiry_id"><span class="title">Amount </span> </span>
+                            <span class="enquiry_items">Rs. {{enquiry.net_payble_amount}}</span>
+                          </div>
+                          <div class="enquiry_details no-border text-align-right">
+                            <span class="enquiry_id"><span class="title">{{enquiry.total_items}} items </span>
+                            </span>
+                          </div>
+                        </div>
+                      
+                          <!-- <span>Home Delivery</span> -->
+                          <div class="text-align-right">
+                              <button class="btn assent small mr10"  routerLink="/chemist-account/stock-enquiry-quotes" [queryParams]="{enquiryid:enquiry.order_id,entrytype:'enquiry'}">Quote- {{enquiry.total_quotes}}</button>
+                           
+                          </div>
+                           
+                       
+                      </li>
+
+
+                    </ul>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+	<app-footer></app-footer>

@@ -1,0 +1,180 @@
+<div class="DeliverySetupProfile">
+        <div class="fromGroup">
+      
+      
+              
+                  <section class="content form_wrapper full_w form_21" >
+                          
+                      <div class="profile_step_heading">
+                        <h2 class="heading">{{form.first.document_caption}}</h2>
+                    </div>        
+                      <ul class="form_listing full_w">
+                        
+                          <li class="form_list ">
+                              <div class="style">
+                                
+                                    <span class="lable">Registration Number</span>
+                                  <input type="text" placeholder="" maxlength="80" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="form.first.document_number" >
+                                
+                              </div>
+                          </li>
+                      </ul>
+      
+      
+                      <div class="expiryData full_w">
+                          <span class="name">Expiry Date</span>
+                    <ul class="form_listing full_w">
+                        <li class="form_list">
+                            <div class="expiry_month">
+                                <select class="select_option ng-untouched ng-pristine ng-valid" [(ngModel)]="form.first.expiry_date_mm">
+                                    <option value="" [attr.selected]="true" >-MM-</option>
+                                    <option *ngFor="let expiry of expirymonth" [value]="expiry.key">{{expiry.key}}</option>
+                                </select>
+                                <img src="assets/images/icon/errow_down.png" >
+                            </div>
+                            <div class="expiry_year">
+                                <select class="select_option ng-untouched ng-pristine ng-valid" [(ngModel)]="form.first.expiry_date_yy">
+                                    <option value="" [attr.selected]="true">-YYYY-</option>
+                                    <option *ngFor="let expiry of expiryyear" [value]="expiry.key">{{expiry.key}}</option>
+                                    
+                                </select>
+                                <img src="assets/images/icon/errow_down.png" >
+                            </div>
+                        </li>
+                        
+                    </ul>                    
+                      </div>
+      
+      
+                                      
+                      <ul class="form_group margin-top-20px">
+                          <li class="list full">
+                              <div class="updatedFields">
+                                  <label class="attachment">
+                                      <input type="file" id="docimg1" name="docimg1" class="dp-none" (change)="onChangeImage($event,'1')" accept="image/jpeg, image/png">
+                                      <div class="icon"><span>Upload Document</span> <img src="assets/images/icon/attech.png"></div>
+                                      <!-- <span class="name" *ngIf="details.filename1==''">Upload Document  (.jpg, .png)</span> -->
+                                      <span class="name" *ngIf="details.filename1!=''">{{details.filename1}}</span>
+                                  </label>
+                                 <a href="{{form.first.document_file_path}}" class="fg-gallery" > 
+                                     <img src="{{form.first.document_file_path}}" id="img1"  alt="">
+                                    </a>
+                              </div>
+                          </li>
+                      </ul>
+                      
+                      <!-- <span class="input input--nao">
+                        <input type="submit" name=""  (click)="onNext('1')" value="SAVE" class="primary_btn"> &nbsp;
+                        <input type="submit" name="" routerLink="/chemist-account/profile-setup" [queryParams]="{'step':3}" value="Next" class="primary_btn">
+                      
+                    </span> -->
+                    <div class="btn_wrapper full_w mb20 mt10">
+                            <button class="btn assent medium"  (click)="onNext('1')" >SAVE</button>
+                            <!-- <button class="btn primary large"  routerLink="/chemist-account/profile-setup" [queryParams]="{'step':3}" >Next</button> -->
+                            
+                        </div>
+                      
+                   
+                          <span class="input input--nao">
+                            
+                         
+                        </span>
+                          
+      
+                  </section>
+
+                  <section class="content form_wrapper full_w form_20">
+                        <div class="profile_step_heading">
+                            <h2 class="heading">{{form.second.document_caption}}</h2>
+                        </div>   
+                            
+                        <ul class="form_listing full_w">
+                          
+                            <li class="form_list ">
+                                <div class="style">
+                                    
+                                        <span class="lable">Registration Number</span>
+                                       <input type="text" placeholder="" maxlength="80" class="input "  [(ngModel)]="form.second.document_number" >
+                                   
+                                </div>
+                            </li>
+                        </ul>
+        
+                        
+                        <div class="expiryData full_w">
+                                <span class="name">Expiry Date</span>
+                          <ul class="form_listing full_w">
+                              <li class="form_list">
+                                  <div class="expiry_month">
+                                      <select class="select_option " [(ngModel)]="form.second.expiry_date_mm">
+                                          <option value="" [attr.selected]="true" >-MM-</option>
+                                          <option *ngFor="let expiry of expirymonth" [value]="expiry.key">{{expiry.key}}</option>
+                                      </select>
+                                      <img src="assets/images/icon/errow_down.png" >
+                                  </div>
+                                  <div class="expiry_year">
+                                      <select class="select_option" [(ngModel)]="form.second.expiry_date_yy">
+                                          <option value="" [attr.selected]="true">-YYYY-</option>
+                                          <option *ngFor="let expiry of expiryyear" [value]="expiry.key">{{expiry.key}}</option>
+                                          
+                                      </select>
+                                      <img src="assets/images/icon/errow_down.png" >
+                                  </div>
+                              </li>
+                              
+                          </ul>                    
+                            </div>
+        
+        
+                                        
+                            <ul class="form_group margin-top-20px">
+                                    <li class="list full">
+                                        <div class="updatedFields">
+                                            <label class="attachment">
+                                                <input type="file" id="docimg1" name="docimg1" class="dp-none" (change)="onChangeImage($event,'2')" accept="image/jpeg, image/png">
+                                                <div class="icon"><span>Upload Document (.jpg, .png)</span> <img src="assets/images/icon/attech.png"></div>
+                                                <!-- <span class="name" *ngIf="details.filename1==''">Upload Document  (.jpg, .png)</span> -->
+                                                <span class="name" *ngIf="details.filename1!=''">{{details.filename1}}</span>
+                                            </label>
+                                           <a href="{{form.second.document_file_path}}" class="fg-gallery-2" > 
+                                               <img src="{{form.second.document_file_path}}" id="img2"  alt="">
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+        
+                        <!-- <span class="input input--nao">
+                          <input type="submit" name=""  (click)="onNext('2')" value="SAVE" class="primary_btn"> &nbsp;
+                          <input type="submit" name="" routerLink="/chemist-account/profile-setup" [queryParams]="{'step':3}" value="Next" class="primary_btn">
+                         
+                      </span> -->
+                      <div class="btn_wrapper full_w mt10">
+                            <button class="btn assent medium"  (click)="onNext('2')" >SAVE</button>
+                            <!-- <button class="btn primary large"  routerLink="/chemist-account/profile-setup" [queryParams]="{'step':3}" >Next</button> -->
+                            
+                        </div>
+                        <div class="btn_wrapper full_w mt20">
+                            <button class="btn primary large"  (click)="onNext('next')" >Next</button>
+                         </div>
+                        
+                      
+                            <span class="input input--nao">
+                             
+                          </span>
+                            
+        
+                    </section>
+      
+          
+       
+          
+                    
+      
+      
+      
+      
+        </div>
+      </div>  
+      
+      
+      

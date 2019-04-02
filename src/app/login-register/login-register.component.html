@@ -1,0 +1,658 @@
+<!-- 
+  <div class="loginPopups">
+    <div class="bottom_strok"></div>
+  <span class="overlay"></span>
+
+  <div class="designBox">
+
+    <div class="login_register_header full_w">
+      <div class="back_btn">
+          <button  (click)="goBack()" class="btn secondary medium"><img src="assets/images/left_arrow.png"></button>
+      </div>
+        <div class="logo_wrapper"><a href="javascript:void(0)" routerLink="/home" ><img src="assets/images/logo.png" alt=""></a></div>
+        <div class="conatct_number"><span>Need Help ?</span><i _ngcontent-c4="" aria-hidden="true" class="fa fa-phone"></i>  +91 88586 88586</div>
+    </div>
+
+    <div class="vAlign"> 
+      <div class="innerDesign"> 
+        <div class="insideBox"> 
+          <div class="left_data"> 
+
+            <div class="inside_data"> 
+              <div class="content_part"> 
+                <div class="data">
+                   
+                  <span class="mainHead">Download the App</span>
+                  <span class="text">Download the app now and connect with your local pharmacy today and
+                      get the best offers with medicines at your doorstep. </span>
+                </div>
+              </div>
+              
+            </div>
+
+            <ul class="social_media">
+              <li class="list"><a href="https://play.google.com/store/apps/details?id=com.aapkachemist"   target="blank"><img src="assets/images/icon/playstore.png"></a></li>
+              <li class="list"><a href="javascript:void(0)" target="_blank"><img src="assets/images/icon/apple.png" /></a></li>
+              
+            </ul>
+
+          </div>
+          <div class="right_data">
+             
+            <ng-container *ngIf="loginform==true">
+               
+            <div class="login_steps" id="login_form" >
+              <div class="popup_name">
+                 <h3 class="form_title">Login</h3>
+                  <span class="form_subTitle">Continue to Aapka Chemist</span> 
+                </div>
+              <form>
+                <div class="forms_div">
+                  <div class="input_div">
+                    <label class="label">Mobile No. or Email</label>
+                     <input type="text" name="loginmobileemail" autocomplete="off" maxlength="200" class="input_box" placeholder="Enter Mobile No. Or Email" [(ngModel)]="login.mobile_email">
+                     </div>
+                  <div class="input_div">  
+                    <label class="label">Password</label> 
+                    <input type="password" name="loginpass" autocomplete="off" maxlength="200" class="input_box" placeholder="Enter Password" [(ngModel)]="login.password"> 
+                  </div>
+                 
+                  <div class="input_div submit_wrapper">
+                    <div class="left_part">
+                        <input type="submit" name="" class="btn primary medium" value="Signin" (click)="onNext('login','1')">
+                    </div>
+                    <div class="right_part">
+                    <a href="javascript:void(0)" routerLink="/forget-password" class="forgot_passwordBtn">Forgot Password ?</a>
+                    </div>
+                  </div>
+
+                  <div class="input_div">
+                    <button class="btn assent large full_w" (click)="switchView('signup')" >Register</button>
+                  </div>
+
+                  
+                  
+                </div>
+              </form>
+            </div>
+          </ng-container>
+
+
+            <ng-container *ngIf="forgotform==true">
+            <div class="login_steps" id="forgot_pass_form" style="display:block">
+
+              <div class="popup_name">
+                  <h3 class="form_title">Forgot Password</h3>
+               
+              </div>
+              <form>
+                <div class="forms_div">
+                  <div class="input_div"> 
+                      <label class="label">Enter Mobile No. Or Email</label>
+                    <input type="text" name="forgotemailmob" class="input_box" maxlength="200" placeholder="Enter Mobile No. Or Email" [(ngModel)]="forget.mobile_email"> </div>
+                  <div class="input_div submit_wrapper">
+                    <div class="left_part">
+                        <input type="submit" name="" class="btn primary medium" value="Next" (click)="onNext('forget-pass','1')">
+                    </div>
+                    
+                    <div class="right_part">
+                    <a href="javascript:void(0)" routerLink="/login" class="login_btn">Back To Login</a>
+                    </div>
+                  </div>
+
+                  <div  class="login_btn_wrapper input_div">
+                    <button class="btn assent large  full_w" (click)="switchView('signup')" >Register</button></div>
+                </div>
+              </form>
+            </div>
+            <div class="login_steps" id="forgot_pass_OTPForm" style="display:none">
+              <div class="popup_name"><span class="primaryColor">OTP</span>An OTP will be sent on
+                <div class="phoneNumber">+91 {{ forget.hidden_mobile }}</div>
+                <span class="resend_btn" *ngIf="isresendotp" (click)="onStartResend('forgetpassword')">Resend</span>
+                <span class="resend_btn" *ngIf="!isresendotp" >
+
+                  Resend OTP in    <countdown [config]="{leftTime: 60}" (start)="onStart()" (finished)="onFinished()">$!s!</countdown> seconds
+                </span>
+                 
+              </div>
+              <form>
+                <div class="forms_div">
+                  <div class="input_div"> 
+                    <input type="number" name="forgotp" class="input_box" onKeyPress="if(this.value.length==6) return false;" placeholder="Enter OTP" [(ngModel)]="forget.entered_otp"> </div>
+                  <div class="input_div">
+                    <input type="submit" name="" class="primary_btn nextBTN" value="Next" (click)="onNext('forget-pass','2')">
+                    <a href="javascript:void(0)" routerLink="/login"  class="login_btn">Back To Login</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="login_steps" id="forgot_pass_CreateForm" style="display:none">
+              <div class="popup_name"><span class="primaryColor">Create Password
+
+              </span>
+              
+              </div>
+              <form>
+                <div class="forms_div">
+                  <div class="input_div"> <input type="password" name="forgetpass" class="input_box" placeholder="Create Password" [(ngModel)]="forget.password"> </div>
+                  <div class="input_div"> <input type="password" name="forgetconfirmpass" class="input_box" placeholder="Confirm Password" [(ngModel)]="forget.confirm_pass"> </div>
+                  <div class="input_div"><input type="submit" name="" class="primary_btn" value="Submit" (click)="onNext('forget-pass','3')">
+                    <a  href="javascript:void(0)" routerLink="/login" class="login_btn">Back To Login</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </ng-container>
+
+
+            <ng-container *ngIf="registerform==true">
+            <div class="login_steps" id="register_form" style="display:block">
+
+                <ng-container *ngIf="is_not_user_type_loggin == true">
+              <select class="select_option" [(ngModel)]="selected_user_type" >
+ 
+ 
+                    <option  *ngFor="let usertype of usertypes"  [value]="usertype.id"  [selected]="usertype.id == 2" >{{usertype.parameter_name}}</option>
+                    
+                
+              
+                 
+              </select>
+            </ng-container>
+
+              <div class="popup_name">
+                 <h3  class="form_title">Register</h3> 
+                 <span class="form_subTitle">Continue to Aapka Chemist</span>
+              </div>
+              <form>
+                <div class="forms_div">
+                 
+                  <div class="input_div"> 
+                      <label class="label">Enter Mobile No.</label>
+                    <input type="number"  autocomplete="off" name="regmobemail" onKeyPress="if(this.value.length==10) return false;" class="input_box" placeholder="Enter Mobile No." [(ngModel)]="register.mobile"> </div>
+                
+                  <div class="input_div"> 
+                      <label class="label">Enter Email</label>
+                    <input type="text" autocomplete="off" name="regmobemail" maxlength="100" class="input_box" placeholder="Enter Email" [(ngModel)]="register.email"> </div>
+                
+                  <div class="input_div"> 
+                      <label class="label">Enter Your Name</label>
+                    <input type="text" autocomplete="off" name="regname" maxlength="200" class="input_box" placeholder="Enter Your Name" [(ngModel)]="register.name"> </div>
+                 
+                  <div class="input_div" *ngIf="aroute.snapshot.queryParams['usertype']=='retailer' "> 
+                      <label class="label">Enter Your Business Name</label>
+                    <input autocomplete="off" type="text" maxlength="200" name="regname" class="input_box" placeholder="Enter Your Business Name" [(ngModel)]="register.business_name"> </div>
+                 
+                    <div class="input_div submit_wrapper">
+                      <div class="left_part">
+                      <input type="submit" name="" class="btn primary medium" value="Signup" (click)="onNext('register','1')">
+                    </div>
+                    <div class="right_part">
+                    <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                  </div>
+                    </div>
+                  <div class="login_btn_wrapper input_div">
+                      <button  (click)="switchView('login')" class="btn assent large full_w">Login</button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+
+            <div class="login_steps" id="register_form2" style="display:none">
+              <div class="popup_name"><span class="primaryColor">OTP</span>An OTP will be sent on
+                <div class="phoneNumber">+91 {{register.hidden_mobile}}</div>
+               
+                <span class="resend_btn" *ngIf="isresendotp" (click)="onStartResend('register')">Resend</span>
+                <span class="resend_btn" *ngIf="!isresendotp" >
+
+                  Resend OTP in    <countdown [config]="{leftTime: 60}" (start)="onStart()" (finished)="onFinished()">$!s!</countdown> seconds
+                </span>
+              </div>
+              <form>
+                <div class="forms_div">
+                  <div class="input_div"> <input type="number" autocomplete="off" onKeyPress="if(this.value.length==6) return false;" name="enteredotp" class="input_box" placeholder="Enter OTP" [(ngModel)]="register.enteredotp"> </div>
+                  <div class="input_div"><input type="submit" name="" class="primary_btn nextBTN" (click)="onNext('register','2')" value="Next">
+                    <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="login_steps" id="register_form3" style="display:none">
+              <div class="popup_name"><span class="primaryColor">Create Password</span> 
+              
+              </div>
+              <form>
+                <div class="forms_div">
+                  <div class="input_div"> <input type="password"  name="regpass" maxlength="100" class="input_box" placeholder="Create Password" [(ngModel)]="register.password"> </div>
+                  <div class="input_div"> <input type="password" name="regconfpass" maxlength="100" class="input_box" placeholder="Confirm Password" [(ngModel)]="register.confirm_pass"> </div>
+                  <div class="input_div"><input type="submit" name="" class="primary_btn" value="Submit" (click)="onNext('register','3')">
+                    <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="login_bd_wrapper">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="login_inner_wrapper">
+      <div class="login_register_header full_w">
+        <div class="back_btn">
+          <button class="btn secondary medium" routerLink="/">
+
+            <img src="assets/images/left_arrow.png">
+
+          </button>
+        </div>
+        <div class="logo_wrapper">
+          <a href="javascript:void(0)" routerLink="/">
+            <img alt="" src="assets/images/logo.png">
+          </a>
+        </div>
+        <div class="conatct_number">
+          <span>Need Help ?</span>
+          <i aria-hidden="true" class="fa fa-phone"></i> +91 88586 88586
+        </div>
+      </div>
+      <div class="form_content_wrapper">
+        <div class="form_content">
+          <div class="form_inner_content">
+            <div class="content_wrapper">
+              <div class="left_part">
+                <div class="content_part">
+                  <span class="mainHead">Download the App</span>
+                  <p><span class="text">Download the app now and connect with your local pharmacy today and get the best
+                      offers with medicines at your doorstep. </span></p>
+                </div>
+                <ul class="social_media">
+                  <li class="list">
+                    <a href="https://play.google.com/store/apps/details?id=com.aapkachemist" target="blank"><img
+                        src="assets/images/icon/playstore.png"></a>
+                  </li>
+                  <li class="list">
+                    <a href="https://itunes.apple.com/us/app/aapkachemist/id1453029064" target="_blank"><img
+                        src="assets/images/icon/apple.png"></a>
+                  </li>
+                </ul>
+
+              </div>
+              <div class="right_part">
+
+                <div class="right_inner_wrapper">
+                  <div class="right_inner_part form_wrapper">
+
+                    <!--Login Form-->
+                    <ng-container *ngIf="loginform==true">
+                      <div class="login_steps" id="login_form">
+                        <div class="form_title">
+                          <h2>Login</h2>
+                          <span>Continue to Aapka Chemist</span>
+                        </div>
+
+                        <div class="form_wrapper">
+                          <ul class="forms_div form_listing">
+                            <li class="form_list forms_div full_w">
+                              <div class="style">
+
+                                <span class="lable">Enter Mobile No. Or Email</span>
+                                <input type="text" name="loginmobileemail" autocomplete="off" maxlength="200"
+                                  class="input" placeholder="" [(ngModel)]="login.mobile_email">
+                              </div>
+
+
+                            </li>
+                            <li class="form_list forms_div full_w">
+                              <div class="style">
+                                <span class="lable">Password</span>
+                                <input type="password" name="loginpass" autocomplete="off" maxlength="200" class="input"
+                                  placeholder="" (keydown.enter)="onNext('login','1')" [(ngModel)]="login.password">
+                              </div>
+
+                            </li>
+
+                            <div class="captcha">
+                              <li class="form_list forms_div full_w">
+                                <div class="style">
+                                  <span class="lable">Enter Security Code</span>
+                                  <input type="text" class="input" placeholder="" [(ngModel)]="login.captcha_code">
+                                </div>
+                              </li>
+                              <div class="captcha_code" (click)="onRefreshCaptcha('logincaptcha')">
+                                <img src="{{global.captchaurl}}" id="logincaptcha" alt="">
+                                <span class="refresh_captcha"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                              </div>
+                            </div>
+                            <div class="input_div submit_wrapper">
+                              <div class="left_part">
+
+                                <button class="btn primary medium" (click)="onNext('login','1')">LogIn</button>
+                              </div>
+                              <div class="right_part">
+                                <a href="javascript:void(0)" routerLink="/forget-password"
+                                  class="forgot_passwordBtn">Forgot Password ?</a>
+                              </div>
+                            </div>
+
+                            <div class="input_div">
+                              <button class="btn assent large full_w" (click)="switchView('signup')">Sign Up</button>
+                            </div>
+                          </ul>
+                        </div>
+                      </div>
+                      <!--Login Form-->
+                    </ng-container>
+
+                    <ng-container *ngIf="forgotform==true">
+                      <!--Forgot Form-->
+
+
+                      <div class="forgot_pass_form" id="forgot_pass_form" style="display:block">
+                        <div class="form_title">
+                          <h2>Forgot Password</h2>
+                        </div>
+
+                        <div class="form_wrapper">
+                          <ul class="forms_div form_listing full_w">
+                            <li class="form_list  full_w">
+                              <div class="style">
+                                <span class="lable">Enter Mobile No. Or Email</span>
+                                <input type="text" name="forgotemailmob" class="input" maxlength="200" placeholder=""
+                                  [(ngModel)]="forget.mobile_email">
+                              </div>
+
+                            </li>
+                            <div class="input_div submit_wrapper">
+                              <div class="left_part">
+                                <input type="submit" name="" class="btn primary medium" value="Next"
+                                  (click)="onNext('forget-pass','1')">
+                              </div>
+
+                              <div class="right_part">
+                                <a href="javascript:void(0)" routerLink="/login" class="login_btn">Back To Login</a>
+                              </div>
+                            </div>
+
+                            <div class="login_btn_wrapper input_div">
+                              <button class="btn assent large  full_w" (click)="switchView('signup')">Sign Up</button>
+                            </div>
+                          </ul>
+                        </div>
+
+                      </div>
+
+                      <div class="forgot_pass_OTPForm" id="forgot_pass_OTPForm" style="display:none">
+                        <div class="form_title">
+                          <h2>OTP An OTP will be sent on</h2>
+                        </div>
+                        <div class="reg_number">
+                          <div class="phoneNumber">+91 {{ forget.hidden_mobile }}</div>
+                          <button class="resend_btn btn small assent" *ngIf="isresendotp"
+                            (click)="onStartResend('forgetpassword')">Resend</button>
+                          <span class="resend_btn" *ngIf="!isresendotp">
+
+                            Resend OTP in <countdown [config]="{leftTime: 60}" (start)="onStart()"
+                              (finished)="onFinished()">$!s!</countdown> seconds
+                          </span>
+                        </div>
+
+                        <ul class="forms_div form_listing">
+                          <li class="form_list">
+                            <div class="style">
+                              <span class="lable">Enter OTP</span>
+                              <input type="number" name="forgotp" class="input"
+                                onKeyPress="if(this.value.length==6) return false;" placeholder=""
+                                [(ngModel)]="forget.entered_otp">
+                            </div>
+
+                          </li>
+                          <div class="input_div submit_wrapper">
+                            <div class="left_part">
+                              <input type="submit" name="" class="btn primary medium" value="Next"
+                                (click)="onNext('forget-pass','2')">
+                            </div>
+                            <div class="right_part">
+                              <a href="javascript:void(0)" routerLink="/login" class="login_btn">Back To Login</a>
+                            </div>
+                          </div>
+                        </ul>
+                      </div>
+
+                      <div class="login_steps" id="forgot_pass_CreateForm" style="display:none">
+                        <div class="form_title">
+                          <h2>Create Password</h2>
+                        </div>
+                        <div class="forms_div">
+                          <div class="input_div">
+                            <input type="password" name="forgetpass" class="input_box" placeholder="Create Password"
+                              [(ngModel)]="forget.password">
+                          </div>
+                          <div class="input_div">
+                            <input type="password" name="forgetconfirmpass" class="input_box"
+                              placeholder="Confirm Password" [(ngModel)]="forget.confirm_pass">
+                          </div>
+                   
+                          <div class="input_div">
+                            <input type="submit" name="" class="primary_btn" value="Submit"
+                              (click)="onNext('forget-pass','3')">
+                            <a href="javascript:void(0)" routerLink="/login" class="login_btn">Back To Login</a>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-container>
+
+                    <!--Forgot Form-->
+                    <ng-container *ngIf="registerform==true">
+                      <!-- Register Form-->
+                      <div class="register_form form_wrapper" id="register_form" style="display:block">
+                        <!--is_not_user_type_loggin-->
+                        <ng-container *ngIf="is_not_user_type_loggin == true">
+                          <select class="select_option" [(ngModel)]="selected_user_type">
+                            <option *ngFor="let usertype of usertypes" [value]="usertype.id"
+                              [selected]="usertype.id == 2">{{usertype.parameter_name}}</option>
+                          </select>
+                        </ng-container>
+                        <!--is_not_user_type_loggin-->
+
+                        <div class="form_title">
+                          <h2>Sign Up</h2>
+                          <span class="form_subTitle">Continue to Aapka Chemist</span>
+                        </div>
+
+                        <ul class="forms_div form_listing">
+                          <li class="form_list  full_w">
+                            <div class="style">
+                              <span class="lable">Mobile No.</span>
+                              <input type="number" autocomplete="off" name="regmobemail"
+                                onKeyPress="if(this.value.length==10) return false;" class="input" placeholder=""
+                                [(ngModel)]="register.mobile">
+                            </div>
+
+
+                          </li>
+
+                          <li class="form_list  full_w">
+                            <div class="style">
+                              <span class="lable">Email</span>
+                              <input type="text" autocomplete="off" name="regmobemail" maxlength="100" class="input"
+                                placeholder="" [(ngModel)]="register.email">
+                            </div>
+                          </li>
+
+                          <li class="form_list  full_w">
+                            <div class="style">
+                              <span class="lable">Your Name</span>
+                              <input type="text" autocomplete="off" name="regname" maxlength="200" class="input"
+                                placeholder="" [(ngModel)]="register.name">
+                            </div>
+                          </li>
+
+                          <li class="form_list  full_w" *ngIf="aroute.snapshot.queryParams['usertype']=='retailer' ">
+                            <div class="style">
+                              <span class="lable">Your Business Name</span>
+                              <input autocomplete="off" type="text" maxlength="200" name="regbusinessname" class="input"
+                                placeholder="" [(ngModel)]="register.business_name">
+                            </div>
+                          </li>
+
+                          <div class="input_div submit_wrapper">
+                            <div class="left_part">
+
+                              <button class="btn primary medium" (click)="onNext('register','1')"> Sign Up</button>
+                            </div>
+                            <div class="right_part">
+                              <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                            </div>
+                          </div>
+
+                          <div class="login_btn_wrapper input_div">
+                            <button (click)="switchView('login')" class="btn assent large full_w">Login</button>
+                          </div>
+                        </ul>
+                      </div>
+
+                      <div class="register_form2" id="register_form2" style="display:none">
+                        <div class="form_title">
+                          <h2>OTP will be sent on</h2>
+
+                        </div>
+                        <div class="reg_number">
+                          <div class="phoneNumber">+91 {{register.hidden_mobile}}</div>
+                          <button class="resend_btn btn assent small" *ngIf="isresendotp"
+                            (click)="onStartResend('register')">Resend</button>
+                          <span class="resend_btn" *ngIf="!isresendotp">
+
+                            Resend OTP in <countdown [config]="{leftTime: 60}" (start)="onStart()"
+                              (finished)="onFinished()">$!s!</countdown> seconds
+                          </span>
+                        </div>
+
+                        <ul class="forms_div form_listing">
+                          <li class="input_div form_list submit_wrapper">
+                            <div class="style">
+                              <span class="lable">Enter OTP</span>
+                              <input type="number" autocomplete="off"
+                                onKeyPress="if(this.value.length==6) return false;" name="enteredotp" class="input"
+                                placeholder="" [(ngModel)]="register.enteredotp">
+                            </div>
+
+                          </li>
+
+                          <div class="input_div submit_wrapper">
+                            <div class="left_part">
+                              <input class="btn primary medium" name="" type="submit" value="Next"
+                                (click)="onNext('register','2')">
+                            </div>
+                            <div class="right_part">
+                              <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                            </div>
+                          </div>
+                          <!-- <div class="input_div">
+                        <input type="submit" name="" class="btn primary medium" (click)="onNext('register','2')" value="Next">
+                    <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                  </div> -->
+                        </ul>
+                      </div>
+
+                      <div class="register_form3" id="register_form4" style="display:none">
+                        <button class="btn primary small float_r" (click)="onSkipReferralCode()">Skip</button>
+                        <div class="form_title">
+                          <h2>Referral Code</h2>
+
+                        </div>
+
+                        <ul class="forms_div form_listing">
+                          <li class="input_div form_list">
+                            <div class="style">
+                              <span class="lable">Referral Code</span>
+                              <!-- <label class="label">Enter the referral code below available</label> -->
+                              <input type="text" autocomplete="off" name="reffcode" maxlength="200" class="input"
+                                placeholder="" [(ngModel)]="register.refer_code">
+                            </div>
+
+
+                          </li>
+                          <div class="login_btn_wrapper input_div">
+                            <button (click)="verifyReferralCode()" class="btn assent large full_w">Verify</button>
+                          </div>
+                        </ul>
+                      </div>
+
+                      <div class="register_form3" id="register_form3" style="display:none">
+                        <div class="form_title">
+                          <h2>Create Password</h2>
+
+                        </div>
+
+                        <ul class="forms_div form_listing">
+                          <li class="input_div form_list">
+                            <div class="style">
+                              <span class="lable">Create Password</span>
+                              <input type="password" name="regpass" maxlength="100" class="input" placeholder=""
+                                [(ngModel)]="register.password">
+                            </div>
+
+                          </li>
+                          <div class="input_div form_list">
+                            <div class="style">
+                              <span class="lable">Confirm Password</span>
+                              <input type="password" name="regconfpass" maxlength="100" class="input" placeholder=""
+                                [(ngModel)]="register.confirm_pass">
+                            </div>
+
+
+                          </div>
+                          <div class="captcha">
+                              <li class="form_list forms_div full_w">
+                                <div class="style">
+                                  <span class="lable">Enter Security Code</span>
+                                  <input type="text" class="input" placeholder="" [(ngModel)]="register.captcha_code">
+                                </div>
+                              </li>
+                              <div class="captcha_code" (click)="onRefreshCaptcha('registercaptcha')">
+                                <img src="{{global.captchaurl}}" id="registercaptcha" alt="">
+                                <span class="refresh_captcha"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                              </div>
+                          </div>
+                          <div class="input_div submit_wrapper">
+                            <div class="left_part">
+                              <input class="btn primary medium" name="" type="submit" value="Sign Up"
+                                (click)="onNext('register','3')">
+                            </div>
+                            <div class="right_part">
+                              <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                            </div>
+                          </div>
+                          <!-- <div class="input_div"><input type="submit" name="" class="primary_btn" value="Submit" (click)="onNext('register','3')">
+                        <a href="javascript:void(0)" routerLink="/login" class="login_btn">Already User ?</a>
+                      </div> -->
+                        </ul>
+                      </div>
+                    </ng-container>
+
+
+                    <!-- Register Form-->
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom_strok"></div>
+</div>

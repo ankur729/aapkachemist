@@ -1,0 +1,224 @@
+<div class="main_container my_accountPages search_distributor_page">
+
+    <app-header></app-header>
+    <div class="my_accountSetting">
+          
+       
+          
+        <div class="container">
+          <div class="main_dataPage">
+              <app-chemist-account-left-panel></app-chemist-account-left-panel>
+              
+              <div class="right_pannel">
+                  <div class="pannelSTyle">
+                      <h1 class="page_name"><div class="leftData"><span class="Pagename">Search Distributor</span></div></h1>
+                      <div class="searchBy_wrapper form_wrapper">
+                              <ul class="form_listing">
+                                  <li class="form_list">
+                                    <div  class="style">
+                                        <select class="citysearch select_option" name="city" id="citysearch" style="width:200px;" [(ngModel)]="filter.city" >
+                                               
+                                          </select>
+                                    </div>
+                                        
+                                  
+                                </li>
+                                  <li class="form_list">
+                                    <div  class="style">
+                                        <select class="areasearch select_option" name="area" id="areasearch" style="width:200px;" [(ngModel)]="filter.area" >
+                                               
+                                          </select>
+                                    </div>
+                                        
+                                   
+                                
+                                </li>
+                                  <li class="form_list">
+                                     <div class="style">
+                                        <span class="lable">Pincode</span>
+                                        <input  class="input" onKeyPress="if(this.value.length==10) return false;" placeholder="" type="number" [(ngModel)]="filter.pincode">
+                                     </div>
+                                      
+                                    </li>
+                                  <li class="form_list">
+                                    <!-- <input class="primary_btn" type="submit" value="Search Now" placeholder="Search By Distributor" (click)="getList()" > -->
+                                    <button class="primary btn medium" (click)="getList()">Search Now</button>
+                                     
+                                    </li>
+                              </ul>
+                          </div>
+
+                          <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+                      <div class="mainPage">
+                          <div class="search_distributer">
+                             
+  
+                              <div class="search_listing_wrapper">
+                                  <ul class="search_listing chemist_listing">
+
+                                        <li class="chamList"  *ngFor="let list of lists">
+                                                <div class="style" [routerLink]="['/chemist-detail']" [queryParams]="{ id: list.vendor_id,typeid:list.vendor_type_id }">
+                                                    <div class="chemist_dtls">
+                                                    <div class="imageSet"  >
+                          
+                                                      <div class="thumb">
+                                                          <img src="{{list.vendor_image_path}}" alt="">
+                                                         <span class="rating" *ngIf="list.vendor_rating!=0 || list.vendor_rating!=0.0">{{list.vendor_rating}}</span> 
+                                                      </div>
+                          
+                                                    </div>
+                                
+                                                    <div class="chemis_name_area_location">
+                                                       
+                                                        <span class="name" *ngIf="list.vendor_shopname!=''">
+                                                          
+                                                            <a href="javascript:void(0)"  >
+                                                            {{list.vendor_shopname }}
+                                                          </a>
+                                                          </span>
+                          
+                                                          <span class="vendorType">
+                                                            <span   *ngIf="list.trusted_status == 1">
+                                                              <img src="assets/images/icon/apctrusted.png"> 
+                                                            </span>
+                                                            <span>{{list.vendor_type}}</span>
+                                                          </span>
+                          
+                                                          <span class="shop_location">{{list.area}}</span>
+                                                          
+                                                          
+                                
+                                                          <span class="chem-add"><img src="assets/images/icon/chemist_location.png">
+                           
+                                                            {{ (list.vendor_address.length>40)? (list.vendor_address |
+                                                              slice:0:40)+'..':(list.vendor_address) }} 
+                          
+                                               
+                                                          </span>
+                                                          <div class="locationArea">
+                          
+                                                              <span class="area" *ngIf="list.distance_in_km >= 1">{{list.distance_in_km }} km Away</span>
+                          
+                                                              <span class="area" *ngIf="list.distance_in_km < 1">{{list.distance_in_km *1000}} m Away</span>
+                                                            </div>
+                                
+                                                          <span class="rating" *ngIf="list.prime_status == 1"><img src="assets/images/icon/premium.png"></span>
+                                                    </div>
+                                                  </div>
+                                                  <div class="chemist_other_dtls">
+                                                      <div class="opening_time">
+                                                        <div class="full_width">
+                                                          <div class="open_closeStatus">
+                                                            <div class="left_content"><img src="assets/images/icon/clock-ico.png">&nbsp;</div>
+                                                            <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time!=''">Open {{list.open_time}} to {{list.close_time}}</span>
+                                                            <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time==''">Open
+                                                              
+                                                             
+                                                            </span>
+                                                            <div class="right_content" *ngIf="list.open_close_status==0">Close</div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="discount" *ngIf="list.discount_percent!=0">
+                                                        <div class="full_width">
+                                                        <div class="open_closeStatus">
+                                                        <span class="left_content"><img src="assets/images/icon/discount_ico.png">&nbsp;</span>
+                                                        <span class="right_content">{{list.discount_percent}}% Discount</span>
+                                                        </div>
+                                                        </div>
+                                                      </div>
+                                                      
+                                                      <div class="chemist_Type">
+                                                      <div class="full_width">
+                                                      <div class="discount">
+                                                      
+                                                      <span class="trustedSeal" *ngIf="list.trusted_status ==1"> </span>
+                                                      </div>
+                                                      </div>
+                                                      </div>
+                                                      </div>
+                          
+                                                   
+                                                  
+                                                </div>
+                                              </li>
+
+                            
+                                      <!-- <li class="chamList">
+                                          <div class="style">
+                                              <div class="chemist_dtls">
+                                                  <div class="imageSet">
+                                                      <div class="thumb">
+                                                          <img src="assets/images/5.jpg">
+                                                      </div>
+                                                  </div>
+                                                  <div class="chemis_name_area_location">
+                                                      
+                                                      <span class="name"><a  href="javascript:void(0)"> Ganesh Medicos </a></span>
+                                                      <span class="shop_location">Laxmi Nagar</span>
+                                                      <div  class="locationArea">
+                                                          <span  class="area">0.17 km away</span>
+                                                      </div>
+                                                      
+                                                      <span class="rating">0</span>
+  
+                                                  </div>
+                                              </div>
+  
+                                             
+                                              <div class="chemist_other_dtls">
+                                                    <div class="opening_time">
+                                                      <div class="full_width">
+                                                        <div class="open_closeStatus">
+                                                          <div class="left_content"><img  src="assets/images/icon/clock-ico.png">&nbsp;</div>
+                                                          <div class="right_content">Open</div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="opening_time">
+                                                            <div class="full_width">
+                                                              <div class="open_closeStatus">
+                                                                <div class="left_content"><img  src="assets/images/icon/discount_ico.png">&nbsp;</div>
+                                                                <div class="right_content">20%</div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                    <div class="chemist_Type">
+                                                      <div class="full_width">
+                                                        <div class="discount">
+                                                          <span>Chemist</span>
+                                                          
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+  
+                                              <div class="chemist_contact_dtls">
+                                                  <ul class="contact_enquiry">
+                                                      <li>
+                                                          <a class="view_details_btn" href="javascipt:void(0)"
+                                                          ><i aria-hidden="true" class="fa fa-file-text"></i> View Details</a>
+                                                      </li>
+                                                      <li>
+                                                          <a class="enquiry_btn" href="javascript:void(0)"><i  aria-hidden="true" class="fa fa-info"></i> Enquiry</a>
+                                                        
+                                                      </li>
+                                                  </ul>
+                                              </div>
+  
+  
+                                          </div>
+                                      </li>
+   -->
+  
+                                  </ul>
+                              </div>
+                          </div>
+                       </div>
+                   </div>
+              </div>
+    
+          </div>
+        </div>
+    </div>
+    <app-footer></app-footer>

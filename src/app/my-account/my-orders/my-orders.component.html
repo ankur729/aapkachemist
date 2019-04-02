@@ -1,0 +1,214 @@
+<div class="main_container my_accountPages chemist_account_page retailer_enquiry">
+
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+    <app-my-account-top-panel></app-my-account-top-panel>
+    
+    <div class="review_popup">
+      <div class="designBox">
+        <div class="vAlign">
+          <div class="insideDesign">
+            <div class="heading">
+              <div class="d-text-flex justify-content-btw align-content-start">
+                  <div class="mrgn0">
+                      <h2 class="text-theme"><span class="rate_id">Rate</span>  {{respdata.last_order_review.data.shopname | titlecase}}    </h2>
+                      <span class="fontsize-14 text_dark">Order #{{respdata.last_order_review.data.order_no}}</span>
+                  </div>
+                  <span class="skip_btn text-theme fontsize-14" (click)="onSetReview(1)">Skip</span>
+              </div>
+                        
+            </div>
+            <div class="fromGroup form_wrapper ">
+            
+              <div class="rating_wrapper">
+                <!-- <h2 class="chem_name">{{respdata.last_order_review.data.shopname | titlecase}}</h2>
+                <div class="order_details_wrapper">
+                  <span class="title">Order ID :</span>
+                  <span class="order_id">#{{respdata.last_order_review.data.order_no}}</span>
+                </div> -->
+                <span class="rating"></span>
+                <!-- <span class="ratings">
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </span> -->
+              </div>
+              
+              <div class="add_amount  full_w">
+                <ul class="form_listing full_w">
+                  <li class="form_list  full_w">
+                    <div class="style text_field">
+                      <span class="lable">Your feedback (optional)</span>
+                 
+                      <textarea  class="input text_area" value='' [(ngModel)]="respdata.last_order_review.data.feedback">
+  
+                      </textarea>
+                    </div>
+                    
+                  </li>
+                  <li  class="full_w">
+                    <button  class="btn primary medium mr10" (click)="onSetReview(3)">Submit</button>
+                    <button  class="btn secondary medium" (click)="onSetReview(2)">Not Interested</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-my-account-left-panel></app-my-account-left-panel>
+          <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+          <div class="right_pannel">
+              
+             
+            <div class="pannelSTyle" >
+                <div  class="account_page_title"><div class="left_part"><div class="heading"><h2 >My Orders</h2></div></div></div>
+                <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+
+                <div class="account_content" *ngIf="respdata.orders.length>0">
+                    <div class="notification_wrapper">
+                      <div class="notification_date">
+                          <span>Year {{respdata.orders[0].order_date | date:'yyyy'}}</span>
+                      </div>
+                      <ul class="notification_listing">
+
+                          <ng-container *ngFor="let order of respdata.orders" >
+
+                          <li class="notification_list" *ngIf="order.depend_on == '' || order.depend_on== 'Enquiry' ">
+                              <div class="enquiryDetail-wrapper">
+                                  <div class="date_wrapper">
+                                      <span class="date">{{order.order_date | date:'dd'}}</span>
+                                      <span class="month">{{order.order_date | date:'MMM'}}</span>
+                                  </div>
+                                  <div class="enquiry_details orderId-wt">
+                                    <span  class="enquiry_id">
+                                      <span  class="title">Order ID : <span class="text-theme">#{{order.order_no}}</span>
+                                    </span>
+                                  </span>
+                                  <!-- <span  class="enquiry_items">Karol Bagh</span> -->
+                                </div>
+                                <div class="enquiry_details no-border">
+                                  <span class="enquiry_id">
+                                    <span class="title">Amount </span>
+                                  </span>
+                                  <span class="enquiry_items">Rs.{{order.net_payble_amount}}</span>
+                                </div>
+                                <div  class="enquiry_details no-border text-align-right">
+                                  <span class="enquiry_id">
+                                    <span class="title">{{order.total_items}} items </span>
+                                  </span>
+                                </div>
+    
+    
+                              </div>
+                              <div class="d-text-flex">
+                                <span class="order_status">Order Status :
+                                  
+                                  <span class="status text-theme" *ngIf="order.entry_type=='Enquiry' && order.order_status=='OS01'">Order Received</span>
+                                  <span class="status text-theme" *ngIf="order.entry_type=='Order' && order.order_status=='OS01'">Order Confirmed
+
+                                      <span class="text-red" *ngIf="order.modify_access==3 || order.order_modify_status==2">[Modified]</span>
+                                  </span>
+
+                                  <!-- <span class="status text-theme" *ngIf="order.entry_type=='Order' && order.order_status=='OS01'">Order Confirmed
+
+                                      <span class="text-red" *ngIf="order.modify_access==2">[Modified]</span>
+                                    </span> -->
+
+
+                                  <span class="status text-black" *ngIf="order.entry_type=='Order' && order.order_status!='OS01' && order.order_status!='OS05' && order.order_status!='OS04' && order.modify_access!=2">Processing</span>
+                                  
+                                   
+                                  <span class="status text-black" *ngIf="order.order_status=='OS04' && order.delivery_confirmation==0 ">On The Way</span>
+                                  <span class="status text-theme" *ngIf="order.order_status=='OS04' && order.delivery_confirmation==1">Order Delivered</span>
+                                  <span class="status text-red" *ngIf="order.order_status=='OS05'">Order Cancelled</span>
+                                  <!-- <span class="status">Confirm</span>
+                                  <span class="status">On the way</span>
+                                  <span class="status">Deliverd</span>
+                                  <span class="status">Cancled</span> -->
+                                
+                                </span>
+                                <div  class="mrgn0">
+                                 
+                                  <button class="btn assent small ml8"  routerLink="/my-account/order-detail" [queryParams]="{'id':order.order_id,'type':order.entry_type}">View Detail </button>
+                                </div>
+                              </div>
+                            </li>
+
+                            </ng-container>
+                        </ul>
+    
+                    </div>
+                </div>
+              
+            <!-- <h1 class="page_name">
+              <div class="leftData">
+ 
+                <span class="Pagename">My Orders</span>
+              </div>
+            </h1>
+    
+            <div class="mainPage">
+              <div class="form_pages">
+                <div class="profileStepsMeter">
+              <div class="myOrderListingPage">
+               
+                <div class="myOrderListingPage">
+                  
+              </div>
+              <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+                <ul class="orderListing" *ngIf="isnodatafound==false">
+                 
+                
+
+                      <ng-container *ngFor="let order of respdata.orders" >
+
+                          <li class="list" *ngIf="order.depend_on=='' || order.depend_on=='Enquiry' " >
+                          <div class="style">
+                              <div class="leftPart">
+                                <span class="orderId">ORDER ID - {{order.order_no}}</span>
+                                <span class="orderTime">{{order.order_date | date:'dd-MM-yyyy'}}, {{order.order_date | date:'hh:mm a'}}</span>
+                                <span class="orderTime" *ngIf="order.delivery_confirmation==0 && respdata.type=='OS04'"> DELIVERY CONFIRMATION PIN : {{order.delivery_pin}}</span>
+                              </div>
+                              <div class="rightPart">
+                                <span class="price">Rs. {{order.net_payble_amount}}</span>
+                                <span class="itemsCount">{{order.total_items}} Items inside</span>
+                              </div>
+                              <div class="orderStatus">
+                                <span class="title blue">Delivery Date :</span>
+                                <span class="data">{{order.delivery_date}},{{order.delivery_time}}</span>
+                              
+        
+                                <a  routerLink="/my-account/order-detail" [queryParams]="{'id':order.order_id,'type':order.entry_type}" href="javascript:void(0)" class="trackBtn">View Details</a>
+                              </div>
+                            </div>
+                          </li>
+                        </ng-container>
+
+         
+                </ul>
+    
+              </div>
+            </div>
+          </div>
+          </div> -->
+          </div>
+        </div>
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer *ngIf="is_show_footer"></app-footer>

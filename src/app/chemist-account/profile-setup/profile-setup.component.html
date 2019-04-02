@@ -1,0 +1,125 @@
+<div class="main_container my_accountPages profile_setip_page retailer_enquiry">
+
+  <app-header></app-header>
+
+
+    <div class="my_accountSetting" >
+      <div class="sending_enquiry_popup" style="display:none" >
+        <div class="enquiry_popup_msg">
+          <div class="sending_msg_gif">
+            <img src="assets/images/error.png">
+    
+          </div>
+          <div class="sending_msg_content">
+    
+            <span style="font-size: 19px;font-weight: bold"> Unable to Fetch your Current Location </span>
+          </div>
+          <ul class="noCartbuttons">
+            <li class="list" (click)="onClosePopup()"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Close</a></li>
+            <!-- <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="Email" href="javascript:void(0)">No,
+                Cancel It</a></li> -->
+          </ul>
+        </div>
+      </div> 
+    
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+          
+
+          <div class="right_pannel" >
+            <div class="pannelSTyle">
+              <h1 class="page_name">
+                <div class="leftData">
+                  <span class="Pagename">Business Setting</span>
+                </div>
+              </h1>
+      
+              <div class="mainPage">
+      
+                <div class="form_pages">  
+                  <div class="profileStepsMeter">
+                    <ul class="meterBar no-border globaltabs orderTabs">
+                  <li class="list" [ngClass]="{'active': this.step == 1}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'1'}" class="link">
+                      <span class="title">Step 1</span>
+                      <span class="data">Business Details</span>
+                    </a>
+                  </li>
+                  <li class="list" [ngClass]="{'active': this.step == 2}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'2'}" class="link">
+                      <span class="title">Step 2</span>
+                      <span class="data">Registration Number</span>
+                    </a>
+                  </li>
+                  <li class="list" [ngClass]="{'active': this.step == 3}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'3'}" class="link">
+                      <span class="title">Step 3</span>
+                      <span class="data">Business Timings</span>
+                    </a>
+                  </li>
+                  <li class="list" [ngClass]="{'active': this.step == 4}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'4'}" class="link">
+                      <span class="title">Step 4</span>
+                      <span class="data">Document Details</span>
+                    </a>
+                  </li>
+                  <!-- <li class="list" [ngClass]="{'active': this.step == 5}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'5'}" class="link">
+                      <span class="title">Step 5</span>
+                      <span class="data">Delivery Details</span>
+                    </a>
+                  </li> -->
+                  <li class="list" [ngClass]="{'active': this.step == 6}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'6'}" class="link">
+                      <span class="title">Step 5</span>
+                      <span class="data">Media Upload</span>
+                    </a>
+                  </li> 
+                  <li class="list" [ngClass]="{'active': this.step == 7}" *ngIf="state.user.user_type_id!='1' && state.user.user_type_id!='2'">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'7'}" class="link">
+                      <span class="title">Step 7</span>
+                      <span class="data">Map Category</span>
+                    </a>
+                  </li>   
+                  <!-- <li class="list" [ngClass]="{'active': this.step == 8}">
+                    <a href="javascript:void(0)" [routerLink]="['/chemist-account/profile-setup']" [queryParams]="{step:'8'}" class="link">
+                      <span class="title">Step 7</span>
+                      <span class="data">Bank Details</span>
+                    </a>
+                  </li>     -->
+                  </ul>
+                  </div>
+
+                  <app-business-details *ngIf="step==1"></app-business-details>
+                  <app-registration-detail  *ngIf="step==2"></app-registration-detail>
+                  <app-business-timings *ngIf="step==3"></app-business-timings>
+                  <app-document-details *ngIf="step==4"></app-document-details>
+                  <app-delivery-details *ngIf="step==5"></app-delivery-details>
+                  <app-social-media *ngIf="step==6"></app-social-media>
+                  <app-map-category *ngIf="step==7"></app-map-category>
+                  <!-- <app-bank-details *ngIf="step==8"></app-bank-details> -->
+                  <!-- <app-social-media></app-social-media> -->
+               
+                  <!-- <app-delivery-details></app-delivery-details>  -->
+                
+                </div>
+      
+              </div>
+      
+            </div>
+          </div>
+ 
+  
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer></app-footer>

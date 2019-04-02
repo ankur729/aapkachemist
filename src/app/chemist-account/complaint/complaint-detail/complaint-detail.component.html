@@ -1,0 +1,187 @@
+<div class="main_container my_accountPages chemist_account_page complaint_detail_page">
+    <div class="review_popup">
+        <div class="designBox">
+          <div class="vAlign">
+            <div class="insideDesign">
+              <div class="heading">
+                <h2>Reply</h2>
+              </div>
+              <div class="fromGroup form_wrapper ">
+              
+                
+                
+                <div class="add_amount  full_w">
+                  <ul class="form_listing full_w">
+                    <li class="form_list  full_w">
+                      <div class="style text_field">
+                        <span class="lable">Your comment here</span>
+                   
+                        <textarea  class="input text_area" value="" [(ngModel)]="complaint.send_message"></textarea>
+                      </div>
+                      
+                    </li>
+                    <li  class="full_w">
+                      <button  class="btn primary medium mr10" (click)="onSubmitReview()">Submit</button>
+                      <button  class="btn secondary medium" (click)="togglePopup()">closed</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <app-header></app-header>
+  
+    <div class="my_accountSetting">
+  
+      <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+  
+      <div class="container">
+        <div class="main_dataPage">
+  
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+          <div class="right_pannel">
+              <div class="pannelSTyle">
+    
+    
+                <div class="account_page_title">
+                  <div class="left_part">
+                    <div class="heading">
+                      <h2>{{complaint.subject | titlecase}}</h2>
+                      <span class="date">{{complaint.complaint_date | date:'dd-MMM-yyyy'}}, {{complaint.complaint_date | date:'hh:mm a'}}</span>
+                    </div>
+                  </div>
+                  <div class="right_part">
+                    <span class="satus" [ngClass]="complaint.complaint_status == 'Closed' ? 'close' : ''">{{complaint.complaint_status}}</span>
+                  </div>
+    
+                </div>
+    
+                <div class="account_content ">
+                  
+                 <div class="complaint_content">
+                    <p class="text">{{complaint.message  }}</p>
+                 </div>
+                 <div class="replied_part">
+                    <ul class="replied_listing">
+                        <li class="replied_list" *ngFor="let message of complaint.messagelist">
+                          <div class="style">
+                              <div class="left_part">
+                                <img src="{{message.profile_image}}" class="profile_pic" *ngIf="message.admin_id ==0">
+                                <img src="assets/images/logo.png" class="profile_pic" *ngIf="message.admin_id !=0">
+                              </div>
+                              <div class="right_part">
+                                <span class="name">{{message.name  | titlecase}}</span>
+                                <span class="date">{{message.date_time |date:'dd-MMM-yyyy'}}, {{message.date_time | date:'hh:mm a'}}</span>
+                                <p class="text">
+                                  {{message.message}}
+                                </p>
+                              </div>
+                          </div>
+                        </li>
+  
+                        <!-- <li class="replied_list">
+                            <div class="style">
+                                <div class="left_part">
+                                  <img src="assets/images/reviewers/user1-.png" class="profile_pic">
+                                </div>
+                                <div class="right_part">
+                                  <span class="name">Gandhi Medicose</span>
+                                  <span class="date">18 March 2019, 15:00</span>
+                                  <p class="text">
+                                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.
+                                  </p>
+                                </div>
+                            </div>
+                          </li> -->
+                    </ul>
+                 </div>
+                <div class="btn_wrapper mt20" *ngIf="complaint.complaint_status=='Open'">
+                  <button class="btn primary large" (click)="togglePopup()">Reply</button>
+                </div>
+  
+                  <!-- <div class="complaint_detail full_w">
+                     <div class="user_section full_w">
+                       <div class="section1">
+                          <div class="left_part">
+                            <div class="thumb">
+                              <img src="assets/images/reviewers/user1-.png">
+                            </div>
+                            <span class="name">Rahul</span>
+                            <span class="date">16, March 2019</span>
+                          </div>
+                          <div class="right_part">
+                              <span class="subject">Status</span> :
+                              <span class="status">Close</span>
+                              
+                          </div>
+                       </div>
+                        <div class="subject full_w">
+                            <span class="title"> Subject </span> :<span class="text">Cancel Request</span>
+                        </div>
+                        <div class="status full_w">
+                            <span class="title"> Status </span> :<span class="text-red">Closed</span>
+                           
+                        </div>
+                        <div class="last_update full_w">
+                            <span class="title"> Last Updated </span> :<span class="text">13 March 2019, 02:00 PM</span>
+                        </div>
+                        
+                        <div class="remarks_wrapper full_w">
+                          <span class="title">Remarks</span>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.</p>
+                        </div>
+                        <div class="documents full_w">
+                            <ul class="documents_listing flax-boxcontainer p-3">
+                                <li class="documents_list fg-gallery">
+                                    <img src="assets/images/products/2.jpg">
+                                </li>
+                                
+                            </ul>
+                        </div>
+                     </div>
+                     
+                     </div>  -->
+                  
+                  <!-- <div class="complaint_detail chem_replied full_w">
+                      <div class="department full_w">
+                        <span class="chem_name">Gandhi Medicos</span>
+                      <div class="last_update full_w">
+                          <span class="title"> Date </span> : <span class="text">13 March 2019, 02:00 PM</span>
+                      </div>
+                      <div class="remarks full_w">
+                         <span class="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span>
+                      </div>
+                      <div class="documents full_w">
+                          <ul class="documents_listing flax-boxcontainer p-3">
+                              <li class="documents_list fg-gallery2">
+                                  <img src="assets/images/products/2.jpg">
+                              </li>
+                              
+                          </ul>
+                      </div>
+                      
+                      <div class="reply full_w mt10">
+                          <button class="btn primary large">Reply</button>
+                      </div>
+  
+                      
+                  </div> 
+                </div> -->
+              </div>
+            </div>
+          </div>
+  
+ 
+  
+            
+        </div>
+      </div>
+  
+    </div>
+  
+  
+  </div>
+  
+  <app-footer></app-footer>

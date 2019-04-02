@@ -1,0 +1,882 @@
+<app-header #child></app-header>
+
+
+<div class="review_popup">
+		<div class="designBox">
+			<div class="vAlign">
+				<div class="insideDesign">
+					<div class="heading">
+						<h2>Write A Review <span class="skip_btn">Skip</span></h2>
+					</div>
+					<div class="fromGroup form_wrapper ">
+					
+            <div class="rating_wrapper">
+              <h2 class="title">Rate Us </h2>
+              <span class="rating"></span>
+              <span class="ratings">
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </span>
+            </div>
+						
+						<div class="add_amount  full_w">
+							<ul class="form_listing full_w">
+								<li class="form_list  full_w">
+									<div class="style text_field">
+										<span class="lable">Your feedback</span>
+               
+                    <textarea  class="input text_area">
+
+                    </textarea>
+                  </div>
+                  
+								</li>
+								<li  class="full_w">
+									<button  class="btn primary medium mr10">Submit</button>
+									<button  class="btn secondary medium">Not Interested</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- <div class="sending_enquiry_popup" *ngIf="status.is_process==true">
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      
+      <img *ngIf="status.is_sent==true" src="assets/images/form_icon.png">
+    </div>
+    <div class="sending_msg_content">
+      
+      <span *ngIf="status.is_sent==true">{{status.sent_txt}}</span>
+    </div>
+    <ul class="noCartbuttons" *ngIf="status.is_sent==true">
+      <li class="list" ><a (click)="onClose('sendprocess','cancel')" class="Download scndry_btn" href="javascript:void(0)">Close</a></li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="sending_enquiry_popup" *ngIf="status.is_confirm_popup==true">
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img src="assets/images/sure.png">
+
+    </div>
+    <div class="sending_msg_content">
+
+      <span>{{status.confirm_txt}}</span>
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list" (click)="onClose('confirmprocess','confirm')"><a _ngcontent-c2="" class="Download primary_btn" href="javascript:void(0)">Yes,
+          Please Add It</a></li>
+      <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="Email scndry_btn" href="javascript:void(0)">No,
+          Cancel It</a></li>
+    </ul>
+  </div>
+</div> -->
+<app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+<div class="chemistDetail_page bodySetting bannerpd">
+
+  <div class="banner_wrapper">
+      <div class="banner_bg"></div>
+  </div>
+
+  <div class="container">
+    <div class="chemist_details">
+
+
+      <!-- <div class="left_section">
+
+         
+
+            
+        <div class="pageSetting">
+          <div class="main_design">
+
+
+
+            <div class="section1">
+
+              <div class="displaySetting">
+
+
+                <div class="leftData">
+                  <div class="chem_name_ratings">
+                  <div class="left_section">
+                 
+                 
+                  <h1 class="companyName">{{respdata.user_data.vendor_shopname }}
+
+
+                
+
+                  </h1>
+                  <span class="companyLocation">{{respdata.user_data.address}}</span>
+                </div>
+                <div class="right_section">
+                    <div class="totalRatingVotes">
+
+                        <span class="rating"><i class="fa fa-star" aria-hidden="true"></i> {{respdata.user_data.vendor_rating}}<span>/5</span></span>
+                        <span class="Totalvotes">{{respdata.user_data.user_total_rating}} Ratings</span>
+    
+                      </div>
+                </div>
+              </div>
+                
+                  <div class="addFav">
+                  
+                    <div class="f-14">{{respdata.user_data.user_type_name  }}</div>
+                 
+                    <button class="primary_btn" id="directenquirybtn" (click)="onAddToDirectEnquiry()"></button>
+                      
+                     
+                    <span *ngIf="state.vendor_id==respdata.business_delivery.user_id">
+                        Added to Direct Enquiry
+                    </span>
+                    <span *ngIf="state.vendor_id!=respdata.business_delivery.user_id">
+                        Add to Direct Enquiry
+                    </span>
+
+
+                   
+                    <div class="Addfav_btn" (click)="addRemoveToFavourites()"><i class="fa fa-heart-o" id="hearticon" aria-hidden="true"></i></div>
+
+                  </div>
+                  
+
+
+
+
+                  
+
+                </div>
+
+
+
+
+
+                <div class="RightData">
+
+                  <div class="list wishlistBtn" (click)="addRemoveToFavourites()">
+                    <div class="style active">
+                      <i class="fa fa-heart-o" *ngIf="respdata.user_data.is_favourite=='0'"></i>
+                      <i class="fa fa-heart" *ngIf="respdata.user_data.is_favourite=='1'"></i>
+
+                     
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+        <div class="pageSetting">
+            <div class="section2">
+                <div class="ChemistAboutUs">
+                  <h3 class="AboutchemHeading"><span>About Chemist</span></h3>
+                  <div class="chem_aboutContent">
+                      <div class="content">
+                        <p *ngIf="respdata.user_data.vendor_summary!=''">{{respdata.user_data.vendor_summary}}</p>
+                        <p *ngIf="respdata.user_data.vendor_summary==''">No description available</p>
+                        
+                      </div>
+  
+                  </div>
+  
+                </div>
+            </div>
+        </div>
+       
+
+        <div class="pageSetting">
+          <div class="section3">
+
+            <div class="chemist_aditionalDetails">
+              <h3 class="detailsHeading"><span>Chemist Details</span></h3>
+              <ul class="chemist_aditionalDetailsList">
+                <li class="DetailsList">
+                  <h2 class="DetailsListheading">Phone number</h2>
+                  <span class="chem chem-tel">
+                    <span class="tel">+91 {{respdata.user_data.vendor_mobile}}</span>
+                    <span class="descrb">
+                      Order Your Medicines
+                    </span>
+                  </span>
+                </li>
+
+                <li class="DetailsList" *ngIf="respdata.user_data.whatsapp_no !=''">
+                    <h2 class="DetailsListheading">Whatsapp number</h2>
+                    <span class="chem chem-tel">
+                      <span class="tel">+91 {{respdata.user_data.whatsapp_no}}</span>
+                    
+                    </span>
+                  </li>
+
+                  <li class="DetailsList" *ngIf="respdata.user_data.whatsapp_no !=''">
+                      <h2 class="DetailsListheading">Landline number</h2>
+                      <span class="chem chem-tel">
+                        <span class="tel">{{respdata.user_data.landline}}</span>
+                       
+                      </span>
+                    </li>
+  
+                <li class="DetailsList">
+                  <h2 class="DetailsListheading">Email Address</h2>
+                  <span class="chem chem-mail">
+                    <span class="descrb">{{respdata.user_data.vendor_email}}</span>
+
+                  </span>
+                </li>
+              </ul>
+
+              <ul class="chemist_aditionalDetailsList">
+                <li class="DetailsList">
+                  <h2 class="DetailsListheading">Opening Hours  </h2>
+                  <span class="chem chem-opoening_hours">
+                     <div class="descrb" *ngFor="let time of respdata.business_timing;let i=index">
+                       
+                     <span *ngIf="i==respdata.current_day_no"> Today&nbsp;&nbsp;
+                       
+                     
+                      <span *ngIf="time.open_close_status==1">Open</span>
+                      <span *ngIf="time.open_close_status==0">Closed</span>
+                    </span>
+                    
+                    </div>  
+                    <span class="descrb see_morebtn" *ngIf="respdata.business_timing.length==0">
+                      
+                      Timings not available
+
+                    </span>
+                    <span class="descrb see_morebtn" *ngIf="respdata.business_timing.length>0">
+                      See More
+
+                   
+
+                      <div class="opening_ours_chart">
+
+                        <table style="border:0">
+                          <tbody>
+
+                            <ng-container *ngFor="let timing of respdata.business_timing ">
+                              <tr class="" [ngClass]="timing.istoday=='1'?'OpningTiimeBold':''">
+                                <td class="pr10">{{timing.day}}</td>
+                                <td class="pl10" *ngIf="timing.open_close_status=='1'"> {{
+                                  tConv24(respdata.business_delivery.open_time) }} to {{
+                                  tConv24(respdata.business_delivery.close_time) }}</td>
+                                <td class="pl10" *ngIf="timing.open_close_status=='0'"> Closed</td>
+                              </tr>
+                            </ng-container>
+                          </tbody>
+
+                        </table>
+                      </div>
+                    </span>
+                  </span>
+                </li>
+
+
+
+
+              </ul>
+
+              <ul class="chemist_aditionalDetailsList">
+                <li class="DetailsList">
+                  <h2 class="DetailsListheading"> Address</h2>
+                  <span class="chem chem-address">
+                    <span class="descrb">
+                      {{respdata.user_data.address}}
+                    </span>
+                    <span class="chemist_location"></span>
+                  </span>
+                </li>
+
+
+              </ul>
+
+            </div>
+
+
+
+            <div class="chemist_socialMedia_contact" *ngIf="respdata.social_data.facebook_url!='' || respdata.social_data.twitter_url !='' || respdata.social_data.linkedin_url !='' || respdata.social_data.instagram_url!=''">
+              <h3 class="socialHeading"><span>Follow</span></h3>
+              <ul class="socialLinks">
+                <li class="socialList"><a href="{{respdata.social_data.facebook_url}}" target="_blank" *ngIf="respdata.social_data.facebook_url!=''" class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="socialList"><a href="{{respdata.social_data.twitter_url}}" target="_blank" *ngIf="respdata.social_data.twitter_url!=''" class="twitt"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="socialList"><a href="{{respdata.social_data.linkedin_url}}" target="_blank" *ngIf="respdata.social_data.linkedin_url!=''" class="linkd"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li class="socialList"><a href="{{respdata.social_data.instagram_url}}" target="_blank" *ngIf="respdata.social_data.instagram_url!=''"   class="insta"><i class="fa fa-instagram"
+                      aria-hidden="true"></i></a></li>
+               
+              </ul>
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+        <div class="pageSetting" *ngIf="respdata.gallery_img.length>0">
+          <div class="section4">
+            <h3 class="galleryHeading"><span>Photos</span></h3>
+            <div class="chemistGallery_section">
+             
+              <div class="flax-boxcontainer p-3" >
+
+                <div class="fg-gallery" *ngIf="respdata.gallery_img.length>0">
+                    <img src="{{image.image_large_path}}" alt="" *ngFor="let image of respdata.gallery_img">
+                   
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pageSetting Review">
+            <div class="section5"> 
+                <div class="chemistReviews"> 
+                    <h3 class="reviewHeading"><span>Reviews</span></h3> 
+                    <div class="total_reviews" *ngIf="respdata.review_data.length==0">
+                     
+                      <span class="totl_reviws_description">No review available</span>
+                  </div>
+                    <div class="total_reviews" *ngIf="respdata.review_data.length>0">
+                      <div class="reviewers_pictures">
+                          <ul>
+                                <li class="reviewers_pictures_list"><img src="assets/images/reviewers/user1.png"></li>
+                                <li class="reviewers_pictures_list"><img src="assets/images/reviewers/user2.png"></li>
+                                <li class="reviewers_pictures_list"><img src="assets/images/reviewers/user3.png"></li>
+                          </ul>
+                      </div>  
+                      <span class="totl_reviws_description">{{respdata.review_data.length}} people have reviewed this place</span>
+                  </div>
+                </div> 
+            </div> 
+  
+            <div class="reviews_wrapper" *ngFor="let review of respdata.review_data">
+                <div class="reviewer_detail_wrapper">
+                    <div class="reviewerPic">
+                        <img src="assets/images/reviewers/user2.png">
+                       
+                    </div>
+                    <div class="reviewername">
+                        <span class="name">{{review.customer_name}}</span>
+                    </div>
+                    
+                  </div>
+                  <div class="reviewTime">
+                     
+                      <span>{{review.review_date | date:'dd-MM-yyyy'}}</span>
+                  </div>
+                    <div class="review_content">
+                       <p>{{review.message}}</p>
+                       
+                    </div>
+                
+            </div>
+   
+  
+        </div> 
+ 
+      </div> -->
+
+      <div class="left_section">
+          <div class="chem_dtails_wrapper">
+              <div class="section_1 section">
+                <div class="chem_discount_name_wrapper">
+                <div class="left_part">
+
+                
+                  <div class="breadCrumbs_wrapper full_w">
+                      <ul class="breadCrubs">
+                        <li class="list">
+                          <a class="link" href="/home" routerlink="/home" ng-reflect-router-link="/home">Home</a>
+                          <i  aria-hidden="true" class="fa fa-angle-right"></i>
+                        </li>
+                          <li class="list"><a class="link" href="javascript:void(0)"><span class="current">Chemist Listing</span></a>
+                            <i  aria-hidden="true" class="fa fa-angle-right"></i>
+                          </li>
+                          <li class="list"><span _ngcontent-c8="" class="current">Chemist Details</span></li>
+                        </ul>
+                  </div>
+
+                  <div class="chemName_discount full_w">
+                      <h1  class="chemName">{{respdata.user_data.vendor_shopname }}</h1>
+                    <span class="chemDiscount"> 0% Discount</span>
+                  </div>
+
+                  <div class="chem_add full_w">
+                      <span>{{respdata.user_data.address}}</span>
+                  </div>
+
+
+                </div>
+
+                <div class="right_part">
+                    <div class="premiumChem" *ngIf="respdata.user_data.prime_status == '1'">
+                        <img src="assets/images/icon/premium.png">
+                    </div>
+                </div>
+              </div>
+              <div class="chemRating full_w">
+                  <div class="left_part">
+                    <div class="full_w">
+                      <div class="rating-wrapper">
+                          <div class="chem_rating">
+                              <span>{{respdata.user_data.vendor_rating}}</span>
+                          </div>
+
+                          <div class="chemdistance_open">
+                              <span class="distance">
+                                
+                               {{respdata.user_data.vendor_distance | number : '1.2-2'}}
+                                
+                             
+                                km Away</span>
+                                <ng-container *ngIf="respdata.business_timing.length>0">
+                                    <ng-container *ngFor="let timing of respdata.business_timing ">
+
+                                        <ng-container *ngIf="timing.istoday=='1'">
+                              <span class="shop_status">
+                                
+                                Open
+                                
+                                <span class="timing" *ngIf="respdata.business_delivery.open_time!=''">
+                                    {{
+                                      tConv24(respdata.business_delivery.open_time) }} to {{
+                                      tConv24(respdata.business_delivery.close_time) }}
+                                </span>
+                              
+                              </span>
+                            </ng-container>
+                          </ng-container>
+                              </ng-container>
+                          </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="right_part">
+                      <div class="loca_trusted_wrapper">
+                          <span class="chem_loc">{{respdata.user_data.area}}</span>
+                          <div class="vender_type">
+
+                          <span class="apc_trusted" *ngIf="respdata.user_data.trusted_status == '1'"><img src="assets/images/icon/apc_trusted.png"> APC Trusted</span> 
+                          <span>{{respdata.user_data.user_type_name  }}</span>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="section_2 section">
+                <div class="detailsHeading">
+                    <h2>Chemist Details</h2>
+                </div>
+
+                <ul class="chemist_aditionalDetailsList">
+                    <li class="DetailsList">
+                        <h2  class="DetailsListheading">Phone number</h2>
+                        <span class="chem chem-tel">
+                          <a  href="tel:+91 {{respdata.user_data.vendor_mobile}}"> <span  class="tel">+91 {{respdata.user_data.vendor_mobile}}</span> </a>
+                          
+                        </span>
+                    </li>
+                    <li class="DetailsList" *ngIf="respdata.user_data.whatsapp_no !=''">
+                        <h2  class="DetailsListheading">Whatsapp number</h2>
+                        <span class="chem chem-tel">
+                          <a  href="tel:+91 {{respdata.user_data.whatsapp_no}}"> <span  class="tel">+91 {{respdata.user_data.whatsapp_no}}</span> </a>
+                          
+                        </span>
+                    </li>
+                    <li class="DetailsList" *ngIf="respdata.user_data.whatsapp_no !=''">
+                        <h2  class="DetailsListheading">Landline number</h2>
+                        <span class="chem chem-tel">
+                          <a  href="tel:{{respdata.user_data.landline}}"> <span  class="tel">{{respdata.user_data.landline}}</span> </a>
+                          
+                        </span>
+                    </li>
+                    <li class="DetailsList">
+                        <h2  class="DetailsListheading">Opening Hours </h2>
+                        <span class="chem chem-open">
+                            <span class="descrb see_morebtn"   *ngIf="respdata.business_timing.length==0">
+                      
+                                Timings not available
+          
+                              </span>
+                            <ng-container *ngIf="respdata.business_timing.length>0">
+                          <ng-container *ngFor="let timing of respdata.business_timing ">
+
+                            <ng-container *ngIf="timing.istoday=='1'">
+                                <span class="open_status">Open</span> <span>
+                                    {{
+                                      tConv24(respdata.business_delivery.open_time) }} to {{
+                                      tConv24(respdata.business_delivery.close_time) }}
+                                </span> 
+                            </ng-container>
+
+                          </ng-container>
+                         
+                           
+                           <span><img src="assets/images/icon/errow_down.png"></span>
+                           <div class="opening_ours_chart">
+
+                              <table style="border:0">
+                                <tbody>
+      
+                                 
+                                
+                                      <tr class=""  *ngFor="let timing of respdata.business_timing ">
+                                        <td class="pr10">{{timing.day}}</td>
+                                        <td class="pl10" *ngIf="timing.open_close_status=='1'"> 
+                                          
+                                            {{
+                                              tConv24(respdata.business_delivery.open_time) }} to {{
+                                              tConv24(respdata.business_delivery.close_time) }}
+                                        </td>
+                                        <td class="pl10" *ngIf="timing.open_close_status=='0'"> Closed</td>
+                                        <td class="pl10" *ngIf="timing.open_close_status=='1'"> Open</td>
+                                      </tr>
+                                      <!-- <tr class="" >
+                                          <td class="pr10">sunday</td>
+                                          <td class="pl10">  12 AM to 12 AM</td>
+                                          <td class="pl10"> Closed</td>
+                                        </tr>
+                                        <tr class="OpningTiimeBold" >
+                                            <td class="pr10">sunday</td>
+                                            <td class="pl10">  12 AM to 12 AM</td>
+                                            <td class="pl10"> Closed</td>
+                                          </tr>
+                                          <tr class="" >
+                                              <td class="pr10">sunday</td>
+                                              <td class="pl10">  12 AM to 12 AM</td>
+                                              <td class="pl10"> Closed</td>
+                                            </tr>
+                                            <tr class="" >
+                                                <td class="pr10">sunday</td>
+                                                <td class="pl10">  12 AM to 12 AM</td>
+                                                <td class="pl10"> Closed</td>
+                                              </tr>
+                                              <tr class="" >
+                                                  <td class="pr10">sunday</td>
+                                                  <td class="pl10">  12 AM to 12 AM</td>
+                                                  <td class="pl10"> Closed</td>
+                                                </tr>
+                                                <tr class="" >
+                                                    <td class="pr10">sunday</td>
+                                                    <td class="pl10">  12 AM to 12 AM</td>
+                                                    <td class="pl10"> Closed</td>
+                                                  </tr> -->
+
+                                   
+                                </tbody>
+      
+                              </table>
+                            </div>
+                          </ng-container>
+                        </span>
+                    </li>
+                    <li class="DetailsList">
+                        <h2  class="DetailsListheading">Email Address</h2>
+                        <span class="chem chem-email"> {{respdata.user_data.vendor_email}}</span>
+                    </li>
+
+                    <li class="DetailsList full">
+                        <h2  class="DetailsListheading"> Address</h2>
+                        <span class="chem chem-add">
+                            <span _ngcontent-c6="" class="descrb">  {{respdata.user_data.address}}</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section_3 section">
+                <div class="detailsHeading"> <h2>About Chemist</h2></div>
+
+                <div class="text_part">
+                    <p  *ngIf="respdata.user_data.vendor_summary!=''">{{respdata.user_data.vendor_summary}} </p>
+                    <p *ngIf="respdata.user_data.vendor_summary==''">No description available</p>
+                </div>
+            </div>
+            
+            <div class="section_4 section"  *ngIf="respdata.gallery_img.length>0">
+                <div class="detailsHeading"> <h2>Gallery</h2></div>
+                    
+                      <div class="chemistGallery_section">
+                       
+                        <div class="flax-boxcontainer p-3" >
+          
+                          <div class="fg-gallery" *ngIf="respdata.gallery_img.length>0">
+                              <img src="{{image.image_large_path}}" alt="" *ngFor="let image of respdata.gallery_img">
+                          </div>
+                         
+                        </div>
+                      </div>
+            </div>
+            <div class="pageSetting Review" *ngIf="respdata.review_data.length>0">
+                <div class="section5"> 
+                    <div class="chemistReviews"> 
+                        <h3 class="reviewHeading"><span>Reviews</span></h3> 
+                        <div class="total_reviews" >
+                         
+                          
+                      </div>
+                        <div class="total_reviews" >
+                          <div class="reviewers_pictures">
+                              <ul>
+                                    <li class="reviewers_pictures_list"><img src="assets/images/reviewers/user1.png"></li>
+                                    <li class="reviewers_pictures_list"><img src="assets/images/reviewers/user2.png"></li>
+                                    <li class="reviewers_pictures_list"><img src="assets/images/reviewers/user3.png"></li>
+                              </ul>
+                          </div>  
+                          <span class="totl_reviws_description">{{respdata.user_data.user_total_rating}} people have reviewed</span>
+                      </div>
+                    </div> 
+                </div> 
+      
+                <div class="reviews_wrapper" *ngFor="let review of respdata.review_data" >
+                    <div class="reviewer_detail_wrapper">
+                        <div class="reviewerPic">
+                            <img src="{{review.profile_image}}">
+                           
+                        </div>
+                        <div class="reviewername">
+                            <span class="name">{{review.user_name}}</span>
+                            <span class="ratings" *ngIf="review.rating ==1">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                            <span class="ratings" *ngIf="review.rating ==2">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                            <span class="ratings" *ngIf="review.rating ==3">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                            <span class="ratings" *ngIf="review.rating ==4">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                            <span class="ratings" *ngIf="review.rating ==5">
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+
+                        </div>
+                        
+                      </div>
+                      <div class="reviewTime">
+                          <!-- <span>2 Days Ago</span> -->
+                          <span> {{review.datetime |date:'dd-MMM-yyyy'}}</span>
+                      </div>
+                        <div class="review_content">
+                           <p>{{review.message}} </p>
+                           
+                        </div>
+                    
+                </div>
+                <div class="btn_wrapper" id="viewmorebtn">
+                  <button class="btn assent medium"  (click)="incrementReviewCounter()" *ngIf="respdata.user_data.user_total_rating>5" > View More Review</button>
+                </div>
+            
+                <!-- <div class="reviews_wrapper" >
+                    <div class="reviewer_detail_wrapper">
+                        <div class="reviewerPic">
+                            <img src="assets/images/reviewers/user2.png">
+                           
+                        </div>
+                        <div class="reviewername">
+                            <span class="name">Rahul</span>
+                            <span class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                              </span>
+                        </div>
+                        
+                      </div>
+                      <div class="reviewTime">
+                        
+                          <span>9 march 2019</span>
+                          
+                      </div>
+                        <div class="review_content">
+                           <p>Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test </p>
+                           
+                        </div>
+                    
+                </div>
+
+                <div class="reviews_wrapper" >
+                    <div class="reviewer_detail_wrapper">
+                        <div class="reviewerPic">
+                            <img src="assets/images/reviewers/user2.png">
+                           
+                        </div>
+                        <div class="reviewername">
+                            <span class="name">Rahul</span>
+                            <span class="ratings">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                              </span>
+                        </div>
+                        
+                      </div>
+                      <div class="reviewTime">
+                           
+                          <span>1 march 2019</span>
+                      </div>
+                        <div class="review_content">
+                           <p>Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test </p>
+                           
+                        </div>
+                    
+                </div> -->
+                <!-- <div class="btn_wrapper">
+                    <button class="btn primary large">Add your Review</button>
+                </div>
+       -->
+            </div> 
+          </div>
+      </div>
+
+
+      <div class="right_section">
+          <div class="section_1">
+            <div class="chemName_wrapper">
+
+            
+              <div class="left_part">
+                  <h2 class="chem_name">{{respdata.user_data.vendor_shopname }}</h2>
+                  <span class="chem_loc">{{respdata.user_data.area}}</span>
+              </div>  
+              <div class="right_part">
+                  <button class=" btn secondary"  (click)="addRemoveToFavourites()">
+                    <i  aria-hidden="true" class="fa" id="hearticon" [ngClass]="respdata.user_data.is_favourite == '1' ? 'fa-heart' : 'fa-heart-o'"></i>
+                  
+                  </button>
+                  
+              </div>
+            </div>
+              <div class="chem_enquiry_wrapper">
+                  <button class="btn primary large full_w" id="directenquirybtn" (click)="onAddToDirectEnquiry()" *ngIf="respdata.user_data.direct_access_enquiry==1">Add to Direct Order</button>
+              </div>
+           
+          </div>
+
+          <!-- <div class="section_2">
+            <div class="chem_order_title">
+                <h2>Your Order </h2>
+            </div>
+              
+
+              <ul class="chem_order_listing">
+                  <li class="list">
+                      <div class="qty_wrappe">
+                          <div class="qtyController">
+                              <div class="plus" ><img src="assets/images/icon/qty_plus.png" alt=""></div>
+                              <div class="qty">
+                             
+                              <input type="text" name="" value="1" readonly>
+                              
+                              </div>
+                              <div class="minus" ><img src="assets/images/icon/qty_minus.png" alt=""></div>
+                            </div>
+                      </div>
+                      <div class="med_name">
+                            <span class=name>TESTOFIL 1000</span>
+                            <span class="med_qty">VIAL of 1 INJECTION</span>
+                            <span class="med_company">ZYDUS CADILA</span>
+                      </div>
+                      <div class="total_price">
+                          <button class="btn secondary">
+                              <img src="assets/images/icon/close_icon.png" alt="">
+                          </button>
+                          <div class="price">
+                              <span>Rs. 612.00</span>
+                          </div>
+                      </div>
+
+                  </li>
+                  <li class="list">
+                      <div class="qty_wrappe">
+                          <div class="qtyController">
+                              <div class="plus" ><img src="assets/images/icon/qty_plus.png" alt=""></div>
+                              <div class="qty">
+                             
+                              <input type="text" name="" value="1" readonly>
+                              
+                              </div>
+                              <div class="minus" ><img src="assets/images/icon/qty_minus.png" alt=""></div>
+                            </div>
+                      </div>
+                      <div class="med_name">
+                            <span class=name>TESTOFIL 1000</span>
+                            <span class="med_qty">VIAL of 1 INJECTION</span>
+                            <span class="med_company">ZYDUS CADILA</span>
+                      </div>
+                      <div class="total_price">
+                          <button class="btn secondary">
+                              <img src="assets/images/icon/close_icon.png" alt="">
+                          </button>
+                          <div class="price">
+                              <span>Rs. 612.00</span>
+                          </div>
+                      </div>
+
+                  </li>
+              </ul>
+          </div> -->
+      </div>
+
+     
+
+    </div>
+
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

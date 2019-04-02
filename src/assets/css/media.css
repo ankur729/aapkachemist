@@ -1,0 +1,1361 @@
+.mobile_fixed {display: inline-block;vertical-align: middle;}
+
+.my_accountSetting .DeliverySetupProfile.bussiness_maping .mapKeywordList .list .filterdata{font-size:12px; }
+/* .my_accountSetting .DeliverySetupProfile.bussiness_maping .mapKeywordList .list {display: inline-block; vertical-align: middle; float: none; width: auto; margin-right: 20px;} */
+.my_accountSetting .DeliverySetupProfile.bussiness_maping .mapKeywordList .list{margin-right: 20px; width: 33.3%;float: left;display: block; margin: 0;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .mapKeywordList     {float: left; width: 100%; max-height: 300px; overflow-y: auto;}
+
+@media screen and (max-width: 1349px){
+.index-header { background-size: auto;}
+}
+
+
+@media screen and (max-width: 1200px){
+app-home .navigation_wrapper .menus .owl-controls {position: initial;     width: 100%;
+    float: left;}
+app-home .navigation_wrapper .menus .owl-controls .owl-prev {position: absolute; left: 0px;}
+app-home .navigation_wrapper .menus .owl-controls .owl-buttons div {margin-top: -45px!important;}
+app-home .navigation_wrapper .menus .owl-controls .owl-next {position: absolute; right: 0px;}
+}
+
+
+
+
+@media screen and (max-width: 1150px){
+    .container {padding: 0px 15px;}
+    header .topHeader .rightPart .Quiclinks .list {margin-left: 10px;}
+    .chemist_listing .chamList .view_detls_wrapr .primary_btn {padding: 10px 5px;}
+    .chemist_listing .chamList .list_overlay {height: 50px;}
+    .chemist_listing .chamList {padding: 0px 2px; margin-bottom: 10px;}
+    .home_Page .section_1 .rightstructure .chemist_listing {padding: 10px 5px;}
+    .chemist_listing .chamList .list_overlay .view_detls_wrapr {padding: 0px 2px;}
+    .chemist_listing .chamList .list_overlay {padding: 0px 2px;}
+  
+    .download_section .mobile_slider {display: none;}
+    .download_section {text-align: center;} 
+
+    .chemistDetail_page .section1 {padding: 10px 20px;} 
+    .chemistDetail_page .section2 .seaTabs .seaTabs_content {padding: 10px 20px; padding-top: 0px;} 
+    .chemistDetail_page .section2 .seaTabs .seaTabs_switch {padding: 10px 20px; padding-bottom: 0px;} 
+    .chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab {margin-left: 2px;} 
+    .chemistDetail_page .PaymentListing {padding: 0px 20px;} 
+
+    /*----*/
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list .inputForm .label .input_box{width:100%;}
+    /* .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list{width:50%; padding-right: 5px;} */
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list .inputForm .label {width: 100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list .inputForm .label .select_option {width: 100%; max-width: 100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .rangerGroups .list {width: 100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .payment_mode_select .list {margin-bottom: 15px;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .socialMeidaEnter .list {width: 33.3%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .socialMeidaEnter .list .right_Data .socialmedia_url {width: 100%; float: left; position: relative; padding-left: 35px;padding-right: 10px;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .socialMeidaEnter .list .right_Data .social_icon_wrapper {width: 40px; height: 40px; position: absolute; left: 0px; }
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .socialMeidaEnter .list .right_Data .input_box {width: 100%; height: 40px;}
+
+    .registrationLicenceList .list {width: 48%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list {width: 50%;}
+    .my_accountPages.chemistaccount_address_page .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style {border-radius: 0px;}
+    /*--25-12-2018--*/
+    .my_accountPages.add_address_page .right_pannel .mainPage .form_pages .add_address .fromGroup .list .inputForm .label .input_box {width: 100%;}
+    .my_accountPages.add_address_page .right_pannel .mainPage .form_pages .add_address .fromGroup .list .inputForm .label {width: 100%;}
+    .my_accountPages.add_address_page .right_pannel .mainPage .form_pages .add_address .fromGroup .list {padding: 0px 3px;}
+    
+    .my_accountPages.add_member_page .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list {width: 100%;}
+    .my_accountPages.add_member_page  .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list .inputForm .label .select_option{width: 250px; max-width: 100%;}
+
+    /*--2-1-2019--*/
+    
+    
+
+    /*5-1-2019*/
+    
+
+    app-header .navigation_wrapper .menus .owl-controls{display:block !important;}
+
+    /*--12-1-2019--*/
+    /* header .topHeader .leftPart .promotionContent .desktop_top{display:none;} */
+    footer .socialMeida .listfooter .socialMeida{}
+    footer .socialMeida{padding: 0;}
+    .chemistDetail_page .section1 .displaySetting .leftData .totalRatingVotes{right: 0px;}
+    .chemistDetail_page .section1 .displaySetting .leftData .rating{    padding: 8px 15px;font-size: 16px;}
+    .chemistDetail_page .section1 .displaySetting .leftData .rating i{    font-size: 12px;}
+    .chemistDetail_page .addFav .Addfav_btn{    right: 10px;}
+    .chemistDetail_page .section1 .displaySetting .leftData{    padding-left: 0px;}
+    /*--12-1-2019--*/
+
+    .about_padding{padding-left: 20px;padding-right: 20px;text-align: center;}
+    .about_page .health_for_all{min-height: 550px;}
+
+    /*--24-1-2019--*/
+    .chem_offers .chemiOffers{    padding: 20px 10px;}
+    .my_accountPages.chem_offers .main_dataPage .right_pannel .page_name{padding: 20px 10px 0px;}
+    .chem_offers .chemiOffers .list .style .offer_img-wrapper{    padding-right: 10px;}
+    .chem_offers .chemiOffers .list .style .offer_img-wrapper img{    width: 100%;}
+    .chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_dealHeading{    font-size: 11px;}
+    .chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_proce{    font-size: 11px;}
+    .chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper{   width: auto; padding: 3px 5px;    max-width: initial;min-height:auto;}
+    /*--24-1-2019--*/
+
+    .categoryPage .categoryBanner .pageTitle{    padding-top: 0;}
+}
+
+@media screen and (max-width: 1100px){
+    header .topHeader .leftPart .app_link .list:last-child {display: none;}
+    footer .socialMeida .list{    margin: 0 1px;}
+    .no_itemFOundPage .graphicPart .image .contentPart{left: 40%;    top: 80px;}
+    .categoryPage .categoryBanner{z-index: -1;}
+
+/*--30-1-2019--1*/
+header .topHeader .leftPart .icon img{    height: 20px;width: 20px;}
+header .topHeader .leftPart .promotionContent{    padding-left: 5px;  font-size: 12px;}
+header .topHeader .leftPart .promotionContent .primary_btn.fill_yellow{padding: 2px 10px;}
+header .topHeader .leftPart .promotionContent .primary_btn.fill_yellow{font-size: 11px;}
+header .topHeader .leftPart .app_link .list.download_applink{    padding-left: 5px;}
+header .topHeader .help_center .list.call_ a{font-size: 12px;    line-height: initial;}
+header .topHeader .help_center .list{    margin-left: 10px;}
+header .topHeader .help_center .list a{line-height: initial;}
+
+
+/*--30-1-2019--1*/
+}
+
+
+
+@media screen and (max-width: 980px){
+    header .topHeader .leftPart .promotionContent .desktop_top {display: none;}
+    header .topHeader .leftPart .icon {display: none;}
+    .chemist_listing .chamList {width: 100%;}
+    .Chemistlisting_Page .chemist_listing .chamList {width: 50%;}
+    .home_Page .section_2 .MedicinTypeList .list .style .title {font-size: 16px;}
+   
+    .chemistDetail_page .fullBanner {display: none;}
+    /* .chemistDetail_page .section1 .displaySetting .leftData {padding-right: 0px; width: 100%; display: block; float: left; margin-top: 285px;} */
+    /* .chemistDetail_page .section1 .displaySetting .RightData {width: 100%; display: block; float: left; position: absolute; background: #fff;} */
+    .chemistDetail_page .section1 .companyLocation {margin-bottom: 20px;}
+    .chemistDetail_page .section1 .displaySetting {position: relative;}
+    .chemistDetail_page .section1 .displaySetting .RightData .wishlistBtn {background: #fff;top: 10px;right: 10px;}
+    .home_Page .medCatListing .list .style .insideDesign .text {font-size: 12px;}
+    .home_Page .medCatListing .list .style {height: 150px;}
+    .categoryPage.home_Page .medCatListing {padding: 0px 0px;}
+    .home_Page .medCatListing .list {width: 20%;}
+  
+ 
+    .loginPopups .designBox .innerDesign .left_data .content_part {padding-left: 20px;}
+    .loginPopups .designBox .innerDesign .left_data .social_media {padding-left: 20px;}
+    .loginPopups .designBox .innerDesign .left_data .social_media .list .link {width: 50px; line-height: 46px; font-size: 18px; height: 50px;}
+
+    /*----*/
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list .text_area, .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list .writeUP{width:100%;}
+    .my_accountPages.chemist-stock-enquiry .main_dataPage .right_pannel .mainPage .orderDetailPage .section {min-width: 100%;}
+
+    .cart_Page .tableDesign .leftDesign{    display: block; float: left;width: 100%; margin-bottom: 20px;    background: #fff;}
+    .cart_Page .tableDesign .right_design{display: block;float:left;}
+
+    /*--12-1-2019--*/
+    /* header .topHeader .leftPart .promotionContent{display:none;} */
+    .cart_Page .pageSetting{background:none;}
+    .dashboard_Widgets .list{    width: 33.3%;}
+    /*--12-1-2019--*/
+    .about_page .left_started{width:25%;}
+    .about_page .right_started{width: 75%;}
+    
+/*--15-jan-2019--*/
+.my_accountSetting .no_itemFOundPage .graphicPart .image .contentPart{    top: 65px;}
+.no_itemFOundPage .graphicPart .image .contentPart .text .big{    font-size: 26px;}
+/*--15-jan-2019--*/
+
+/*--19-1-2019--*/
+
+footer .socialMeida .list{min-height:initial;}
+footer .sectionLinks .list:last-child{min-height:initial;}
+footer .logo img{float: left;}
+footer .socialMeida{text-align: left;}
+.chem_offers .chemiOffers{padding: 20px 10px;}
+.my_accountPages.chem_offers .main_dataPage .right_pannel .page_name{padding: 20px 10px 0px}
+
+/*--19-1-2019--*/
+
+/*--22-1-2019--*/
+.chem_offers .chemiOffers .list .style .offer_img-wrapper{    padding-right: 10px;}
+.chem_offers .chemiOffers .list .style .offer_img-wrapper img{width: 100%;}
+/*--22-1-2019--*/
+
+/*--23-1-1-2019--*/
+.chem_offers .chemiOffers .list .style .offers_details{    float: left;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry{    float: right;}
+/*--23-1-1-2019--*/
+
+/*--24-1-2019--*/
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper .offer_name{    font-size: 14px;}
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper .offer_discount{font-size: 11px;    padding: 1px 5px;}
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper{    margin-bottom: 0;}
+.chem_offers .chemiOffers .list .style .offers_details .offer_end span:nth-child(1), .chem_offers .chemiOffers .list .style .offers_details .offer_end span{font-size: 12px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .offer_prive_saving:nth-child(1){    margin-bottom: 0;}
+.chem_offers .chemiOffers .list .style .offer_discription span{    font-size: 13px;}
+.chem_offers .chemiOffers .list .style .offer_discription p{    font-size: 12px;}
+.chem_offers .offer_details_wrapper .offer_section3{    padding: 10px 10px;}
+.chem_offers .offer_details_wrapper .offer_section3 .primary_btn{    FONT-SIZE: 11px;    padding: 0 5px;}
+/*--24-1-2019--*/
+
+/*contact*/
+
+
+/*contact*/
+
+}
+@media screen and (max-width: 890px){
+    .my_accountPages .section{min-width: auto;}
+
+
+
+
+
+.loginPopups .designBox .innerDesign .left_data .content_part .data .mainHead {margin-bottom: 0px;}
+.loginPopups .designBox .innerDesign .left_data .content_part .data .mainHead br {display: none;}
+.loginPopups .designBox .innerDesign .left_data .content_part .data .text {width: 100%;}
+.loginPopups .designBox .innerDesign .left_data .buttons {width: 100%; float: left;position: relative;top: 9px;}
+.loginPopups .designBox .innerDesign .left_data .buttons .list {float: left;}
+.loginPopups .designBox .innerDesign .left_data .content_part {padding-left: 0px;}
+.loginPopups .designBox .innerDesign .left_data .inside_data {padding-left: 20px;}
+.loginPopups .designBox .innerDesign .left_data .buttons .btns {text-align: center; padding: 10px 20px;}
+.loginPopups .designBox .innerDesign .left_data .close_popup {right: 10px;top: 10px; z-index: 2;}
+
+.loginPopups .designBox .innerDesign .right_data .select_option {position: absolute; top: 10px;right: 0px;}
+.loginPopups .designBox .innerDesign .right_data .login_steps {position: relative;}
+
+.loginPopups .designBox .innerDesign .insideBox {height: auto;}
+.loginPopups .designBox .innerDesign .right_data .forms_div {margin-bottom: 20px;}
+
+
+.registrationLicenceList .list {width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .rightPart {width: 90px;}
+
+/*-----*/
+
+/*--25-12-2018--*/
+.my_accountPages.user_account_page .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list{width:50%;}
+
+/*--29-12-2018--*/
+.cart_Page .tableDesign{    display: block;}
+/*5-1-2019*/
+
+
+
+
+/*6-1-2019*/
+.loginPopups .designBox .innerDesign .left_data .buttons .btns.active{border-radius: 5px 5px 0px 0px;}
+
+/*--12-1-2019--1*/
+
+.cart_Page .stepPage_1 .TimeSlot .list{margin: 5px 0;}
+/*--12-1-2019--1*/
+
+/*--19-1-2019--*/
+.my_accountPages.search_distributor_page  .main_dataPage .right_pannel .page_name{    padding: 20px 10px 0px;}
+.search_distributor_page .right_pannel .searchBy_wrapper{    padding: 5px 10px;}
+.search_distributor_page .right_pannel .pannelSTyle .mainPage{    padding: 20px 10px;}
+
+/*--19-1-2019--*/
+
+/*--22-1-2019--*/
+.Chemistlisting_Page .chemist_listing .chamList{width:50%;}
+/*--22-1-2019--*/
+/*--23-1-2019--*/
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn .scndry_btn{      margin-left: 5px;padding: 10px;font-size: 11px;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn .enqry_btn{    padding: 10px;font-size: 11px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_proce{font-size: 14px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_dealHeading{    font-size: 13px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper{    max-width: 95px;}
+.chem_offers .chemiOffers .list .style .offers_details{    width: 65%;}
+/*--23-1-2019--*/
+
+/*--24-1-2019--*/
+/* .chem_offers .chemiOffers .list .style .offer_img-wrapper{width: 100%;} */
+.chem_offers .chemiOffers .list .style .offers_details{    width: 100%;margin-bottom: 10px;}
+.chem_offers .stockist_details{    width: 100%;    text-align: left;}
+.chem_offers .stockist_details .number{    margin-top: 5px;}
+/*--24-1-2019--*/
+
+/*--28-1-2019--*/
+/* .my_chemist_page .chemist_listing .chamList{width: 100%;} */
+
+/*--28-1-2019--*/
+
+/*--29-1-2019--*/
+.contact_udp ul .list{    width: 50%;}
+/*--29-1-2019--*/
+
+
+}
+
+
+@media screen and (max-width: 800px){
+.mobile_fixed{display:none;}
+.mobile_fixed {position: fixed; bottom: 0px; left: 0px; width: 100%; z-index: 1;}
+header .topHeader .rightPart .Quiclinks .mobile_fixed .list {width: 50%; float: left; margin-left: 0px; text-align: center;}
+header .topHeader .rightPart .Quiclinks .list .link.findnearet {float: left; width: 100%; background:#0a7b58; border-radius:0px;  padding: 15px 0px;}
+header .topHeader .rightPart .Quiclinks .list .link.medicinesLink {float: left; width: 100%; padding: 15px 0px; border-radius:0px;}
+
+header {position: inherit}
+
+
+.home_Page .section_1 .leftstructure {display: none; background: #fff; box-shadow: 1px 1px 15px rgba(0,0,0,0.25);position: fixed; left: 0px; top: 0px; z-index: 1; overflow-y: auto;height: 100%;}
+.home_Page .section_1 .leftstructure .design_part .cateList {box-shadow: none;}
+.home_Page .section_1 .leftstructure .design_part .barCode {box-shadow: none;}
+.home_Page .section_1 .rightstructure {width: 100%; padding: 0px;}
+.download_section .left_section {padding: 20px;}
+
+.home_Page .section_5 .userBenifits .userBenifitsList .list .style .dataPart .data {font-size: 12px;}
+.home_Page .section_5 .userBenifits .userBenifitsList .list .style .left_icon .icon {padding: 10px;}
+.home_Page .section_5 .userBenifits .userBenifitsList .list .style .left_icon .icon img {transform: scale(0.8);}
+.home_Page .section_5 .userBenifits .userBenifitsList .list .style .dataPart .title {font-size: 18px;}
+app-home .menuMobileToggle  {display: block; height: 60px; margin-right: 0px;}
+.home_Page .section_1 .leftstructure .overlay{position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0,0,0,0.65);}
+.home_Page .section_1 .leftstructure .design_part {position: relative; z-index: 1; background: #fff;    height: 100%;}
+.home_Page .section_1 .leftstructure .design_part .cateList .list .main_title {margin-bottom: 10px;border-bottom: 2px solid #f2f2f2;padding-bottom: 10px;}
+
+/*-- Rahul --*/
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder{line-height: initial;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .leftPart .orderTime{margin-bottom:3px;}
+.my_accountPages .retailer_order_tracking .main_dataPage .right_pannel .mainPage .orderDetailPage .updateStatus, .my_accountPages .retailer_order_tracking .main_dataPage .right_pannel .mainPage .orderDetailPage .order_track_sys{width:100%}
+.my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .socialMeidaEnter .list {width: 50%;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list {width: 100%; padding-right: 0px;}
+.chemistaccount_address_page .mainPage .addresspage {padding: 10px;}
+.my_accountPages.add_address_page .right_pannel .mainPage .form_pages .add_address .fromGroup .list {width: 50%;}
+.my_accountPages.add_address_page .right_pannel .mainPage .form_pages .add_address .fromGroup .list .inputForm .label .select_option {width: 100%; max-width: 100%;}
+
+/*-- Rahul --*/
+
+/*--- 25-12-2018----*/
+.my_accountPages .main_dataPage{padding-bottom: 60px;}
+.my_accountPages .chemist_ac_left_slider{display:none;}
+.my_accountPages .main_dataPage .right_pannel{    width: 100%; padding:0;} 
+
+/*--2-1-2019--*/
+/* header .topHeader .leftPart{display: block;float: left;width: 15%;} */
+
+
+
+
+
+
+
+
+
+
+
+
+header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper li.viewcart_btn a.cart img{width:35px;height:35px;}
+header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper li.viewcart_btn a.cart{    float: left;position: relative;    right: -5px;}
+
+header .mainHeader .insideDesign .left_part .logo{display: table-cell;vertical-align: middle;float: none;}
+header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper .mobile_login_cartInner_wrapper{float:right;}
+
+
+
+header .mainHeader .insideDesign .left_part .mobile_login_cart_wrapper li.viewcart_btn a.cart .number{     position: absolute;top: 7px;line-height: 17px;right: 23px;font-size: 11px;text-align: left;}
+
+
+
+
+.mainHeader .searchLocation .detectLocation{    top: 2px;    height: 30px;    right: 0px;}
+.mainHeader .searchLocation #locsearch{    height: 34px;}
+
+app-home .menuMobileToggle{height: 40px; }
+
+
+header .topHeader .rightPart .Quiclinks .mobile_fixed .list{    margin-right: 0;}
+
+.chemist_listing .chamList .style .chemis_name_area_location .name{font-size: 20px;}
+.chemist_listing .chamList .style .chemis_name_area_location .discount, .chemist_listing .chamList .style .chemis_name_area_location .shop_location{    font-size: 10px;}
+.chemist_listing .chamList .style .locationArea .area{font-size: 11px;    padding-left: 10px;}
+.chemist_listing .chamList .style .locationArea .area:before{background-size: 11px;}
+.chemist_listing .chamList .style .chemist_contact_dtls .contact_enquiry li a{    font-size: 12px;}
+
+
+
+.mainHeader .navigation_wrapper{display:none;}
+.main_cat_wrapper{display:block;}
+
+/*--new-enquiry-form--*/
+.enquiryPopup2 .designBOx{    width: 95%;}
+/*--new-enquiry-form--*/
+
+/*4-1-2019*/
+
+header .topHeader .help_center .list{    margin-left: 20px;}
+
+/*5-1-2019*/
+header .mainHeader{position: relative;}
+/* .mainHeader .searchLocation_wrapper{display:none;} */
+
+.Chemistlisting_Page .chemist_listing .chamList .style .chemist_contact_dtls .contact_enquiry li a{    font-size: 12px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemist_contact_dtls .contact_enquiry li a i{    display: none;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .discount{    font-size: 10px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .name{font-size: 18px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .shop_location{    font-size: 10px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .locationArea .area:before{background-size: 11px;}
+
+.medicalDetail_page .leftPanel{width:100%;padding-right:0;}
+.medicalDetail_page .rightPanel{width: 100%;    margin-top: 15px;}
+.medicalDetail_page .rightPanel .section_3 .ArticlesListing .list{    width: 33.33%;padding: 10px;border:none;}
+.medicalDetail_page .rightPanel .section_3 .ArticlesListing .list .style{    padding: 10px;    border: 1px solid #ccc;}
+.medicalDetail_page .rightPanel .section_3 .ArticlesListing .list .style .content .title{font-size: 14px;}
+.medicalDetail_page .rightPanel .section_3 .ArticlesListing .list .style .content .text{font-size: 12px;}
+
+.cart_Page .mobile_cart_sction{display: block;    float: left;width: 100%;    margin-top: 5px;}
+.cart_Page .mobile_cart_sction .removeCart{   font-size: 13px;padding: 7px 11px;background: #fff;box-shadow: 1px 1px 5px rgba(0,0,0,.4);color: #046f4e;font-weight: bold;position: absolute;top: 0;right: 10px;border-radius: 100%;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController{    position: absolute;bottom: 0px;right: 0px;}
+.pageSetting .cartListing .list .QTYControllerDiv{position: relative;}
+.pageSetting .cartListing .list .basePrice{display:none;}
+.pageSetting .cartListing .list .MultiplePriceDiv{display:none;}
+
+.pageSetting .cartListing .list .mobile_cart_sction .basePrice{display:block;    float: left;width: 100%;text-align: left;}
+.pageSetting .cartListing .list .mobile_cart_sction .MultiplePriceDiv{display:block;    float: left;width: 100%;text-align: left;}
+
+.pageSetting .cartListing .list .infoPart .name{    font-weight: bold;margin-bottom: 5px;}
+
+.pageSetting .cartListing .list .mobile_cart_sction .basePrice .displayQty{    font-size: 14px;margin-bottom: 2px;}
+.pageSetting .cartListing .list .mobile_cart_sction .basePrice .price{margin-bottom: 5px;}
+.pageSetting .cartListing .list .mobile_cart_sction .MultiplePriceDiv .price{line-height: 24px;}
+
+.pageSetting .cartListing .list .mobile_cart_sction .removeDiv{display:block;}
+.pageSetting .cartListing .list .removeDiv{display:none;}
+.cart_Page .stepPage_1 .familyTreeListing .list{width:50%;}
+
+header .mainHeader .insideDesign .right_part .icon_menu .list .menuBtn {width: 10px; overflow: hidden; height: 25px; padding: 0px 15px;float: right;transform: scale(1);    margin-top: 10px;} 
+/* header .mainHeader .insideDesign .right_part .icon_menu .list:last-child {position: absolute; top: 10px; right: 5px;} */
+header .mainHeader .insideDesign .right_part .icon_menu .list .menuBtn .MList {width: 6px;height: 6px;}
+header .mainHeader .insideDesign .right_part .icon_menu .list .cart{float: right;}
+
+header .topHeader .help_center .blog_btn, header .topHeader .help_center .newsArticle_btn{display:none;}
+
+.navigation_wrapper{display:none;}
+
+/*--12-1-2019--*/
+.home_Page .section_1 .leftstructure .design_part .cateList .list .main_catlist li{ margin-bottom: 5px;     margin-top: 5px;}
+.home_Page .section_1 .leftstructure .design_part .cateList .list .main_catlist li.saleOnBtn button{  transition: all .5s;-webkit-transition: all .5s;-moz-transition: all .5s;border: 2px solid #0a5e44;cursor: pointer; width: 100%;padding: 12px 5px; background: #0a5e44;  color: #fff;}
+
+
+.chemistDetail_page .section3 .chemist_aditionalDetails .chemist_aditionalDetailsList{    width: 33.3%;}
+.my_accountPages .main_dataPage .left_pannel{display: none;}
+/*--12-1-2019--*/
+
+/*--13-1-2019--*/
+.inquirypopup .designBOx{width: 90%;}
+.CHemistSHopdesign{display:none;}
+/*--13-1-2019--*/
+.search_distributor_page .right_pannel .searchBy_wrapper .searchBy_listing li.list:last-child{    display: block;float: left;width:130px;}
+.search_distributor_page .right_pannel .searchBy_wrapper .searchBy_listing li.list{width: 33.3%;}
+
+.about_page .right_started{    width: 65%;}
+.about_page .left_started{    width: 35%;}
+/*--15-1-2019--*/
+.packageDetails:first-child, .packageDetails{width:25%;}
+.about_page .health_for_all{    min-height: 420px;}
+.about_padding{padding-top: 70px;}
+.about_page .what_we_offer .offering_listing .list{    padding: 0 5px;}
+.no_itemFOundPage .categoriesDesign .heading:before{font-size: 40px;}
+.no_itemFOundPage .categoriesDesign .heading:after{font-size: 40px;}
+.no_itemFOundPage .categoriesDesign .heading{font-size: 18px;    margin-bottom: 20px;}
+/*--15-1-2019--*/
+
+/*--16-1-2019--*/
+header .mainHeader .insideDesign .right_part .icon_menu .list .searchResultdiv .list:last-child{position: inherit;}
+/*--16-1-2019--*/
+
+
+.mediaReleasePage .mediaListing {margin: 5px 0px;}
+.mediaReleasePage .mediaListing .list {width: 100%;}
+.mediaReleasePage .mediaDetails .fullBanner .content {margin: 30px 0px;padding: 0px 15px;}
+.mediaReleasePage .mediaDetails .mainHead {padding: 0px 15px; margin: 30px 0px;}
+.mediaReleasePage .mediaDetails .mainHead .title {font-size: 36px; line-height: 40px;}
+
+/*--191-2019--*/
+.career_page .section_4 .content_wrapper .right_section{display:none;}
+.career_page .section_2 .job_Fields-wrapper .job_Field_listing .list .style .insideDesign .title{    font-size: 14px;}
+.career_page .section_2 .career_heading, .career_page .section_4 .content_wrapper .left_section h3.career_heading{    font-size: 24px;}
+.career_page .section_4 .content_wrapper .left_section p.career_text{line-height: 24px;font-size: 16px;}
+
+.career_page .Banner_wrapper{    height: 200px;}
+.career_page .Banner_wrapper h3{font-size: 20px;}
+.career_page .Banner_wrapper h2{font-size: 24px;}
+.career_page .career_form .left_part .inside_design .set_content .max_width .input_box{min-width: 300px;    height: 50px;    font-size: 16px;}
+.career_page .career_form .left_part .form_steps .list .next_btn{font-size: 16px;    padding: 10px 50px;}
+.career_page .career_page .Banner_wrapper{    height: 200px;}
+.career_page .career_form{display: block;}
+.career_page .career_form .left_part{    display: block;height: 300px;}
+.career_page .career_form .right_part{display: flex;}
+
+/*--191-2019--*/
+
+/*--21-1-2019--*/
+.home_Page.bodySetting.categoryPage{    padding-top: 0;}
+/*--21-1-2019--*/
+
+/*--2-1-2019--*/
+.chemist_listing .chamList .style .imageSet{width: 30%;}
+.chemist_listing .chamList{    width: 50%;}
+.chemist_listing .chamList .style .chemis_name_area_location{    width: 70%;}
+.home_Page .section_1 .rightstructure .chemist_listing{padding:0;}
+/*--2-1-2019--*/
+
+/*--2-1-2019--*/
+/* footer {padding-bottom: 45px;} */
+footer .copywrightDiv{padding: 5px 0px;}
+footer .copywrightDiv .right_part .enqry_btn{    padding: 8px 15px;    font-size: 11px}
+/*--2-1-2019--*/
+
+/*--22-1-2019--*/
+.chemist_listing .chamList .style .chemist_dtls{    padding: 5px;}
+/*--22-1-2019--*/
+
+/*--24-1-2019--*/
+.chem_offers .stockist_details{width: 100%;    padding-top: 10px;border-top: 1px solid #e8e8e8;}
+.chem_offers .chemiOffers .list .style .offers_details{ width: 85%;margin-bottom: 10px;}
+.chem_offers .chemiOffers .list .style .offer_img-wrapper{    width: 15%;}
+.my_accountPages .main_dataPage .right_pannel .page_name{    padding: 20px 10px 0px;}
+.add_offer_page .mainPage .fromGroup{padding: 10px 10px;}
+.chemist_listing .chamList .style .chemist_other_dtls{  padding: 5px;}
+/*--24-1-2019--*/
+
+/*--28-1-2019--*/
+
+/*--28-1-2019--*/
+
+/*--29-1-2019--*/
+.mobile_leftstructure .design_part .cateList .list .main_title{    float: left;width: 100%;font-size: 14px;color: #000;text-transform: uppercase;font-weight: bold;margin-bottom: 10px;border-bottom: 2px solid #f2f2f2;padding-bottom: 10px;}
+.mobile_leftstructure .design_part .cateList .list  .catSpList{    float: left;width: 100%;}
+.mobile_leftstructure .design_part .cateList .list  .catSpList .subList{    float: left;width: 100%;margin: 5px 0px;}
+.mobile_leftstructure .design_part .cateList .list  .catSpList .subList .link{    float: left;width: 100%;display: table;}
+.mobile_leftstructure .design_part .cateList .list  .catSpList .subList .link .icon{    display: table-cell;vertical-align: middle;width: 32px;text-align: center;}
+.mobile_leftstructure .design_part .cateList .list  .catSpList .subList .link .icon img{    float: left;height: 25px;}
+.mobile_leftstructure .design_part .cateList .list  .catSpList .subList .name{    display: table-cell;vertical-align: middle;color: #000;font-size: 13px;font-weight: bold;}
+.mobile_leftstructure .design_part .cateList .main_cat_wrapper .main_catlist{    float: left;width: 100%;}
+.mobile_leftstructure .design_part .cateList .main_cat_wrapper .main_catlist .main_cat{float: left;width: 100%;margin: 5px 0px;line-height: 20px;}
+.mobile_leftstructure .design_part .cateList .main_cat_wrapper .main_catlist .main_cat a{    float: left;width: 100%;text-align: left;padding: 5px 10px;font-size: 11px;} 
+.mobile_leftstructure .design_part .cateList .list.saleOnBtn button{       transition: all .5s;-webkit-transition: all .5s;-moz-transition: all .5s;border: 2px solid #f8c302;padding: 5px 10px;cursor: pointer;position: relative;font-size: 11px;}
+
+
+.mobile_leftstructure .design_part .barCode .icon{display: table-cell;vertical-align: middle;width: 75px;}
+.mobile_leftstructure .design_part .barCode .icon img{    float: left;}
+.mobile_leftstructure .design_part .barCode .textForm{    display: table-cell;vertical-align: middle;}
+.mobile_leftstructure .design_part .barCode .textForm .title{    float: left;width: 100%;color: #111;font-size: 13px;margin-bottom: 5px;}
+.mobile_leftstructure .design_part .barCode .textForm .caption{    float: left;width: 100%;color: #999999;font-size: 12px;}
+.mobile_leftstructure .design_part .cateList .list:last-child{margin-bottom: 0;}
+.mobile_leftstructure .leftstructure{height: 100%;}
+
+.pageSetting .cartListing .list .producThumb{    width: 20%;}
+.pageSetting .cartListing .list .infoPart{    width: 50%;}
+.banner_wrapper h2{    font-size: 26px;}
+.contact_us_banner ul li{    font-size: 12px;}
+.contact_us_banner ul li span{font-size: 16px;}
+.sending_enquiry_popup .enquiry_popup_msg .sending_msg_content span{    font-size: 16px !important;}
+
+/* .mobile_leftstructure .design_part .barCode{float: left;width: 100%;background: #f7f7f7;display: table;border: 3px solid #dfdfdf;padding: 8px 10px;margin: 15px 0px;} */
+.mobile_leftstructure .design_part .barCode{display: none;}
+.my_accountPages.apcCash .main_dataPage .right_pannel .mainPage .MywalletPage{    padding: 20px 10px;}
+/*--29-1-2019--*/
+
+/*--31-1-2019--*/
+.my_accountPages .main_dataPage .right_pannel .mainPage .addresspage, .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup{    padding: 10px;}
+/*--31-1-2019--*/
+
+/*--1-2-2019--*/
+.view_details_popup .designBOx{    width: 98%;}
+/*--1-2-2019--*/
+
+}
+
+@media screen and (max-width: 680px){
+
+header .mainHeader .insideDesign .right_part {margin-bottom: 5px; float: left; width: 100%; display: block;}
+header .mainHeader .insideDesign .left_part .logo img {transform: scale(0.9);}
+header .mainHeader .insideDesign {display: inline; position: relative;} 
+
+
+header .mainHeader .insideDesign .right_part .icon_menu .list {padding-left: 0px;}
+.Sectionheading {font-size: 24px;margin: 10px 0px;}
+.download_section .left_section .input_section .input_text {width: 100%;}
+.download_section .left_section .input_section {display: none}
+.download_section .left_section .text_part {margin-bottom: 0px;}
+.download_section .left_section .button {margin-top: 30px;}
+.home_Page .section_5 .userBenifits {margin-top: 20px; display: none;}
+
+
+
+footer .sectionLinks .list:last-child{    margin-bottom: 0px;}
+app-home .menuMobileToggle  {height: 40px;    margin-top: 10px;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab {padding: 10px 25px;font-size: 14px;}
+.chemistDetail_page .seaTabs_content_active {border: 2px solid #dedede;padding: 20px;} 
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab.seaTabs_switch_active {background: #000;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab {background: #e9e9e9;color: #8c8c8c;}
+.chemistDetail_page .section1 .mainFeatureList {display: table;}
+.chemistDetail_page .section1 .mainFeatureList .list {height: 55px; padding: 0px 15px; font-size: 12px; display: table-cell; vertical-align: middle;float: none; width: 50%; padding-left: 10px;}
+.chemistDetail_page .section1 .mainFeatureList .enquiryBtnDiv .detail_enquiry_btn {padding: 0px 10px; line-height: 51px; height: 55px;width: 100%; text-align: center;}
+.chemistDetail_page .section1 .mainFeatureList .enquiryBtnDiv {  padding-right: 0px;}
+
+.chemistDetail_page .section1 .mainFeatureList .list .style .label {padding-left: 25px; font-size: 12px;}
+.chemistDetail_page .section1 .mainFeatureList .list .style .Data {font-size: 18px;}
+.home_Page .medCatListing .list {width: 25%;}
+
+/* .Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart {float: left; padding: 10px 0px; border-bottom: 1px solid #ededed; width: 100%; display: block; width: 100%;} */
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .enquiryBtnDiv {padding-right: 0px; display: block; width: 50%; float: left; height: 45px;}
+/* .Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart {display: block; width: 50%; float: left; height: 45px;} */
+
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart .select_option {height: 100%; padding-left: 10px;padding-right: 10px; background: #fff url("../images/icon/down.png") no-repeat scroll 95% 50%; background-size: 12px;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .enquiryBtnDiv .primary_btn {width: 100%;}
+/* .my_accountSetting .main_dataPage .account_page_menu{display: none;}
+
+
+
+.chemist_account_page .my_accountSetting .main_dataPage .chemist-ac-togle .cart{float: left;position: relative;    }
+.chemist_account_page .my_accountSetting .main_dataPage .chemist-ac-togle .cart .menuBtn{    width: 35px; height: 35px;  transform: scale(0.9);}
+.chemist_account_page .my_accountSetting .main_dataPage .chemist-ac-togle .cart .menuBtn li.MList{    opacity: 0.5;  width: 8px; height: 8px;  background: #000;  border-radius: 100%;  float: left;  margin: 1px;}
+*/
+
+
+.chemist_account_page .left_slider_toggle{display:block;}
+.chemist_account_page .left_slider_toggle .left_toogle_btn{float: left; position: relative;  padding-left: 10px;margin-bottom: 10px;}
+.chemist_account_page .left_slider_toggle .left_toogle_btn .menuBtn{width: 35px;height: 35px;transform: scale(0.9);}
+.chemist_account_page .left_slider_toggle .left_toogle_btn .menuBtn .MList{    width: 8px;height: 8px; background: #000;  border-radius: 100%; float: left; margin: 1px;}
+
+.chemist_ac_left_slider{    width: 100%;max-width: 350px;background: #fff; height: 100%; position: absolute;right: -300px;}
+.chemist-stock-enquiry .enquiry-id-section, .my_accountPages.chemist-stock-enquiry .main_dataPage .right_pannel .mainPage .orderDetailPage .section, .retailer_enquiry_details_page .right_pannel .enquiry-id-section{padding:10px;}
+.my_accountPages .main_dataPage .right_pannel .page_name .leftData .Pagename{    font-size: 18px;}
+.my_accountPages.chemist-stock-enquiry .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .leftPart .name{    font-size: 16px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .DetailShowBtn{    font-size: 11px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .rightPart .price{    font-size: 18px;}
+
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .CheckoutDiv .checkOutbtn{    padding: 10px;}
+
+.my_accountPages.chemist-stock-enquiry .main_dataPage .right_pannel .mainPage .orderDetailPage .chemist_details_wrapper .section{height: 171px;}
+.retailer_enquiry_details_page .right_pannel .enquiry-id-section .page_name{    padding: 0;}
+.my_accountPages .my_table th{font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart{text-align:right;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .name{font-size: 16px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .profileStepsMeter .meterBar{    overflow-y: hidden;overflow-x: scroll; white-space: nowrap;position: relative;  scroll-behavior: smooth;}
+.my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .profileStepsMeter .meterBar .list{    display: inline-block; float: none;}
+.my_accountPages.chemist-stock-enquiry .retailer_order_tracking .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list{width:50%;}
+
+/*--25-12-2018--*/
+header .mainHeader .insideDesign .right_part .icon_menu .list .input_box{    width: 97%;}
+.home_Page .download_section .left_section .button .list .link img{width: 130px;}
+
+/*--29-12-2018--*/
+.cart_Page .stepPage_1 .selectDate .list{width: 25%; }
+
+/*--2-1-2019--*/
+
+
+/*--new-enquiry-form--*/
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox .leftPart{    width: 100%;}
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox .rightPart{display:none;}
+/*--new-enquiry-form--*/
+
+/*4-1-2019*/
+/* .mainHeader .searchLocation_wrapper{    top: -45px;left: 0px;} */
+
+
+
+
+
+
+
+.chemist_listing .chamList .style .locationArea{margin-left: 0px;}
+
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .discount{    margin-bottom: 5px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .name{margin-bottom: 5px;}
+
+
+
+/*5-1-2019*/
+
+.pageSetting .cartListing .list .producThumb{    width: 80px;}
+.pageSetting .cartListing .list .producThumb .thumb img{    width: 70px;}
+footer .disclaimer_content{padding: 0 15px 20px 15px}
+
+/*--7-1-2019--*/ 
+header .topHeader .rightPart .Quiclinks{display:block;float: left;}
+/*--7-1-2019--*/
+
+/*--12-1-2019--*/
+header .topHeader .leftPart .app_link .list.download_applink{padding-left: 0;}
+header .topHeader .help_center .list{margin-left: 5px;}
+header .topHeader .help_center .list.call_ a{    font-size: 12px;border: 1px solid #ffffff;}
+header .topHeader .help_center .list{    line-height: 42px;}
+header .topHeader .help_center .list.saleOnBtn button{    font-size: 12px;    border: 1px solid #f8c302;}
+header .topHeader .help_center .list a, header .topHeader .leftPart .app_link .list a{    font-weight: 500;}
+
+header .topHeader .help_center .list.saleOnBtn{display:none;}
+
+
+header .topHeader .help_center .list.call_{display:none;}
+footer .logo img{float:left;}
+footer .socialMeida{text-align: left;}
+.home_Page .how_its_work{display: none;} 
+.medicalDetail_page .rightPanel .section_3 .ArticlesListing .list{width: 50%;}
+.chemistDetail_page .section1 .displaySetting .leftData{    padding-left: 0;}
+.chemistDetail_page .section1 .displaySetting .leftData{    padding-right: 0px;}
+.chemistDetail_page .section1 .companyName{font-size: 20px;margin:5px 0;}
+.chemistDetail_page .section1 .companyLocation{    font-size: 14px;    margin-bottom: 25px;}
+.chemistDetail_page .addFav .Addfav_btn{    top: 75px;}
+.dashboard_Widgets .list{width: 50%;}
+/* header .mainHeader .insideDesign .right_part .icon_menu .list:last-child{right: -5px;} */
+.my_accountPages.profile_setip_page .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list{    width: 50%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list.full{width:100%;}
+/*--12-1-2019--*/
+
+/*--13-1-2019--*/
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .leftPart{width: 100%;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .rightPart{    display: none;}
+.inquirypopup .designBOx{width: 95%;}
+footer .payment_options{padding-left: 5px;padding-right: 5px;}
+footer .siteMapSection{padding-left: 5px;padding-right: 5px;}
+.about_page .what_we_offer .offering_listing .list .style{padding: 20px 5px;}
+
+
+/*--13-1-2019--*/
+
+.about_page .left_started{    width: 100%;text-align: center;}
+.about_page .right_started{width: 100%;}
+.about_page .what_we_offer .offering_listing .list{padding: 0 5px;}
+/*--15-1-2019--*/
+.packageDetails li:nth-child(2), .packageDetails:first-child ul li:nth-child(2){    height: 150px;}
+.packageDetails ul li h3 small{font-size: 16px;}
+.packageDetails button.top_buy_nowBtn{    font-size: 11px;    padding: 3px 8px;}
+.packageLeftBar li, .packageDetails li{    padding: 10px;}
+.packageDetails .plansName{height: 50px;}
+.packageDetails:first-child ul li.plansName{font-size: 13px;}
+.my_accountPages.chemist-stock-enquiry .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart .price{font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder{    padding: 10px 5px;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .imageSet{    padding: 0 15px;width: 50%;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .chemis_name_area_location{    width: 100%;margin-top: 10px;padding: 0px 15px;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls{    padding: 15px 0 0;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .chemis_name_area_location .shop_location{    font-size: 12px;margin-top: 10px;margin-bottom: 5px;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .chemis_name_area_location .locationArea{    margin-top: 5px;margin-bottom: 5px;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .chemis_name_area_location .rating{right: 15px;}
+
+.no_itemFOundPage .graphicPart .image .contentPart{left: 35%;top: 50px;}
+.no_itemFOundPage .graphicPart .image .contentPart .text .big{    font-size: 23px;}
+.no_itemFOundPage .graphicPart .image .contentPart .icon .number{    font-size: 16px;}
+.no_itemFOundPage .graphicPart .image .contentPart .icon img{    height: 45px;width: 45px;}
+.no_itemFOundPage .categoriesDesign .catList{    text-align: left;}
+.no_itemFOundPage .categoriesDesign .catList .list{text-align: center;margin-bottom: 20px;float: left;width: 25%;}
+/*--15-1-2019--*/
+
+/*--19-1-2019--*/
+.my_accountSetting .chemist_listing .chamList .style .chemist_dtls .imageSet .thumb{    width: 100%;}
+
+.videoSection .videoList .list{width:100%;    margin-bottom: 10px;}
+footer{    padding-top: 20px;}
+
+/*--22-1-2019--*/
+/* .Chemistlisting_Page .chemist_listing .chamList, .home_Page .section_1 .rightstructure .chemist_listing .chamList {width: 50%;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemist_dtls, .home_Page .chemist_listing .chamList .style .chemist_dtls, .my_accountSetting .chemist_listing .chamList .style .chemist_dtls{padding: 15px 0 0;} 
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location, .home_Page .chemist_listing .chamList .style .chemis_name_area_location, .my_accountSetting .chemist_listing .chamList .style .chemist_dtls .chemis_name_area_location{    width: 100%;margin-top: 10px;    padding: 0px 15px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .imageSet, .home_Page .chemist_listing .chamList .style .imageSet{    padding: 0 15px;    width: 50%;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .rating, .home_Page .chemist_listing .chamList .style .chemis_name_area_location .rating{    right: 15px;}*/
+footer .siteMapSection{padding:0;}
+footer .copywrightDiv{    margin-top: 5px;}
+.chem_offers .chemiOffers .list .style .offers_details{padding-left: 0;display: block;float: left;width: 100%;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry{    display: block;float: left;width: 100%;text-align: left;    margin-top: 10px;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .offer_date{    margin-right: 20px;margin-left: 0;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .offer_expiry, .chem_offers .chemiOffers .list .style .deals_expire_enquiry .offer_expiry_days{    text-align: left;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn{    text-align: left;    margin-top: 10px;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn .enqry_btn{    margin-left: 0px;    margin-right: 5px;}
+/*--22-1-2019--*/
+
+/*--24-1-2019--*/
+.chem_offers .chemiOffers .list .style .offer_img-wrapper{width: 20%;}
+.chem_offers .chemiOffers .list .style .offers_details{width: 80%;}
+/* .Chemistlisting_Page .chemist_listing .chamList .style .chemist_other_dtls .opening_time .left_content, .chemist_listing .chamList .style .chemist_other_dtls .discount .left_content{    width: 35%;} */
+/* .Chemistlisting_Page .chemist_listing .chamList .style .chemist_other_dtls .opening_time .right_content, .chemist_listing .chamList .style .chemist_other_dtls .discount .right_content{    width: 65%;} */
+/*--24-1-2019--*/
+
+/*--28-1-2019--*/
+footer .sectionLinks .list .newsletter_form li .primary_btn.fill_yellow{height: 40px;line-height: 40px;padding: 0 10px;vertical-align: middle;}
+footer .sectionLinks .list .newsletter_form li .input_box{    background: #f2f9f7;border: 1px solid #f2f9f7;padding: 10px;margin-bottom: 0;display: inline-block;height: 40px;line-height: 40px;vertical-align: middle;    width: 55%;}
+/* .my_accountSetting .chemist_listing .chamList .style .chemist_dtls .imageSet{    width: 50%;} */
+.my_chemist_page .right_pannel .mainPage .my_chemist_list_wapper{padding: 20px 10px;}
+
+/*contact*/
+.contact_udp ul li {width: 50%;margin: 10px 0 ;}
+.form_group {float: left;width: 100%;margin: 4px 0px;padding: 0;}
+.form_contact h3 {font-size:30px;}
+.form_row{width:100%;}
+.form_sec .form_group_text{padding:0;}
+.form_sec .form_group_text .text-area .primary_btn.fill_yellow{    display: block;width: 100px;float: left;    margin-top: 10px;}
+/*contact*/
+/*--28-1-2019--*/
+
+/*--301-2019--*/
+.my_accountPages.retailer_orders .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .left_section, .my_accountPages.retailer_orders .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .right_section{   display: block;float: left;width: 100%;}
+.my_accountPages.retailer_orders .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .right_section .trackBtn{float: left;margin-left:0;margin-right:5px;}
+.my_accountPages.retailer_orders .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus{    margin: 5px 0;}
+header .topHeader .help_center .list a{    line-height: 45px;}
+/*--30-2019--*/
+
+}
+
+@media screen and (max-width: 600px){
+ 
+ 
+    .chemist_listing .chamList .style .chemist_other_dtls .discount{margin-top:5px;text-align: left;}
+    .chem_offers .chemiOffers{padding: 20px 10px;}
+    .chem_offers .chemiOffers .list .style .offers_details{padding-left:0;}
+    .add_offer_page .add_offer .list{    width: 50%;}
+    /* .add_offer_page .add_offer{    padding: 20px 10px;} */
+    .add_offer_page .expiryData{padding: 20px 10px;}
+    .categoryPage .categoryBanner .pageTitle{background-position: 0 30px;} 
+    /*--22-1-2019--*/
+    
+    .chemist_listing .chamList, .Chemistlisting_Page .chemist_listing .chamList{width:100%;} 
+    .home_Page .section_4 .OurBrands{padding: 5px;} 
+    /* .chemist_listing .chamList .style .chemist_other_dtls .discount .open_closeStatus{float: left;} 
+    .chamList .style .chemist_other_dtls .opening_time, .Chemistlisting_Page .chemist_listing .chamList .style .chemist_other_dtls .opening_time{display: block;}*/
+    .vender_launch_popup .designBox .vAlign .innerDesign{max-width: 300px;} 
+    .vender_launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper{    margin-top: -10px;} 
+    .vender_launch_popup .btns_wrapper span .primary_btn{    width: 120px;    padding:15px 10px;font-size: 12px;} 
+    .vender_launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper .heading span{    font-size: 16px;} 
+    /*--22-1-2019--*/ 
+
+/*--29-1-2019--*/
+.contact_udp ul .list .style .insideDesign{    padding: 0px 10px;}
+.contact_udp ul li span p{    padding: 0;    font-size: 14px;}
+.contact_udp ul .list .style .insideDesign .text{font-size: 12px;}
+.add_offer_page .add_offer .list.offer_days_wrapper .offer_date{    width: 100%;}
+.add_offer_page .add_offer .list.offer_days_wrapper .inputForm .label .input_box{    width: 100%;}
+.add_offer_page .add_offer .list.offer_days_wrapper{width:50%}
+.add_offer_page .add_offer .list.offer_days_wrapper{width:50%}
+/*--29-1-2019--*/
+
+/*--30-1-2019--*/
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_proce{font-size: 12px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_dealHeading{    font-size: 11px;}
+/*--30-1-2019--*/
+
+/*--1-2-2019--*/
+.chemist_account_page.retailer_enquiry .main_dataPage .right_pannel .mainPage .orderListing .list .style .trackBtn{margin-bottom: 5px;}
+/*--1-2-2019--*/
+     
+}
+
+@media screen and (max-width: 500px){
+    
+    .Hide_500 {display: none!important;}
+    header .topHeader .leftPart .locationToggle {font-size: 12px;}
+    
+    .chemist_listing .chamList .style .imageSet .thumb::after {opacity: 0.5;}
+    .chemist_listing .chamList .style .infoData {padding: 7px 5px; word-break: break-all;}
+    
+   
+    .home_Page .section_2 .MedicinTypeList .list .style .title {font-size: 13px;}
+    .home_Page .section_2 .MedicinTypeList .list .style {height: 150px;}
+    footer .copywrightDiv .right_part {width: 160px;}
+   
+    .menu_Popup .slide_right .bottomButton {padding: 10px 5px;}
+    .menu_Popup .slide_right .bottomButton .list a {padding: 12px 10px;}
+    .menu_Popup .slide_right .menuAcconuntPanel {padding: 0px 10px;margin-bottom: 10px;}
+    .menu_Popup .slide_right .menu_head {padding: 10px 10px;}
+
+    footer .copywrightDiv .left_part {display: block;}
+    footer .copywrightDiv .right_part {display: block; float: left; margin-top: 5px;}
+    footer .copywrightDiv .right_part .enqry_btn {float: left;}
+    .chemistDetail_page .section2 .seaTabs .seaTabs_switch {padding: 10px 10px; padding-bottom: 0px;}
+    .chemistDetail_page .section2 .seaTabs .seaTabs_content {padding: 10px 10px; padding-top: 0px;}
+    .chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab {padding: 10px 15px;}
+    .chemistDetail_page .section1 {padding: 10px 10px;}
+    .home_Page .medCatListing .list {width: 33.3%;}
+    .home_Page .medCatListing .list .style .insideDesign .text {padding: 0px 5px; font-size: 11px;}
+    .home_Page .medCatListing .list .style {height: 125px;}
+    .categoryPage .tilesBanner {display: none;}
+ 
+    .chemist_listing .chamList .style .imageSet img {height: auto;}
+    .chemist_listing .chamList .style .infoData .shopInfo .leftPart .name {font-size: 14px;}
+    .chemist_listing .chamList .style .infoData .shopInfo .leftPart .discount {font-size: 12px;}
+    .Chemistlisting_Page .container {padding: 0px 5px;}
+    .loginPopups .designBox .innerDesign .right_data #register_form .popup_name {font-size: 13px; width: 100%; padding-right: 0px;}
+    .loginPopups .designBox .innerDesign .right_data .select_option {position: initial; width: 100%; margin-bottom: 10px;}
+    .loginPopups .designBox .innerDesign .left_data .content_part .data .mainHead {font-size: 22px; line-height: 26px; padding-right: 50px;}
+    .loginPopups .designBox .innerDesign .left_data .content_part .data .text {font-size: 13px;}
+    .loginPopups .designBox .innerDesign {padding: 0px 10px;}
+    .loginPopups .designBox .innerDesign .right_data .forms_div .input_div:last-child {margin-top: 10px;}
+    .loginPopups .designBox .innerDesign .right_data{padding-left:15px;padding-right:15px; margin-top: 0px;}
+    .loginPopups .designBox .innerDesign .left_data::after {transform: scaleY(1);}
+    .loginPopups .designBox .innerDesign .left_data .buttons {top: 2px;}
+    .loginPopups .designBox .innerDesign .left_data .inside_data {padding-top: 10px; padding-left: 15px;}
+    .loginPopups .designBox .innerDesign .left_data .content_part {width: 100%;}
+    
+    /*----*/
+    .my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage .orderTabs .list .name{padding:10px;font-size: 13px;}
+    .my_accountPages .main_dataPage .right_pannel .page_name{    padding: 20px 10px 0px;}
+    .my_accountPages .main_dataPage .right_pannel .page_name .leftData .Pagename{    font-size: 20px;}
+    .my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .orderListing{    padding: 20px 10px;}
+    .my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .orderListing .list{    padding: 10px 10px;}
+   
+
+    .chemist-stock-enquiry .orderDetailPage .delivery_address_wrapper, .chemist-stock-enquiry .orderDetailPage .chemist_details_wrapper{ width: 100%; padding: 0;}
+
+
+    .my_accountPages .table_wrapper{  overflow-y: hidden; overflow-x: scroll;  white-space: nowrap;  padding: 10px;  position: relative;  scroll-behavior: smooth; }
+
+    .my_accountPages .main_dataPage .right_pannel .page_name .leftData{display:block;float:left;}
+    .my_accountPages .main_dataPage .right_pannel .page_name .rightData{display:block;float:left;margin-top: 10px;    font-size: 14px;}
+    .retailer_enquiry_details_page .right_pannel .enquiry-id-section .page_name{padding:0;}
+
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .leftPart .price{    font-size: 14px; font-weight: 600; }
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list{    margin-top: 5px;}
+
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup {padding: 10px 15px;}
+    .mapLocationSet .search_location_wrapper input.search_location {width: 80%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .rangerGroups .list .flat-slider {width: 100%;}
+    
+.my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .socialMeidaEnter .list {width: 100%;} 
+
+.my_accountPages.chemistaccount_address_page .main_dataPage .right_pannel .page_name .rightData {margin-top: 0px; float: right;}
+.my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style {padding: 10px 10px;}
+.my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing {padding: 20px 10px;}
+.my_accountPages.user_account_page .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list{width:100%;}
+
+
+
+
+.chemist_listing .chamList{    width: 100%;    display: block;    float: left;margin-bottom: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .addresspage{padding: 10px;}
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .leftPart .Label{font-size: 15px;font-weight: 600;}
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .leftPart .Amount{font-size: 13px;font-weight: 600;  }
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage{    padding: 20px 10px;}
+.my_accountPages.notification_page .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing{  padding: 20px 10px;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch{    overflow-y: hidden; overflow-x: scroll;white-space: nowrap;  padding: 10px;position: relative; scroll-behavior: smooth;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab{    display: inline-block;  float: none;}
+.chemistDetail_page .section1 .companyName{margin-top: 5px;font-size: 18px;}
+.my_chemist_page.my_chemist_page .right_pannel .mainPage .my_chemist_list_wapper{       padding: 20px 10px;}
+
+.chemist_listing .chamList .style .infoData .shopInfo .leftPart .discount, .chemist_listing .chamList .style .infoData .shopInfo .leftPart .rating{width: 100%;}
+
+/*--29-12-2018--*/
+.dashboard_page .meterBar_wrapper .meterBar .list{width:50%;} 
+/* .pageSetting .cartListing{    overflow-y: hidden;  overflow-x: scroll; white-space: nowrap;  position: relative; scroll-behavior: smooth;}  */
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .bar{width:100%;}
+.cart_Page .stepPage_1 .selectDate .list{    width: 50%;margin-bottom: 15px;}
+.cart_Page .stepPage_1 .heading_name .name{font-size: 18px;}
+.cart_Page .stepPage_1 .heading_name .RightPart .Cartprice{font-size: 14px;}
+.cart_Page .stepPage_1 .heading_name .RightPart .label{font-size: 12px;}
+.chemistDetail_page .section1 .companyLocation{    font-size: 12px;}
+/*--29-12-2018--*/
+
+/*--2-1-2019--*/
+
+
+
+header .topHeader .help_center .list{margin-left: 0;}
+header .topHeader .help_center .list a{font-size: 11px;}
+
+.home_Page .how_its_work .its_work_list .list{    width: 100%;}
+.home_Page .how_its_work .its_work_list .list .style{    width: 100%;float: left;    padding-right: 10px;min-height: auto;padding: 10px;    border-bottom: 1px solid rgba(0,0,0,.15); border-right: none; }
+.home_Page .how_its_work .its_work_list .list .style .work_icon{    width: 80px;    text-align: left;}
+.home_Page .how_its_work .its_work_list .list .style .work_icon img{    height: 60px;width: 60px;}
+.home_Page .how_its_work .its_work_list .list .style .work_content_section{width: 70%;    padding-left: 0;text-align: left;}
+.home_Page .how_its_work .its_work_list .list:last-child .style{padding-bottom: 0; border-bottom: 0;}
+
+
+/*----new-enquiry-form----*/
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox .leftPart .headPart{    padding:20px 15px;}
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox .leftPart .form_part{padding:20px 15px 65px;}
+
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox .leftPart .headPart .name .title{    font-size: 20px;}
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox{height: 384px;}
+/*----new-enquiry-form----*/
+
+/*4-1-2019*/
+header .topHeader .rightPartP{    padding-top: 40px;}
+
+/*5-1-2019*/
+.home_Page .medCatListing .list{border:1px solid #ccc;}
+
+
+.medicalDetail_page .section_1 .img{    height: 90px;position: static;float: left;width: 50%;} 
+.medicalDetail_page .section_1 .leftPart .Prodetails{    padding-left: 15px;    width: 100%;float: left;}
+.medicalDetail_page .pagesNamePart{float: left;width: 100%;position: absolute;top: 10px;}
+.medicalDetail_page .section_1 .leftPart .Prodetails .category{float: left;width: 100%;font-size: 11px;margin-bottom: 5px;}
+.medicalDetail_page .section_1 .leftPart .Prodetails .product_name{    font-size: 16px;    margin-bottom: 5px;}
+.medicalDetail_page .section_1 .leftPart .Prodetails .companyName{    line-height: 16px;font-size: 14px;}
+.medicalDetail_page .section_1 .leftPart .Prodetails .small_disc{    margin-top: 10px;}
+.medicalDetail_page .section_1 .leftPart .Prodetails .small_disc .text{    font-size: 12px;}
+.medicalDetail_page .section_1 .featureBuyOption{    margin-top: 20px;    border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;}
+.medicalDetail_page .section_1 .featureBuyOption .list{padding: 10px 15px;display: block;vertical-align: middle;border-bottom: 1px solid #ccc;    width: 50%;float: left;height: 70px;}
+.medicalDetail_page .section_1 .featureBuyOption .list:last-child{    width: 100%;    float: left;}
+.medicalDetail_page .section_1 .featureBuyOption .list .Add_button{    width: 40%;font-size: 14px;}
+.pageSetting .cartListing .list .producThumb{display:none;}
+.cart_Page .stepPage_1 .familyTreeListing .list{width:100%;}
+
+.cart_Page .tableDesign .right_design{width:100%;}
+
+.home_Page .listinheading .right_part .view_all_btn{font-size: 11px;padding: 10px;}
+
+/*--8-1-2019--*/
+header .topHeader .help_center .list{    margin-right: 10px;}
+/*--8-1-2019--*/
+
+/*--11-1-2019--*/
+.cart_Page .stepPage_1 .heading_name{padding:15px 10px;}
+/*--11-1-2019--*/
+
+/*--12-1-2019--*/
+
+
+.medicalDetail_page .rightPanel .section_3 .ArticlesListing .list{width: 100%;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle{    padding-left: 10px;}
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list{padding:10px;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart{    width: 160px;}
+.pageSetting .cartListing .list .infoPart .name, .Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart .name{font-size: 14px;}
+.loginPopups .designBox .innerDesign .left_data .content_part .data{margin-bottom:10px; }
+
+.mainHeader .searchLocation_wrapper .searchLocation{    width: 98%;    margin-left: 10px;}
+.chemistDetail_page .section3 .chemist_aditionalDetails .chemist_aditionalDetailsList{    width: 50%;}
+.chemistDetail_page .addFav .Addfav_btn{    top: 80px;}
+.dashboard_Widgets .list{width:50%;}
+.my_accountPages.profile_setip_page .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list{width:100%;}
+/*--12-1-2019--*/
+
+/*--13-1-2019--*/
+
+.Chemistlisting_Page .chemist_listing .chamList .style .imageSet, .home_Page .chemist_listing .chamList .style .imageSet{width:35%;}
+.home_Page .section_1 .rightstructure .chemist_listing .chamList .style .imageSet img, .Chemistlisting_Page .chemist_listing .chamList .style .imageSet img{width: 100%;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location, .home_Page .chemist_listing .chamList .style .chemis_name_area_location{    margin-top: 0px;}
+.chemist_listing .chamList .style .chemis_name_area_location .shop_location, .Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .shop_location{    margin-top: 2px;}
+.home_Page .section_1 .rightstructure .chemist_listing .chamList .style .locationArea, .Chemistlisting_Page .chemist_listing .chamList .style .locationArea{    margin-bottom: 5px;    margin-top: 0px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .name{margin-bottom: 0;max-width: 250px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .chemis_name_area_location .shop_location{font-size: 12px;}
+/*--13-1-2019--*/
+
+/*--14-1-2019--*/
+.my_accountPages .main_dataPage .right_pannel .mainPage .profileStepsMeter .meterBar{    padding: 0px 10px;}
+.search_distributor_page .right_pannel .searchBy_wrapper, .search_distributor_page .right_pannel .pannelSTyle .mainPage{    padding: 5px 10px;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList{width:100%;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .imageSet{width:100%;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .imageSet .thumb img{width:100px;}
+.search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .chemis_name_area_location{width:100%;}
+
+.about_padding{    padding-top: 15px;}
+.about_page .health_for_all{background-image:none;}
+.about_page .moto h1{font-size: 28px;}
+.about_page .moto p{    font-size: 18px;}
+/*--14-1-2019--*/
+
+/*--151-2019--*/
+
+
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper li a{    padding: 10px 0px;font-size: 12px;}
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper li{padding: 6px 3px;width: 85px;}
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper li.active a i.fa-check{display:none;}
+.packageDetails:first-child, .packageDetails{float: none;max-width: 170px;width: 100%;display: table-cell;}
+.buy_plan_page .plan_warpper {overflow-y: hidden;overflow-x: scroll;white-space: nowrap;padding: 10px 1px;position: relative;scroll-behavior: smooth;}
+.chemist_account_page.buy_plan_page .packageContainer .package{display: table !important;}
+.packageDetails li:nth-child(2){    padding: 45px 10px 25px;}
+.packageDetails:first-child ul li:nth-child(2){    text-align: left;}
+.chemist_account_page.buy_plan_page .packageContainer{padding:20px 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section{padding: 15px 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section{    padding: 15px 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing{margin-left: 0;}
+.packageDetails:first-child{    position: sticky;left: 0;z-index: 31;background: #fff;border-right: 1px dotted #ccc;}
+.about_page .health_for_all{min-height: 310px;}
+.about-page .heading{font-size: 24px;}
+.about-page .containt p{font-size: 14px;    padding-left: 15px;padding-right: 15px;}
+.about-page section{    padding: 30px 0;}
+.about-page .what_got_us_started .heading{text-align: center;    margin-top: 15px;}
+.about-page .what_got_us_started p{text-align: center;}
+.about_page .what_we_offer .offering_listing .list{    text-align: center;float: none;display: inline-block;    width: 70%;    margin-bottom: 20px;}
+.what_we_offer .offering_listing{text-align: center;}
+.launch_popup[_ngcontent-c3] .designBox[_ngcontent-c3] .vAlign[_ngcontent-c3] .innerDesign[_ngcontent-c3]{width: 90%;}
+
+.my_accountSetting .no_itemFOundPage .graphicPart .image .contentPart{    top: 30px;}
+.my_accountSetting .no_itemFOundPage .graphicPart .image img{    width: 90%;}
+.no_itemFOundPage .graphicPart .image .contentPart .text .big{    font-size: 20px;}
+.no_itemFOundPage .graphicPart .image .contentPart .icon{display:none;}
+.no_itemFOundPage .graphicPart .image .contentPart{top: 15px;left: 30%;}
+.no_itemFOundPage .categoriesDesign .catList .list{    width: 33.3%;}
+/*--15-1-2019--*/
+
+/*--19-1-2019--*/
+.career_page .section_2 .job_Fields-wrapper .job_Field_listing .list{width: 50%;}
+.career_form .left_part .inside_design .set_content .max_width{min-width: auto;}
+.career_page .career_form .left_part .inside_design .set_content .max_width .input_box{    min-width: 250px;}
+.career_page .career_form .right_part{    display: block;float: left;width: 100%;}
+.chemist_listing .chamList .style .imageSet .thumb, .search_distributor_page .right_pannel .search_distributer .search_listing_wrapper .search_listing .chamList .style .chemist_dtls .imageSet .thumb{    width: 100%;}
+/*--19-1-2019--*/
+
+/*--21-1-2019--*/
+.chem_offers .chemiOffers .list .style .offers_details{    float: left;width: 100%;display: block;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry{float: left;width: 100%;display: block;margin-top:10px;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .offer_expiry, .chem_offers .chemiOffers .list .style .deals_expire_enquiry .offer_expiry_days, .chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn{text-align: left;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn .enqry_btn{    margin-top: 10px;    padding: 10px 10px;font-size: 11px;}
+.add_offer_page .add_offer .list{    width: 100%;}
+.categoryPage .categoryBanner .pageTitle .container h1{display: none;}
+.categoryPage .categoryBanner .pageTitle{    background-position: 0 10px;}
+.home_Page .chemist_listing .chamList .style .chemis_name_area_location{    width: 70%;padding-left: 5px;float: left;position: relative;}
+.chamList .style .chemist_other_dtls .opening_time, .Chemistlisting_Page .chemist_listing .chamList .style .chemist_other_dtls .opening_time{display: table-cell;}
+.chemist_listing .chamList .style .chemist_other_dtls .discount{    margin-top: 0;}
+
+.home_Page .chemist_listing .chamList .style .chemist_dtls{padding: 5px 0 0;}
+.home_Page .chemist_listing .chamList .style .imageSet{    padding: 0 5px;    width: 30%;}
+
+footer .sectionLinks .list .title{    margin-bottom: 0px;}
+/* footer .sectionLinks .list .newsletter_form li .input_box{    display: inline-block;height: 38px;    margin: 0;}
+footer .sectionLinks .list .newsletter_form li .primary_btn.fill_yellow{    padding: 10px;margin: 0;vertical-align: middle;} */
+/*--21-1-2019--*/
+
+/*--22-1-2019--*/
+.home_Page .section_4 .OurBrands .list .style{    height: 100px;}
+/* .chemist_listing .chamList .style .chemist_other_dtls .discount .open_closeStatus{    float: right;} */
+.home_Page .chemist_listing .chamList .style .chemist_other_dtls{padding: 10px 5px;}
+.static_page .quicklinkTab_listig{padding-left: 0;}
+.static_page .quick_link_tabs .quicklinkTab_listig .list{padding: 5px 5px;}
+.static_page .quick_link_tabs .quicklinkTab_listig .list a{    margin: 0 5px 0 0;}
+.static_page .quick_link_tabs .quicklinkTab_listig .list a:after{    height: 2px;}
+.static_page .quick_link_tabs .quicklinkTab_listig .list a{    font-size: 12px;}
+.static_page h2{    font-size: 18px;}
+.static_page section{padding: 5px 10px;}
+.chemist_listing .chamList .style .chemis_name_area_location .name{    font-size: 14px;}
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper{    margin-bottom: 15px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper{    max-width: 90px;}
+/*--22-1-2019--*/
+
+/*---23-1-2019--*/
+.chem_offers .chemiOffers .list .style .offer_img-wrapper{    float: left;width: 30%;display: block;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .leftPart .headPart{  padding: 10px 10px;padding-top: 10px;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .leftPart{    top: 0;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox{padding: 0px;    height: auto;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .leftPart .form_part{    padding:20px 10px 60px;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .leftPart .form_part .formGroup .list .label .name{    padding-left: 0;}
+.inquirypopup .designBOx .vAlign .innerDesign .insideBox .leftPart .headPart .name .caption{    font-size: 12px;}
+/*---23-1-2019--*/
+
+/*--24-1-2019--*/
+.chem_offers .chemiOffers .list .style .offer_img-wrapper{margin-bottom: 10px;}
+.chem_offers .chemiOffers .list .style .offers_details{    width: 100%;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper{max-width: initial;}
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper{margin-bottom: 5px;}
+footer .copywrightDiv .right_part .primary_btn{float: left;padding: 8px 10px;font-size: 11px;}
+.referral_page .code_data h2{font-size: 18px;}
+.referral_page .code_data .caption{    font-size: 13px;}
+.referral_page .code_data .my_code{    padding: 5px 15px;    color: #333;}
+.referral_page .code_data .primary_btn{    margin-bottom: 15px;}
+.referral_page{    padding: 20px 10px;}
+.referral_page .code_data .share_option .list .link .icon img{height: 40px;width: 40px;}
+/* .Chemistlisting_Page .chemist_listing .chamList .style .chemist_other_dtls .opening_time .left_content, .chemist_listing .chamList .style .chemist_other_dtls .discount .left_content{width: 25%;} */
+/* .Chemistlisting_Page .chemist_listing .chamList .style .chemist_other_dtls .opening_time .right_content, .chemist_listing .chamList .style .chemist_other_dtls .discount .right_content{width: 75%;} */
+/*--24-1-2019--*/
+
+/*--29-1-2019--*/
+.contact_us_banner ul li{    padding: 0;}
+.banner_wrapper{min-height: 150px;}
+.contact_udp h1{    font-size: 24px;}
+header .searchResultdiv .insideBox .searchListing .list .Name{    max-width: 250px;}
+.launch_popup .designBox .vAlign .innerDesign .launch_img-wrapper img{    width: 250px;}
+.launch_popup .designBox .vAlign .innerDesign{max-width: 300px;}
+/*--29-1-2019--*/
+
+/*--30-1-2019*/
+
+.sending_enquiry_popup .noCartbuttons .list .primary_btn, .sending_enquiry_popup .noCartbuttons .list .scndry_btn{font-size: 11px;
+    padding: 10px 5px;}
+.sending_enquiry_popup .enquiry_popup_msg{    padding: 25px 5px;}
+.chem_offers .offer_details_wrapper .offer_section1{padding: 10px 5px;}
+/*--30-1-2019*/
+
+/*--31-1-2019--*/
+.my_accountPages.familyTree .main_dataPage .right_pannel .page_name .leftData{    width: 100%;}
+/*--31-1-2019--*/
+
+/*--1-2-1029--*/
+.view_details_popup .designBOx .vAlign .innerDesign .my_table th, .view_details_popup .designBOx .vAlign .innerDesign .my_table td{    font-size: 12px;padding: 10px;}
+
+/*--1-2-1029--*/
+
+}
+
+@media screen and (max-width:420px){
+    .dashboard_Widgets .list{width: 100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .reorderBtn{    margin-left: 0;float: left;    margin-top: 10px;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing{    padding: 20px 10px;}
+    .search_distributor_page .right_pannel .searchBy_wrapper .searchBy_listing li.list{    width: 100%;}
+	
+    /*--15-1-2019--*/
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper{padding: 0;    float: left;width: 100%;}
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper li{    width: 80px;    padding: 6px 2px;display: block;    float: left;}
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper li a{float: left;    padding: 10px 0px;    font-size: 11px;}
+
+.chemist_account_page.buy_plan_page .packageContainer{padding: 20px 10px;}
+.about_page .moto h1{font-size: 24px;}
+.about_padding{padding-top: 50px;}
+.about_page .what_we_offer .offering_listing .list{    width: 80%;}
+.launch_popup[_ngcontent-c3] .designBox[_ngcontent-c3] .vAlign[_ngcontent-c3] .innerDesign[_ngcontent-c3] .launch_img-wrapper[_ngcontent-c3] img[_ngcontent-c3]{width: 240px !important;}
+.no_itemFOundPage .categoriesDesign .catList .list{    width: 50%;}
+/*--15-1-2019--*/
+
+.mediaReleasePage .mediaDetails .mainHead .title {font-size: 24px; line-height: 28px;}
+
+/*--19-1-2019--*/
+.career_page .career_form .left_part{height: 200px;}
+/*--19-1-2019--*/
+
+/*--22-1-2019--*/
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper .offer_name{    font-size: 14px;}
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper .offer_companyname, .chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_dealHeading{    font-size: 12px;}
+.chem_offers .chemiOffers .list .style .offers_details .Offer_name_wrapper .offer_discount{    padding: 3px 5px;font-size: 12px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper .offer_proce{    font-size: 12px;}
+/*--22-1-2019--*/
+
+/*--23-1-2019--*/
+.chem_offers .chemiOffers{padding: 10px 5px;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn .scndry_btn{    padding: 10px 10px;    font-size: 11px;}
+.chem_offers .chemiOffers .list .style .deals_expire_enquiry .enquiry_btn{    margin-top: 0;}
+/*--23-1-2019--*/
+
+/*--24-1-2019--*/
+.chem_offers .offer_details_wrapper .offer_section1{padding: 10px 5px;}
+.chem_offers .chemiOffers .list .style .offers_details .deals_qty_wrapper .Deals_wrapper{    border: none;border-right: 1px solid #ccc;padding: 0 5px 0 0;    border-radius: 0;}
+.chem_offers .chemiOffers .list .style .offer_img-wrapper{    width: 30%;}
+.add_offer_page .add_offer .list.offer_days_wrapper .inputForm .label .input_box{    width: 150px;}
+.add_offer_page .add_offer .list.offer_days_wrapper .offer_days .qtyController .minus{width: 30px;}
+.add_offer_page .add_offer .list.offer_days_wrapper .offer_days .qtyController .qty{width: 35px;}
+.add_offer_page .add_offer .list.offer_days_wrapper .offer_days .qtyController .plus{width: 30px;}
+.add_offer_page .btn_wrapper .primary_btn{    padding: 10px 10px;}
+.add_offer_page .btn_wrapper{    margin-bottom: 10px;    font-size: 11px;}
+.chem_offers .offer_details_wrapper .offer_qty_wrapper input{width: 34px;}
+.chem_offers .offer_details_wrapper .offer_qty_wrapper span{padding: 10px 5px;}
+.chem_offers .offer_details_wrapper .offer_section3 .scndry_btn, .chem_offers .offer_details_wrapper .offer_section3 .primary_btn{margin-left: 5px;}
+/*--24-1-2019--*/
+
+/*--28-1-2019--*/
+.chemistDetail_page .section1 .f-14{width: 30%;margin-right: 50px;margin-right: 20%;}
+.chemistDetail_page .section1 .primary_btn{margin-left: 0;    margin-top: 10px;}
+.chemistDetail_page .addFav .Addfav_btn{    display: block;float: right;margin-top: 7px;}
+/*--28-1-2019--*/
+
+/*--29-1-2019--*/
+.contact_us_banner{padding: 30px 0;}
+.banner_wrapper h2{font-size: 22px;}
+.contact_us_banner span.fa.fa-envelope.email{    padding: 5px;}
+header .mainHeader .insideDesign .right_part .icon_menu .list .searchResultdiv .list{    padding-left: 5px;}
+header .searchResultdiv .insideBox .searchListing .list .Name{    max-width: 150px;}
+header .searchResultdiv .insideBox .searchListing .list .price .amount{    font-size: 12px;}
+header .searchResultdiv{left: -5px;}
+.contact_udp{    padding: 0;}
+.contact_udp ul .list{    padding: 5px 5px;}
+.contact_udp ul .list .style .insideDesign{padding: 0;}
+.contact_udp{    width: 100%;padding: 0 5px 15px 5px;}
+.name, .subject_, .contact_type{margin: 0;}
+.form_contact h3{    font-size: 20px;    padding: 0px 0;}
+/*--29-1-2019--*/
+
+/*--30-1-2019--*/
+.chem_offers .offer_details_wrapper .offer_section2{padding: 10px 5px;}
+/*--30-1-2019--*/
+
+}
+
+@media screen and (max-width:375px){
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .leftPart{    width: 100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart{float: left; width: 100%; margin-top: 10px;text-align: left;}
+
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart .price{    float: left;text-align: left;}
+
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart .itemsCount{    float: left; text-align: left;    display: block; width: 100%;}
+
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .leftPart .name{font-size: 18px;}
+
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .DetailShowBtn{float: left;margin-left:0; }
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .leftPart, .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .rightPart{width: 100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .rightPart .price{font-size: 14px;float: left; text-align: left;}
+    .my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .orderListing .list .style .rightPart .itemsCount{float: left;}
+    
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .trackBtn{float:left;font-size: 10px;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus{margin-top:0;}
+    .my_accountPages.chemist-stock-enquiry .retailer_order_tracking .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list{width:100%;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .DeliverySetupProfile .fromGroup .form_group .list {width: 100%;}
+    .registrationLicenceList .list .style .number {font-size: 22px;}
+    .registrationLicenceList .list .style .bottomStyle {padding: 15px 10px;}
+    .registrationLicenceList .list .style .number {padding: 10px 10px;}
+    .registrationLicenceList .list .style .topHead {padding: 15px 10px;}
+    .registrationLicenceList .list .style .bottomStyle .coloumDiv .validDate {width: 80px;}  
+    .my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .leftPart .msg {font-size: 11px;}
+    .my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list.unreadNoti .style .notiTitle::after {position: absolute; right: 10px;}  
+    .my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style {position: relative;}
+    .my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .leftPart{    display: block;width: 100%;float:left;}
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .rightPart{display: block;width: 100%;float:left;    margin-top: 5px;}
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .rightPart .price{float: left;}
+    /*--25-12-2018--*/
+    
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .leftPart{display:block;float:left;width:100%;}
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .rightPart{display:block;float:left;width:100%;    margin-top: 10px;}
+.my_accountPages.my_wallet_page .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .rightPart .AddBTN{float:left;}
+.home_Page .download_section .left_section .button .list .link img{    width: 110px;}
+.home_Page .download_section .left_section .text_part h4{font-size: 24px;}
+
+/*--27-12-2018--*/
+.my_accountPages.chemist-stock-enquiry .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list{width:100%;}
+
+/*--29-12-2018--*/
+.dashboard_page .meterBar_wrapper .meterBar .list{width:100%;}
+
+/*--2-1-2019--*/
+.chemist_listing .chamList .style .imageSet{width: 40%;}
+.chemist_listing .chamList .style .chemis_name_area_location{    width: 60%;}
+
+/*--new-enquiry-form--*/
+.enquiryPopup2 .designBOx .vAlign .innerDesign .insideBox{padding: 0px 15px;}
+/*--new-enquiry-form--*/
+
+.chemistDetail_page .section3 .chemist_aditionalDetails .chemist_aditionalDetailsList{    width: 100%;}
+
+/*--15-1-2019--*/
+.chemist_account_page.buy_plan_page .packageContainer .plans_tabs .plans_tabs_wrapper li{    width: 70px;    padding: 6px 2px;display: block;    float: left;}
+.my_accountSetting .no_itemFOundPage .graphicPart .image .contentPart{    top: 15px;}
+.my_accountSetting .no_itemFOundPage .graphicPart .image .contentPart{    left: 30%;}
+.no_itemFOundPage .graphicPart .image .contentPart .text .big{    font-size: 17px;}
+
+/*--30-1-2019--*/
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .title.blue{    display: block;width: 100%;}
+.my_accountPages.retailer_orders .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .left_section .title.blue{    width: auto;}
+.my_accountPages.chemist_account_page .main_dataPage .right_pannel .mainPage .orderListing .list .style .leftPart .orderTime{    margin: 10px 0;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .reorderBtn.buy_now_btn{float: left;}
+ 
+/*--30-1-2019--*/
+
+/*--1-2-2019---*/
+.chemist_account_page.retailer_enquiry .main_dataPage .right_pannel .mainPage .orderListing .list .style .trackBtn{    margin-top: 10px;margin-left:0;font-size: 12px;margin-right:5px;}
+/*--1-2-2019---*/
+
+}
+
+
+
+
+/********* AMIT(30/01/2019) *****************/
+
+/* @media  (min-width: 481px) and (max-width: 767px){
+    .videogallery-list li{display:block;width: calc(50% - 5px);}
+    .mediaGallery .cols-4 .gallery-items {width: calc(50% - 5px)!important;}
+    }
+    
+    @media  (max-width: 480px){
+    .videogallery-list li{display:block;width:100%;margin-right: 0;}
+    .mediaGallery .cols-4 .gallery-items {width:100%!important;}
+    }
+    
+    @media  (max-width: 767px){
+    .mediaReleasePage .mediaDetails{padding:0 15px;}
+    .mediaReleasePage .mediaDetails .mainHead {padding: 0px 15px;}
+    .mediaReleasePage .mediaDetails .mainHead .title {font-size: 30px;line-height: 40px;}
+    } */
+    
+    /******************************************/
+	

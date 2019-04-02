@@ -1,0 +1,436 @@
+<app-header></app-header>
+
+<div class="add_addressPopup">
+  <div class="designBox">
+
+
+  </div>
+</div>
+
+
+
+<!-- <div class="cart_Page bodySetting">
+
+  
+  <div class="container">
+    <div class="pageSetting">
+      
+  
+  
+      <div class="stepPage_1">
+  
+  
+  
+  
+  
+        <div class="tableDesign">
+          <div class="leftDesign">
+            <h4 class="heading_name">
+              <span class="name">
+                  <app-cart-header></app-cart-header> 
+                Select Delivery Address
+              
+              </span>
+              <div class="RightPart">
+                <span class="Cartprice">Rs. {{state.cartdata.net_payble_amount}}</span>
+                <span class="label">Total List Amount</span>
+              </div>
+            </h4>
+  
+  
+            <div class="fullButtonsdiv"   (click)="navigate('add-address')">
+              <a href="javascript:void(0)" class="AddBtn primary_btn">Add New Address</a>
+            </div>
+  
+  
+  
+  
+                          
+        <ul class="familyTreeListing">
+          <li class="list" id="addr_{{address.address_id}}" *ngFor="let address of addresses" >
+            <div class="style">
+              <span class="name">{{address.full_name}}</span>
+              <span class="age"><i class="fa fa-home"></i> <i> (Home)</i></span>
+              <div class="Address">
+                  {{address.address}}
+              </div>
+            
+  
+              <div class="buttons">
+                <a href="javascript:void(0)" (click)="onEditAddress(address)" class="">Edit</a>
+                <a href="javascript:void(0)"  (click)="setAddress(address)" class="">Select Address</a>
+              </div>
+  
+            </div>
+          </li>
+       
+        </ul>
+  
+  
+  
+          
+  
+          </div>
+          
+          <div class="right_design" style="display:none">
+            
+  
+            <div class="cartSummryview">
+              <div class="mainHeading">Cart Summary <span class="items">({{state.cartdata.items.length}} Items)</span></div>
+              <ul class="cartLists">
+                <li class="list" *ngFor="let cart of state.cartdata.items">
+                  <span class="name">{{cart.product_name}}</span>
+                  <div class="designSetting">
+                    <span class="left_Data">Quantity : {{cart.product_qty}}</span>
+                    <span class="right_Data">Rs. {{cart.price * cart.product_qty}}</span>
+                  </div>
+                </li>
+              
+              </ul>
+            </div>
+  
+            <ul class="summry_design">
+              <li class="list">
+                <div class="labelPart">Total MRP</div>
+                <div class="dataPart">Rs. {{state.cartdata.cart_amount}}</div>
+              </li>
+              <li class="list">
+                <div class="labelPart">Delivery Charges</div>
+                <div class="dataPart">Rs. {{state.cartdata.delivery_amount}}</div>
+              </li>
+              <li class="list">
+                <div class="labelPart b">Amount to be paid</div>
+                <div class="dataPart b">Rs. {{state.cartdata.gross_amount}}</div>
+              </li>
+            </ul>
+            <div class="checkoutBtnDiv">
+              <div class="buttonList">
+                <a  href="javascript:void(0)" routerLink="/cart-step-two" class="backBtn">Go Back</a>
+              </div>
+             
+            </div>
+  
+        </div>	
+        </div>		
+  
+      
+  
+      </div>
+  
+  
+  
+    </div>
+  </div>
+  
+  </div> -->
+
+<div class="bodySetting cartpage_1 cartpage_3 bannerpd">
+
+  <div class="banner_wrapper">
+    <div class="banner_bg"> </div>
+  </div>
+
+  <div class="container">
+    <div class="cart_details">
+      <div class="left_section">
+        <div class="cart_dtails_wrapper">
+          <div class="section_1">
+            <div class="breadCrumbs_wrapper full_w">
+              <ul class="breadCrubs">
+                <li class="list">
+                  <a class="link" href="/home" ng-reflect-router-link="/home" routerlink="/home">Home</a>
+                  <i aria-hidden="true" class="fa fa-angle-right"></i>
+                </li>
+                <li class="list">
+                  <a class="link" href="javascript:void(0)">
+                    <span class="current">Chemist Listing</span>
+                  </a><i aria-hidden="true" class="fa fa-angle-right"></i>
+                </li>
+                <li class="list">
+                  <span _ class="current">Chemist Details</span>
+                </li>
+              </ul>
+            </div>
+            <div class="estimate_items">
+              <div class="left_part">
+                <h1 class="medName">Select Delivery Address</h1>
+
+              </div>
+
+              <div class="total_value right_part">
+                <span>Total value</span>
+                <span class="price">Rs. {{state.cartdata.net_payble_amount}}</span>
+              </div>
+            </div>
+
+            <div class="select_address_wrapper full_w">
+              <div class="btn_wrapper mb20">
+                <button class="btn assent large" (click)="navigate('add-address')" tabindex="0">Add New Address</button>
+              </div>
+              <div class="address_listing">
+                <div class="address_wrapper full_w">
+                  <ul class="address_listing full_w">
+
+                    <li class="address_list full_w" id="addr_{{address.address_id}}" *ngFor="let address of addresses" (click)="setAddress(address)">
+                      <div class="left_part">
+                        <div class="name_wrapper">
+                          <span class="name">{{address.full_name | titlecase}}
+                             <span class="gender" *ngIf="address.gender==0">(Male)</span>
+                             <span class="gender" *ngIf="address.gender==1">(Female)</span>
+                            </span>
+                        </div>
+
+                        <div class="address_wrapper full_w">
+                          <span class="location">{{address.area | titlecase}}</span>
+                          <span class="address">{{address.address}},<br>{{address.city}} - {{address.pincode}}</span>
+                        </div>
+                        <div class="number">
+                          <span>+91 - {{address.mobile}}</span>
+                        </div>
+                      </div>
+
+                      <div class="right_part" >
+                        <!-- <div class="manage_address_wrapper">
+                          <ul class="ellipse_wrapper">
+                            <li class="ellipse"></li>
+                            <li class="ellipse"></li>
+                            <li class="ellipse"></li>
+
+
+                          </ul>
+                          <div class="address_options">
+                            <div class="address_btn">
+                              <button class="btn primary small" (click)="onEditAddress(address)">Edit</button>
+                              <button class="btn secondary small"
+                                (click)="removeAddressById(address.address_id)">Delete</button>
+                            </div>
+                          </div>
+                        </div> -->
+                        <div class="select-address">
+                          <label class="radio btn">
+                            <input checked="checked" name="radio" type="radio" >
+                            <span class="checkmark" id="addrset_{{address.address_id}}">
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="right_section">
+        <div class="section_1">
+          <div class="chem_order_title">
+            <h2>Your Order ({{state.cartdata.items.length}} Items)</h2>
+          </div>
+
+          <div class="chemName_wrapper" *ngFor="let cart of state.cartdata.items">
+
+
+            <div class="left_part">
+              <div class="med_name">
+                <span class="name">{{cart.product_name}}</span>
+                <span class="med_qty">{{cart.product_variant}}</span>
+                <span class="med_company">{{cart.description}}</span>
+              </div>
+            </div>
+            <div class="right_part">
+              <span class="itm_qty">{{cart.product_qty}}</span>
+              <span class="itm_price">Rs. {{cart.price * cart.product_qty |number:'1.2-2'}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="section_2">
+          <div class="chem_order_title">
+            <h2>Your Order </h2>
+          </div>
+          <div class="estimate_details">
+            <div class="left_part">
+              <span class="estimate_title">Subtotal</span>
+            </div>
+            <div class="right_part">
+              <span class="price">Rs. {{state.cartdata.cart_amount}}</span>
+            </div>
+          </div>
+
+          <!-- <div class="estimate_details" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+                    <div class="left_part">
+                      <span class="estimate_title">APC Cashback</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price  discount_text">-Rs. {{state.cartdata.customer_discount_wallet_amount}}</span>
+                    </div>
+                  </div>
+     -->
+        
+          <div class="estimate_details">
+            <div class="left_part">
+              <span class="estimate_title">Discount</span>
+            </div>
+            <div class="right_part">
+              <span class="price">- Rs. {{state.cartdata.total_product_discount_amount}} </span>
+            </div>
+          </div>
+          <div class="estimate_details total_amount">
+              <div class="left_part">
+                <span class="estimate_title">Billing Amount</span>
+              </div>
+              <div class="right_part">
+                <span class="price">Rs.
+                  {{state.cartdata.cart_amount - state.cartdata.total_product_discount_amount |number:'1.2-2'}}</span>
+              </div>
+            </div>
+          <div class="estimate_details" *ngIf="state.cartdata.apc_cash_used!=0">
+            <div class="left_part">
+              <span class="estimate_title">APC Cash Used</span>
+            </div>
+            <div class="right_part">
+              <span class="price">- Rs.{{state.cartdata.apc_cash_used}} </span>
+            </div>
+          </div>
+
+          <div class="estimate_details">
+            <div class="left_part">
+              <span class="estimate_title">Delivery Charges</span>
+            </div>
+            <div class="right_part">
+              <span class="price">
+                <!-- <span>(CJM250)</span>  -->
+                - Rs. {{state.cartdata.delivery_amount}}</span>
+            </div>
+          </div>
+
+          <!-- <div class="estimate_details">
+                    <div class="left_part">
+                      <span class="estimate_title">Coupon Applied</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price">Rs. 10.00</span>
+                    </div>
+                  </div> -->
+
+          <div class="estimate_details total_amount">
+            <div class="left_part">
+              <span class="estimate_title">Amount to Pay</span>
+            </div>
+            <div class="right_part">
+              <span class="price">Rs. {{state.cartdata.net_payble_amount}}</span>
+            </div>
+          </div>
+
+          <div class="estimate_details" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+            <div class="left_part">
+              <span class="estimate_title">APC Cashback*</span>
+            </div>
+            <div class="right_part">
+              <span class="price">
+
+                Rs.{{state.cartdata.customer_discount_wallet_amount}}</span>
+            </div>
+          </div>
+
+
+          <div class="chem-enquiry_wrapper full-w">
+            <button class="btn primary large full_w" id="chem_enquiry" routerLink="/cart-step-two">Go Back</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="right_section">
+              <div class="section_1">
+                <div class="chem_order_title">
+                  <h2>Your Order</h2>
+                </div>
+                <div class="chemName_wrapper"  >
+                  
+                  
+                  <div class="left_part">
+                    <div class="med_name">
+                      <span class="name" >A RET HC</span>
+                      <span class="med_qty">TUBE of 15 GM CREAM</span>
+                      <span class="med_company">{{cart.description}}</span>
+                    </div>
+                  </div>
+                  <div class="right_part">
+                    <span class="itm_qty">1</span>
+                    <span class="itm_price">Rs. Rs. 116.00</span>
+                  </div>
+                </div>
+       
+              </div>
+              <div class="section_2">
+                <div class="chem_order_title">
+                  <h2>Estimates Details</h2>
+                </div>
+                <div class="estimate_details">
+                  <div class="left_part">
+                    <span class="estimate_title">Subtotal</span>
+                  </div>
+                  <div class="right_part">
+                    <span class="price">Rs. 116</span>
+                  </div>
+                </div>
+    
+                  <div class="estimate_details" >
+                    <div class="left_part">
+                      <span class="estimate_title">APC Cashback</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price discount_text">Rs. 23.2</span>
+                    </div>
+                  </div>
+    
+                  <div class="estimate_details">
+                    <div class="left_part">
+                      <span class="estimate_title">Discount</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price">-Rs. 23.2</span>
+                    </div>
+                  </div>
+    
+                  <div class="estimate_details">
+                    <div class="left_part">
+                      <span class="estimate_title">Delivery Charges</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price"><span>(CJM250)</span> - Rs. 00</span>
+                    </div>
+                  </div>
+    
+                  <div class="estimate_details">
+                    <div class="left_part">
+                      <span class="estimate_title">Coupon Applied</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price">Rs. 10.00</span>
+                    </div>
+                  </div>
+    
+                  <div class="estimate_details total_amount">
+                    <div class="left_part">
+                      <span class="estimate_title">Amount to pay</span>
+                    </div>
+                    <div class="right_part">
+                      <span class="price">Rs. 92.8</span>
+                    </div>
+                  </div>
+                  <div class="chem-enquiry_wrapper full-w">
+                    <button class="btn primary large full_w" id="chem_enquiry"  (click)="onNext()" >proceed To Enquiry</button>
+                  </div>
+              </div>
+            </div> -->
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,34 @@
+<div class="launch_popup" >
+  <div class="designBox">
+        <div class="vAlign">
+            <div class="innerDesign">
+
+                <span class="close_popup" style="cursor:pointer" (click)="onClose()"><i class="fa fa-close"></i></span>
+                <div class="launch_img-wrapper">
+                    <img src="assets/images/chem3.png">
+                </div>
+                <div class="launch_content_wrapper">
+                    <div class="heading">
+                        <span>{{state.maintenance.maintenance_status_heading}}</span>
+                    </div>
+                    <div class="subheading">
+                      <span>{{state.maintenance.maintenance_status_message}}</span>
+                    </div>
+                    <div class="timer" *ngIf="istimer">
+                        <h1 class="alt-1">{{time.hour}}h {{time.minute}}m {{time.seconds}}s</h1>
+                    </div>
+                    <!-- 
+                      <div class="launch_date_wrapper">
+                        <span>16/01/2019</span>
+                     </div>
+                   -->
+
+                    <!-- <div class="btn_field">
+                          <input type="submit" value="Submit" class="submit_btn" (click)="onClose()">
+                        </div> -->
+                    
+                </div>  
+            </div>
+        </div>
+  </div>
+</div>

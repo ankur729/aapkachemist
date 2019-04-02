@@ -1,0 +1,24 @@
+<ngx-loading-bar diameter="20px" height="5px"  color="#64FFDA" [includeSpinner]=true></ngx-loading-bar>
+
+<router-outlet></router-outlet>
+<div class="brodcast-popupblock brodcast-popupblock-close">
+        <div class="brodcast-inner">
+      
+            <div class="d-text-flex justify-content-btw">
+                <div class="brodcast-bell">
+                    <img src="assets/images/icon/notify_bell-icon.png">
+                </div>
+                <div class="brodcast-message-content">
+                    <h5 id="notifiytitle">{{payload.title}}</h5>
+                    <!-- <div class="">
+                      <label class="text-blackish">Today, <time>1:30 PM</time></label>
+                      <span class="text-theme pl5">14 Minutes before</span>
+                    </div> -->
+                    <label class="text-grey d-text-block mt10" id="notifybody">{{payload.body}}</label>
+                </div>
+            </div>
+            <span class="notification-arrow" (click)="onCloseNotification()">
+              <img src="assets/images/icon/notify-arrow.png">
+            </span>
+        </div>
+      </div> 

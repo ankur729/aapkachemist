@@ -1,0 +1,124 @@
+<app-header #child></app-header>
+
+ 
+
+
+ 
+ <div class="bodySetting cartpage_1 cartpage_2 bannerpd preview_order_page">
+    
+		<div class="banner_wrapper">
+			<div class="banner_bg">	</div>
+    </div>
+    
+    <!-- <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup> -->
+
+    
+
+
+		<div class="container">
+			<div class="cart_details">
+				<div class="left_section">
+					<div class="preview_order_wrapper full_w">
+            <div class="section section_1">
+                <ul class="breadCrubs">
+                  <li  class="list">
+                    <a  class="link"  routerlink="/home">Home</a>
+                    <i  aria-hidden="true" class="fa fa-angle-right"></i>
+                  </li>
+                	<li class="list">
+                      <a class="link" href="javascript:void(0)">
+                        <span class="current">Cart</span></a>
+                      <!-- <i aria-hidden="true" class="fa fa-angle-right"></i> -->
+                    </li>
+                  <!-- <li class="list">
+                    <span  class="current">Chemist Details</span>
+                  </li> -->
+                </ul>
+               
+                <div  class="estimate_items ">
+                  <div class="left_part">
+                    <h1 class="medName">Upload Prescription</h1>
+                    
+                  </div>
+                  <div class=" right_part" routerLink="/cart-step-two" *ngIf="state.cartdata.prescription_status==2">
+                    <span class="skip_btn">Skip</span>
+                  </div>
+                </div>
+
+                <div class="upload_prescription_wrapper full_w">
+                    <div class="upload">
+                      <div class="icon_wrapper">
+                          <img src="assets/images/icon/selec_pic.png">
+                      </div>
+                    </div>
+                    <div class="uploading_description">
+                        <span class="title">Order Quickly with prescription</span>
+                        <span class="sub_title">Upload prescription and tell us what  you need. We do the rest</span>
+                    </div>
+                    <div class="upload_button_wrapper">
+                        <button class="btn primary medium">Upload</button>
+                        <input type="file" accept="image/jpeg, image/png" (change)="onChangeImage($event)">
+                    </div>
+                </div>
+
+            </div>
+        
+           <div class="section section_2" *ngIf="prescription_arr.length>0">
+              <div class="uploaded_prescription_wrapper">
+                  <div class="heading">
+                      <h2>Prescription Uploaded</h2>
+                  </div>
+
+                  <div class="uploaded_prescription">
+                      <ul class="Prescription">
+                          <li class="style" *ngFor="let prescription of prescription_arr">
+                             
+        
+                                  <div class="Prescription_" >
+                                      <img src="{{prescription.file_Path}}">
+                                     
+                                  </div>
+                                 
+                                
+                            <span class="cross_btn" (click)="onRemoveImage(prescription)"><img src="assets/images/icon/cross.png"></span>
+                          </li>
+                          
+                      </ul>
+
+                  </div>
+                  <div class="btn_wrpper">
+                      <button class="btn assent large" (click)="onNext()">continue</button>
+                  </div>
+              </div>
+           </div>
+           
+          </div>
+          
+       
+				</div>
+
+				<div class="right_section">
+					
+          <div class="section_2">
+              <div class="heading">
+                  <h2>Sample Image</h2>
+              </div>
+            <div class="dummy_prescription_wrapper">
+                <div class="dummy_prescription_image">
+                    <img src="assets/images/dummy_prescription.jpg">
+                </div>
+            </div>
+        <!-- <div class="chem-enquiry_wrapper full_w">
+                  <button class="btn secondary large " id="chem_enquiry" >Go back</button>
+                <button class="btn primary large " id="chem_enquiry" >Order now</button>
+              </div> -->
+            </div>
+				</div>
+			</div>
+		</div>
+  </div>
+
+
+
+
+<app-footer></app-footer>

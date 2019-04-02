@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>CLA</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/media.css">
+
+
+	    <link rel="stylesheet" href="plugin/owl_2/assets/owlcarousel/assets/owl.carousel.min.css"><!-- 
+	    <link rel="stylesheet" href="plugin/owl_2/assets/owlcarousel/assets/owl.theme.default.min.css"> -->
+		<!-- 
+			<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500,500i,700,700i,900" rel="stylesheet">
+		-->
+		<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="plugin/input/css/set2.css" />
+		<link rel="stylesheet" href="plugin/button/test/test.css">
+		<script src="js/min.js"></script>
+
+	    <script src="plugin/button/src/jquery.ripple.js"></script>
+	    <script src="plugin/button/test/test.js"></script>
+
+		<link rel = "stylesheet" href = "plugin/nature/css/flexBackground.css"/>
+		<script type = "text/javascript" src = "js/jquery.min.js"></script>	
+		<script type = "text/javascript" src="plugin/nature/js/flexBackground2.js"></script>
+		<!-- css end here-->
+	</head>
+
+<body>
+<div class="main_container BasepageColor">
+
+	<!-- <div class="paymentPage success">
+		<div class="insideDEsign">
+			<div class="designBox">
+				<span class="icon"><img src="images/payment_success.png"></span>
+				<div class="textMatter">
+					<h2 class="title">Payment Success</h2>
+					<span class="data">Thankyou for choosing us we are happy to have you</span>
+				</div>
+				<div class="buttons">
+					<a href="#0" class="continueBtn">Continue</a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="paymentPage fail">
+		<div class="insideDEsign">
+			<div class="designBox">
+				<span class="icon"><img src="images/payment_fail.png"></span>
+				<div class="textMatter">
+					<h2 class="title">Payment Fail</h2>
+					<span class="data">Soory for inconvenience please try again later</span>
+				</div>
+				<div class="buttons">
+					<a href="#0" class="continueBtn">Continue</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<script type="text/javascript" src="plugin/animation/1/jquery.firefly-0.7.js"></script>
+<script type="text/javascript">
+ 	
+
+
+	$(".natureSceen .ufo").animate({
+		left: "0",
+		right: "0"
+	}, 1500);
+
+
+
+function astronautAnim(){
+	$(".natureSceen .ufo .astronaut").addClass("active");
+
+	$(".natureSceen .ufo .astronaut.active").animate({
+		width: "70px",
+		bottom: "0px",
+		opacity: "1"
+	}, 3000);
+}
+
+function addAnimation(){
+	$(".natureSceen .ufo").addClass("active");
+	 setTimeout(astronautAnim, 500)
+
+	 $(".roundAnimation .user_icon1 , .roundAnimation .user_icon2 , .roundAnimation").addClass("active");
+	$(".animationType2 .natureSceen .chalangeROunds ").animate({
+		opacity: "1"
+	}, 1000);
+
+}
+
+
+ setTimeout(addAnimation, 1500)
+
+$(document).ready(function(){
+$(".flexBackground").flexBackground({numberOfPoints:'500',
+	radius:'2',
+	interval : '100',
+	color : 'rgb(256, 256, 256)' //Only In RGB format. don't use #hex or any other color format
+	});
+})
+
+
+
+function questionMsgAnsDivStart(){
+	$(".questionMsgAnsDiv").show();
+	$(".questionMsgAnsDiv .overlay").animate({
+		opacity: "1"
+	}, 500)
+	$(".questionMsgAnsDiv .designBox").animate({
+		opacity: "1",
+		bottom: "0"
+	}, 300)
+}
+
+function questionMsgAnsDivEnd(){
+	$(".questionMsgAnsDiv .overlay").animate({
+		opacity: "0"
+	}, 500)
+	$(".questionMsgAnsDiv .designBox").animate({
+		opacity: "0",
+		bottom: "-250px"
+	}, 300)
+
+}
+
+$("body").click(function(){
+ questionMsgAnsDivStart();
+  setTimeout(questionMsgAnsDivEnd, 5000)
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>

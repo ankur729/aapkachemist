@@ -1,0 +1,178 @@
+      <!-- left pannel start here -->
+   
+      <div class="left_pannel">
+        <!-- <span class="sectionName">My Account</span>
+        <ul class="pannelList">
+            <li class="list">
+                <div class="nameDesigns" id="myenquires" (click)="navigate('my-enquires')">
+                  <span class="icon"><img src="assets/images/icon/category/green/10.png"></span>
+                  <div class="name">My Enquiries</div>
+                </div>
+              </li>
+              <li class="list">
+                  <div class="nameDesigns" id="myorders" routerLink="/my-account/orders" [queryParams]="{'type':'OS01'}">
+                    <span class="icon"><img src="assets/images/icon/category/green/12.png"></span>
+                    <div class="name">My Orders</div>
+                  </div>
+                </li>
+          <li class="list">
+            <a href="javascript:void(0)" id="familytree" class="nameDesigns active" (click)="navigate('family-tree')">
+              <span class="icon"><img src="assets/images/icon/category/green/6.png"></span>
+              <div class="name">Family Tree</div>
+            </a>
+          </li>
+          <li class="list">
+            <div class="nameDesigns" id="changepass" (click)="navigate('change-password')">
+              <span class="icon"><img src="assets/images/icon/category/green/4.png"></span>
+              <div class="name">Change Password</div>
+            </div>
+          </li>
+          <li class="list">
+            <div class="nameDesigns" id="updateprofile" (click)="navigate('update-profile')">
+              <span class="icon"><img src="assets/images/icon/category/green/7.png"></span>
+              <div class="name">Update Profile</div>
+            </div>
+          </li>
+          <li class="list">
+            <div class="nameDesigns" id="apccash" routerLink="/my-account/apc-cash">
+              <span class="icon"><img src="assets/images/icon/category/green/14.png"></span>
+              <div class="name">APC Cash</div>
+            </div>
+          </li>
+          <li class="list" >
+              <div class="nameDesigns" id="mywallet"  routerLink="/my-account/wallet">
+                <span class="icon"><img src="assets/images/icon/category/green/2.png"></span>
+                <div class="name">My Wallet
+                  
+                
+                
+                </div>
+              </div>
+            </li>
+            <li class="list" >
+              <div class="nameDesigns" id="refferearn"  routerLink="/my-account/reffer-earn">
+                <span class="icon"><img src="assets/images/icon/category/green/2.png"></span>
+                <div class="name">Reffer Earn
+                  
+                
+                </div>
+              </div>
+            </li>
+            <li class="list">
+              <div class="nameDesigns" id="mynotification"  (click)="navigate('my-notification')">
+                <span class="icon"><img src="assets/images/icon/category/green/5.png"></span>
+                <div class="name">My Notification 
+                 
+                </div>
+              </div>
+            </li>
+           
+            <li class="list">
+              <div class="nameDesigns" id="mychemist" (click)="navigate('my-chemist')">
+                <span class="icon"><img src="assets/images/icon/category/green/13.png"></span>
+                <div class="name">My Chemist</div>
+              </div>
+            </li>
+          
+           
+        </ul> -->
+
+        <div class="section_1 section">
+            <div class="user_info_part">
+                <div class="profile_pic">
+                  <img 
+                  *ngIf="state.user.profile_image_path !=undefined"
+                  src="{{state.user.profile_image_path}}"
+                  
+                  >   
+                  <img 
+                  *ngIf="state.user.profile_image_path ==undefined"
+                  src="assets/images/user_default_pic.png"
+                  
+                  >   
+                </div>
+                <div class="user_name">
+                    <span class="griting_text">Hello,</span>
+                    <span class="name">{{state.user.first_name}}</span>
+                </div>
+                <div class="user_notifications" routerLink="/my-account/notification">
+                    <img src="assets/images/icon/bell.png">
+                    <span class="notifications">{{state.user.total_notification}}</span>
+                </div>
+            </div>
+            <div class="share_earn" routerLink="/my-account/reffer-earn"   >
+                <div class="icon_wrapper">
+                  <img src="assets/images/icon/share_earn2.png">
+                </div>
+                <div class="text_part">
+                    <span class="apc_cash">{{state.user.total_wallet_amount}} APC Cash</span>
+                    <span class="descr">Invite friend to earn more <img src="assets/images/icon/right_arrow.png"></span>
+                </div>
+            </div>
+        </div> 
+        <!-- <div class="section_2 section">
+            <div class="order_link full_w">
+              <div class="style active"  routerLink="/my-account/orders">
+                <span class="icon_wrapper"><img src="assets/images/icon/orders.png"></span>
+                <span class="text_part">Orders</span>
+              </div>
+            </div>
+     
+        </div>
+     -->
+        <div class="section_3 section">
+            <ul class="left_panel_listing">
+              <!-- <div class="account_panel_heading">
+                  <h2> Exclusive</h2>
+              </div>  -->
+              <li class="list"  routerLink="/my-account/orders">
+                <a href="javascript:void(0)" id="myorders"  class="text_part" routerLink="/my-account/orders" >
+                  <span class="icon_wrapper"><img src="assets/images/icon/order-icon.png"></span> <span class="text">My Order</span></a>
+            </li>
+
+                <li class="list" >
+                    <a href="javascript:void(0)" id="familytree"  class="text_part" routerLink="/my-account/family-tree" >
+                      <span class="icon_wrapper"><img src="assets/images/icon/family_tree.png"></span>   <span class="text">My Family</span> </a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="changepass"  class="text_part" routerLink="/my-account/change-password"> <span class="icon_wrapper"><img src="assets/images/icon/change_password.png"></span>  <span class="text">Change Password</span></a>
+                </li> 
+            <!-- </ul> -->
+    
+            <!-- <ul class="left_panel_listing"> -->
+                <!-- <div class="account_panel_heading">
+                    <h2> Management</h2>
+                </div>  -->
+                   <li class="list"> 
+                      <a href="javascript:void(0)" id="updateprofile"  class="active text_part"  routerLink="/my-account/update-profile"> <span class="icon_wrapper"><img src="assets/images/icon/updatepro-icon.png"></span>  <span class="text">Update Profile</span></a>
+                  </li> 
+                 <li class="list"> 
+                      <a href="javascript:void(0)" id="apccash"  class="text_part" routerLink="/my-account/apc-cash">  <span class="icon_wrapper"><img src="assets/images/icon/apccash-icon.png"></span>  <span class="text">APC Cash</span> </a>
+                  </li> 
+                  <li class="list"> 
+                      <a href="javascript:void(0)" id="mywallet"  class="text_part" routerLink="/my-account/wallet"> <span class="icon_wrapper"><img src="assets/images/icon/apc_wallet.png"></span>  <span class="text">My Wallet</span> </a>
+                  </li> 
+                  <li class="list"> 
+                      <a href="javascript:void(0)" id="broadcast"  class="text_part" routerLink="/my-account/broadcast"> <span class="icon_wrapper"><img src="assets/images/icon/broadcast_icon.png"></span>  <span class="text">Broadcast</span> </a>
+                  </li> 
+ 
+                 <li class="list">
+                   
+                      <a href="javascript:void(0)" id="mychemist"  class="text_part " routerLink="/my-account/chemist"  ><span class="icon_wrapper"><img src="assets/images/icon/chemist-icon.png"></span>  <span class="text">My Chemist</span></a>
+                  </li> 
+                  <li class="list">
+                    <a href="javascript:void(0)" id="refferhistory"  class="text_part " routerLink="/my-account/reffer-history"  ><span class="icon_wrapper"><img src="assets/images/icon/payment_request.png"></span>   <span class="text">Refer Earn History</span></a>
+                </li> 
+                <li class="list">
+                  <a href="javascript:void(0)" id="complaint"  class="text_part " routerLink="/my-account/complaint"  ><span class="icon_wrapper"><img src="assets/images/icon/complaint.png"></span>   <span class="text">Report Issue</span></a>
+              </li> 
+                <!-- <li class="list">
+                    <a href="javascript:void(0)" id="mychemist"  class="text_part " routerLink="/my-account/complaint"  ><span class="icon_wrapper"><img src="assets/images/icon/category/green/13.png"></span>  My Comlaint</a>
+                </li>  -->
+              </ul>
+        </div>
+      
+      </div>
+
+      <!-- <app-refferal ></app-refferal> -->
+      <!-- left pannel end here -->

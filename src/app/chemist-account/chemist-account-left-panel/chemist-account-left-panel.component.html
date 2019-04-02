@@ -1,0 +1,301 @@
+
+   
+   <!-- left pannel start here -->
+   
+   <div class="left_pannel chemist_lef_pannel">
+      <!-- <span class="sectionName">Enquiry/Order </span>
+      <ul class="pannelList">
+        <li class="list">
+          <a href="javascript:void(0)"  id="stockenquiry"  (click)="navigate('stock-enquiry')" class="nameDesigns">
+            <span class="icon"><img src="assets/images/icon/category/green/10.png"></span>
+            <div class="name">Sent Enquiries</div>
+          </a>
+        </li>
+        <li class="list">
+          <div class="nameDesigns" id="retailerenquiry" routerLink="/chemist-account/retailer-enquiry" [queryParams]="{ type: ''}">
+            <span class="icon"><img src="assets/images/icon/category/green/15.png"></span>
+            <div class="name">Recieved Enquiries</div>
+          </div>
+        </li>
+        <li class="list">
+          <a href="javascript:void(0)" class="nameDesigns"  id="stockorders" routerLink="/chemist-account/stock-orders" [queryParams]="{ type: 'OS01'}">
+            <span class="icon"><img src="assets/images/icon/category/green/12.png"></span>
+            <div class="name">Sent Orders</div>
+          </a>
+        </li>
+        <li class="list">
+          <div class="nameDesigns" id="retailerorders"  routerLink="/chemist-account/retailer-orders" [queryParams]="{ type: 'OS01'}">
+            <span class="icon"><img src="assets/images/icon/category/green/16.png"></span>
+            <div class="name">Recieved Orders</div>
+          </div>
+        </li>
+  
+      </ul>
+      
+      <span class="sectionName">Other Usage</span>
+      <ul class="pannelList">
+          <li class="list">
+              <div class="nameDesigns"  id="dashboard" routerLink="/chemist-account/dashboard">
+                <span class="icon"><img src="assets/images/icon/category/green/1.png"></span>
+                <div class="name">Dashboard</div>
+              </div>
+            </li>
+  
+          <li class="list" style="display:none">
+            <div class="nameDesigns"  id="viewprofile" routerLink="/chemist-account/view-profile">
+              <span class="icon"><img src="assets/images/icon/category/green/16.png"></span>
+              <div class="name">View Profile</div>
+            </div>
+          </li>
+          <li class="list">
+            <div class="nameDesigns"  id="mywallet" routerLink="/chemist-account/my-wallet">
+              <span class="icon"><img src="assets/images/icon/category/green/14.png"></span>
+              <div class="name">APC Cash
+                
+                <span class="bagged" *ngIf="state.user.total_wallet_amount!=undefined" >
+                  Rs.{{state.user.total_wallet_amount}}
+                </span>
+                <span class="bagged" *ngIf="state.user.total_wallet_amount==undefined" >
+                    Rs.0
+                  </span>
+              </div>
+            </div>
+          </li>
+        <li class="list" >
+          <a href="javascript:void(0)" class="nameDesigns"  id="profilesetup" (click)="navigate('profile-setup')">
+            <span class="icon"><img src="assets/images/icon/category/green/3.png"></span>
+            <div class="name">Profile Setting</div>
+          </a>
+        </li>
+        <li class="list">
+          <div class="active nameDesigns"  id="changepass" (click)="navigate('change-password')">
+            <span class="icon"><img src="assets/images/icon/category/green/4.png"></span>
+            <div class="name">Change Password</div>
+          </div>
+        </li>
+        <li class="list" >
+          <div class="nameDesigns"  id="notifications" (click)="navigate('notifications')">
+            <span class="icon"><img src="assets/images/icon/category/green/5.png"></span>
+            <div class="name">Broadcast <span class="bagged" *ngIf="state.user.total_notification!=undefined && state.user.total_notification !=0">{{state.user.total_notification}}</span></div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="nameDesigns"  id="myaddress" (click)="navigate('my-address')">
+            <span class="icon"><img src="assets/images/icon/category/green/6.png"></span>
+            <div class="name">Manage Address</div>
+          </div>
+        </li>
+        
+        <li class="list">
+          <div class="nameDesigns"  id="updateprofile" (click)="navigate('update-profile')">
+            <span class="icon"><img src="assets/images/icon/category/green/7.png"></span>
+            <div class="name">Update Profile</div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="nameDesigns"  id="refferearn" routerLink="/chemist-account/reffer-earn">
+            <span class="icon"><img src="assets/images/icon/category/green/14.png"></span>
+            <div class="name">Reffer n Earn</div>
+          </div>
+        </li>
+        <li class="list">
+            <div class="nameDesigns"  id="offers" routerLink="/chemist-account/offers">
+              <span class="icon"><img src="assets/images/icon/category/green/14.png"></span>
+              <div class="name">Offers</div>
+            </div>
+          </li>
+          <li class="list">
+              <div class="nameDesigns"  id="myoffers" routerLink="/chemist-account/my-offers">
+                <span class="icon"><img src="assets/images/icon/category/green/14.png"></span>
+                <div class="name">My Offers</div>
+              </div>
+            </li>
+       
+        <li class="list">
+          <div class="nameDesigns"  id="searchdistributor" routerLink="/chemist-account/search-distributor">
+            <span class="icon"><img src="assets/images/icon/category/green/17.png"></span>
+            <div class="name">Search Distributor</div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="nameDesigns"  id="packagehistory" routerLink="/chemist-account/package-history">
+            <span class="icon"><img src="assets/images/icon/category/green/18.png"></span>
+            <div class="name">Package History</div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="nameDesigns" id="buyplan"    routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'monthly'}">
+            <span class="icon"><img src="assets/images/icon/category/green/19.png"></span>
+            <div class="name">Buy Plan</div>
+          </div>
+        </li>
+      </ul> -->
+      <div class="section_1 section">
+          <div class="user_info_part">
+              <div class="profile_pic">
+                <img 
+                *ngIf="state.user.profile_image_path !=undefined"
+                src="{{state.user.profile_image_path}}"
+
+                >    
+                <img 
+                *ngIf="state.user.profile_image_path ==undefined"
+                src="assets/images/user_default_pic.png"
+
+                >    
+ 
+              </div>
+              <div class="user_name">
+                  <span class="griting_text">Hello,</span>
+                  <span class="name">{{state.user.first_name}}</span>
+              </div>
+              <div class="user_notifications" routerLink="/chemist-account/notifications">
+                  <img src="assets/images/icon/bell.png">
+                  <span class="notifications">{{state.user.total_notification}}</span>
+              </div>
+              
+          </div>
+
+          <div class="share_earn" routerLink="/chemist-account/reffer-earn"   >
+            <div class="icon_wrapper">
+              <img src="assets/images/icon/share_earn2.png">
+            </div>
+            <div class="text_part">
+                <span class="apc_cash">{{state.user.total_wallet_amount}} APC Cash</span>
+                <span class="descr">Invite friend to earn more <img src="assets/images/icon/right_arrow.png"></span>
+            </div>
+        </div>
+          <!-- <div class="share_earn"  routerLink="/chemist-account/reffer-earn">
+              <div class="icon_wrapper">
+                <img src="assets/images/icon/share_earn.png">
+              </div>
+              <div class="text_part">
+ 
+                  <span class="apc_cash">{{state.user.total_wallet_amount}} APC Cash</span>
+                  <span class="descr">Invite friend to earn more <img src="assets/images/icon/right_arrow.png"></span>
+              </div>
+          </div> -->
+      </div> 
+      <!-- <div class="section_2 section full_w">
+  
+          <div class="right_part ">
+              <div class="style"  routerLink="/chemist-account/retailer-enquiry" [queryParams]="{ type: 'new'}">
+                <span class="icon_wrapper"><img src="assets/images/icon/orders.png"></span>
+                <span class="text_part">Orders</span>
+              </div>
+          </div>
+      </div> -->
+  
+      <div class="section_3 section">
+          <ul class="left_panel_listing">
+            <!-- <div class="account_panel_heading">
+                <h2>
+         
+                  Exclusive</h2>
+            </div>  -->
+            <li class="list" >
+                <a href="javascript:void(0)" id="retailerenquiry" class="text_part"  routerLink="/chemist-account/retailer-enquiry" [queryParams]="{ type: 'new'}" class="nameDesigns"><span class="icon_wrapper"><img src="assets/images/icon/order-icon.png"></span>
+                <span class="text">Orders</span></a>
+            </li>
+            <li class="list" >
+                <a href="javascript:void(0)" id="mywallet" class="text_part"  routerLink="/chemist-account/my-wallet" class="nameDesigns"><span class="icon_wrapper"><img src="assets/images/icon/apccash-icon.png"></span>
+                  <span class="text">APC Cash</span></a>
+            </li> 
+            <li class="list" >
+              <a href="javascript:void(0)" id="bidcoin"  class="text_part"  routerLink="/chemist-account/bid-coin" class="nameDesigns"><span class="icon_wrapper"><img src="assets/images/icon/bidcoin_icon.png"></span>
+                <span class="text">Bid Coin</span></a>
+          </li>
+            <!-- <li class="list">
+                  <a href="javascript:void(0)"  id="stockenquiry" class="text_part"  routerLink="/chemist-account/stock-enquiry"  class="nameDesigns">Sent Enquiries</a>
+              </li> -->
+
+              <li class="list">
+                  <a href="javascript:void(0)"  id="stockorders" class="text_part"  routerLink="/chemist-account/stock-orders" [queryParams]="{ type: 'OS01'}"  class="nameDesigns"><span class="icon_wrapper"><img src="assets/images/icon/send_orders.png"></span>
+                    <span class="text">Sent Orders</span> </a>
+              </li>
+              <!-- <li class="list">
+                  <a href="javascript:void(0)"  class="text_part"  routerLink="/chemist-account/retailer-enquiry" [queryParams]="{ type: ''}">Recieved Enquiries</a>
+              </li> -->
+          <!-- </ul> -->
+  
+          <!-- <ul class="left_panel_listing"> -->
+              <!-- <div class="account_panel_heading">
+                  <h2>
+                 
+                     Management</h2>
+              </div>  -->
+                <li class="list">
+                    <a href="javascript:void(0)" id="dashboard" class="text_part" routerLink="/chemist-account/dashboard"><span class="icon_wrapper"><img src="assets/images/icon/dashboard_icon.png"></span>
+                      <span class="text">Dashboard</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="profilesetup" class="text_part" routerLink="/chemist-account/profile-setup" [queryParams]="{step:'1'}"> <span class="icon_wrapper"><img src="assets/images/icon/business_setting.png"></span>
+                      <span class="text">Business Setting</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" class="text_part"  routerLink="/chemist-account/order-history" ><span class="icon_wrapper"><img src="assets/images/icon/order_history.png"></span>
+                    <span class="text">Order History</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="changepass"  class="text_part" (click)="navigate('change-password')"> <span class="icon_wrapper"><img src="assets/images/icon/change_password.png"></span>
+                      <span class="text">Change Password</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="notifications" class="text_part"  routerLink="/chemist-account/broadcast"><span class="icon_wrapper"><img src="assets/images/icon/broadcast_icon.png"></span>
+                      <span class="text">Broadcast</span> </a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="myaddress" class="text_part" (click)="navigate('my-address')"><span class="icon_wrapper"><img src="assets/images/icon/manage_addess.png"></span>
+                      <span class="text">Manage Address</span></a>
+                </li>
+  
+                <li class="list">
+                    <a href="javascript:void(0)" id="updateprofile" class="text_part" (click)="navigate('update-profile')"><span class="icon_wrapper"><img src="assets/images/icon/updatepro-icon.png"></span>
+                      <span class="text">Update Profile</span></a>
+                </li>
+                <!-- <li class="list">
+                    <a href="javascript:void(0)" id="offers" class="text_part" routerLink="/chemist-account/offers">Offers</a>
+                </li> -->
+                <li class="list">
+                    <a href="javascript:void(0)" id="myoffers" class="text_part" routerLink="/chemist-account/my-offers"><span class="icon_wrapper"><img src="assets/images/icon/manage_offers.png"></span>
+                    <span class="text">Manage Offers</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="refferhistory" class="text_part" routerLink="/chemist-account/reffer-history"><span class="icon_wrapper"><img src="assets/images/icon/payment_request.png"></span>
+                    <span class="text">Refer Earn History</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="searchdistributor" class="text_part" routerLink="/chemist-account/search-distributor"><span class="icon_wrapper"><img src="assets/images/icon/find_distributor.png"></span>
+                    <span class="text">Search Distributor</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="searchdistributor" class="text_part" routerLink="/chemist-account/payment"><span class="icon_wrapper"><img src="assets/images/icon/payment_request.png"></span>
+                    <span class="text">Payment Request</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="packagehistory" class="text_part" routerLink="/chemist-account/package-history"><span class="icon_wrapper"><img src="assets/images/icon/plan_history.png"></span>
+                    <span class="text">Plan History</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="bankdetails" class="text_part" routerLink="/chemist-account/update-bank-details"><span class="icon_wrapper"><img src="assets/images/icon/bank_details.png"></span>
+                    <span class="text">Bank Details</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="invoice" class="text_part" routerLink="/chemist-account/invoice"><span class="icon_wrapper"><img src="assets/images/icon/invoice_history.png"></span>
+                    <span class="text">Invoice History</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" class="text_part"  routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'monthly'}"><span class="icon_wrapper"><img src="assets/images/icon/buy_plan.png"></span>
+                    <span class="text">Buy Plan</span></a>
+                </li>
+                <li class="list">
+                    <a href="javascript:void(0)" id="complaint"  class="text_part " routerLink="/chemist-account/complaint"  ><span class="icon_wrapper"><img src="assets/images/icon/complaint.png"></span>   <span class="text">Report Issue</span></a>
+  
+                </li>
+            </ul>
+      </div>
+  
+    </div>
+    
+    <!-- left pannel end here -->
+  

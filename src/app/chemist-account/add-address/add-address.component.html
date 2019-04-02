@@ -1,0 +1,188 @@
+<div class="main_container my_accountPages add_address_page user_account_page">
+
+    <div class="mapLocationSet mapLocation_block">
+        <div class="designBox">
+          <div class="vAlign">
+            <div class="insideDesign">
+              <agm-map [latitude]="lat" [longitude]="lng" [mapDraggable]="true" [zoom]="15">
+                <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="placeMarker($event)"></agm-marker>
+              </agm-map>
+             
+              <div class="search_location_wrapper">
+                <input class="search_location" placeholder="Search Location" #search />
+              </div>
+              <ul class="buttons">
+                <li class="list"><a href="javascript:void(0)" (click)="toggleMapView()" class="btn secondary medium">Cancel</a></li>
+                <li class="list"><a href="javascript:void(0)" class="btn primary medium" (click)="setLocation()">Pick Location</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- <div class="mapLocationSet">
+        <div class="designBox">
+          <div class="vAlign">
+            <div class="insideDesign">
+                <agm-map [latitude]="lat" [longitude]="lng" [mapDraggable]="true" [zoom]="15" >
+                    <agm-marker   [latitude]="lat" [longitude]="lng" [markerDraggable]="true"  (dragEnd)="placeMarker($event)"></agm-marker>
+                  </agm-map>
+              <ul class="buttons">
+                <li class="list" ><a href="javascript:void(0)" (click)="toggleMapView()" class="CancelBtn scndry_btn">Cancel</a></li>
+                <li class="list"><a href="javascript:void(0)" class="LocationBtn primary_btn" (click)="setLocation()">Pick Location</a></li>
+              </ul>
+              <div class="search_location_wrapper">
+                    <input class="search_location" placeholder="Search Location" #search/>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+  
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+ 
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+            
+
+          <div class="right_pannel">
+              <div class="pannelSTyle">
+            <div class="account_page_title">
+              <div class="left_part">
+                <div class="heading">
+                  <h2>Add Address</h2>
+                </div>
+              </div>
+              <div class="right_part">
+                
+              </div>
+              
+            </div>
+            <div class="account_content">
+                <div class="form_wrapper full_w">
+                    <ul class="form_listing full_w">
+                        <li class="form_list full_w">
+                            <h2 class="form_title">Select Gender</h2>
+                            <label class="radio btn"  (click)="onSetGender('m')">Male
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark" id="addrmale"></span>
+                              </label>
+                              <label class="radio btn" id="dropathome" (click)="onSetGender('f')">Female
+                                  <input type="radio" checked="checked" name="radio">
+                                  <span class="checkmark" id="addrfemale"></span>
+                                </label>
+                        </li>
+                       
+                        <li class="form_list">
+                            <div class="style">
+                                <span class="lable" >Contact person name</span>
+                                <input type="text" placeholder="" class="input" [(ngModel)]="address.full_name">
+                            </div>
+                        </li>
+                        <li class="form_list">
+                                <div class="style">
+                                    
+                                    <select class="select_option"  id="input-2" [(ngModel)]="address.relation_id" >
+                                            <option value="">Select Relation</option>
+                                            <option *ngFor="let relation of relations" [value]="relation.id">
+                                                {{relation.parameter_name}}
+                                            </option>
+                                           
+                                        </select>
+                                </div>
+                            </li>
+                        <!-- <li class="form_list">
+                                <div class="style">
+                                        <span class="lable">Shop Name</span>
+                                    <input id="input-1" [(ngModel)]="address.full_name" type="text"  name="person name" class="input">
+                                   
+                                  
+                                </div>
+                            </li> -->
+                        <li class="form_list">
+                            <div class="style">
+                                <span class="lable" >Mobile no.</span>
+                                <input type="number" maxlength="10" placeholder="" class="input" onKeyPress="if(this.value.length==10) return false;"  [(ngModel)]="address.mobile">
+                                
+                            </div>
+                        </li>
+                        
+                    </ul>
+                  
+                    
+                 <ul class="form_listing full_w">
+                     <div class="full_w">
+                            <button class="btn assent large" (click)="toggleMapView()">Location on Map</button>
+                     </div>
+                        
+                     <li class="form_list">
+                            <div class="style">
+                                <span class="lable" >Address</span>
+                                <input type="text" placeholder="" class="input" [(ngModel)]="address.address">
+                            </div>
+                        </li>    
+                        <li class="form_list">
+                            <div class="style">
+                                <span class="lable" >Area</span>
+                                <input type="text" placeholder="" class="input" [(ngModel)]="address.area">
+                            </div>
+                        </li>
+                        <li class="form_list">
+                            <div class="style">
+                                <input type="text" placeholder="" class="input" [(ngModel)]="address.city">
+                                <label for="City" class="lable">City</label>
+                            </div>
+                        </li>
+                     <li class="form_list">
+                     
+                            <div class="style">
+                                <span class="lable" >State</span>
+                                <input type="text" placeholder="" class="input" [(ngModel)]="address.state">
+                            </div>
+                        </li> 
+                   
+                        <li class="form_list">
+                                <div class="style">
+                                    <span class="lable" >PIN Code</span>
+                                    <input type="text" placeholder="" class="input" [(ngModel)]="address.pincode" onKeyPress="if(this.value.length==10) return false;" >
+                                </div>
+                            </li>
+                      
+                        <li class="form_list">
+                            <div class="style">
+                                <span class="lable" >Landmark</span>
+                                <input type="text" placeholder="" class="input" [(ngModel)]="address.landmark">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_wrapper full_w">
+                        <button class="btn primary large"  (click)="onSubmit()">Save</button>
+                        <button class="btn secondary large" routerLink="/chemist-account/my-address">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+      
+
+
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer></app-footer>

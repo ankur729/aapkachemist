@@ -1,0 +1,297 @@
+<app-header></app-header>
+
+<div class="main_container my_accountPages chemist_account_page buy_plan_page bodySetting">
+  <div class="mt10">
+
+    <!-- <div class="sending_enquiry_popup" *ngIf="payment.status!=undefined">
+      <div class="enquiry_popup_msg">
+        <div class="sending_msg_gif">
+          <img *ngIf="payment.status=='success'" src="assets/images/form_icon.png">
+          <img *ngIf="payment.status=='failure'" src="assets/images/error.png">
+        </div>
+        <div class="sending_msg_content">
+
+          <span *ngIf="payment.status=='success'">Transaction successfull</span>
+          <span *ngIf="payment.status=='failure'"> Transaction Failed</span>
+
+        </div>
+        <ul class="noCartbuttons">
+          <li class="list" (click)="onClosePaymentPopup()"><a _ngcontent-c2="" class="Download"
+              href="javascript:void(0)">Close</a></li>
+
+        </ul>
+      </div>
+    </div> -->
+
+    <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+    <div class="container">
+      <div class="main_dataPage">
+        <app-chemist-account-left-panel #child></app-chemist-account-left-panel>
+        <div class="right_pannel">
+         <div class="package-Wrapper">
+            <div class="packageTabs">
+                <ul class="packageTabs-list d-text-flex justify-content-center">
+                    <li  id="monthly"><a href="javascript:void(0)" (click)="switchPlan('monthly')">Monthly <i class="fa fa-check" aria-hidden="true"></i></a></li>
+                    <li id="quaterly"><a href="javascript:void(0)" (click)="switchPlan('quaterly')">Quarterly <i class="fa fa-check" aria-hidden="true"></i></a></li>
+                    <li id="halfyearly"><a href="javascript:void(0)" (click)="switchPlan('halfyearly')"> Half Yearly <i class="fa fa-check" aria-hidden="true"></i></a></li>
+                    <li id="yearly"><a href="javascript:void(0)" (click)="switchPlan('yearly')">Yearly <i class="fa fa-check" aria-hidden="true"></i></a></li>
+                  
+                    
+                </ul>
+            </div>
+            <div class="planWrapper-body">
+              <div class="planWrapper">
+                  <div class="planCategory-box">
+                    <div class="inner_planCategory_box">
+                    
+                      <div class="planCategory-head">
+                          <h5 class="text-theme">{{data.plans.selected_plan[0]?.plan_name}}</h5>
+                          <label class="d-text-block text-black fontbold">Rs. {{data.plans.selected_plan[0]?.plan_amount}}</label>
+                          <span class="d-text-block text-grey">Inclusive GST</span>
+                      </div>
+                      <div class="plansDetails">
+                          <ul class="planDetails-list">
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Listing</span> </li>
+                              <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Website</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Email & Chat Support</span> </li>
+                              <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Call Support 24/7</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Search Support</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Send Enquiry</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Receive Offers</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Buy Leads</span> </li>
+                              <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Banner display</span> </li>
+                              <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Trusted Member</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Lead Management</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Promotional Offers</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Rating</span> </li>
+                              <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Cashback Offers</span> </li>
+                              <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Apc Cash Redemption</span> </li>
+                              <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Rs.00 Cashback</span> </li>
+
+
+                            </ul>
+                            <button class="btn assent large" (click)="onBuyNow(data.plans.selected_plan[0])">BUY PLAN</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="planCategory-box">
+                      <div class="inner_planCategory_box">
+
+                      
+                        <div class="planCategory-head">
+                            <h5 class="text-theme">{{data.plans.selected_plan[1]?.plan_name}}</h5>
+                            <label class="d-text-block text-black fontbold">Rs. {{data.plans.selected_plan[1]?.plan_amount}}</label>
+                            <span class="d-text-block text-grey">Inclusive GST</span>
+                        </div>
+                        <div class="plansDetails">
+                            <ul class="planDetails-list">
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Listing</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Website</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Email & Chat Support</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Call Support 24/7</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Search Support</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Send Enquiry</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Receive Offers</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Buy Leads</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Banner display</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Trusted Member</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Lead Management</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Promotional Offers</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Rating</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Cashback Offers</span> </li>
+                                <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Apc Cash Redemption</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Rs.300 Cashback</span> </li>
+  
+                                <!-- <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Website</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Email & Chat Support</span> </li>
+                                <li> <i class="fa fa-times" aria-hidden="true"></i> <span>Call Support 24/7</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Search Support</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Send Enquiry</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Receive Offers</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Buy Leads</span> </li>
+                                <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Sell Leads</span> </li> -->
+                              </ul>
+                              <button class="btn assent large" (click)="onBuyNow(data.plans.selected_plan[1])">BUY PLAN</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="planCategory-box">
+                        <div class="inner_planCategory_box">
+  
+                        
+                          <div class="planCategory-head">
+                              <h5 class="text-theme">{{data.plans.selected_plan[2]?.plan_name}}</h5>
+                              <label class="d-text-block text-black fontbold">Rs. {{data.plans.selected_plan[2]?.plan_amount}}</label>
+                              <span class="d-text-block text-grey">Inclusive GST</span>
+                          </div>
+                          <div class="plansDetails">
+                              <ul class="planDetails-list">
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Listing</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Website</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Email & Chat Support</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Call Support 24/7</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Search Support</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Send Enquiry</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Receive Offers</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Buy Leads</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Banner display</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Trusted Member</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Lead Management</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Promotional Offers</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Rating</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Cashback Offers</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Apc Cash Redemption</span> </li>
+                                  <li> <i class="fa fa-check" aria-hidden="true"></i> <span>Rs.600 Cashback</span> </li>
+
+                                </ul>
+                                <button class="btn assent large" (click)="onBuyNow(data.plans.selected_plan[2])">BUY PLAN</button>
+                          </div>
+                        </div>
+                      </div> -->
+              </div>
+           </div>
+        </div> 
+        </div>
+    </div>
+       <!-- <div class="packageContainer">
+        <div class="plans_tabs">
+          <ul class="plans_tabs_wrapper">
+            <li id="monthly"><a href="javascript:void(0)" (click)="switchPlan('monthly')">Monthly <i class="fa fa-check"
+                  aria-hidden="true"></i></a></li>
+            <li id="yearly"><a href="javascript:void(0)" (click)="switchPlan('yearly')">Yearly <i class="fa fa-check"
+                  aria-hidden="true"></i></a></li>
+            <li id="quaterly"><a href="javascript:void(0)" (click)="switchPlan('quaterly')">Quarterly <i
+                  class="fa fa-check" aria-hidden="true"></i></a></li>
+            <li id="halfyearly"><a href="javascript:void(0)" (click)="switchPlan('halfyearly')"> Half Yearly <i
+                  class="fa fa-check" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="plan_warpper">
+          <div class="package">
+
+
+            <div class="packageDetails">
+              <ul>
+                <li></li>
+                <li>
+                  <h3>Our Plans </h3><br>
+                </li>
+                <li class="plansName">Listing</li>
+                <li class="plansName">Website</li>
+                <li class="plansName">Email & chat support</li>
+                <li class="plansName">Call Support 24/7</li>
+                <li class="plansName">Search Support</li>
+                <li class="plansName">Send Enquiry</li>
+                <li class="plansName">Receive Offers</li>
+                <li class="plansName">Buy leads</li>
+                <li class="plansName">Sell Leads</li>
+                <li class="plansName">Banner Display</li>
+                <li class="plansName">Trusted Member</li>
+                <li class="plansName">lead Management</li>
+                <li class="plansName">Promotional Offers</li>
+                <li class="plansName">Rating </li>
+                <li class="plansName">Cash Back Offers</li>
+                <li class="plansName">APC Cash Redemption</li>
+                <li class="subscribe_btn">&nbsp;</li>
+
+              </ul>
+            </div>
+            <div class="packageDetails">
+              <ul class="plan_listing ">
+                <li><span class="plan_types">Basic</span></li>
+                <li class="plan_heading" *ngIf="data.plans.selected_plan.length>0">
+                  <h3>{{data.plans.selected_plan[0].plan_name}}
+                    <small>Rs.{{data.plans.selected_plan[0].plan_amount}}</small> </h3>
+                  <button class="top_buy_nowBtn" (click)="onBuyNow(data.plans.selected_plan[0])">Buy Now</button>
+                </li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+                <li class="subscribe_btn" (click)="onBuyNow(data.plans.selected_plan[0])"><a class="primary_btn">Buy
+                    Now</a></li>
+              </ul>
+            </div>
+            <div class="packageDetails">
+              <ul class="plan_listing">
+                <li><span class="plan_types">Standard</span></li>
+                <li class="plan_heading" *ngIf="data.plans.selected_plan.length>0">
+                  <h3>{{data.plans.selected_plan[1].plan_name}}
+                    <small>Rs.{{data.plans.selected_plan[1].plan_amount}}</small> </h3>
+                  <button class="top_buy_nowBtn" (click)="onBuyNow(data.plans.selected_plan[1])">Buy Now</button>
+                </li>
+                <li><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/error.png"></li>
+
+                <li class="subscribe_btn" (click)="onBuyNow(data.plans.selected_plan[1])"><a class="primary_btn">Buy
+                    Now</a></li>
+              </ul>
+            </div>
+            <div class="packageDetails">
+              <ul class="plan_listing">
+                <li><span class="plan_types">Premium</span></li>
+                <li class="plan_heading" *ngIf="data.plans.selected_plan.length>0">
+                  <h3>{{data.plans.selected_plan[2].plan_name}}
+                    <small>Rs.{{data.plans.selected_plan[2].plan_amount}}</small> </h3>
+                  <button class="top_buy_nowBtn" (click)="onBuyNow(data.plans.selected_plan[2])">Buy Now</button>
+                </li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="plansName"><img src="assets/images/plans/success.png"></li>
+                <li class="subscribe_btn" (click)="onBuyNow(data.plans.selected_plan[2])"><a class="primary_btn">Buy
+                    Now</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>  -->
+    </div>
+  </div>
+
+  <!-- <app-payumoney-gateway *ngIf="is_pay_model_set" [pay_model]="payu_model"></app-payumoney-gateway> -->
+  <app-paytm-gateway *ngIf="is_pay_model_set" [pay_model]="payu_model"></app-paytm-gateway>
+
+
+  <app-footer></app-footer>

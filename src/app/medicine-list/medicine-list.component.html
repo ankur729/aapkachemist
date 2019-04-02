@@ -1,0 +1,267 @@
+<app-header #child></app-header>
+
+<div class="Chemistlisting_Page bodySetting">
+
+  <div class="no_itemFOundPage"  *ngIf="isnodatafound==true">
+    <div class="container">
+      <div class="graphicPart">
+        <div class="image"><img src="assets/images/no_item.png">
+          <div class="contentPart">
+         
+            <div class="text">
+              <span class="big">We are Updating Inventory</span>
+              <span class="small">Products will be available soon.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="categoriesDesign">
+				<h4 class="heading">Please add new item in your list from</h4>
+				<ul class="catList">
+        
+          <li class="list" *ngFor="let category of categories_list">
+						<a href="javascript:void(0)" class="link" [routerLink]= " [ '/category/'+category.seo_url]">
+							<span class="icon"><img src="{{category.category_image_path}}"></span>
+							<span class="name">{{category.category_name}}</span>
+						</a>
+					</li>
+			 
+				</ul>
+			</div>
+      
+
+    </div>
+  </div> 
+  
+  
+  <div class="container">
+      <!-- <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found> -->
+
+
+
+      <div class="pageSetting">
+          <div class="main_design">
+            <div class="leftPanel">
+              <div class="filter_part">
+                <div class="headingStyle">
+                  <span class="name">Filter</span>
+                  <span class="resetBtn" (click)="onResetFilter()"></span>
+                </div>
+                <div class="filterPannel" style="display:none">
+                  <span class="filterName">By Discount</span>
+                  <ul class="radioList">
+                    <li class="list">
+                                  <input type="hidden" id="discount_ranger" class="flat-slider" />
+                    </li>
+                  </ul>
+                </div>
+        
+              
+                <div class="filterPannel" style="display:none" >
+                  <span class="filterName">By Price</span>
+                  <ul class="radioList">
+                    <li class="list">
+                                  <input type="hidden" id="price_ranger" class="flat-slider" />
+                    </li>
+                  </ul>
+                </div>
+        
+              
+                <!-- <div class="filterPannel">
+                  <span class="filterName">Location With in</span>
+                  <ul class="radioList">
+                    <li class="list">
+                      <label class="Vcheckbox">
+                        <span class="filterdata">200 M</span>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="number">(15)</span>
+                      </label>
+                    </li>
+                    <li class="list">
+                      <label class="Vcheckbox">
+                        <span class="filterdata">200-500 M</span>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="number">(15)</span>
+                      </label>
+                    </li>
+                    <li class="list">
+                      <label class="Vcheckbox">
+                        <span class="filterdata">500-1000 M</span>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="number">(15)</span>
+                      </label>
+                    </li>
+                    <li class="list">
+                      <label class="Vcheckbox">
+                        <span class="filterdata">1-1.5 KM</span>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="number">(15)</span>
+                      </label>
+                    </li>
+                    <li class="list">
+                      <label class="Vcheckbox">
+                        <span class="filterdata">1-2 KM</span>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="number">(15)</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div> -->
+        
+              
+                <!-- <div class="filterPannel" (click)="setRating()">
+                  <span class="filterName">By Rating</span>
+                  <ul class="radioList">
+                    
+                    <div class="rating"></div>
+        
+                  </ul>
+                </div> -->
+                <div class="FullbuttonDiv" (click)="onApplyFilter()" style="display:none">
+                  <a href="javascript:void(0)" class="ViewmoreBtn">APPLY FILTER</a>
+                </div>
+              </div>
+            </div>
+      <div class="rightPanel">
+        
+         
+          <div class="headingStyle">
+              <div class="namePart">
+
+                <div class="pagesNamePart">
+                    <div class="headPart">
+                      <h1 class="pageName">Medicine Listing </h1>
+                     
+                      <ul class="breadCrubs">
+                        <li class="list"><a href="javascript:void(0)" routerLink="/home" class="link">Home</a></li>
+                        <li class="list"><span class="current"  >Medicine List</span></li>
+                      </ul>
+                    </div>
+                </div>
+                
+                <h1 class="name">Medicine Listing
+                   
+                  <!-- <span class="result">(Showing 1 – 40 products of 87,909 products)</span> -->
+                
+                </h1>
+                <!-- <span *ngIf="listing.length<1" style="color:red"> Record not found for this category</span> -->
+              </div>
+              <div class="sortPart">
+                  <select class="select_option" [(ngModel)]="filter.sort_by" (change)="onChangeDiscount()">
+                    <option value="">--Sort By--</option>
+                    <option value="customer_discount~DESC">Discount High to Low</option>
+                    <option value="customer_discount~ASC">Discount Low to High</option>
+                    <option value="product_name~DESC">Name Z to A</option>
+                    <option value="product_name~ASC">Name A to Z</option>
+                  </select>
+              </div>
+            </div>
+  
+  
+  
+      <ul class="cartListing">
+        <li class="list" *ngFor="let list of listing" >
+     
+          <div class="producThumb"  [routerLink]="['/medicine-detail/'+list.seo_url]" >
+            <span class="thumb"><img src="{{list.product_img_path}}"></span>
+          </div>
+          <div class="infoPart"  [routerLink]="['/medicine-detail/'+list.seo_url]" >
+            <span class="name">{{list.product_name}}</span>
+            <span class="CompanyName">{{list.company_name}}</span>
+            <span class="displayQty">{{list.packing_size}} {{list.packing_type}}</span>
+          </div>
+          <!-- <div class="MultiplePriceDiv">
+            <span class="displayQty">{{list.packing_size}} {{list.packing_type}}</span>
+            <span class="price">Rs. {{list.price}}</span>
+          </div> -->
+          <div class="QTYControllerDiv" (click)="addToCart(list)">
+            <span class="Add_button" id="list_{{list.product_id}}">Add To List</span>
+            <!-- <div class="qtyController">
+              <span class="minus">-</span>
+              <span class="qty"><input type="text" name="" value="10"></span>
+              <span class="plus">+</span>
+            </div> -->
+          </div>
+    
+          
+        </li>
+        <!-- <li class="list">
+          <div class="producThumb">
+            <span class="thumb"><img src="assets/images/products/2.jpg"></span>
+          </div>
+          <div class="infoPart">
+            <span class="name">Decold Total Tables</span>
+            <span class="CompanyName">Decold Total Tables</span>
+          </div>
+          <div class="MultiplePriceDiv">
+            <span class="displayQty">10 Tab Leaf</span>
+            <span class="price">Rs. 1200</span>
+          </div>
+  
+          <div class="QTYControllerDiv">
+            <div class="qtyController">
+              <span class="minus">-</span>
+              <span class="qty"><input type="text" name="" value="10"></span>
+              <span class="plus">+</span>
+            </div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="producThumb">
+            <span class="thumb"><img src="assets/images/products/2.jpg"></span>
+          </div>
+          <div class="infoPart">
+            <span class="name">Decold Total Tables</span>
+            <span class="CompanyName">Decold Total Tables</span>
+          </div>
+          <div class="MultiplePriceDiv">
+            <span class="displayQty">10 Tab Leaf</span>
+            <span class="price">Rs. 1200</span>
+          </div>
+  
+          <div class="QTYControllerDiv">
+            <div class="qtyController">
+              <span class="minus">-</span>
+              <span class="qty"><input type="text" name="" value="10"></span>
+              <span class="plus">+</span>
+            </div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="producThumb">
+            <span class="thumb"><img src="assets/images/products/2.jpg"></span>
+          </div>
+          <div class="infoPart">
+            <span class="name">Decold Total Tables</span>
+            <span class="CompanyName">Decold Total Tables</span>
+          </div>
+          <div class="MultiplePriceDiv">
+            <span class="displayQty">10 Tab Leaf</span>
+            <span class="price">Rs. 1200</span>
+          </div>
+  
+          <div class="QTYControllerDiv">
+            <div class="qtyController">
+              <span class="minus">-</span>
+              <span class="qty"><input type="text" name="" value="10"></span>
+              <span class="plus">+</span>
+            </div>
+          </div>
+        </li> -->
+        
+      </ul>
+  
+      </div>
+    </div>
+    </div>
+  
+  </div>
+  
+  </div>
+  
+<app-footer *ngIf="is_show_footer==true"></app-footer>

@@ -1,0 +1,76 @@
+<div class="main_container my_accountPages">
+
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+    <app-my-account-top-panel></app-my-account-top-panel>
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-my-account-left-panel></app-my-account-left-panel>
+    
+          <div class="right_pannel">
+            <div class="pannelSTyle">
+            <h1 class="page_name">
+              <div class="leftData">
+                  <ul  class="breadCrubs"><li  class="list"><a  class="link" href="#0">Home</a></li><li _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" class="list"><span _ngcontent-c24="" _ngcontent-c10="" _ngcontent-c2="" _ngcontent-c7="" class="current">Cart</span></li></ul>
+                <span class="Pagename">My Address</span>
+              </div>
+              <div class="rightData">
+                <a href="javascript:void(0)" routerLink="/my-account/add-address"  class="AddBtn primary_btn">Add Address</a>
+              </div>
+    
+            </h1>
+    
+            <div class="mainPage">
+              <ul class="familyTreeListing">
+                <li class="list" *ngFor="let address of addresses">
+                  <div class="style">
+                    <span class="name">{{address.full_name}}</span>
+                    <span class="age"  *ngIf="address.address_type=='0'"><i class="fa fa-home"></i>
+                      
+                      <i > (Home)</i>
+                      
+                    
+                    
+                    </span>
+
+                    <span class="age"  *ngIf="address.address_type=='1'"><i class="fa fa-building"></i>
+                      
+                      <i > (Office)</i>
+                      
+                    
+                    
+                    </span>
+                    <div class="Address">
+                     {{address.address}} <br>
+                     {{address.city}} -  {{address.pincode}}
+                    </div>
+    
+                    <div class="buttons">
+                      <a href="javascript:void(0)"  routerLink="/my-account/edit-address" [queryParams]="{addressid:address.address_id}" class="">Edit</a>
+                      <a href="javascript:void(0)" (click)="removeAddressById(address.address_id)" class="">Delete</a>
+                    </div>
+    
+                  </div>
+                </li>
+           
+        
+              </ul>
+            </div>
+    
+          </div>
+        </div>
+        
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer></app-footer>

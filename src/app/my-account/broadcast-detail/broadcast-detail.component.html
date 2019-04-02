@@ -1,0 +1,68 @@
+<div class="main_container my_accountPages user_account_page change_password apcCash notificationPage">
+
+    <app-header></app-header>
+      
+      <div class="my_accountSetting">
+      
+      <app-my-account-top-panel></app-my-account-top-panel>
+      
+        <div class="container">
+          <div class="main_dataPage">
+      
+            <app-my-account-left-panel #leftpanel></app-my-account-left-panel>
+      
+            <div class="right_pannel">
+                <div class="pannelSTyle">
+                    <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+                <!-- <h1 class="page_name">
+                  <div class="leftData">
+                    <span class="Pagename">Notifications</span>
+                  </div>
+                </h1> -->
+                <div class="account_page_title">
+                    <div class="left_part">
+                      <div class="heading">
+                      <h2>Broadcast Detail</h2>
+                      </div>
+                    </div>
+                    <div class="right_part">
+                      
+                    </div>
+                    
+                    </div>
+                     <div class="account_content">
+                      
+                      <div class="broadcastDetail_block">
+                        <div class="time_date text-grey fontsize-14">
+                          <span>{{broadcast.date_time | date:'dd-MM-yyyy'}}</span>
+                          <span class="pl5">{{broadcast.date_time | date:'hh:mm a'}}</span>
+                        </div>
+                        <h6 class="text-black fontbold">{{broadcast.title}}</h6>
+                        <div class="boardcast_detail mt20">
+                            <img *ngIf="broadcast.blogtype==1" src="{{broadcast.image_file}}" class="w-100" >
+                            <img *ngIf="broadcast.blogtype==2" src="{{broadcast.url_link}}" class="w-100" >
+                            <!-- <iframe *ngIf="broadcast.blogtype==2" width="100%" height="100%" [src]="broadcast.url" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen safe></iframe> -->
+                        </div>
+                        <p class="boardcast_about">
+                          {{broadcast.description}}
+                        </p>
+                      </div>
+                
+                     
+                      </div>
+        
+        
+              </div>
+              </div>
+            
+            
+          </div>
+        </div>
+      
+      </div>
+      
+        
+      </div>
+  
+      <app-footer></app-footer>

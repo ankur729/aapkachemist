@@ -1,0 +1,166 @@
+<div class="main_container my_accountPages dashboard_page offers_page">
+    <div class="AddMoneyPopup greateDeal-popup" style="display:none">
+        <div class="designBox">
+          <div class="vAlign">
+            <div class="insideDesign">
+    
+              <div class="heading">
+                <span class="great-deal-img">
+                  <img src="assets/images/great-deal.png">
+                </span>
+              </div>
+              <div class="deal-body">
+                  <div class="content_part full_w">
+                        <h5 class="text-black fontbold">Healthy new year package  </h5>
+                        <label class="d-text-block text-grey"> Include <span class="text-theme"> 120 Meds </span> </label> 
+                      <div class="fromGroup pd0">
+                        <p class="caption">Healthy New Year Package is a comprehensive package specifically designed to evaluate
+                          your essential health parameters. It not only screens the most common health conditions related to
+                          thyroid, heart, liver, kidney.</p>
+                        
+                      </div>
+                  </div>
+                
+
+                <div class="mrp_discount_wrapper">
+                    <div class="left_part">
+                        <span  class="title">MRP</span>
+                        <span class="price">Rs. 23.00 </span>
+                    </div>
+                    <div class="right_part">
+                        <span class="discount">51% Discount</span>
+                    </div>
+                </div>
+
+                <div class="deals_ptr_details full_w">
+                    <ul class="offer_info_listing">
+                        <li class="offer_info_list">
+                            <span class="info-title">Deal Price</span>
+                            <span class="price">Rs. 30.00</span>
+                        </li>
+                        <li class="offer_info_list">
+                            <span class="info-title">PTR</span>
+                            <span class="price">Rs. 30.00</span>
+                        </li> 
+                        <li class="offer_info_list">
+                            <span class="info-title">Expire In</span>
+                            <span class="price">1 Days</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-align-center mt20 full_w">
+                  <button class="btn primary large mr10" >Buy Now</button>
+                  <button class="btn secondary large" >Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+  
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+    
+          <div class="right_pannel">
+            <div class="pannelSTyle">
+              <div class="account_page_title">
+                <div class="left_part">
+                  <div class="heading">
+                  <h2>Manage Offers</h2>
+                  </div>
+                </div>
+                <div class="right_part">
+                  
+                </div>
+                
+                </div>
+            
+              
+              <div class="account_content add_offer_wrapper">
+                  <div class="btn_wrapper">
+                      <button class="btn assent medium" routerLink="/chemist-account/add-offer" > Add Offer</button>
+                  </div>
+                  <div class="offer_wrapper full_w">
+                     
+                   
+                      <ul class="offer_listing full_w">
+                          <li class="offer_list" *ngFor="let offer of offers">
+                              <div class="style">
+                                  <div class="section_1">
+                                      <div class="left_part">
+                                          <div class="offer_icon">
+                                              <img src="assets/images/icon/offer_icon.png">
+                                          </div>
+                                          <div class="offerName">
+                                              <span class="name">{{offer.offer_title}}</span>
+                                              <span class="med_qty_wrapper">include <span class="med_qty">{{offer.stock_quantity}} Meds</span></span>
+                                          </div>
+                                      </div>
+  
+                                      <div class="right_part">
+                                          <div class="full_w">
+                                              <div class="offer_price_wrapper">
+                                                  <div class="left_part">
+                                                      <span class="title">MRP</span>
+                                                      <span class="price">Rs.  {{offer.target_amount}}  </span>
+                                                  </div>
+                                                  <div class="right_part">
+                                                      <button class="btn assent medium" routerLink="/chemist-account/edit-offer" [queryParams]="{'id':offer.id}">Update</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="description_wrapper">
+                                    <span class="med_qty_wrapper"> 
+                                      
+                                
+                                
+                                </span>
+                                  </div>
+                                  <div class="section_2">
+                                      <div class="left_part">
+                                          <ul class="offer_info_listing">
+                                              <li class="offer_info_list">
+                                                  <span class="info-title">Deal Price</span>
+                                                  <span class="price">Rs.  <span>{{offer.deal_price}}</span></span>
+                                              </li>
+                                              <li class="offer_info_list">
+                                                  <span class="info-title">PTR</span>
+                                                  <span class="price">Rs. <span>{{offer.ptr}}</span></span>
+                                              </li>
+                                              <li class="offer_info_list">
+                                                  <span class="info-title">Expire In</span>
+                                                  <span class="price"><span>{{offer.offer_duration_days}}</span> Days</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="right_part">
+                                          <div class="discount">
+                                              <span class="">{{offer.discount}}% Discount</span>
+                                          </div>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                          </li>
+                          
+                      </ul>
+                  </div> 
+              
+              </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,136 @@
+<app-header></app-header>
+
+
+
+<div class="cart_Page bodySetting">
+
+  <app-cart-header></app-cart-header>
+  
+  <div class="container">
+    <div class="pageSetting">
+      
+  
+  
+      <div class="stepPage_1">
+  
+  
+  
+  
+  
+        <div class="tableDesign">
+          <div class="leftDesign">
+            <h4 class="heading_name">
+              <span class="name">Select Payment Mode</span>
+              <div class="RightPart">
+                <span class="Cartprice">Rs. {{state.cartdata.cart_amount}}</span>
+                <span class="label">Total Cart Amount</span>
+              </div>
+            </h4>
+  
+  
+          
+            <ul class="payment_mode_select">
+              <li class="list">
+                <label class="choose_btn"> <img src="assets/images/icon/pay_2.png"> </label>
+                <span class="name">Cash</span>
+              </li>
+              <li class="list">
+                <label class="choose_btn active"> <img src="assets/images/icon/pay_1.png"> </label>
+                <span class="name">Online</span>
+              </li>
+              <li class="list">
+                <label class="choose_btn"> <img src="assets/images/icon/pay_3.png"> </label>
+                <span class="name">Paytm</span>
+              </li>
+              <li class="list">
+                <label class="choose_btn"> <img src="assets/images/icon/pay_1.png"> </label>
+                <span class="name">UPI</span>
+              </li>
+              <li class="list">
+                <label class="choose_btn"> <img src="assets/images/icon/pay_2.png"> </label>
+                <span class="name">Freecharge</span>
+              </li>
+            </ul>
+  
+  
+  
+            <div class="FullbuttonDiv">
+              <div class="checkoutMeter">
+                <div class="left_bar">
+                  <span class="Step_name">Step -4</span>
+                  <span class="bar">
+                    <i class="meterLine" style="width: 100%"></i>
+                    <i class="baseLine"></i>
+                  </span><!-- 
+                  <div class="priceSummuryDiv">
+                    <span class="price">Rs. 815</span> <span class="label">Amount Details</span>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          
+          <div class="right_design">
+  
+  
+  
+            
+  
+            <div class="cartSummryview">
+              <div class="mainHeading">Cart Summary <span class="items">({{state.cartdata.items.length}} Items)</span></div>
+              <ul class="cartLists">
+                <li class="list" *ngFor="let cart of state.cartdata.items">
+                  <span class="name">{{cart.product_name}}</span>
+                  <div class="designSetting">
+                    <span class="left_Data">Quantity : {{cart.product_qty}}</span>
+                    <span class="right_Data">Rs. {{cart.price * cart.product_qty}}</span>
+                  </div>
+                </li>
+              
+              </ul>
+            </div>
+  
+            <ul class="summry_design">
+              <li class="list">
+                <div class="labelPart">Total MRP</div>
+                <div class="dataPart">Rs. {{state.cartdata.cart_amount}}</div>
+              </li>
+              <li class="list">
+                <div class="labelPart">Delivery Charges</div>
+                <div class="dataPart">Rs. {{state.cartdata.delivery_amount}}</div>
+              </li>
+              <li class="list">
+                <div class="labelPart b">Amount to be paid</div>
+                <div class="dataPart b">Rs. {{state.cartdata.gross_amount}}</div>
+              </li>
+            </ul>
+            <div class="checkoutBtnDiv">
+              <div class="buttonList">
+                <a  href="javascript:void(0)" routerLink="/cart-step-three" class="backBtn">Go Back</a>
+              </div>
+              <div class="buttonList">
+                <a href="javascript:void(0)" class="ViewmoreBtn">Place Order</a>
+              </div>			
+            </div>
+  
+  
+            
+  
+          </div>
+        </div>		
+  
+      
+  
+      </div>
+  
+  
+  
+    </div>
+  </div>
+  
+  </div>
+
+
+
+<app-footer></app-footer>

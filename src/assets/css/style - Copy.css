@@ -1,0 +1,1175 @@
+/*
+@import url('https://fonts.googleapis.com/css?family=K2D:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');*/
+body {font-family: 'K2D', sans-serif;  background: #f1f1f1; }
+
+.row {float: left; width: 100%;}
+.container {width: 100%; max-width: 1150px;}
+
+.fancy-radio-label , .fancy-checkbox-label {line-height: 23px; color: #919191; display: inline-block;cursor: pointer;position: relative;padding-left: 35px; font-size: 13px;}
+.fancy-radio , .fancy-checkbox {display: none;}
+.fancy-radio-label:before , .fancy-checkbox-label:before {content: "";display: inline-block;width: 20px;height: 20px;margin-right: 10px;position: absolute;left: 0;top: 1px;background-color: #fff;border: 1px solid #ccc;}
+.fancy-radio-label:before {border-radius: 100%;}
+.fancy-checkbox-label {margin-bottom: 10px; width: 100%;}
+.fancy-checkbox-label:before {}
+.fancy-radio:checked + .fancy-radio-label:before {border-color: #0ba2db; background: url('../images/icon/radio_check.png') no-repeat center;color: #f3f3f3;font-size: 30px;text-align: center;line-height: 20px;}
+.fancy-checkbox:checked + .fancy-checkbox-label:before {background: url('../images/icon/checked.png') no-repeat  50% 50%;text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);font-size: 15px;color: #f3f3f3;text-align: center;line-height: 15px;}
+.fancy-checkbox-label .number-of-item {float: right; font-size: 12px; color: #AEAEAE;}
+
+.select_option {border-radius: 2px;  height: 35px; color: #000; cursor: pointer; border: none; padding: 5px; -webkit-appearance:none; appearance:none; -moz-appearance: none; background-color: #fff; background-position: right center; background-repeat: no-repeat;  text-indent: 0.01px; text-overflow: ""; background: #fff url("../images/icon/down.png") no-repeat scroll 90% 50%; background-size: 12px; padding-right: 25px;}
+.select_option option {border: none;}
+.select_option optgroup {font-size: 12px; color: #333; font-style: normal; padding:3px 0px; font-family: arial;}
+.bg-grey{background: #efefef;}
+.common_section {width: 100%; float: left; padding: 0px 10px;}
+
+
+
+.primary_btn {cursor: pointer; text-transform: uppercase; background: #fff; border: none; color: #000; padding: 15px 35px; font-size: 14px; text-align: center;font-weight: bold;border: 2px solid #23a2db;}
+.primary_btn:hover {background: #dff5ff;}
+.scndry_btn {text-transform: uppercase; background: #fff; color: #3598fe;  border: 1px solid #3598fe; padding: 15px 35px; font-size: 13px; text-align: center;font-weight: bold;}
+.bodySetting {float: left; width: 100%; padding-top:85px; }
+
+
+
+
+.Vcheckbox {display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 22px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.Vcheckbox input {position: absolute; opacity: 0; cursor: pointer; }
+.Vcheckbox .checkmark {position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #eee; }
+.Vcheckbox:hover input ~ .checkmark {background-color: #ccc; }
+.Vcheckbox input:checked ~ .checkmark {background-color: #50C8A1; }
+.Vcheckbox .checkmark:after {content: ""; position: absolute; display: none; }
+.Vcheckbox input:checked ~ .checkmark:after {display: block; }
+.Vcheckbox .checkmark:after {left: 9px; top: 5px; width: 5px; height: 10px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+
+
+.Vradio_btn {/*! display: block; */ position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 22px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.Vradio_btn input {position: absolute; opacity: 0; cursor: pointer; }
+.Vradio_btn .checkmark {position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #eee; border-radius: 50%; }
+.Vradio_btn:hover input ~ .checkmark {background-color: #ccc; }
+.Vradio_btn input:checked ~ .checkmark {background-color: #23A2DB; }
+.Vradio_btn .checkmark:after {content: ""; position: absolute; display: none; }
+.Vradio_btn input:checked ~ .checkmark:after {display: block; }
+.Vradio_btn .checkmark:after {top: 9px; left: 9px; width: 8px; height: 8px; border-radius: 50%; background: white; }
+
+
+
+header {width: 100%; position: fixed; top: 0px; left: 0px;
+ float: left;
+
+background: rgb(35,162,219);
+background: -moz-linear-gradient(left, rgb(35,162,219) 0%, rgb(13,173,179) 100%);
+background: -webkit-linear-gradient(left, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+background: linear-gradient(to right, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23a2db', endColorstr='#0dadb3',GradientType=1 );
+
+z-index: 9;
+box-shadow: 1px 1px 15px rgba(0,0,0,0.5);
+}
+header .topHeader {float: left; width: 100%; display: table; height: 85px;}
+header .topHeader .left_part {display: table-cell; vertical-align: middle;padding: 10px 0px;}
+header .topHeader .left_part .logo {float: left; width: 100%;}
+header .topHeader .left_part .logo .link {float: left;}
+header .topHeader .left_part .logo img {display: block;}
+header .topHeader .left_part .locationToggle {float: left; color: #fff; font-size: 16px; margin-top: 5px;cursor: pointer;}
+header .topHeader .left_part .locationToggle:before {content: ""; display: inline-block; margin-right: 5px; vertical-align: middle; width: 18px; height: 24px; background: url(../images/icon/location_black.png)no-repeat center; background-size: 14px; opacity: 0.4;}
+header .topHeader .left_part .locationToggle:after {content: ""; display: inline-block; margin-left: 5px; vertical-align: middle; width: 15px; height: 15px; background: url(../images/icon/down_white.png)no-repeat center; background-size: 13px; opacity: 0.5;}
+
+header .topHeader .right_part {display: table-cell; vertical-align: middle;}
+header .topHeader .right_part .icon_menu {float: right;display: table;}
+header .topHeader .right_part .icon_menu .list {/*! float: left; */padding: 0px 10px;display: table-cell;vertical-align: middle;}
+header .topHeader .right_part .icon_menu .list .cart {float: left;position: relative;}
+header .topHeader .right_part .icon_menu .list .cart .number {position: absolute; top: -3px; width: 24px; height: 24px; background: #f9ff00; text-align: center; font-size: 11px; line-height: 20px; border-radius: 100%;right: -8px;border: 2px solid #10acb8;font-weight: bold;}
+header .topHeader .right_part .icon_menu .list .menuBtn {width: 35px; height: 35px;}
+header .topHeader .right_part .icon_menu .list .menuBtn .MList{width: 8px; height: 8px; background: #fff; border-radius: 100%; float: left;margin: 1px; transform: scale(0.9);}
+header .topHeader .right_part .icon_menu .list .loginBtn {font-size: 14px; color: #ffffff;float: left;}
+header .topHeader .right_part .icon_menu .list .enquiryBTn {font-size: 14px; color: #ffffff; border: 2px solid #69f6ff; border-radius: 2px; padding: 5px 10px;float: left;}
+header .topHeader .right_part .icon_menu .list .SearchToggleBtn {float: left; margin-right: 10px; /*! display: none; */}
+header .topHeader .right_part .icon_menu .list .SearchToggleBtn img{display: block; width: 24px;}
+
+header .search_design {float: left; width: 100%; background:#fff; padding: 15px 25px; box-shadow: 1px 1px 25px rgba(0,0,0,0.25);position: relative;top: 40px; display: none;}
+header .search_design .designBox {width: 100%; float: left; display: table;}
+header .search_design .designBox .search_part {display: table-cell; vertical-align: middle;}
+header .search_design .designBox .search_part .input_box {float: left; width: 100%; padding: 15px; border: none; font-size: 14px; background: #fff url(../images/icon/search.png)no-repeat center left; background-size: 22px;  padding-left: 40px;}
+header .search_design .designBox .map_viewBtndiv {display: none; vertical-align: middle;}
+header .search_design .designBox .map_viewBtndiv .mapVewBtn {float: right; padding: 10px 25px;background: rgb(35,162,219);
+background: -moz-linear-gradient(left, rgb(35,162,219) 0%, rgb(13,173,179) 100%);
+background: -webkit-linear-gradient(left, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+background: linear-gradient(to right, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23a2db', endColorstr='#0dadb3',GradientType=1 ); font-size: 14px; color: #fff; border-radius: 3px;}
+header .search_design .designBox .map_viewBtndiv .mapVewBtn img {display: inline-block; vertical-align: middle;}
+
+header .search_design {display: none;}
+header .topHeader .right_part .icon_menu .list .SearchToggleBtn {display: block;}
+header .search_design.fixed {display: block; position: fixed; top: 0px; left: 0px;  height: 85px;z-index: 1;}
+header .search_design.fixed .close_sreach{cursor: pointer;opacity: 0.3;  position: absolute; right: 30px; top: -4px; bottom: 0; width: 35px; height: 25px; background:url(../images/icon/close.png) no-repeat center; background-size: 24px;margin: auto;}
+header .search_design.fixed .close_sreach:hover {opacity: 0.8;}
+header .searchResultdiv {position: fixed; top: 85px; left: 0px; width: 100%; height: 100%; background: #fff;display: none;}
+header .searchResultdiv .insideBox {position: absolute; top: 0px; width: 100%; height: calc(100% - 85px);overflow-y: auto;}
+header .searchResultdiv .insideBox .searchListing {float: left; width: 100%;}
+header .searchResultdiv .insideBox .searchListing .list {float: left; width: 100%; border-bottom: 1px solid #e7e7e7;padding: 15px 0px;}
+header .searchResultdiv .insideBox .searchListing .list .displayStyle {float: left; width: 100%;}
+header .searchResultdiv .insideBox .searchListing .list .displayStyle .iconPart {display: table-cell;vertical-align: middle; text-align: center; width: 100px;}
+header .searchResultdiv .insideBox .searchListing .list .displayStyle .iconPart .icon {float: left; width: 100%;}
+header .searchResultdiv .insideBox .searchListing .list .displayStyle .iconPart .icon img {display: block; width: 50px;}
+header .searchResultdiv .insideBox .searchListing .list .name_part {display: table-cell;vertical-align: middle;}
+header .searchResultdiv .insideBox .searchListing .list .Name {float: left; width: 100%; font-size: 16px; color: #222;}
+header .searchResultdiv .insideBox .searchListing .list .Caption {float: left; width: 100%; font-size: 12px; color: #888;}
+header .searchResultdiv .insideBox .searchListing .list:hover {background: #f2f2f2;}
+section {float: left; width: 100%;}
+
+
+footer {float: left; width: 100%;margin-top: 80px;}
+footer .insideFooter {float: left; width: 100%; background: #010d10; border-top: 15px solid #23a2db; border-bottom: 15px solid #23a2db;}
+footer .insideFooter .designBox {float: left; width: 100%; display: table;}
+footer .insideFooter .designBox .leftPart {position: relative; display: table-cell;vertical-align: middle; width: 450px;position: relative;z-index: 2;}
+footer .insideFooter .designBox .leftPart:before {width: 100%; height: 100%; content: ""; position: absolute; background: #01181e; left: 0px;transform: scaleY(1.3);box-shadow: 1px 1px 15px rgba(0,0,0,0.75);}
+footer .insideFooter .designBox .leftPart .infocontent{float: left; width: 100%; text-align: center;padding: 0px 0px;position: relative;}
+footer .insideFooter .designBox .leftPart .logo {float: left; width: 100%;margin-bottom: 30px;}
+footer .insideFooter .designBox .leftPart .logo:after {width: 300px; max-width: 100%; content: ""; display: inline-block; background: #01232c;height: 4px;margin-top: 30px;}
+footer .insideFooter .designBox .leftPart .logo img{display: block; max-width: 100%;}
+footer .insideFooter .designBox .leftPart .infoContact {float: left; width:100%; color: #ffffff; font-size: 16px;margin: 5px 0px;}
+footer .insideFooter .designBox .leftPart .infoContact i {color: #2bc2dd;}
+footer .insideFooter .designBox .buttonDiv {float: left;width: 100%;margin: 20px 0px;}
+footer .insideFooter .designBox .buttonDiv .enquiryBtn {display: inline-block; padding: 10px 25px; border: 2px solid #69f6ff; color: #fff; font-size: 16px;}
+footer .insideFooter .designBox .leftPart .copyRight {float: left; width: 100%; color: #3b545b; font-size: 14px;margin-top: 30px;}
+footer .insideFooter .designBox .rightPart {display: table-cell; vertical-align: middle;}
+footer .insideFooter .designBox .rightPart .conectivity {float: left; width: 100%; text-align: center;}
+footer .insideFooter .designBox .rightPart .conectivity .socialMeida {float: left; width: 100%;}
+footer .insideFooter .designBox .rightPart .conectivity .socialMeida .list {display: inline-block;margin: 0px 5px;}
+footer .insideFooter .designBox .rightPart .conectivity .socialMeida .list .link {display: block; color: #fff; width: 60px; height: 60px; line-height: 60px; border: 1px solid #3c8185; border-radius: 100%;}
+footer .insideFooter .designBox .rightPart .conectivity .socialMeida .list .link i {font-size: 20px;}
+footer .insideFooter .designBox .rightPart .quickLinks {float: left; width: 100%; margin-top: 15px;}
+footer .insideFooter .designBox .rightPart .quickLinks .list {display: inline-block;}
+footer .insideFooter .designBox .rightPart .quickLinks .list .link {font-size:14px; color: #455357; padding: 5px 10px; border:1px solid #010d10; }
+footer .insideFooter .designBox .rightPart .quickLinks .list .link:hover {text-decoration: underline; color: #fff;}
+
+
+/*login pages start here*/
+
+
+.loginPopups {position: fixed; top: 0px;left: 0px; width: 100%; height: 100%; z-index: 99;  background: #000 url(../images/slider/2.jpg);background-position: center 0px; 
+ -webkit-animation: overlay_moving 15s linear 1s infinite;
+    animation: overlay_moving 15s linear 1s infinite;
+display: none;
+}
+
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes overlay_moving {
+    0%   {background-position: 0px center ; }
+    100%   {background-position:  1500px center; }
+}
+
+/* Standard syntax */
+@keyframes overlay_moving {
+    0%   {background-position:  0px center; }
+    100%   {background-position: 1500px center; }
+}
+
+.loginPopups .designBox {display:table; width: 100%; height: 100%; max-width: 1000px;}
+.loginPopups .designBox .vAlign {display: table-cell;vertical-align: middle;}
+.loginPopups .designBox .innerDesign {float: left; width: 100%; background: #efefef; box-shadow: 1px 1px 25px rgba(0,0,0,0.5); border-radius: 5px; height: 100%; max-height: 450px;  padding: 0px 25px;/*! min-height: 350px; */padding-left: 70px;}
+.loginPopups .designBox .innerDesign .insideBox {display:  table; width: 100%; float: left;height: 450px;}
+.loginPopups .designBox .innerDesign .left_data {display: table-cell; vertical-align: middle; position: relative;}
+.loginPopups .designBox .innerDesign .left_data:after {width: 100%; position: absolute; top: 0px; left: 0px; height: 100%; background: #23a2db; content: ""; transform: scaleY(1.2); /*box-shadow: 1px 1px 25px #23a2db;*/}
+.loginPopups .designBox .innerDesign .left_data .buttons {float: right;}
+.loginPopups .designBox .innerDesign .left_data .buttons .btns {cursor: pointer; float: right; padding: 15px 20px; background:#23a2db; color: #fff;font-size: 14px;width: 90px;text-align: left;}
+.loginPopups .designBox .innerDesign .left_data .inside_data {float: left; position: relative; z-index: 1; width: 100%;}
+.loginPopups .designBox .innerDesign .left_data .buttons .btns.active {background:#efefef; color: #000; border-radius: 5px 0px 0px 5px;} 
+
+.loginPopups .designBox .innerDesign .left_data .content_part {float: left;width: 80%;padding-left: 40px;}
+.loginPopups .designBox .innerDesign .left_data .content_part .data {float: left; width: 100%;}
+.loginPopups .designBox .innerDesign .left_data .content_part .data .mainHead {float: left; width: 100%; font-size: 28px; line-height: 32px; color: #fff;margin-bottom: 10px;}
+.loginPopups .designBox .innerDesign .left_data .content_part .data .text {float: left; width: 100%; font-size: 16px; color: #b7e9ff;width: 300px;}
+
+.loginPopups .designBox .innerDesign .left_data .social_media {position: absolute; bottom: 0px; left: 0px; width: 100%; z-index: 1; padding-left: 50px;}
+.loginPopups .designBox .innerDesign .left_data .social_media .list {float: left; margin-right: 15px;}
+.loginPopups .designBox .innerDesign .left_data .social_media .list .link {float: left; width: 60px; height: 60px; line-height: 56px; border-radius: 100%; border: 2px solid #fff; color: #fff; text-align: center; font-size: 22px; }
+.loginPopups .designBox .innerDesign .left_data .social_media .list .link:hover {background: #fff; color: #23a2db; border-color: #0876a7;}
+
+.loginPopups .designBox .innerDesign .right_data {display: table-cell; vertical-align: middle; width:400px;padding: 0px 40px;}
+.loginPopups .designBox .innerDesign .right_data .popup_name {float: left; width: 100%; font-size: 14px;padding: 10px 5px;margin-bottom: 10px;color: #888;}
+.loginPopups .designBox .innerDesign .right_data .popup_name .primaryColor{color: #23a2db; font-weight: bold; /*! text-transform: uppercase; */}
+.loginPopups .designBox .innerDesign .right_data .popup_name .phoneNumber {float: left; width: 100%; font-size: 24px; color: #222;}
+.loginPopups .designBox .innerDesign .right_data .popup_name .resend_btn {float: left; font-size: 12px; cursor: pointer; color: #222;}
+.loginPopups .designBox .innerDesign .right_data .popup_name .resend_btn:hover {text-decoration: underline;}
+
+.loginPopups .designBox .innerDesign .right_data .forms_div {float: left; width: 100%;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div{float: left; width: 100%;margin: 7px 0px;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div:last-child {margin-top: 25px;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div .input_box {float: left; width: 100%; padding: 10px 15px; height: 50px; border: 2px solid #fff; box-shadow: 1px 1px 15px #ccc;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div .input_box:focus {border-color: #23a2db; box-shadow: 1px 1px 15px #23a2db; }
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div .primary_btn {cursor: pointer;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div .primary_btn.disable {color: #ccc; pointer-events: none; border-color: #ccc;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div .forgot_passwordBtn {float: right;margin-top: 18px;font-size: 12px;}
+.loginPopups .designBox .innerDesign .right_data .forms_div .input_div .login_btn {float: right;margin-top: 15px;font-size: 12px;}
+.loginPopups .designBox .innerDesign .right_data .login_steps {display: none;}
+.loginPopups .designBox .innerDesign .right_data #login_form {display: block;}
+
+.loginPopups .designBox .innerDesign .left_data .close_popup {cursor: pointer;opacity: 0.3;  position: absolute; right: 30px; top: -10px; bottom: 0; width: 35px; height: 25px; background:url(../images/icon/close.png) no-repeat center; background-size: 24px; z-index: 1;}
+.loginPopups .designBox .innerDesign .left_data .close_popup:hover {opacity: 1;}
+.loginPopups .overlay{width: 100%; height: 100%; position: absolute;z-index: -1;}
+
+/*login pages end here*/
+
+
+.home_Page {float: left; width: 100%;}
+.home_Page .section_1 {background:#f1f1f1;}
+
+.home_Page .slider {float: left; width: 100%; padding: 0px 10px; margin-top: 10px; box-shadow: 1px 1px 5px #adadad;}
+.home_Page .slider .list {float: left; width: 100%;}
+.home_Page .slider .list .image {float: left; width: 100%;}
+.home_Page .slider .list .image img{float: left; width: 100%;}
+.home_Page .slider.owl-theme .owl-controls {display: none!important;}
+
+
+.chemist_listing {/*! float: left; */ /*! width: 100%; *//*! margin: 0px -5px; */}
+.chemist_listing .chamList {float: left; width: 50%; padding: 0px 5px;margin-bottom: 10px;}
+.chemist_listing .chamList .style { box-shadow: 1px 1px 5px #ccc; /*! padding: 8px; */ float: left; width: 100%; background: #fff;}
+.chemist_listing .chamList .style .imageSet {float: left; width: 100%; position: relative;}
+.chemist_listing .chamList .style .imageSet .thumb {float: left; width: 100%; position: relative;}
+.chemist_listing .chamList .style .imageSet .thumb:after {content: ""; width: 100%; height: 118px; background: url(../images/overlay.png)repeat-x center bottom; position: absolute; left: 0px; bottom: 0px;}
+.chemist_listing .chamList .style .imageSet img {display: block; width: 100%;}
+.chemist_listing .chamList .style .locationArea {position: absolute; bottom: 0px; left: 0px;/*! z-index: 3; */color: #fff;padding-left: 30px;margin-bottom: 10px;margin-left: 10px;}
+.chemist_listing .chamList .style .locationArea .area {position: relative; float: left; width: 100%; font-size: 16px; color: #fff;line-height: 16px;}
+.chemist_listing .chamList .style .locationArea .area:before {content: ""; width: 24px; height: 24px; background: url(../images/icon/location_white.png)no-repeat center; background-size: 24px; position: absolute; left: -24px;}
+.chemist_listing .chamList .style .locationArea .deliveryCharges {float: left; width: 100%; font-size: 13px; color: #a6a6a6;}
+
+
+
+.chemist_listing .chamList .style .infoData {float: left; width: 100%; padding: 15px;}
+.chemist_listing .chamList .style .infoData .shopInfo {float: left; width: 100%; display: table;}
+.chemist_listing .chamList .style .infoData .shopInfo .leftPart {display: table-cell;vertical-align: middle;}
+.chemist_listing .chamList .style .infoData .shopInfo .leftPart .name{float: left; width: 100%; font-weight: bold; color: #000; font-size: 18px;}
+.chemist_listing .chamList .style .infoData .shopInfo .leftPart .discount {float: left; width: 100%; color: #13ba69; font-size: 12px;}
+.chemist_listing .chamList .style .infoData .shopInfo .rightPart {display: table-cell;vertical-align: middle; font-size: 14px; text-align: right;}
+.chemist_listing .chamList .style .infoData .shopInfo .rightPart .status {float: left; width: 100%;}
+.chemist_listing .chamList .style .infoData .shopInfo .rightPart .status.green {color: #13ba69}
+.chemist_listing .chamList .style .infoData .shopInfo .rightPart .status.red {color: #ba1313}
+
+.chemist_listing .chamList .style .infoData .shopInfo .rightPart .times {float: left; width: 100%; color: #5c5c5c;font-size: 12px;}
+.chemist_listing .chamList .style .infoData .bottom_actions {float: left; width: 100%; display: table;margin-top: 20px;}
+.chemist_listing .chamList .style .infoData .bottom_actions .leftPart {display: table-cell;vertical-align: middle;}
+.chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList {float: left;border: 2px solid #dfdfdf;border-radius: 100px;position: relative;padding-left: 45px;padding-right: 10px;margin-right: 10px;cursor: pointer;}
+.chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon {cursor: pointer; float: left; width: 49px; height: 49px; text-align: center; border-radius: 100%; border: 2px solid #dfdfdf;position: absolute;left: -2px;top: -2px;}
+.chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon img{display: block;height: 100%;}
+.chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .name {float: left; height: 45px; line-height: 45px; font-size: 14px; color: #4f4f4f; font-weight: bold;padding: 0px 15px;}
+.chemist_listing .chamList .style .infoData .bottom_actions .rightPart {display: table-cell;vertical-align: middle; text-align: right;}
+.chemist_listing .chamList .style .infoData .bottom_actions .rightPart .totalNumber {float: left; width: 100%; font-size: 14px; font-weight: bold; color: #4f4f4f;}
+
+.chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon:hover {border-color: #888;}
+
+
+.FullbuttonDiv {float: left; width: 100%; text-align: center;margin: 20px 0px;}
+.FullbuttonDiv .ViewmoreBtn {display: inline-block; padding: 12px 20px;border: 2px solid #23a2db;background: #fff;}
+.FullbuttonDiv .ViewmoreBtn:hover {box-shadow: 1px 1px 5px #23a2db;}
+
+
+.home_Page .uspButton {float: left; width: 100%; text-align: center;position: relative;}
+.home_Page .uspButton .buttonList {width: 100%; float: left;margin-top: -30px;}
+.home_Page .uspButton .buttonList .list {display: inline-block;width: 25%;}
+.home_Page .uspButton .buttonList .list .link {float: left; padding: 20px 30px; background: #fff;width: 100%;}
+.home_Page .uspButton .buttonList .list .link i {display: inline-block; vertical-align: middle;}
+.home_Page .uspButton .buttonList .list .link i img {display: block; height: 28px;}
+.home_Page .uspButton .buttonList .list .link.blue{ border: 2px solid #23a2db; }
+.home_Page .uspButton .buttonList .list .link.black{ border: 2px solid #5f5f5f; }
+
+
+.home_Page section {float: left; width: 100%; background: #fff; padding: 50px 0px;}
+.home_Page .section_2 .MedicinTypeList {float: left; width: 100%; text-align: center;}
+.home_Page .section_2 .MedicinTypeList .list {float: left; width: 100%; padding: 0px 10px;margin-bottom: 20px;}
+.home_Page .section_2 .MedicinTypeList .list.full {width: 100%;}
+.home_Page .section_2 .MedicinTypeList .list .style {float: left; width: 100%; display: table; background: #fff; box-shadow: 1px 1px 5px #ccc;height: 300px;}
+.home_Page .section_2 .MedicinTypeList .list .style .insideDesign {display: table-cell;vertical-align: middle;padding: 0px 25px;}
+.home_Page .section_2 .MedicinTypeList .list .style .icon {float: left; width: 100%; position: relative; text-align: center;padding-bottom: 15px;}
+.home_Page .section_2 .MedicinTypeList .list .style .icon:before {width: 75px; height: 2px; background:#ccc;  display: block; position: absolute; left: 0; right: 0; content: "";margin: auto;bottom: 0px;}
+.home_Page .section_2 .MedicinTypeList .list .style .title {float: left; width: 100%; color: #222; font-size: 20px; font-weight: bold;margin: 15px 0px;}
+.home_Page .section_2 .MedicinTypeList .list .style .text {float: left; width: 100%; color: #5f5f5f; font-size: 16px; line-height: 20px;}
+.home_Page .section_2 .MedicinTypeList .list .style:hover {
+ background: rgb(35,162,219);
+background: -moz-linear-gradient(left, rgb(35,162,219) 0%, rgb(13,173,179) 100%);
+background: -webkit-linear-gradient(left, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+background: linear-gradient(to right, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23a2db', endColorstr='#0dadb3',GradientType=1 ); 
+}
+.home_Page .section_2 .MedicinTypeList .list .style:hover .icon::before {background:#31dcfb;}
+.home_Page .section_2 .MedicinTypeList .list .style:hover .title{color: #fff;}
+.home_Page .section_2 .MedicinTypeList .list .style:hover .text{color: #d1f8ff;}
+
+
+.home_Page .section_3 {float: left; width: 100%;background: #f1f1f1;}
+.home_Page .medCatListing {float: left; width: 100%;margin-bottom: 10px;}
+.home_Page .medCatListing .list {float: left;  width: 16.667%; text-align: center;border: 1px solid #eaeaea;box-shadow: 1px 1px 5px #ccc;}
+.home_Page .medCatListing .list .style {float: left; width: 100%; display: table;background: #fff;height: 180px;}
+.home_Page .medCatListing .list .style .insideDesign {display: table-cell;vertical-align: middle;}
+.home_Page .medCatListing .list .style .insideDesign .icon {float: left; width: 100%;}
+.home_Page .medCatListing .list .style .insideDesign .icon img{display: block; max-width:100%; height: 60px;}
+.home_Page .medCatListing .list .style .insideDesign .text {width: 100%;float: left;font-size: 16px;margin-top: 10px;}
+
+
+.home_Page .section_4 {float: left; width: 100%;background: #f1f1f1;}
+.home_Page .section_4 .OurBrands {float: left; width: 100%;margin-bottom: 10px;}
+.home_Page .section_4 .OurBrands .list {float: left; width: 100%;}
+.home_Page .section_4 .OurBrands .list .style {float: left; width: 100%; display: table; background: #fff; border: 1px solid #ccc; text-align: center;height: 180px;}
+.home_Page .section_4 .OurBrands .list .style .insideDesign {display: table-cell;vertical-align: middle;}
+.home_Page .section_4 .OurBrands .list .style .insideDesign .icon {float: left; width: 100%;}
+.home_Page .section_4 .OurBrands .list .style .insideDesign .name {font-size: 14px; color: #222;}
+
+
+.home_Page .section_4 .OurBrands { border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0; }
+.home_Page .section_4 .OurBrands .list img{max-width: 100%; }
+.home_Page .section_4 .OurBrands .owl-pagination {display: none;}
+.home_Page .section_4 .OurBrands .owl-controls {position: absolute; top: 36%; width: 108%; margin-top: 0px !important;left: -4%;right: 0;/*! margin: auto; */z-index: 0;}
+.home_Page .section_4 .OurBrands .owl-controls .owl-prev {position: relative; float: left; background: #f00 !important; border-radius: 0px!important;  width: 34px;  height: 33px; }
+.home_Page .section_4 .OurBrands .owl-controls .owl-prev:after {content: ''; position: absolute; top: 0px; left: 0px; width: 45px;  height: 45px; background-color: #37403a!important; background:url('../images/icon/left.png') no-repeat 50% 50%;}
+.home_Page .section_4 .OurBrands .owl-controls .owl-next:after {content: ''; position: absolute; top: 0px; left: -10px; width: 45px;  height: 45px; background-color: #37403a!important; background:url('../images/icon/right.png') no-repeat 50% 50%;}
+.home_Page .section_4 .OurBrands .owl-controls .owl-next {position: relative;  float: right; background: #f00 !important; border-radius: 0px!important;   width: 34px;  height: 33px; }
+.home_Page .section_4 .OurBrands .owl-controls .owl-buttons div{margin: 0px !important; padding: 10px 5px!important;}
+
+
+
+.home_Page .section_2 .MedicinTypeList .owl-pagination {display: none;}
+.home_Page .section_2 .MedicinTypeList .owl-controls {position: absolute; top: 36%; width: 108%; margin-top: 0px !important;left: -4%;right: 0;/*! margin: auto; */z-index: 0;}
+.home_Page .section_2 .MedicinTypeList .owl-controls .owl-prev {position: relative; float: left; background: #f00 !important; border-radius: 0px!important;  width: 34px;  height: 33px; }
+.home_Page .section_2 .MedicinTypeList .owl-controls .owl-prev:after {content: ''; position: absolute; top: 0px; left: 0px; width: 45px;  height: 45px; background-color: #37403a!important; background:url('../images/icon/left.png') no-repeat 50% 50%;}
+.home_Page .section_2 .MedicinTypeList .owl-controls .owl-next:after {content: ''; position: absolute; top: 0px; left: -10px; width: 45px;  height: 45px; background-color: #37403a!important; background:url('../images/icon/right.png') no-repeat 50% 50%;}
+.home_Page .section_2 .MedicinTypeList .owl-controls .owl-next {position: relative;  float: right; background: #f00 !important; border-radius: 0px!important;   width: 34px;  height: 33px; }
+.home_Page .section_2 .MedicinTypeList .owl-controls .owl-buttons div{margin: 0px !important; padding: 10px 5px!important;}
+
+
+.home_Page .section_4 .registerBenifits {float: left; width: 100%; text-align: center; margin-top: 20px;}
+.home_Page .section_4 .registerBenifits .list {display: inline-block;width: 25%;}
+.home_Page .section_4 .registerBenifits .list .style {float: left; width: 100%;}
+.home_Page .section_4 .registerBenifits .list .style .icon {display: block; width: 110px; height: 110px; border-radius: 100%; border: 2px solid #dadada;}
+.home_Page .section_4 .registerBenifits .list .style .icon img{display: block; width: 100%; padding: 25px;}
+.home_Page .section_4 .registerBenifits .list .style .title {float: left; width: 100%; font-size:22px; margin-top: 20px;}
+.home_Page .section_4 .registerBenifits .list .style .data {float: left; width: 100%; font-size:14px; color: #888;}
+
+
+.home_Page  .myTabs {float: left; width: 100%;margin-bottom: 10px;text-align: center;}
+.home_Page  .myTabs .list{/*! float: left; */  text-align: center;display: inline-block;margin: 0px 5px;}
+.home_Page  .myTabs .list .name {float: left; padding: 20px 15px;color: #888;font-size: 14px;/*! border: 2px solid #ccc; */border-bottom: 2px solid #f1f1f1;}
+.home_Page  .myTabs .list.active .name{color: #000;/*! background: #fff; *//*! box-shadow: 1px 1px 5px #ccc; */border-radius: 3px; /*! border-color:#23a2db; */ border-bottom-color: #23a2db;}
+.home_Page  .myTabs .list.active .name .number{color: #23a2db;}
+.home_Page  .myTabs .list .icon {float: left; width: 100%; margin-bottom: 5px; opacity: 0.2;}
+.home_Page .myTabs .list .icon img {display: block; height: 32px;}
+.home_Page  .myTabs .list.active .icon {opacity: 1;}
+
+
+
+.download_section {float: left; width: 100%;}
+.download_section .left_section { position: relative; float: left; width: 820px; padding: 90px; /*! margin-top: 145px; */ background: #fff; box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);}
+.download_section .left_section .text_part {float: left; width: 100%; margin-bottom: 50px;}
+.download_section .left_section .text_part h4 {float: left; width: 100%; font-size: 28px; color: #12a7df; font-weight:bold; margin-bottom: 15px;}
+.download_section .left_section .text_part .text {float: left; width: 100%; font-size: 14px; color: #6c6c6c; line-height: 20px;}
+.download_section .left_section .input_section {float: left; width: 100%;}
+.download_section .left_section .input_section .title {float: left; width: 100%; font-size: 18px; color: #0f2240; font-weight: bold; color: #0f2240; margin-bottom: 10px;}
+.download_section .left_section .input_section label {float: left; position: relative;}
+.download_section .left_section .input_section label:before { content: "+91"; position: absolute; height: 100%; line-height: 60px; font-size: 18px; color: #afafaf; font-weight: bold; margin-left: 20px; left: 0px;}
+.download_section .left_section .input_section .input_text { float: left; border: 2px solid #ccc; background: #fff; height: 60px; padding: 15px; padding-left: 60px; /*! border-radius: 5px; */ width: 360px; font-size: 18px;}
+.download_section .left_section .input_section .input_text:focus {border-color: #12a7df;}
+.download_section .left_section .input_section .submit_button {float: left; margin-left: 20px; border: 2px solid #12a7df;height: 60px; background: #12a7df; color: #fff; padding: 15px 30px; cursor: pointer; /*! border-radius: 3px; */ font-size: 18px;}
+.download_section .left_section .button {float: left; width: 100%; margin-top: 60px;}
+.download_section .left_section .button .list{float: left;}
+.download_section .left_section .button .list .link{float: left; margin-right: 15px; background: #000;}
+.download_section .left_section .button .list .link img{display: block; max-width: 100%;}
+.download_section .mobile_slider {position: absolute; top: -25px; height: 100%; right: -310px;}
+
+
+
+
+
+.Sectionheading {width: 100%; float: left; text-align: center; font-size: 28px; color: #222222; font-weight: bold;margin: 30px 0px;}
+.Sectionheading .colored {color: #23a2db;}
+
+
+.home_Page .section_1  .nearestShopList{margin-top: 50px;}
+.nearestShopList {width: 100%; float: left;}
+.nearestShopList .list {float: left; width: 20%; padding: 0px 5px;}
+.nearestShopList .list .style {float: left; width: 100%; background:#fff; box-shadow: 1px 1px 5px #ccc; border-radius: 3px; overflow: hidden;}
+.nearestShopList .list .style .details {float: left; width: 100%; padding: 10px;}
+.nearestShopList .list .style .details .name {float: left; width: 100%; font-weight: bold; font-size: 16px; color: #000000;}
+.nearestShopList .list .style .details .name:hover {text-decoration: underline;}
+.nearestShopList .list .style .details .discount {float: left; width: 100%; color: #269660; font-size: 12px;}
+.nearestShopList .list .style .details .deliveryTime {float: left; width: 100%; color: #757575; font-size: 12px;line-height: 14px;}
+.nearestShopList .list .style .details .starsRate {float: left; width: 100%; margin-top: 10px;}
+.nearestShopList .list .style .details .starsRate i {float: left; margin-right: 2px;}
+.nearestShopList .list .style .details .starsRate img{display:block;}
+.nearestShopList .list .style .details .deliveryLocation {float: left; width: 100%; display: table;}
+.nearestShopList .list .style .details .deliveryLocation .area{display: table-cell; vertical-align: middle;}
+.nearestShopList .list .style .details .deliveryLocation .locationBtn {display: table-cell;vertical-align: middle; cursor: pointer; opacity: 0.5;}
+.nearestShopList .list .style .details .deliveryLocation .locationBtn img{float: right;}
+
+/*
+.my_accountPages header {position: initial;}*/
+.my_accountPages .my_accountSetting {float: left; width: 100%;padding-top: 85px;}
+.my_accountPages .headPart {float: left; width: 100%; background: rgb(35,162,219);
+background: -moz-linear-gradient(left, rgb(35,162,219) 0%, rgb(13,173,179) 100%);
+background: -webkit-linear-gradient(left, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+background: linear-gradient(to right, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23a2db', endColorstr='#0dadb3',GradientType=1 ); }
+
+.my_accountPages .headPart .insideDesign {float: left; width: 100%; display: table;position: relative;top: 30px;}
+.my_accountPages .headPart .insideDesign .left_part {display: table-cell;vertical-align: middle; width: 200px;}
+.my_accountPages .headPart .insideDesign .left_part .thumb {float: left; width: 160px; /*! padding: 3px; */ height: 160px; background:#fff; box-shadow: 1px 1px 15px rgba(0,0,0,0.25); border-radius: 5px;overflow: hidden;border: 3px solid #fff;}
+.my_accountPages .headPart .insideDesign .left_part .thumb img {display: block; width: 100%;}
+.my_accountPages .headPart .insideDesign .right_part {display: table-cell;vertical-align: top; position: relative;}
+.my_accountPages .headPart .insideDesign .right_part .left_details {float: left; width: 100%;margin-top: 7px;}
+.my_accountPages .headPart .insideDesign .right_part .left_details .yourname {float: left; width: 100%; font-size: 28px; color: #fff;}
+.my_accountPages .headPart .insideDesign .right_part .left_details .emailMobile {float: left; width: 100%; font-size: 14px; color: #bcf3ff; position: relative;}
+.my_accountPages .headPart .insideDesign .right_part .left_details .emailMobile:after {width: 60px; position: absolute; bottom: -5px; left: 0px; content: ""; height: 2px; background:#42c9e7; }
+.my_accountPages .headPart .insideDesign .right_part .locationDiv {float: left; /*! width: 100%; */ font-size: 12px; color: #fff;margin-top: 15px;padding: 8px;border-radius: 30px;background: #15b7db;padding-right: 20px;}
+.my_accountPages .headPart .insideDesign .right_part .locationDiv .label{padding: 3px 15px; margin-right: 3px; border-radius: 20px; color: #000; background:#d1f7ff; }
+
+.my_accountPages .headPart .insideDesign .right_part .edit_profileBTN {position: absolute; right: 0px; bottom: 60px; padding: 10px 20px; border-radius: 3px; box-shadow: 1px 1px 5px rgba(0,0,0,0.5);background: #fff;font-size: 14px;/*! text-transform: uppercase; */}
+.my_accountPages .headPart .insideDesign .right_part .edit_profileBTN:hover {color: #000;}
+
+.my_accountPages .main_dataPage {float: left; width: 100%; margin-top: 60px;}
+.my_accountPages .main_dataPage .left_pannel {float: left; width: 20%;}
+.my_accountPages .main_dataPage .left_pannel .sectionName {float: left; width: 100%; font-size: 13px; text-transform: uppercase;color: #a2a2a2;}
+.my_accountPages .main_dataPage .left_pannel .pannelList {float: left; width: 100%; margin: 20px 0px;}
+.my_accountPages .main_dataPage .left_pannel .pannelList .list{float: left; width: 100%;/*margin: 10px 0px;*/}
+.my_accountPages .main_dataPage .left_pannel .pannelList .nameDesigns {float: left; width: 100%; display: table; padding: 10px; color: #222;}
+.my_accountPages .main_dataPage .left_pannel .pannelList .nameDesigns.active {background: #fff; box-shadow: 1px 1px 5px #ccc;border-radius: 0px 3px 3px 0px;border-left: 5px solid #23a2db;color: #000;font-weight: bold;}
+.my_accountPages .main_dataPage .left_pannel .pannelList .nameDesigns .icon {opacity: 0.3; display: table-cell;vertical-align: middle; width: 30px; height: 30px;}
+.my_accountPages .main_dataPage .left_pannel .pannelList .nameDesigns .icon img {display: block; width: 21px;}
+.my_accountPages .main_dataPage .left_pannel .pannelList .nameDesigns .name {display: table-cell;vertical-align: middle; padding-left: 5px;font-size: 14px;}
+.my_accountPages .main_dataPage .left_pannel .pannelList .nameDesigns .bagged {display: inline-block; padding: 3px 7px;background: #23a2db;font-size: 12px;color: #fff;border-radius: 3px;margin-left: 5px;}
+
+
+.my_accountPages .main_dataPage .right_pannel {float: left; width: 80%; padding-left: 50px;}
+.my_accountPages .main_dataPage .right_pannel .page_name {float: left; width: 100%; display: table;}
+.my_accountPages .main_dataPage .right_pannel .page_name .leftData{display: table-cell;vertical-align: middle; }
+.my_accountPages .main_dataPage .right_pannel .page_name .leftData .Pagename {float: left; width: 100%; font-size: 28px;text-transform: uppercase;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData {display: table-cell; vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .AddBtn {float: right;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .backBtn {float: right; padding: 7px 10px;border: 1px solid #888;font-size: 14px;text-transform: uppercase;background: #fff;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .CheckoutDiv {float: right; text-align: right;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .CheckoutDiv .checkOutbtn {float: right; border:2px solid #ccc; padding: 10px 15px;/*! max-width: 160px; */background: #fff;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .CheckoutDiv .Amount { color: #000; float: left; font-weight: bold;margin-right: 10px;}
+.my_accountPages .main_dataPage .right_pannel .page_name .rightData .CheckoutDiv .checkOutbtn:hover {border-color: #888;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage {float: left; width: 100%; margin-top: 30px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing {float: left; width: 100%; margin: 0px -5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list{float: left; width: 33.3%; padding: 0px 5px;margin-bottom: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style {float: left; width: 100%; padding: 20px; border-radius: 3px; box-shadow: 1px 1px 15px rgba(0,0,0,0.25); background:#fff; border-radius: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .name {float: left; width: 100%; font-size: 18px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .name i {color: #888; font-size: 14px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .age {float: left; width: 100%; font-size: 14px;color: #333;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .age i {color: #888; font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .Address {float: left; width: 100%; font-size: 12px; color: #484848;margin-top: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .Phone {margin-top: 10px; float: left; width: 100%;color: #1795cf; background: url(../images/icon/phone.png) no-repeat center left; padding-left: 30px; background-size: 24px;font-size: 16px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .buttons {float: left; width: 100%;margin-top: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .buttons a {padding: 5px 15px;float: left; font-size: 12px;border: 2px solid #d4d4d4;margin-right: 5px;/*! text-transform: uppercase; */color: #000;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .buttons a:hover {border-color: #000;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .selectAddress {position: relative; width: 100%; float: left; font-size: 16px; padding: 10px; margin-top: 20px; border: 2px solid #ccc;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .selectAddress:after { background: url(../images/icon/checked.png)no-repeat center; background-size: 18px; content: ""; position: absolute; right: 5px; top: 0px; height: 100%; width: 40px; opacity: 0.4;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list .style .selectAddress:hover {border-color: #888;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list.active .style .selectAddress {border-color: #000; color: #000;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .familyTreeListing .list.active .style .selectAddress:after {opacity: 1;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage {float: left; width: 50%; max-width: 400px; box-shadow: 1px 1px 15px #ccc; background:#fff; padding: 25px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_div{float: left; width: 100%;margin: 7px 0px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_div .input_box {float: left; width: 100%; padding: 10px 15px; height: 50px; border: 2px solid #ececec; /*! box-shadow: 1px 1px 15px #ccc; */}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_box:focus {border-color: #23a2db; box-shadow: 1px 1px 15px #23a2db; }
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_div .primary_btn {cursor: pointer;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_div .primary_btn.disable {color: #ccc; pointer-events: none; border-color: #ccc;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_div .forgot_passwordBtn {float: right;margin-top: 18px;font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .change_passwordPage .forms_div .input_div .login_btn {float: right;margin-top: 15px;font-size: 12px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage {float: left;width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing {float: left; width: 100%; box-shadow: 1px 1px 5px #ccc; background:#fff; padding: 20px 20px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style {display: table; float: left; width: 100%; padding: 12px 0px; border-bottom: 2px solid #e4e4e4;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .leftPart {display: table-cell;vertical-align: top;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .rightPart {display: table-cell;vertical-align: top;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .rightPart .time {float: right;text-align: right; font-size: 12px; color: #666666;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .leftPart .notiTitle {display: inline-block;vertical-align: middle; color: #000; font-size: 14px; font-weight: bold;}
+/*.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .leftPart .Badage {display: inline-block;vertical-align: middle; padding: 3px 8px; border-radius: 2px; background:#0dadb3; color: #fff; font-size: 12px;margin-left: 3px;}*/
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style .leftPart .msg {float: left; width: 100%; font-size: 14px; color: #747474;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list.unreadNoti .style {border-color: #0dadb3;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list.unreadNoti .style .notiTitle:after{content: "New"; display: inline-block;vertical-align: middle; padding: 3px 8px; border-radius: 2px; background:#0dadb3; color: #fff; font-size: 12px;margin-left: 3px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list .style:hover {background: #f0f0f0;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .list:last-child .style{border-bottom: none;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .iconThumb {display: table-cell;vertical-align: top; width: 65px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .iconThumb .icon {float: left; width: 50px; height: 50px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .NotificationPage .notificationListing .iconThumb .icon img{display: block; width: 100%;height: 100%;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption {display: table; float: left; width: 100%; background: #fff; padding: 20px 25px; box-shadow: 1px 1px 10px #ccc;border-bottom: 5px solid #23a2db;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .leftPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .leftPart .Label {float: left; width: 100%; font-size: 14px; color: #888;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .leftPart .Amount {float: left; width: 100%; font-size: 18px; color: #000;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .rightPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .AddingOption .rightPart .AddBTN {float: right; padding: 10px 25px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList {float: left; width: 100%;padding: 20px 25px;box-shadow: 1px 1px 10px #ccc;background: #fff;margin-top: 20px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list {float: left; width: 100%;padding: 10px 0px;border-bottom: 2px solid #e1e1e1;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style {float: left; width: 100%; display: table;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .leftPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .rightPart {display: table-cell;vertical-align: bottom;width: 110px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .leftPart .title {float: left; width: 100%; color: #2f2f2f; font-size: 16px; font-weight: bold;line-height: 20px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .leftPart .msg {float: left; width: 100%; color: #575757; font-size: 14px;line-height: 14px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .leftPart .date {float: left; width: 100%; color: #939393; font-size: 12px; /*! font-weight: bold; */margin-top: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .rightPart .price {float: right;font-size: 16px;font-weight: bold;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list .style .rightPart .price.cr {color: #199e26;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .MywalletPage .walletList .list:last-child {border-bottom: none;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT {float: left; width: 100%;  background: #fff; box-shadow: 1px 1px 10px #ccc;/*! padding: 10px 15px; */}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list {float: left; width: 100%;padding: 5px 5px;border-bottom: 2px solid #eaeaea;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style {display: table; float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .LeftPart {display: table-cell;vertical-align: middle; width: 200px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .LeftPart .images {float: left;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .LeftPart .images .thumb {float: left;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .LeftPart .images .thumb img {display: block; width: 100%;padding: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .RightPart {position: relative; display: table-cell;vertical-align: middle;padding-left: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .RightPart .name {float: left; width: 100%; font-size: 16px; color: #000000; font-weight: bold;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .RightPart .discount {float: left; width: 100%; font-size: 14px; color: #13ba69;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .RightPart .delivery {float: left; width: 100%; font-size: 14px; color: #a6a6a6; /*! font-weight: bold; */line-height: 14px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .starsRate {float: left; width: 100%; margin-top: 10px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .starsRate .starsRate i {float: left; margin-right: 2px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .starsRate .starsRate img{display:block;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .deliveryLocation {float: left; width: 100%; display: table;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .deliveryLocation .area{display: table-cell; vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .deliveryLocation .locationBtn {width: 30px; display: table-cell;vertical-align: middle; cursor: pointer; opacity: 0.5;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .deliveryLocation .locationBtn img{float: left; width: 20px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .myFav {position: absolute; right: 0px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .RightPart .positionDiv {position: relative; float: left; width: 100%;padding-right: 40px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list .style .RightPart .positionDiv .myFav{cursor: pointer; position: absolute; right: 15px; top: 0px; background: url(../images/icon/heartFill.png) no-repeat center; width: 20px; height: 20px;background-size: 20px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .ChemistListing .ChemistLisT .list:last-child {border: none;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage .orderTabs {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage .orderTabs .list{float: left;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage .orderTabs .list .name {float: left; padding: 10px 15px;color: #888;font-size: 14px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage .orderTabs .list.active .name{color: #000;background: #fff;box-shadow: 1px 1px 5px #ccc;border-radius: 3px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .myOrderListingPage .orderTabs .list.active .name .number{color: #23a2db;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing {float: left; width: 100%; box-shadow: 1px 1px 5px #ccc; background: #fff; padding: 10px 20px;margin-top: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list {float: left; width: 100%;padding: 15px 0px;border-bottom: 2px solid #e9e9e9;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style {float: left; width: 100%; display: table;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .leftPart {float: left; width: 60%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .leftPart .orderId {float: left; width: 100%; font-size: 13px; color: #888;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .leftPart .orderTime {float: left; width: 100%;  color: #000000;font-size: 14px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus {float: left; width: 100%;margin-top: 10px; font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .title {float: left; margin-right: 5px;line-height: 32px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .data {float: left; color: #454545;line-height: 32px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .title.red {color: #f00;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .title.green {color: #52a853;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .orderStatus .title.blue {color: #23a2db;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .rightPart {float: right ; width: 40%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .rightPart .itemsCount {float: right; font-size: 12px; color: #a7a7a7;line-height: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .rightPart .price {float: right; width: 100%; text-align: right; font-size: 16px; color: #000;line-height: 18px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .trackBtn {float: right;padding: 7px 10px;border: 1px solid #ccc;  text-transform: uppercase; margin-left: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .trackBtn:hover {background: #eaeaea;border-color: #a8a8a8;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .reorderBtn {float: right;padding: 7px 10px;border: 1px solid #23a2db; color: #23a2db; text-transform: uppercase; margin-left: 5px;font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderListing .list .style .reorderBtn:hover {background: #e4f7ff;border-color: #23a2db;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage {float: left; width: 100%;}
+
+
+.my_table {width: 100%;  box-shadow: 1px 1px 10px #ccc;background: #fff;}
+.my_table .row_head {background: #23a2db; color: #fff;}
+.my_table th  {padding: 15px; vertical-align: middle;text-transform: uppercase;}
+.my_table td  {padding: 15px 15px; vertical-align: middle;line-height: 15px;}
+.my_table th {font-size: 16px; border-right: 2px solid #1096d2;}
+.my_table td { border-right: 2px solid #ebebeb; border-bottom: 2px solid #ebebeb;}
+.my_table td .amount {font-size: 14px; color: #181818; /*! font-weight: bold; */}
+.my_table td .time {font-size: 14px; color: #000;/*! font-weight: bold; */}
+.my_table td .time.green {color: #52a853;}
+.my_table td .time.red {color: #fe0000;}
+.my_table td .name {font-size: 14px; color: #000; float: left; width: 100%;/*! font-weight: bold; */}
+.my_table td .data {font-size: 12px; color: #888; float: left; width: 100%;margin-top: 2px;}
+.my_table td .shopName {font-size: 12px; color: #23a2db; float: left; width: 100%;}
+.my_table td .caption {font-size: 10px; color: #181818; float: left; width: 100%;}
+.my_table td .caption .red {color: #ed6d6d;}
+.my_table td .caption .green {color: #37b850;}
+.my_table td .caption.incoming {padding-left: 15px; background: url(../images/icon/income.png)no-repeat left top; background-size: 10px;}
+.my_table td .caption.outgoing {padding-left: 15px; background: url(../images/icon/outgoing.png)no-repeat left top; background-size: 10px;}
+.my_table th .amount {font-size: 11px; float: left; width: 100%; font-weight: normal;color: #b4cff9;}
+.my_table td .number {display: inline-block; text-align: center; border-radius: 100%; width: 30px; height: 30px; line-height: 30px; margin-right: 10px; background: #33b3e4; color: #fff; font-size: 16px; }
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .headingPart {float: left; width: 100%; display: table;margin-bottom: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .headingPart .leftPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .headingPart .leftPart .name {float: left; width: 100%; color: #23a2db; font-size: 22px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .headingPart .rightPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .headingPart .rightPart .sortBtn { background: url(../images/icon/sort.png)no-repeat  8px center; background-size: 14px; float: right; padding: 7px 15px;padding-left: 30px; cursor: pointer; font-size: 12px; border: 1px solid #ccc;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .headingPart .rightPart .sortBtn:hover {border-color:#000; }
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting {float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list {float: left; width: 100%;padding: 10px 0px;border-bottom: 1px solid #e1e1e1;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style{float: left; width: 100%; display: table;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .leftPart {display: table-cell;vertical-align: top;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .leftPart .name {float: left; width: 100%; font-size: 16px; color: #000;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .leftPart .avail {float: left; width: 100%; font-size: 12px; color: #484848;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .rightPart {display: table-cell;vertical-align: top;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .leftPart .avail .number {color: #149d47;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .rightPart .price {text-align: right; float: left; width: 100%; font-size: 18px; color: #000;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list .style .rightPart .discount {text-align: right; float: left; width: 100%; font-size: 12px; color: #149d47;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .dealsListinset .QuotesLiting .list:last-child{border: none;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing {float: left; width: 100%; margin: 10px 0px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list {width: 100%; padding: 0px; margin-bottom: 0px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .familyTreeListing .list .style{border-radius: 0px;padding: 0px;box-shadow: none;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section {margin: 10px 0px; padding: 15px 20px; background: #fff; box-shadow: 1px 1px 10px #ccc;} 
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart {float: left; width: 100%; display: table;margin-bottom: 10px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .leftPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .leftPart .name {float: left; width: 100%; color: #23a2db; font-size: 22px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .rightPart {display: table-cell;vertical-align: middle;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .rightPart .sortBtn { background: url(../images/icon/sort.png)no-repeat  8px center; background-size: 14px; float: right; padding: 7px 15px;padding-left: 30px; cursor: pointer; font-size: 12px; border: 1px solid #ccc;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .rightPart .sortBtn:hover {border-color:#000; }
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .section .headingPart .rightPart .price{float: right; font-size: 22px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder {float: left; width: 100%; display: table;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .leftPart {float: left; width: 60%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .leftPart .orderId {float: left; width: 100%; font-size: 13px; color: #888;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .leftPart .orderTime {float: left; width: 100%;  color: #000000;font-size: 14px;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart {float: right ; width: 40%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart .itemsCount {float: right; font-size: 12px; color: #a7a7a7;line-height: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart .price {float: right; width: 100%; text-align: right; font-size: 16px; color: #000;line-height: 18px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .trackBtn {float: right;padding: 7px 10px;border: 1px solid #ccc;  text-transform: uppercase; margin-left: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .trackBtn:hover {background: #eaeaea;border-color: #a8a8a8;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .reorderBtn {float: right;padding: 7px 10px;border: 1px solid #23a2db; color: #23a2db; text-transform: uppercase; margin-left: 5px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .reorderBtn:hover {background: #e4f7ff;border-color: #23a2db;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .rightPart .price.green {color: #149d47; font-size: 12px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .youSave {float: left; width: 100%; font-size: 14px; margin-top: 15px; color: #535353;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .youSave .red{color: #e02a27;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .MainOrder .DetailShowBtn {font-size: 13px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage #mydetailsToggleout {display: none;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons {float: left; width: 100%;margin-top: 20px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list {float: left;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list .Download {float: left; padding: 7px 15px; font-size: 14px; border: 1px solid #25a3db; color: #25a3db; margin-right: 10px;border-radius: 3px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list .Download:hover {background: #e4f7ff;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list .Email {float: left; padding: 7px 15px; font-size: 14px; border: 1px solid #d1d1d1;border-radius: 3px;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list .Email:hover {background: #eaeaea; border-color: #a8a8a8;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list.right {float: right;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .orderDetailPage .Downloadbuttons .list.right .Download{margin-right: 0px;}
+
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages {margin: 10px 0px; padding: 15px 20px; background: #fff; box-shadow: 1px 1px 10px #ccc; float: left;} 
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .Vradio_btn {font-size: 16px;line-height: 32px;margin-right: 15px;}
+
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .input--filled .input__label-content{color: #23a2db;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .locationPopuptrigger {float: left; font-size: 12px; color: #23a2db;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .UploadImg {float: left; /*! width: 100%; */ margin-top: 10px; }
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .UploadImg .thumbImg{float: left; width: 120px; height: 120px; overflow: hidden; border: 2px solid #ccc; border-radius: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .UploadImg .thumbImg img {display: block; float: left; width: 100%;}
+.my_accountPages .main_dataPage .right_pannel .mainPage .form_pages .UploadImg input {display: none;}
+
+.my_accountPages .mapLocationSet {position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background:rgba(0,0,0,0.75); z-index: 2; display: none;}
+.my_accountPages .mapLocationSet .designBox {display: table; width: 100%; height: 100%; max-width: 800px;}
+.my_accountPages .mapLocationSet .designBox .vAlign {display: table-cell;vertical-align: middle;}
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign {float: left; width: 100%; background: #fff;}
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign .buttons {width: 100%; text-align: center; margin: 25px 0px; float: left;}
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign .buttons .list {display: inline-block; vertical-align: middle; margin: 0px 5px;}
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign .buttons .CancelBtn {float: left; padding: 7px 15px; font-size: 14px; border: 1px solid #d1d1d1; border-radius: 3px;} 
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign .buttons .CancelBtn:hover {background: #eaeaea; border-color: #a8a8a8;}
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign .buttons .LocationBtn {float: left; padding: 7px 15px; font-size: 14px; border: 1px solid #25a3db; color: #25a3db; margin-right: 10px;}
+.my_accountPages .mapLocationSet .designBox .vAlign .insideDesign .buttons .LocationBtn:hover {background: #e4f7ff;}
+
+.my_accountPages .AddMoneyPopup {position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background:rgba(0,0,0,0.75); z-index: 2; display: none;}
+.my_accountPages .AddMoneyPopup .designBox {display: table; width: 100%; height: 100%; max-width: 400px;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign {display: table-cell;vertical-align: middle;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign {float: left; width: 100%; background: #fff; padding: 20px;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .buttons {width: 100%; /*! text-align: center; */ margin-top: 25px; float: left;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .buttons .list {display: inline-block; vertical-align: middle; /*! margin: 0px 5px; */margin-right: 5px;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .buttons .CancelBtn {float: left; padding: 7px 15px; font-size: 14px; border: 1px solid #d1d1d1; border-radius: 3px;} 
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .buttons .CancelBtn:hover {background: #eaeaea; border-color: #a8a8a8;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .buttons .LocationBtn {float: left; padding: 7px 15px; font-size: 14px; border: 1px solid #25a3db; color: #25a3db; margin-right: 10px;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .buttons .LocationBtn:hover {background: #e4f7ff;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .heading {float: left; width: 100%; font-size: 22px;}
+.my_accountPages .AddMoneyPopup .designBox .vAlign .insideDesign .caption {float: left; width: 100%; font-size: 12px; margin-bottom: 10px;color: #888;}
+
+
+
+.locationPopup {display: none;  position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background:rgba(0,0,0,0.75); z-index: 99;}
+.locationPopup .overlay {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;}
+.locationPopup .slide_right {width: 100%; max-width: 400px; background:#fff; height: 100%; position: absolute; left: -300px; }
+.locationPopup .slide_right .close_popup {position: absolute; top: 20px; cursor: pointer; right: 20px; width: 45px; height: 45px; border: 2px solid #fff; background: #fff url(../images/icon/close.png) no-repeat center; background-size: 18px;}
+.locationPopup .slide_right .close_popup:hover {border-color: #000;}
+.locationPopup .slide_right .searchLocation {float: left; width: 100%; padding: 40px; padding-top: 80px; }
+.locationPopup .slide_right .searchLocation .input_div {float: left; width: 100%; position: relative;}
+.locationPopup .slide_right .searchLocation .input_div .detectLocation {opacity: 0.6; height: 50px; width: 45px; position: absolute; right: 0px; top: 0px; background: url(../images/icon/detect.png)no-repeat center; background-size: 18px;}
+.locationPopup .slide_right .searchLocation .input_div .detectLocation:hover {cursor: pointer; opacity: 1;}
+.locationPopup .slide_right .searchLocation .input_div .input_box {float: left; width: 100%; height: 50px; border: 2px solid #ccc; padding: 15px;}
+.locationPopup .slide_right .searchLocation .input_div .input_box:focus {border-color: #23a2db; box-shadow: 1px 1px 15px #23a2db; }
+
+
+
+.Chemistlisting_Page .main_design {background: #fff; float: left; width: 100%; box-shadow: 1px 1px 15px rgba(0,0,0,0.25);display: table;}
+.Chemistlisting_Page .main_design .leftPanel {display: table-cell;vertical-align:top; width: 30%;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part {float: left; width: 100%;}
+.Chemistlisting_Page .main_design .rightPanel {display: table-cell;vertical-align: top;border-left: 1px solid #ccc;}
+.Chemistlisting_Page .main_design .headingStyle {float: left; width: 100%; height: 70px; border-bottom: 1px solid #ccc; display: table;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .headingStyle .name {display: table-cell;vertical-align: middle;padding-left: 30px;color: #000;font-weight: bold;font-size: 18px;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .headingStyle .resetBtn {cursor: pointer; display: table-cell;vertical-align: middle; width: 70px; background: url(../images/icon/reload.png)no-repeat center; background-size: 16px;border-left: 1px solid #ccc;}
+
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel {float: left; width: 100%;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .filterName {float: left; width: 100%; padding: 15px 30px; font-size: 13px; text-transform: uppercase;font-weight: bold;color: #23a2db;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList {float: left; width: 100%;padding: 10px 30px;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list {float: left; width: 100%;margin-bottom: 10px;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox {float: left; width: 100%;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox:hover .filterdata{color: #000;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox:hover .number{color: #000;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .number {float: right; font-size: 12px; color: #888;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .filterdata {float: left; font-size: 12px;color: #222;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .checkmark {height: 20px;width: 20px;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .checkmark::after {left: 6px;top: 2px;}
+
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .starsRate {float: left;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .starsRate i {float: left;margin-right: 3px;}
+.Chemistlisting_Page .main_design .leftPanel .filter_part .filterPannel .radioList .list .Vcheckbox .starsRate img {display: block;}
+
+.Chemistlisting_Page .main_design .rightPanel .chemist_listing {padding: 30px; float: left; width: 100%;margin: 0px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .infoData .bottom_actions .rightPart {width: 120px;}
+.Chemistlisting_Page .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .name {display: none;}
+.Chemistlisting_Page .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon {position: inherit;}
+.Chemistlisting_Page .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList {padding: 0px; border:none;}
+.Chemistlisting_Page .chemist_listing .chamList .style .infoData .bottom_actions {margin-top: 10px;}
+
+.Chemistlisting_Page .main_design .rightPanel .headingStyle {float: left; width: 100%; height: 70px; display: table;padding: 0px 30px;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart {display: table-cell;vertical-align: middle;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .namePart .name {float: left; width: 100%; font-size: 18px; font-weight: bold;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart {display: table-cell;vertical-align: middle;width: 150px;border-left: 1px solid #ccc;}
+.Chemistlisting_Page .main_design .rightPanel .headingStyle .sortPart .select_option {float: right;width: 100%;padding-left: 20px;}
+
+
+.pagesNamePart {float: left; width: 100%;
+
+background: rgb(35,162,219);
+background: -moz-linear-gradient(left, rgb(35,162,219) 0%, rgb(13,173,179) 100%);
+background: -webkit-linear-gradient(left, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+background: linear-gradient(to right, rgb(35,162,219) 0%,rgb(13,173,179) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23a2db', endColorstr='#0dadb3',GradientType=1 );
+padding: 30px 0px;
+padding-bottom: 70px;
+}
+
+
+.pagesNamePart .headPart {float: left; width: 100%; text-align: center;}
+.pagesNamePart .headPart .pageName {float: left; width: 100%; font-size: 32px; color: #fff;display: none;}
+.pagesNamePart .headPart .breadCrubs {float: left; /*! width: 100%; */margin-bottom: 10px;padding-left: 20px;}
+.pagesNamePart .headPart .breadCrubs .list {display: inline-block; /*! padding: 15px; */ vertical-align: middle;font-size: 14px;}
+.pagesNamePart .headPart .breadCrubs .list .link {display: inline-block; color: #daf4ff;vertical-align: middle;}
+.pagesNamePart .headPart .breadCrubs .list .current {display: inline-block; color: #fff;vertical-align: middle;}
+.pagesNamePart .headPart .breadCrubs .list:after {content: ">";display: inline-block;vertical-align: middle;margin-left: 10px;margin-right: 7px;color: #14718a;}
+.pagesNamePart .headPart .breadCrubs .list:last-child:after {display: none;}
+
+.pageSetting {float: left; width: 100%; margin-top: -70px; background: #fff; box-shadow: 1px 1px 15px rgba(0,0,0,0.25);}
+.pageSetting .cartListing {float: left; width: 100%;padding: 0px 30px;}
+.pageSetting .cartListing .list {float: left; width: 100%; display: table;padding: 10px 0px;border-bottom: 1px solid #dedede;}
+.pageSetting .cartListing .list .producThumb {display: table-cell;vertical-align: middle; width: 120px;text-align: center;}
+.pageSetting .cartListing .list .producThumb .thumb {float: left;width: 100%;}
+.pageSetting .cartListing .list .producThumb .thumb img {display: block; width: 100px;}
+.pageSetting .cartListing .list .infoPart {display: table-cell;vertical-align: middle;}
+.pageSetting .cartListing .list .infoPart .name {float: left; width: 100%; font-size: 16px;}
+.pageSetting .cartListing .list .infoPart .CompanyName {float: left; width: 100%; font-size: 12px; color: #888;line-height: 14px;}
+.pageSetting .cartListing .list .basePrice {display: table-cell;vertical-align: middle;text-align: center;width: 110px;}
+.pageSetting .cartListing .list .basePrice .price {float: left; width: 100%; font-size: 13px; color: #888;line-height: 13px;}
+.pageSetting .cartListing .list .basePrice .displayQty {float: left; width: 100%; font-size: 12px; color: #13b869;}
+.pageSetting .cartListing .list .QTYControllerDiv {display: table-cell;vertical-align: middle; text-align: center;width: 120px;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController {width: 100px;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController .minus {cursor: pointer; float: left; width: 30px; line-height: 26px; height: 30px; border: 1px solid #ccc;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController .qty {float: left; width: 30px; line-height: 26px; height: 30px; border: 1px solid #ccc; border-left: none; border-right: none;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController .qty input {width: 100%; text-align: center; border: none;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController .plus {cursor: pointer; float: left; width: 30px; line-height: 26px; height: 30px; border: 1px solid #ccc;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController .minus:hover {border-color: #888;}
+.pageSetting .cartListing .list .QTYControllerDiv .qtyController .plus:hover {border-color: #888;}
+.pageSetting .cartListing .list .MultiplePriceDiv {display: table-cell;vertical-align: middle;text-align: center;width: 110px;}
+.pageSetting .cartListing .list .MultiplePriceDiv .price {float: left; width: 100%; font-size: 16px; color: #222;font-weight: bold;}
+.pageSetting .cartListing .list .removeDiv {display: table-cell;vertical-align: middle;text-align: center;}
+.pageSetting .cartListing .list .removeDiv .removeCart {display: inline-block; width: 45px; height: 45px; border: 1px solid #ccc; border-radius: 100%; background: url(../images/icon/close.png)no-repeat center; background-size: 10px;cursor: pointer;}
+.pageSetting .cartListing .list .removeDiv .removeCart:hover {border-color: #000;}
+
+
+
+.cart_Page .FullbuttonDiv{background: #fbfbfb;padding: 20px 0px; margin: 0px;position: absolute;bottom: 0px;left: 0px;/*! border-top: 2px solid #e4e4e4; */}
+.cart_Page .stepPage_1 {float: left; width: 100%;}
+.cart_Page .stepPage_1 .heading_name {display: table; width: 100%; float: left; padding: 15px 30px;padding-top: 20px;border-bottom: 1px solid #dedede;height: 70px;}
+.cart_Page .stepPage_1 .heading_name .name{display: table-cell;vertical-align: middle; font-size: 24px; }
+.cart_Page .stepPage_1 .heading_name .RightPart {display: table-cell;vertical-align: middle; text-align: right;}
+.cart_Page .stepPage_1 .heading_name .RightPart .Cartprice {float: left; width: 100%; font-size: 18px;}
+.cart_Page .stepPage_1 .heading_name .RightPart .label {float: left; width: 100%;color: #888;font-size: 14px;}
+
+
+.cart_Page .tableDesign .leftDesign .payment_mode_select {width: 100%; float: left; margin-top: 30px;padding: 0px 30px;}
+.cart_Page .tableDesign .leftDesign .payment_mode_select .list {float: left; text-align: center; margin-right: 20px;}
+.cart_Page .tableDesign .leftDesign .payment_mode_select .list .choose_btn {cursor: pointer; padding: 25px; display: block; background: #ecf0f1; border:3px solid #ecf0f1; border-radius: 10px;}
+.cart_Page .tableDesign .leftDesign .payment_mode_select .list .choose_btn.active {border-color:#33b3e4;}
+.cart_Page .tableDesign .leftDesign .payment_mode_select .list .choose_btn:hover {border-color:#33b3e4;}
+.cart_Page .tableDesign .leftDesign .payment_mode_select .list .name {float: left; width: 100%; margin-top: 15px; color: #212121; font-size: 14px; font-weight: bold;}
+
+
+.cart_Page .stepPage_1 .billingArea {float: left; width: 100%;border-top: 1px solid #e9e9e9;}
+.cart_Page .stepPage_1 .billingArea .list {width: 100%; float: left; display: table;padding: 25px 30px;border-bottom: 1px solid #e9e9e9;}
+.cart_Page .stepPage_1 .billingArea .list .left_part {display: table-cell;vertical-align: middle;}
+.cart_Page .stepPage_1 .billingArea .list .left_part .name {float: left; width: 100%; font-size: 18px; color: #23a2db;}
+.cart_Page .stepPage_1 .billingArea .list .left_part .data {float: left; width: 100%; font-size: 14px; color: #222;}
+.cart_Page .stepPage_1 .billingArea .list .right_part {display: table-cell;vertical-align:  top;}
+.cart_Page .stepPage_1 .billingArea .list .right_part .changeBtn { font-size: 12px; float: right; padding: 7px 10px; border: 1px solid #23a2db; color: #23a2db; text-transform: uppercase; margin-left: 5px;}
+.cart_Page .stepPage_1 .billingArea .list .right_part .changeBtn:hover {background: #e4f7ff; border-color: #23a2db;}
+.cart_Page .stepPage_1 .pickupSelect {float: left; width: 100%; padding: 20px 20px;background: #fbfbfb;/*! box-shadow: 1px 1px 5px #ccc; */border: 2px solid #dadada;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList {float: left; width: 100%; height: 160px;/*! max-width: 200px; */}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list {float: left; width: 100%;/*! overflow: hidden; */}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style {float: left; cursor: pointer; border: 1px solid #ddd;padding: 20px;border-radius: 3px;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style img {display: block;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style .name {color: #888;float: left;width: 100%;     font-size: 13px;    margin-top: 3px;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style .icon {opacity: 0.5; margin-bottom: 20px;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style:hover {border-color: #888;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style.active .icon{opacity: 1;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style.active .name {color: #000;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .style.active {border-color: #000;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list .name {position: relative; padding: 10px 15px;/*! border: 2px solid #000; */ color: #000; border-radius: 3px;font-size: 14px; width: 100%; float: left; margin: 5px 0px; cursor: grabbing;padding-left: 30px;overflow: hidden;background: #fff;box-shadow: 1px 1px 5px #ccc;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list:first-child {opacity: 1;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list:first-child .name:after {content: "1"; left: 0px;position: absolute;height: 100%;top: 0px;line-height: 41px;width: 25px;text-align: center;background: #fff;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list:nth-child(2) .name:after {content: "2"; left: 0px;position: absolute;height: 100%;top: 0px;line-height: 41px;width: 25px;text-align: center;background: #fff;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list:nth-child(3) .name:after {content: "3"; left: 0px;position: absolute;height: 100%;top: 0px;line-height: 41px;width: 25px;text-align: center;background: #fff;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list:nth-child(2) {opacity: 0.5;}
+.cart_Page .stepPage_1 .pickupSelect .buttonsList .list:nth-child(3) {opacity: 0.25;}
+.cart_Page .stepPage_1 .pickupSelect .title {float: left; width: 100%; color: #23a2db;font-size: 12px;}
+
+
+.deliveryOptionList {float: left; width: 100%;margin: 30px 0px;padding: 0px 30px;}
+.deliveryOptionList .list {float: left;margin-right: 20px;}
+.deliveryOptionList .list .style {float: left; cursor: pointer; border: 1px solid #ddd;padding: 20px;border-radius: 3px;}
+.deliveryOptionList .list .style img {display: block;height: 30px;}
+.deliveryOptionList .list .style .name {color: #888;float: left;width: 100%;     font-size: 13px;    margin-top: 3px;}
+.deliveryOptionList .list .style .icon {opacity: 0.5; margin-bottom: 20px;}
+.deliveryOptionList .list .style:hover {border-color: #888;}
+.deliveryOptionList .list .style.active .icon{opacity: 1;}
+.deliveryOptionList .list .style.active .name {color: #000;}
+.deliveryOptionList .list .style.active {border-color: #000;}
+
+
+.cart_Page .stepPage_1 .selectDate{float: left; width: 100%; padding: 30px 30px;}
+.cart_Page .stepPage_1 .selectDate .list {float: left; width: 16.66%;text-align: center;}
+.cart_Page .stepPage_1 .selectDate .list .style {float: left; width: 100px; height: 112px; background: url(../images/icon/calendar.png)no-repeat center; background-size: 100%; text-align: center;display: block;cursor: pointer;opacity: 0.8;}
+.cart_Page .stepPage_1 .selectDate .list .style .dayNAme {float: left; width: 100%;height: 40px;line-height: 54px;color: #fff;font-size: 14px;}
+.cart_Page .stepPage_1 .selectDate .list .style .date {position: relative; float: left; width: 100%;height: 70px;line-height: 70px;font-size: 28px;}
+.cart_Page .stepPage_1 .selectDate .list.notAvail {opacity: 0.25; pointer-events: none;}
+.cart_Page .stepPage_1 .selectDate .list .style .date:after {opacity: 0.5; content: ""; width: 30px; height: 30px; background: #fff url(../images/icon/checked.png) no-repeat center; position: absolute;bottom: -4px;right: -2px;border-radius: 100%;border: 2px solid #ccc;background-size: 14px;}
+.cart_Page .stepPage_1 .selectDate .list .style .date:before {content: ""; width: 30px; height: 30px; background: #fff; position: absolute;bottom: -4px;right: -2px;border-radius: 100%;border: 2px solid #ccc;background-size: 14px;}
+.cart_Page .stepPage_1 .selectDate .list .style:hover .date:after{opacity: 0.8; border-color: #000;}
+.cart_Page .stepPage_1 .selectDate .list .style:hover {opacity: 1;}
+
+
+.cart_Page .stepPage_1 .Subheading_name {width: 100%; float: left; padding: 15px 30px; font-size: 18px; padding-top: 20px;border-bottom: 1px solid #dedede;height: 70px;}
+.cart_Page .stepPage_1 .TimeSlot {float: left; width: 100%;padding: 50px 30px;padding-bottom: 10px;}
+.cart_Page .stepPage_1 .TimeSlot .list {float: left;padding: 0px 5px;}
+.cart_Page .stepPage_1 .TimeSlot .list .style {float: left;/*! padding: 15px; */border-radius: 3px;/*! border: 1px solid #a1a1a1; */}
+/*.cart_Page .stepPage_1 .TimeSlot .list .style .time {padding: 15px 25px;color: #2f2f2f;}*/
+
+.cart_Page .stepPage_1 .TimeSlot .list .style .time {position: relative; width: 100%; float: left; font-size: 14px; padding: 10px; /*! margin-top: 20px; */ border: 2px solid #a1a1a1;padding-right: 60px;cursor: pointer;}
+.cart_Page .stepPage_1 .TimeSlot .list .style .time:after { background: url(../images/icon/checked.png)no-repeat center; background-size: 18px; content: ""; position: absolute; right: 5px; top: 0px; height: 100%; width: 40px; opacity: 0.4;}
+.cart_Page .stepPage_1 .TimeSlot .list .style .time:hover {border-color: #888;}
+.cart_Page .stepPage_1 .TimeSlot .list.active .style .time:after {opacity: 1;}
+.cart_Page .stepPage_1 .TimeSlot .list.active .style .time {border-color: #000; }
+.cart_Page .stepPage_1 .TimeSlot .list.notAvail .style .time {opacity: 0.5; pointer-events: none;}
+
+
+
+
+.cart_Page .stepPage_1 .familyTreeListing {float: left; /*! width: 100%; */ padding: 0px 30px; margin-bottom: 30px;}
+.cart_Page .stepPage_1 .familyTreeListing .list{float: left; width: 33.3%; padding: 0px 5px;margin-bottom: 10px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style {float: left; width: 100%; padding: 20px; border-radius: 3px; box-shadow: 1px 1px 15px rgba(0,0,0,0.25); background:#fff; border-radius: 5px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .name {float: left; width: 100%; font-size: 18px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .name i {color: #888; font-size: 14px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .age {float: left; width: 100%; font-size: 14px;color: #333;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .age i {color: #888; font-size: 12px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .Address {float: left; width: 100%; font-size: 12px; color: #484848;margin-top: 10px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .Phone {margin-top: 10px; float: left; width: 100%;color: #1795cf; background: url(../images/icon/phone.png) no-repeat center left; padding-left: 30px; background-size: 24px;font-size: 16px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .buttons {float: left; width: 100%;margin-top: 10px;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .buttons a {padding: 5px 15px;float: left; font-size: 12px;border: 2px solid #d4d4d4;margin-right: 5px;/*! text-transform: uppercase; */color: #000;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .buttons a:hover {border-color: #000;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .selectAddress {position: relative; width: 100%; float: left; font-size: 16px; padding: 10px; margin-top: 20px; border: 2px solid #ccc;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .selectAddress:after { background: url(../images/icon/checked.png)no-repeat center; background-size: 18px; content: ""; position: absolute; right: 5px; top: 0px; height: 100%; width: 40px; opacity: 0.4;}
+.cart_Page .stepPage_1 .familyTreeListing .list .style .selectAddress:hover {border-color: #888;}
+.cart_Page .stepPage_1 .familyTreeListing .list.active .style .selectAddress {border-color: #000; color: #000;}
+.cart_Page .stepPage_1 .familyTreeListing .list.active .style .selectAddress:after {opacity: 1;}
+.cart_Page .stepPage_1 .fullButtonsdiv {width: 100%; float: left; padding: 30px 30px;}
+.cart_Page .stepPage_1 .fullButtonsdiv .AddBtn {float: right; margin-right: 5px;}
+
+.cart_Page .FullbuttonDiv .checkoutMeter{float: left; width: 100%; display: table;padding: 0px 30px;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar{display: table-cell; vertical-align: middle;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .bar {float: left; position: relative; width: 400px; /*! max-width: 400px; */ height: 5px;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .bar .baseLine {position: absolute; width: 100%; height: 5px; background: #d2d2d2;left: 0px;border-radius: 10px;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .bar .meterLine {position: absolute; height: 5px; background: #23a2db; z-index: 1; left: 0px;border-radius: 10px;}
+.cart_Page .FullbuttonDiv .checkoutMeter .right_bar {display: table-cell; vertical-align: middle;}
+.cart_Page .FullbuttonDiv .checkoutMeter .right_bar .backBtn{ display: inline-block; padding: 12px 20px; border: 2px solid #ccc; background: #fff; margin-right: 10px;}
+.cart_Page .FullbuttonDiv .checkoutMeter .right_bar .backBtn:hover {background: #eaeaea; border-color: #a8a8a8;}
+.cart_Page .FullbuttonDiv .checkoutMeter .right_bar a {float: right;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .Step_name {float: left; width: 100%; text-align: left; margin-bottom: 5px; font-weight: bold;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .priceSummuryDiv {float: left; width: 100%; text-align: left; font-size: 14px; margin-top: 5px;}
+.cart_Page .FullbuttonDiv .checkoutMeter .left_bar .priceSummuryDiv .label {color: #23a2db; cursor: pointer;}
+
+
+.cart_Page .tableDesign {float: left; width: 100%; display: table;}
+.cart_Page .tableDesign .leftDesign{ display: table-cell; vertical-align: top;position: relative;padding-bottom: 100px;}
+.cart_Page .tableDesign .right_design { display: table-cell; vertical-align: top;width: 30%;background: #f3f3f3;padding: 20px;}
+.cart_Page .tableDesign .right_design .summry_design {float: left; width: 100%; box-shadow: 1px 1px 5px #ccc; background: #fff;margin-top: 20px;padding: 15px 0px;}
+.cart_Page .tableDesign .right_design .summry_design .list {float: left; width: 100%; display: table; padding: 5px 15px; font-size: 13px;}
+.cart_Page .tableDesign .right_design .summry_design .list .labelPart{display: table-cell;vertical-align: top; color: #888;}
+.cart_Page .tableDesign .right_design .summry_design .list .dataPart{display: table-cell;vertical-align: middle; text-align: right;color: #888;font-weight: bold;}
+.cart_Page .tableDesign .right_design .checkoutBtnDiv {float: left; width: 100%; margin-top: 20px; display: table;}
+.cart_Page .tableDesign .right_design .summry_design .list .labelPart.b {color: #000;}
+.cart_Page .tableDesign .right_design .summry_design .list .dataPart.b {color: #000;}
+
+.cart_Page .tableDesign .right_design .cartSummryview {float: left; width: 100%; box-shadow: 1px 1px 5px #ccc; background: #fff;padding-bottom: 10px;}
+.cart_Page .tableDesign .right_design .cartSummryview .mainHeading{float: left; width: 100%; font-size: 13px; color: #888; padding: 15px;border-bottom: 1px solid #e4e4e4;}
+.cart_Page .tableDesign .right_design .cartSummryview .mainHeading .items {color: #000;}
+.cart_Page .tableDesign .right_design .cartSummryview .cartLists {float: left; width: 100%;}
+.cart_Page .tableDesign .right_design .cartSummryview .cartLists .list{float: left; width: 100%;padding: 7px 15px;}
+.cart_Page .tableDesign .right_design .cartSummryview .cartLists .list .name {float: left; width: 100%; font-size: 13px; color: #333;}
+.cart_Page .tableDesign .right_design .cartSummryview .cartLists .list .designSetting {float: left; width: 100%; display: table;font-size: 12px;}
+.cart_Page .tableDesign .right_design .cartSummryview .cartLists .list .designSetting .left_Data{display: table-cell;vertical-align:  middle;color: #888;}
+.cart_Page .tableDesign .right_design .cartSummryview .cartLists .list .designSetting .right_Data{display: table-cell;vertical-align:  middle; text-align: right;font-weight: bold;}
+
+
+.cart_Page .tableDesign .right_design .checkoutBtnDiv .buttonList {display: table-cell;vertical-align: middle;width: 50%;}
+.cart_Page .tableDesign .right_design .checkoutBtnDiv .buttonList .backBtn {width: 100%; text-align: center;float: left;padding: 12px 20px;border: 2px solid #ccc;background: #fff;margin-right: 10px;color: #000;}
+.cart_Page .tableDesign .right_design .checkoutBtnDiv .buttonList .backBtn:hover {background: #eaeaea;border-color: #a8a8a8;}
+.cart_Page .tableDesign .right_design .checkoutBtnDiv .buttonList .ViewmoreBtn {width: 100%; text-align: center;float: left;padding: 15px;padding: 12px 20px;border: 2px solid #23a2db;background: #fff;}
+.cart_Page .tableDesign .right_design .checkoutBtnDiv .buttonList .ViewmoreBtn:hover {background: #dff5ff;}
+
+
+.menu_Popup {display: none;  position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background:rgba(0,0,0,0.75); z-index: 99;}
+.menu_Popup .overlay {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;}
+.menu_Popup .slide_right {width: 100%; max-width: 300px; background:#fff; height: 100%; position: absolute; right: -300px; }
+.menu_Popup .slide_right .close_popup {position: absolute; top: 20px; cursor: pointer; right: 20px; width: 45px; height: 45px; border: 2px solid #fff; background: #fff url(../images/icon/close.png) no-repeat center; background-size: 18px;}
+.menu_Popup .slide_right .close_popup:hover {border-color: #000;}
+.menu_Popup .slide_right .menu_list {float: left; width: 100%; padding: 0px 30px; padding-top: 80px;}
+.menu_Popup .slide_right .menu_list .list{float: left; width: 100%;padding: 10px 0px;border-bottom: 1px solid #d7d7d7;}
+.menu_Popup .slide_right .menu_list .list .link{float: left;font-weight: normal;font-size: 14px;color: #000;}
+.menu_Popup .slide_right .menu_list .list .link:hover {color: #888;}
+.menu_Popup .slide_right .menu_list .list.loginList {position: absolute; bottom: 20px;left: 0px;padding: 0px 30px; border: none;}
+.menu_Popup .slide_right .menu_list .list.loginList .link {width: 100%; text-align: center;}
+.menu_Popup .slide_right .menu_list .list .link .icon {display: inline-block; vertical-align: middle; margin-right: 10px; opacity: 0.4;}
+.menu_Popup .slide_right .menu_list .list .link .icon img {display: block; height: 26px;}
+
+
+
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list {padding: 10px 30px;}
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list .MultiplePriceDiv {text-align: left;}
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list .MultiplePriceDiv .displayQty {font-size: 12px;color: #13b869;}
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list .producThumb .thumb img {width: 76px;}
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list .QTYControllerDiv .Add_button {font-size: 12px; color: #fff; background: #23a2db; padding: 10px 15px; cursor: pointer;}
+.Chemistlisting_Page .main_design .rightPanel .cartListing .list .QTYControllerDiv .Add_button:hover {box-shadow: 1px 1px 10px #23a2db;}
+
+
+.medicalDetail_page .main_design {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_1 {float: left; width: 100%; padding: 20px 50px; display: table;}
+.medicalDetail_page .main_design .section_1 .leftPart {display: table-cell;vertical-align:  middle;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .product_name{font-size: 24px; float: left; width: 100%;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .companyName {color: #888; float: left; width: 100%;line-height: 16px;margin-bottom: 30px;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .category {color: #23a2db; float: left; width: 100%; font-size: 12px;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyDisply { float: left; width: 100%; font-size: 12px; color: #13b869;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .price {color: #000; float: left; width: 100%; font-size: 24px;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .small_disc {float: left; width: 100%;margin-top: 20px;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .small_disc .label{float: left; width: 100%;font-size: 14px;/*! margin-bottom: 3px; */}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .small_disc .text {font-size: 14px;color: #7a7a7a;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .priceDiv {float: left; width: 100%; display: table;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .priceDiv .left_Part {display: table-cell;vertical-align: middle;width: 160px;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .priceDiv .right_part {display: table-cell;vertical-align: middle;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .priceDiv .right_part .Add_button {font-size: 18px; color: #fff; background: #23a2db; padding: 10px 15px;cursor: pointer;}
+
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController {width: 100px;text-align: center;float: left;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController .minus {cursor: pointer; float: left; width: 30px; line-height: 26px; height: 30px; border: 1px solid #ccc;text-align: center;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController .qty {float: left; width: 30px; line-height: 26px; height: 30px; border: 1px solid #ccc; border-left: none; border-right: none;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController .qty input {width: 100%; text-align: center; border: none;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController .plus {cursor: pointer; float: left; width: 30px; line-height: 26px; height: 30px; border: 1px solid #ccc;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController .minus:hover {border-color: #888;}
+.medicalDetail_page .main_design .section_1 .leftPart .Prodetails .qtyController .plus:hover {border-color: #888;}
+
+.medicalDetail_page .main_design .section_1 .rightPart {display: table-cell;vertical-align:  bottom; width: 50%;}
+.medicalDetail_page .main_design .section_1 .rightPart .thumb {float: left; width: 100%; position: relative;}
+.medicalDetail_page .main_design .section_1 .rightPart .thumb .img img {display: block; height: 300px;}
+.medicalDetail_page .main_design .section_1 .rightPart .thumb .cat_icon {position: absolute; top: -20px; right: -25px;border: 2px solid #a2e0fc;border-radius: 100%;padding: 10px;}
+.medicalDetail_page .main_design .section_1 .rightPart .thumb .cat_icon img {display: block;width: 36px;}
+
+.medicalDetail_page .main_design .section_2 {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_2 .seaTabs {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_switch{float: left; width: 100%;border-top: 1px solid #e0e0df;border-bottom: 1px solid #e0e0e0;padding: 0px 50px;overflow: visible;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_switch .seaTabs_tab {padding: 25px 0px; margin: 0px 35px; font-size: 16px;color: #000;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content {float: left; width: 100%;padding: 30px 50px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_switch .seaTabs_tab.seaTabs_switch_active {background: #fff; color: #229dd8; position: relative;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_switch .seaTabs_tab.seaTabs_switch_active:after{width: 100%; position: absolute; bottom: -1px; z-index: 1; height: 2px; background: #229dd8; content: "";left: 0px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_switch .seaTabs_tab:first-child {margin-left: 0px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .listing{float: left; width: 100%;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .listing li {float: left; width: 100%; font-size: 14px;background: #f3f3f3;padding: 12px 0px;color: #505050;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .listing li:nth-child(odd) {background: #fff;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .text {float: left; width: 100%;font-size: 14px; line-height: 24px;color: #333;margin-bottom: 20px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails {float: left; width: 100%; display: table;padding: 20px 0px;border-top: 1px solid #e4e4e4;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .iconPart {display: table-cell; vertical-align: top; width: 120px;text-align: left;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .iconPart .icon {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .iconPart .icon img{display: block; height: 36px;float: left;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .name {float: left; width: 100%;margin-top: 5px;font-size: 14px;font-weight: bold;}
+
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .contentPart {display: table-cell;vertical-align: top;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .contentPart .redCaution{float: left; padding: 7px 15px; color: #e60202; border: 1px solid #f98787; font-size: 12px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .contentPart .greenCaution{float: left; padding: 7px 15px; color: #08aa00; border: 1px solid #08aa00; font-size: 12px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .contentPart .readMorecontent {float: left; width: 100%;font-size: 14px;line-height: 24px;margin-top: 10px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .cautionDetails .contentPart .pinkCaution {float: left; padding: 7px 15px; color: #f7007e; border: 1px solid #f7007e; font-size: 12px;}
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .subHeading {float: left; width: 100%; margin-bottom: 15px; font-size: 18px;}
+
+.medicalDetail_page .main_design .section_2 .seaTabs .seaTabs_content .seaTabs_item .accordionStyle .contentDiv {font-size: 14px; padding-left: 20px; color: #333; line-height: 24px;}
+.medicalDetail_page .main_design .section_3 {float: left; width: 100%; padding: 15px 50px;margin-bottom: 30px;}
+.medicalDetail_page .main_design .section_3 .Sectionheading{float: left; width: 100%; text-align: left;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list {float: left; width: 100%; width: 33.3%; padding: 0px 5px;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style {float: left; width: 100%;border: 1px solid #ccc; background: #fff;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style .thumb {float: left; width: 100%;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style .thumb img{display: block; width: 100%;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style .content {float: left; width: 100%; padding: 15px 20px;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style .content .title {float: left; width: 100%; font-size: 16px; color: #000;margin-bottom: 5px;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style .content .text {float: left; width: 100%; font-size: 13px; color: #7a7a7a;}
+.medicalDetail_page .main_design .section_3 .ArticlesListing .list .style:hover {box-shadow: 1px 1px 10px #ccc;}
+
+.medicalDetail_page .main_design .SimilarSaltsection {float: left; width: 100%;padding: 35px 50px;border-top: 1px solid #ccc;}s
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset {float: left; width: 100%;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart {float: left; width: 100%; display: table;margin-bottom: 10px;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart .leftPart {display: table-cell;vertical-align: middle;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart .leftPart .name {float: left; width: 100%; color: #23a2db; font-size: 22px;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart .rightPart {display: table-cell;vertical-align: middle;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart .rightPart .sortBtn { background: url(../images/icon/sort.png)no-repeat  8px center; background-size: 14px; float: right; padding: 7px 15px;padding-left: 30px; cursor: pointer; font-size: 12px; border: 1px solid #ccc;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart .rightPart .sortBtn:hover {border-color:#000; }
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting {float: left; width: 100%;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list {float: left; width: 100%;padding: 10px 0px;border-bottom: 1px solid #e1e1e1;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style{float: left; width: 100%; display: table;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .leftPart {display: table-cell;vertical-align: top;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .leftPart .name {float: left; width: 100%; font-size: 16px; color: #000;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .leftPart .avail {float: left; width: 100%; font-size: 12px; color: #484848;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .rightPart {display: table-cell;vertical-align: top;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .leftPart .avail .number {color: #149d47;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .rightPart .price {text-align: right; float: left; width: 100%; font-size: 18px; color: #000;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list .style .rightPart .discount {text-align: right; float: left; width: 100%; font-size: 12px; color: #149d47;}
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .QuotesLiting .list:last-child{border: none;}
+
+.medicalDetail_page .main_design .SimilarSaltsection .dealsListinset .headingPart .Sectionheading {text-align: left;}
+
+
+
+
+.my_accountSetting .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList {padding: 0px; border: none; cursor: pointer;}
+.my_accountSetting .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon {position: inherit;}
+.my_accountSetting .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon.wishlist img{transform: scale(0.45);}
+.my_accountSetting .chemist_listing .chamList .style .infoData .bottom_actions .leftPart .buttonsList .icon.wishlist {border-color: #23a2db;}
+
+
+.chemistDetail_page .fullBanner{float: left; width: 100%;}
+.chemistDetail_page .fullBanner .banner {float: left; width: 100%;}
+.chemistDetail_page .fullBanner .banner img{float: left; width: 100%;}
+
+.chemistDetail_page .section1 {float: left; width: 100%; padding: 30px 50px;}
+.chemistDetail_page .section1 .companyName {float: left; width: 100%; font-size: 28px;}
+.chemistDetail_page .section1 .companyLocation {color: #888; float: left; width: 100%; line-height: 16px; margin-bottom: 30px;}
+.chemistDetail_page .section1 .mainFeatureList {float: left; width: 100%;}
+.chemistDetail_page .section1 .mainFeatureList .list {float: left;}
+.chemistDetail_page .section1 .mainFeatureList .list .style {float: left; width: 100%;}
+.chemistDetail_page .section1 .mainFeatureList .list .style .Data{float: left; width: 100%; font-size: 24px;}
+.chemistDetail_page .section1 .mainFeatureList .list .style .Data i {margin-right: 5px; display: inline-block; color: #23db3f;}
+.chemistDetail_page .section1 .mainFeatureList .list .style .label{float: left; width: 100%; color: #888;font-size: 14px;}
+.chemistDetail_page .section1 .actionButtons {float: left; width: 100%; margin-top: 30px;}
+.chemistDetail_page .section1 .actionButtons .list {float: left; margin-right: 15px;}
+.chemistDetail_page .section1 .actionButtons .list .style {float: left; padding: 15px 20px; cursor: pointer; border: 2px solid #ccc; border-radius: 3px; font-size: 18px; color: #222;}
+.chemistDetail_page .section1 .actionButtons .list .style.active {color: #23a2db; border-color: #23a2db;}
+.chemistDetail_page .section1 .actionButtons .list .style i {font-size: 24px; display: inline-block;}
+
+.chemistDetail_page .section2 {float: left; width: 100%;} 
+
+.chemistDetail_page .section2 .seaTabs {float: left; width: 100%;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch{float: left; width: 100%;border-top: 1px solid #e0e0df;border-bottom: 1px solid #e0e0e0;padding: 0px 50px;overflow: visible;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab {padding: 25px 0px; margin: 0px 35px; font-size: 16px;color: #000;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_content {float: left; width: 100%;padding: 30px 50px;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab.seaTabs_switch_active {background: #fff; color: #229dd8; position: relative;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab.seaTabs_switch_active:after{width: 100%; position: absolute; bottom: -1px; z-index: 1; height: 2px; background: #229dd8; content: "";left: 0px;}
+.chemistDetail_page .section2 .seaTabs .seaTabs_switch .seaTabs_tab:first-child {margin-left: 0px;}
+.chemistDetail_page .section2 .seaTabs .dataList {float: left; width: 100%;}
+.chemistDetail_page .section2 .seaTabs .dataList .list {float: left; width: 100%;margin-bottom: 30px;}
+.chemistDetail_page .section2 .seaTabs .dataList .list .headTitle {float: left; width: 100%; font-size: 18px;margin-bottom: 5px;}
+.chemistDetail_page .section2 .seaTabs .dataList .list .headTitle .green {color: #13ba69; font-size: 14px;}
+.chemistDetail_page .section2 .seaTabs .dataList .list .headTitle .icon {display: inline-block; vertical-align: bottom; width: 30px;}
+.chemistDetail_page .section2 .seaTabs .dataList .list .headTitle .icon img{display: block; width: 27px;}
+.chemistDetail_page .section2 .seaTabs .dataList .list .headTitle i {font-size: 24px; width: 30px; color: #888;}
+.chemistDetail_page .section2 .seaTabs .dataList .list .Details {float: left; width: 100%; font-size: 14px; color: #666;}
+
+.chemistDetail_page .socialMeidaListing {float: left; width: 100%; /*! margin-: 30px; */padding: 0px 50px;}
+.chemistDetail_page .socialMeidaListing .heading {float: left; width: 100%; font-size: 18px;margin-bottom: 20px;}
+.chemistDetail_page .socialMeidaListing .socialListing {float: left; width: 100%;}
+.chemistDetail_page .socialMeidaListing .socialListing .list {display: inline-block;margin-right: 45px;}
+.chemistDetail_page .socialMeidaListing .socialListing .list .style {float: left; width: 100%;text-align: center;}
+.chemistDetail_page .socialMeidaListing .socialListing .list .style .icon img{display: block; height: 36px;/*! float: left; */}
+.chemistDetail_page .socialMeidaListing .socialListing .list .style .icon {/*! float: left; */ /*! width: 100%; */border: 1px solid #ccc;border-radius: 100%;padding: 12px;display: block;}
+.chemistDetail_page .socialMeidaListing .socialListing .list .style .Name {float: left; width: 100%; font-size: 12px; color: #333;margin-top: 10px;}
+
+.chemistDetail_page .PaymentListing .heading {float: left; width: 100%; font-size: 18px;margin-bottom: 20px;}
+.chemistDetail_page .PaymentListing {float: left; width: 100%;margin: 30px 0px;padding: 0px 50px;}
+.chemistDetail_page .PaymentListing .list {float: left;/*! text-align: center; */margin-bottom: 30px;margin: 0px 20px;text-align: center;}
+.chemistDetail_page .PaymentListing .list .style {width: 100%; /*! text-align: center; */float: left;}
+.chemistDetail_page .PaymentListing .list .icon {float: left;width: 100%;text-align: center;}
+.chemistDetail_page .PaymentListing .list .Name{float: left; width: 100%; font-size: 12px; color: #333;margin-top: 10px;}
+.chemistDetail_page .PaymentListing .list .icon img {display: block;height: 22px;/*! float: left; */}
+
+.chemistDetail_page .overviewDetails {float: left; width: 100%; margin-top: 20px;}
+.chemistDetail_page .overviewDetails .headTitle{float: left; width: 100%;font-size: 18px;}
+.chemistDetail_page .overviewDetails .Details{float: left; width: 100%; font-size: 14px; line-height: 24px; color: #666}
+
+
+.chemistDetail_page .section1 .displaySetting {float: left; width: 100%; display: table;}
+.chemistDetail_page .section1 .displaySetting .leftData {display: table-cell;vertical-align:  top;width: 50%;padding-right: 30px;}
+.chemistDetail_page .section1 .displaySetting .RightData {display: table-cell;vertical-align:  top;}
+
+
+.chemistDetail_page .section2 .timeTable {float: left; width: 100%;padding-left: 20px;margin-top: 10px;max-width: 270px;}
+.chemistDetail_page .section2 .timeTable .TableList {float: left; width: 100%; display: table;margin: 5px 0px;}
+.chemistDetail_page .section2 .timeTable .TableList .label {display: table-cell;vertical-align: top; color: #000;width: 100px;border-right: 4px double #ccc;}
+.chemistDetail_page .section2 .timeTable .TableList .data {display: table-cell;vertical-align: top;padding-left: 15px;}
+.chemistDetail_page .section2 .timeTable .TableList .data .timeList {float: left; width: 100%; font-size: 14px;}
+.chemistDetail_page .section2 .timeTable .TableList.active {padding: 10px; border: 1px solid #000;margin-left: -10px;}
+.chemistDetail_page .section2 .timeTable .TableList.active .timeList {font-weight: bold; color: #000;}
+.chemistDetail_page .section2 .timeTable .TableList.weekoff {opacity: 0.35;}
+
+
+.categoryPage.home_Page .section_2 .MedicinTypeList .list .style{cursor: pointer;}
+.categoryPage.home_Page .section_2 {background: none; padding-bottom: 0px;padding-top: 0px;}
+.categoryPage.home_Page .section_3 {padding-top: 0px;}
+.categoryPage.home_Page .medCatListing {padding: 0px 10px;}
+.categoryPage.home_Page .topSellingsList {float: left; width: 100%;}
+.categoryPage.home_Page .topSellingsList .list {float: left; width: 16.66%; padding: 0px 5px;}
+.categoryPage.home_Page .topSellingsList .list .style {float: left; width: 100%; background: #fff; text-align: center;box-shadow: 1px 1px 5px #ccc;}
+.categoryPage.home_Page .topSellingsList .list .image {float: left; width: 100%;margin: 10px 0px;}
+.categoryPage.home_Page .topSellingsList .list .image img{display: block; height: 150px;}
+.categoryPage.home_Page .topSellingsList .list .name {float: left; width: 100%;color: #555;font-size: 14px;}
+.categoryPage.home_Page .topSellingsList .list .price {float: left; width: 100%;color: #000;margin-bottom: 15px;}
+
+.categoryPage.home_Page .fullBanner{float: left; width: 100%;margin-top: 30px;}
+.categoryPage.home_Page .fullBanner .banner{float: left; width: 100%;}
+.categoryPage.home_Page .fullBanner .banner img{float: left; width: 100%;}
+
+.categoryPage.home_Page .section_4 {padding-top: 0px;}
+
+
+.home_Page .section_2 .MedicinTypeList .list {width: 33.3%;}

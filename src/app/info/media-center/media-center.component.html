@@ -1,0 +1,38 @@
+<app-header #child></app-header>
+<div class="bodySetting media_center_page">
+  <div class="container">
+      <div class="media_center">
+
+        <div class="custom_tabs">
+            <ul class="tab_listing">
+                <li class="tab_list" id="usertype" *ngIf="media.user.length>0">
+                    <a href="javascript:void(0)" (click)="onSwitchUserType('user')">User</a>
+                </li>
+                <li class="tab_list" id="chemisttype" *ngIf="media.chemist.length>0">
+                    <a href="javascript:void(0)" (click)="onSwitchUserType('chemist')">Chemist</a>
+                </li>
+            </ul>
+        </div>
+
+          <ul class="media_listing">
+              <li class="media_list" *ngFor="let media of medialist">
+                  <div class="style">
+                      <div class="video_thumb">
+                        <a href="{{media.video_url}}" target="_blank">
+                          <i aria-hidden="true" class="fa fa-play"></i>
+                          <img src="{{media.image_url}}">
+                        </a>
+                      </div>
+                      <div class="content">
+                        <h2>{{media.title}}</h2>
+                       
+                      </div>
+                  </div>
+              </li>
+
+             
+          </ul>
+      </div>
+  </div>
+</div>  
+<app-footer></app-footer>

@@ -1,0 +1,150 @@
+<div class="inquirypopup help_
+feedBack">
+	<div class="designBOx">
+		<div class="vAlign">
+			<div class="innerDesign">
+				<div class="insideBox">
+					<div class="form_wrapper">
+						<div class="form_innerWrapper full_w">
+								<div  class="login_steps full_w">
+									
+									<div  class="form_title">
+										<div class="left_part">
+											<h2 >{{mode.txt}}</h2>
+											<span >Enter Your Details Below</span>
+										</div>
+
+										<div class="right_part">
+											<button  class="btn secondary medium"  routerLink="/" tabindex="0"><img  src="assets/images/left_arrow.png"></button>
+										</div>
+									</div>
+									
+									
+										<div class="forms_div  full_w">
+											<ul  class="form_listing full_w">
+												<li  class="form_list  full_w">
+													<div class="style">
+															<span class="lable">Your Name</span>
+														<input autocomplete="off" class="input"   placeholder="" type="text" [(ngModel)]="user.name">
+													</div>
+													
+												</li>
+												<li  class="form_list  full_w">
+													<div class="style">
+														<span class="lable">Your Email</span>
+														<input autocomplete="off" class="input"  placeholder="" type="email"  [(ngModel)]="user.email">
+													</div>
+													
+												</li>
+												<li  class="form_list  full_w">
+													<div class="style">
+														<span class="lable">Your Mobile</span>
+														<input autocomplete="off" class="input"  placeholder="" type="text" maxlength="10"  [(ngModel)]="user.mobile">
+													</div>
+													
+												</li>
+												<li  class="form_list  full_w">
+													<div class="style">
+														<span class="lable">Enter Message</span>
+														<input autocomplete="off" class="input"   placeholder="" type="text" [(ngModel)]="user.message">
+													</div>
+													
+												</li>
+												<div class="captcha">
+													<li class="form_list forms_div full_w">
+													  <div class="style">
+														<span class="lable">Enter Security Code</span>
+														<input type="text" class="input" placeholder="" [(ngModel)]="user.captcha_code">
+													  </div>
+													</li>
+													<div class="captcha_code" (click)="onRefreshCaptcha('logincaptcha')">
+													  <img src="{{global.captchaurl}}" id="logincaptcha" alt="">
+													  <span class="refresh_captcha"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+													</div>
+												  </div>
+												<div class="input_div">
+													<button class="btn assent large full_w" (click)="onSubmit()">Submit</button>
+												</div>
+											</ul>
+											
+
+										</div>
+									
+								</div>
+						</div>
+						<div class="form_img_wrapper">
+								<img src="assets/images/enquiry_img.jpg">
+							</div>
+					</div>
+					
+					<!-- <div class="leftPart">
+						<div class="enquiry_popup_form_fields">
+							<div class="headPart">
+								<h1 class="name">
+									<span class="title">{{mode.txt}}</span>
+									<span class="caption">Enter Your Details Below</span>
+								</h1>
+							</div>
+							<div class="form_part">
+								<ul class="formGroup">
+									<li class="list">
+										<label class="label">
+											<span class="name">Enter Your Name</span>
+											<input type="text" name="name" placeholder="Your Name" [(ngModel)]="user.name"  class="inputBox">
+										</label>
+									</li>
+									<li class="list">
+										<label class="label">
+											<span class="name">Enter Email</span>
+											<input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" class="inputBox">
+										</label>
+									</li>
+									<li class="list">
+										<label class="label">
+											<span class="name">Enter Mobile</span>
+											<input type="number" name="mobile" placeholder="Mobile" [(ngModel)]="user.mobile" class="inputBox" maxlength="10">
+										</label>
+									</li>
+
+									
+									<li class="list">
+										<label class="label">
+											<span class="name">Enter Message</span>
+											<textarea type="text" name="message" placeholder="Message" [(ngModel)]="user.message"  class="textarea"></textarea>
+											
+										</label>
+									</li>
+								</ul>
+								<ul class="buttons">
+									<li class="list"><a href="#0"  routerLink="/home" class="closeBtn scndry_btn">Close</a></li>
+									<li class="list">
+										<input type="submit" value="Submit" class="submitBtn primary_btn" name=""  (click)="onSubmit()" >
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div> -->
+<!-- 	
+					<div class="rightPart">
+						<div class="enquiry_popup_title">
+							<h3 class="">Get the App</h3>
+						</div>
+
+						<div class="enquiry_popup_description">
+							<p>Download the app now and connect with your local pharmacy today. </p>
+							<ul class="social_links">
+								<li class="list"><a href="https://play.google.com/store/apps/details?id=com.aapkachemist&hl=en"  class="link"><i class="fa fa-android"></i></a></li>
+								<li class="list"><a href="#0" class="link"><i class="fa fa-apple"></i></a></li>
+							</ul>
+
+						</div>
+						<div class="enquiry_form_image">
+							<img src="assets/images/enquiry_form_image.png" alt="">
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

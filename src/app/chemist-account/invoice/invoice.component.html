@@ -1,0 +1,104 @@
+<app-header></app-header>
+
+<div class="main_container my_accountPages chemist_account_page retailer_enquiry invoice_page">
+  
+<div class="my_accountSetting">
+    <div class="container">
+      <div class="main_dataPage">
+  
+        <app-chemist-account-left-panel></app-chemist-account-left-panel>
+        
+        <div class="right_pannel">
+          <div class="pannelSTyle">
+            <div class="account_page_title">
+              <div class="left_part">
+                <div class="heading">
+                   <h2>Invoice</h2>
+                </div>
+              </div>
+              <div class="right_part">
+  
+              </div>
+  
+            </div>
+            <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+            <div class="mainPage" *ngIf="isnodatafound==false">
+                <div class="account_content">
+                    <div class="notification_wrapper">
+                        <div class="notification_date" *ngIf="invoicelist.length>0"><span>Year {{invoicelist[0].invoice_date |date:'yyyy'}}</span></div>
+
+                        <ul class="notification_listing">
+                            <li class="notification_list" *ngFor="let invoice of invoicelist">
+                                <div class="enquiryDetail-wrapper">
+                                    <div class="date_wrapper">
+                                      <span class="date">{{invoice.invoice_date | date:'dd'}}</span>
+                                      <span class="month">{{invoice.invoice_date | date:'MMM'}}</span>
+                                    </div>
+                                </div>
+    
+                                <div class="enquiry_details">
+                                  <span  class="enquiry_id">
+                                    <span  class="title">Invoice : <span class="text-theme">#{{invoice.invoice_no}}</span>
+                                  </span>
+                                  </span>
+                                  <span class="enquiry_items">{{invoice.status}}</span>
+                                </div>
+    
+                                <div  class="enquiry_details no-border">
+                                  <span  class="enquiry_id">
+                                    <span class="title">Amount </span>
+                                  </span>
+                                  <span  class="enquiry_items">Rs. {{invoice.amount}}</span>
+                                </div>
+    
+                                <div class="enquiry_details no-border text-align-right">
+                                  <span class="enquiry_id">
+                                    <a class="assent medium btn"  href="{{invoice.invoice_link}}" target="_blank"><i class="fa fa-download"></i> View</a>
+                                  </span>
+                                </div>
+                            </li>
+<!-- 
+                            <li class="notification_list">
+                                <div class="enquiryDetail-wrapper">
+                                    <div class="date_wrapper">
+                                      <span class="date">08</span>
+                                      <span class="month">Mar</span>
+                                    </div>
+                                </div>
+    
+                                <div class="enquiry_details">
+                                  <span  class="enquiry_id">
+                                    <span  class="title">Invoice : <span class="text-theme">#00001652</span>
+                                  </span>
+                                  </span>
+                                  <span class="enquiry_items">Bid Invoice</span>
+                                </div>
+    
+                                <div  class="enquiry_details no-border">
+                                  <span  class="enquiry_id">
+                                    <span class="title">Amount </span>
+                                  </span>
+                                  <span  class="enquiry_items">Rs. 1263.00</span>
+                                </div>
+    
+                                <div class="enquiry_details no-border text-align-right">
+                                  <span class="enquiry_id">
+                                    <button class="assent medium btn" ><i class="fa fa-download"></i> download</button>
+                                  </span>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<app-footer></app-footer>

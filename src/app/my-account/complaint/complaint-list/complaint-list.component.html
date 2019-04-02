@@ -1,0 +1,155 @@
+<div class="main_container my_accountPages user_account_page">
+
+
+
+
+  <app-header></app-header>
+
+  <div class="my_accountSetting">
+
+    <app-my-account-top-panel></app-my-account-top-panel>
+
+    <div class="container">
+      <div class="main_dataPage">
+
+        <app-my-account-left-panel></app-my-account-left-panel>
+
+
+        <div class="right_pannel">
+          <div class="pannelSTyle">
+
+
+            <div class="account_page_title">
+              <div class="left_part">
+                <div class="heading">
+                  <h2>Complaint Box</h2>
+                </div>
+              </div>
+              <div class="right_part">
+
+              </div>
+
+            </div>
+
+            <div class="account_content">
+              <div class="mb10">
+                <button class="btn assent large" routerLink="/my-account/add-complaint">Report Issue</button>
+              </div>
+
+              <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+              <!-- <div class="notification_wrapper mt20 complaint_listing">
+                <div class="notification_date"><span>2019</span></div>
+                <ul class="notification_listing">
+                  <li class="notification_list">
+                    <div class="date_wrapper">
+                      <span class="d-text-block title">Last updated</span>
+                      <span class="date">13</span>
+                      <span class="month">March </span>
+                      <span class="month">04:00 PM</span>
+                    </div>
+                    <div class="enquiry_details depart_col">
+                      <span class="enquiry_id"><span class="title">Department</span> </span>
+                      <span class="enquiry_items">Billing</span>
+                    </div>
+                    <div class="enquiry_details  sub_col">
+                      <span class="enquiry_id"><span class="title">Subject</span> </span>
+                      <span class="enquiry_items">Cancel Request</span>
+                    </div>
+                    <div class="enquiry_details  text-align-right">
+                      <span class="enquiry_id"><span class="title">Status</span> </span>
+                      <span class="enquiry_items">Closed</span>
+                    </div>
+                  </li>
+                </ul>
+              </div> -->
+
+              <div class="complaint_listing_wrapper mt20" *ngIf="list.length>0">
+                <div class="complaint_table">
+                    <table class="table">
+                      <tr>
+                        <th> Department <span>
+                          
+                          <i class="fa fa-sort" (click)="onSortBy('department')" aria-hidden="true"></i>
+                        
+                        </span></th>
+                        <th> Subject  <span>
+                          
+                          <i class="fa fa-sort" (click)="onSortBy('subject')" aria-hidden="true"></i>
+                        
+                        </span></th>
+                        <th> Status  <span>
+                          
+                          <i class="fa fa-sort" (click)="onSortBy('status')" aria-hidden="true"></i>
+                        </span></th>
+                        <th> Remarks  <span>
+                          
+                          <i class="fa fa-sort" (click)="onSortBy('remarks')" aria-hidden="true"></i>
+                        
+                        </span></th>
+                        <th> Last Updated  <span>
+                          
+                          <i class="fa fa-sort" (click)="onSortBy('lastupdated')" aria-hidden="true"></i>
+                        
+                        </span></th>
+                       
+                      </tr>
+                      <tr  *ngFor="let complaint of list" routerLink="/my-account/complaint-detail" [queryParams]="{'id':complaint.id}">
+                          <td  class="billing_col">
+                            <span>{{complaint.parameter_name}}</span>
+                          </td>
+                          <td  class="sub_col">
+                              <span>{{complaint.subject}}</span>
+                            </td>
+                            <td class="status_col">
+                                <span class="text-red">{{complaint.complaint_status}}</span>
+                                 
+                              </td>
+                          <td class="remarks_col">
+                              <span class="text">{{complaint.message}}</span>
+                            </td>
+                           <td class="date_time_col">
+                            <span class="d-text-block">{{complaint.complaint_date |date:'dd-MM-yyyy'}}</span>
+                            <span class="d-text-block">{{complaint.complaint_date |date:'hh:mm a'}}</span>
+                          </td>
+                          
+                          
+                        </tr>
+
+                        
+                        <!-- <tr routerLink="/my-account/complaint-detail">
+                            <td  class="billing_col">
+                              <span>Billing</span>
+                            </td>
+                            <td  class="sub_col">
+                                <span>Cancel Request</span>
+                              </td>
+                              <td class="status_col">
+                                  <span class="text-red">Closed</span>
+                                </td>
+                            <td class="remarks_col">
+                                <span class="text">It is a long established fact that a reader....</span>
+                              </td>
+                             <td class="date_time_col">
+                              <span class="d-text-block">13 March, 2019</span>
+                              <span class="d-text-block">02:00 PM</span>
+                            </td>
+                            
+                          </tr> -->
+                    </table>
+                  </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

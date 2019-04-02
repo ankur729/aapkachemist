@@ -1,0 +1,582 @@
+<app-header #child></app-header>
+
+
+<!-- <div class="cart_Page bodySetting">
+ 
+	<div class="no_itemFOundPage" *ngIf="cartdata.length==0">
+		<div class="container">
+			<div class="graphicPart">
+				<div class="image"><img src="assets/images/no_item.png">
+					<div class="contentPart">
+						<div class="icon">
+							<span class="number">0</span>
+							<img src="assets/images/icon/cart_white.png">
+						</div>
+						<div class="text">
+							<span class="big">No Item</span>
+							<span class="small">found in your list</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		 
+			<div class="categoriesDesign">
+				<h4 class="heading">Please add new item in your list from</h4>
+				<ul class="catList">
+					<li class="list" *ngFor="let category of respdata.categories_list">
+						<a href="javascript:void(0)" class="link" [routerLink]= " [ '/category/'+category.seo_url]" >
+							<span class="icon"><img src="{{category.category_image_path}}"></span>
+							<span class="name">{{category.category_name}}</span>
+						</a>
+					</li>
+			 
+				</ul>
+			</div>
+
+		</div>
+	</div> 
+	
+
+
+<div class="container">
+	<div class="pageSetting">
+		
+		
+
+
+		<div class="stepPage_1" *ngIf="cartdata.length>0">
+
+			<div class="tableDesign">
+				<div class="leftDesign">
+					
+
+
+			<h4 class="heading_name"class="heading_name">
+				<span class="name"> <app-cart-header></app-cart-header>Estimated Items ({{cartdata.length}})</span>
+				<div class="RightPart">
+					<span class="Cartprice">Rs. {{cart.net_payble_amount}} </span>
+					<span class="label">Total List Amount</span>
+				</div>
+			</h4>
+					<ul class="cartListing">
+						<li class="list" *ngFor="let cart of cartdata">
+							<div class="producThumb">
+								<span class="thumb"><img src="{{cart.product_img_path}}"></span>
+							</div>
+							<div class="infoPart">
+								<span class="name" 
+								[routerLink]="['/medicine-detail/'+cart.seo_url]"
+							 
+								>{{cart.product_name}}</span>
+								<span class="CompanyName">{{cart.description}}</span>
+								<div class="mobile_cart_sction">
+									<div class="basePrice">
+										<span class="displayQty">{{cart.product_variant}}</span>
+										<span class="price">Rs. {{cart.price |number:'1.2-2'}}</span>
+								 	</div>
+									<div class="MultiplePriceDiv">
+										<span class="price">Rs. {{cart.price * cart.product_qty |number:'1.2-2' }}</span>
+									</div> 
+									<span class="displayQty">{{cart.category_product_discount}}%</span>
+								</div> 
+							</div>
+
+							<div class="basePrice">
+								<span class="displayQty">{{cart.product_variant}}</span>
+								<span class="price">Rs. {{cart.price |number:'1.2-2'}}</span>
+								<span class="displayQty">{{cart.category_product_discount}}%</span>
+
+							</div>
+
+							<div class="QTYControllerDiv">
+									<div class="mobile_cart_sction">
+											<span class="removeCart"  (click)="removeCartItem(cart)">x</span>
+									</div>
+									
+								<div class="qtyController">
+								  <span class="minus"  (click)="udpateCart(cart,'-')">-</span>
+								  <span class="qty">
+								 
+									<input type="text" name="" value="{{cart.product_qty}}" readonly>
+									
+								  </span>
+								  <span class="plus" (click)="udpateCart(cart,'+')">+</span>
+								</div>
+							  </div>
+							<div class="MultiplePriceDiv">
+								<span class="price">Rs. {{cart.price * cart.product_qty |number:'1.2-2' }}</span>
+							</div>
+							<div class="removeDiv">
+								<span class="removeCart"  (click)="removeCartItem(cart)"></span>
+							</div>
+						</li>
+					 
+	
+
+
+				</div>
+				<div class="right_design">
+					
+
+					<div class="cartSummryview">
+						<div class="mainHeading">Estimate Summary <span class="items">({{state.cartdata.items.length}} Items)</span></div>
+						<ul class="cartLists">
+						  <li class="list" *ngFor="let cart of state.cartdata.items">
+							<span class="name">{{cart.product_name}}</span>
+							<div class="designSetting">
+							  <span class="left_Data">Quantity : {{cart.product_qty}}</span>
+							  <span class="right_Data">Rs. {{cart.price * cart.product_qty |number:'1.2-2'}}</span>
+							</div>
+						  </li>
+						
+						</ul>
+					  </div>
+					<ul class="summry_design">
+						<li class="list">
+							<div class="labelPart">Total MRP</div>
+							<div class="dataPart">Rs. {{cart.cart_amount}}</div>
+						</li>
+						<li class="list" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+							<div class="labelPart">APC Cash</div>
+							<div class="dataPart"> Rs.{{state.cartdata.customer_discount_wallet_amount}}   </div>
+							</li>
+							<li class="list">
+								<div class="labelPart">Discount</div>
+								<div class="dataPart"> Rs.{{state.cartdata.total_product_discount_amount}}   </div>
+								</li>
+						<li class="list">
+							<div class="labelPart">Delivery Charges</div>
+							<div class="dataPart">Rs. {{cart.delivery_amount}}</div>
+						</li>
+						<li class="list">
+							<div class="labelPart b">Amount to be paid</div>
+							<div class="dataPart b">Rs. {{cart.net_payble_amount}}</div>
+						</li>
+					</ul>
+					<div class="checkoutBtnDiv">
+						<div class="buttonList">
+							<a href="javascript:void(0)"  (click)="onNext()"  class="ViewmoreBtn primary_btn">Checkout</a>
+						</div>			
+					</div>
+					
+
+				</div>
+				
+			</div>
+
+
+		</div>
+
+	</div>
+</div>
+
+  </div> -->
+
+<!-- <div class="sending_enquiry_popup" *ngIf="err.iserr">
+			<div class="enquiry_popup_msg">
+				<div class="sending_msg_gif">
+					<img src="assets/images/error.png">
+	
+				</div>
+				<div class="sending_msg_content">
+	
+					<span>{{err.errtxt}}</span>
+				</div>
+				<ul class="noCartbuttons">
+ 
+					<li class="list" (click)="onClose()"><a class="Email scndry_btn" href="javascript:void(0)">Close</a></li>
+				</ul>
+			</div>
+		</div> -->
+
+<app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+<div class="bodySetting cartpage_1 bannerpd">
+
+	<div class="no_itemFOundPage" *ngIf="cartdata.length==0">
+		<div class="container">
+			<div class="graphicPart">
+				<div class="image"><img src="assets/images/no_item.png">
+					<div class="contentPart">
+						<div class="icon">
+							<span class="number">0</span>
+							<img src="assets/images/icon/cart_white.png">
+						</div>
+						<div class="text">
+							<span class="big">No Item</span>
+							<span class="small">found in your list</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="categoriesDesign">
+				<h4 class="heading">Please add new item in your list from</h4>
+				<ul class="catList">
+					<li class="list" *ngFor="let category of respdata.categories_list">
+						<a href="javascript:void(0)" class="link" [routerLink]=" [ '/category/'+category.seo_url]">
+							<span class="icon"><img src="{{category.category_image_path}}"></span>
+							<span class="name">{{category.category_name}}</span>
+						</a>
+					</li>
+
+				</ul>
+			</div> -->
+
+		</div>
+	</div>
+
+	<div class="banner_wrapper">
+		<div class="banner_bg"></div>
+	</div>
+
+	<div class="container">
+		<div class="cart_details" *ngIf="cartdata.length>0">
+			<div class="left_section">
+				<div class="cart_dtails_wrapper">
+					<div class="section_1">
+
+						<div class="breadCrumbs_wrapper full_w">
+							<div class="left_part">
+								<ul class="breadCrubs">
+									<li class="list">
+										<a class="link"  routerlink="/home">Home</a>
+										<i aria-hidden="true" class="fa fa-angle-right"></i>
+									</li>
+									<li class="list">
+										<a class="link" href="javascript:void(0)">
+											<span class="current">Cart</span></a>
+										<!-- <i aria-hidden="true" class="fa fa-angle-right"></i> -->
+									</li>
+									<!-- <li class="list">
+										<span _ class="current">Chemist Details</span>
+									</li> -->
+								</ul>
+							</div>
+							<!-- <div class="right_part">
+								
+								<button class="btn medium assent" (click)="onMobileSearchFocus()"> <i class="fa fa-plus" aria-hidden="true"></i>  Add More Items</button>
+							</div> -->
+						</div>
+						<!-- <div class="breadCrumbs_wrapper full_w">
+									<ul  class="breadCrubs">
+										<li class="list">
+											<a  class="link" href="/home" ng-reflect-router-link="/home" routerlink="/home">Home</a>
+											<i  aria-hidden="true" class="fa fa-angle-right"></i>
+										</li>
+										<li class="list">
+											<a class="link" href="javascript:void(0)">
+												<span class="current">Chemist Listing</span>
+											</a><i  aria-hidden="true" class="fa fa-angle-right"></i>
+										</li>
+										<li  class="list">
+											<span _ class="current">Chemist Details</span>
+										</li>
+									</ul>
+								</div> -->
+
+								<div class="direct_order_wrapper" *ngIf="state.vendor_id != 0">
+									<div class="direct_order_option">
+									<div class="left_part">
+									<span class="title">Direct Order*</span>
+									<span class="chem_name">{{state.cartdata.direct_order.vendor_shop_name}}</span>
+									</div>
+									<div class="right_part">
+									<button class="btn assent medium" (click)="onRemoveFromDirectOrder()">remove</button>
+									</div>
+									</div>
+									<!-- <div class="decr">
+									<span>{{state.cartdata.direct_order.msg}}</span>
+									</div> -->
+									</div>
+
+									
+						<div class="estimate_items">
+							<div class="left_part">
+								<h1 class="medName">Items</h1>
+								<span class="estimate_itm">{{cartdata.length}}</span>
+
+							</div>
+
+							<div class="total_value right_part">
+								<span>Total Value</span>
+								<span class="price">Rs. {{cart.net_payble_amount}}</span>
+							</div>
+						</div>
+
+						<div class="product_table_wrapper">
+
+							<div class="product_details_wrapper heading">
+								<div class="product_details">
+									<span>Product Details</span>
+								</div>
+								<div class="product_price">
+									<span>Product Price</span>
+								</div>
+								<div class="product_qty">
+									<span>Qty</span>
+								</div>
+								<div class="product_action">
+									<span>Action</span>
+								</div>
+							</div>
+
+							<div class="product_details_wrapper" *ngFor="let cart of cartdata">
+								<div class="product_details">
+									<div class="productName_thumb_wrapper">
+										<div class="productName_thumb">
+											<div class="thumb">
+												<img src="{{cart.product_img_path}}" alt="">
+											</div>
+
+										</div>
+										<div class="name">
+											<span class="med_name"
+												[routerLink]="['/medicine-detail/'+cart.seo_url]">{{cart.product_name}}</span>
+											<span class="brand_name">{{cart.description}}</span>
+										</div>
+									</div>
+
+								</div>
+								<div class="product_price">
+									<span class="product">{{cart.product_variant}}</span>
+									<span class="amount">Rs. {{cart.price |number:'1.2-2'}}</span>
+									<span class="cat_discount">{{cart.category_product_discount}}%</span>
+								</div>
+								<div class="product_qty">
+									<div class="qty_wrappe">
+										<div class="qtyController">
+											<div class="minus" (click)="udpateCart(cart,'-')">
+												<img alt="" src="assets/images/icon/qty_minus.png">
+											</div>
+											<div class="qty">
+												<input name="" readonly="" type="text" value="{{cart.product_qty}}">
+											</div>
+											<div class="plus" (click)="udpateCart(cart,'+')">
+												<img alt="" src="assets/images/icon/qty_plus.png">
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="product_action">
+									<button class="btn secondary medium" (click)="removeCartItem(cart)"><img _ngcontent-c2="" alt=""
+											src="assets/images/icon/close_icon.png"></button>
+								</div>
+							</div>
+
+							<!-- <div class="product_details_wrapper">
+												<div class="product_details">
+													<div class="productName_thumb_wrapper">
+														<div class="productName_thumb">
+															<div class="thumb">
+																<img src="assets/images/products/2.jpg" alt="">
+															</div>
+															
+														</div>
+														<div class="name">
+																<span class="med_name">YAMINI LS 3.02</span>
+																<span class="brand_name">ZYDUS CADILA</span>
+															</div>
+													</div>
+													
+												</div>
+												<div class="product_price">
+													<span class="product">VIAL of 1 INJECTION</span>
+													<span class="amount">Rs. 160.00</span>
+												</div>
+												<div class="product_qty">
+														<div  class="qty_wrappe">
+															<div class="qtyController">
+																<div  class="plus">
+																	<img alt="" src="assets/images/icon/qty_plus.png">
+																</div>
+																<div  class="qty">
+																	<input  name="" readonly="" type="text" value="1">
+																</div>
+																<div class="minus">
+																	<img alt="" src="assets/images/icon/qty_minus.png">
+																</div>
+															</div>
+														</div>
+												</div>
+												<div class="product_action">
+													<button class="btn secondary medium"><img _ngcontent-c2="" alt="" src="assets/images/icon/close_icon.png"></button>
+												</div>
+											</div>  -->
+						</div>
+
+
+
+
+					</div>
+					<!-- <div class="promo_code_wrapper form_wrapper full_w">
+								<ul class="form_listing full_w">
+									<li class="form_list ">
+										<div class="style">
+											<span class="lable">Promo Code</span>
+											<input class="input ng-untouched ng-pristine ng-valid">
+										
+										</div>
+										<button class="btn large primary">Apply</button>
+									</li>
+								</ul>
+							</div> -->
+				</div>
+			</div>
+
+			<div class="right_section">
+				<div class="section_1">
+					<div class="chem_order_title">
+						<h2>Your Order</h2>
+					</div>
+					<div class="chemName_wrapper" *ngFor="let cart of cartdata">
+
+
+						<div class="left_part">
+							<div class="med_name">
+								<span class="name" >{{cart.product_name}}</span>
+								<span class="med_qty">{{cart.product_variant}}</span>
+								<span class="med_company">{{cart.description}}</span>
+							</div>
+						</div>
+						<div class="right_part">
+							<span class="itm_qty">{{cart.product_qty}}</span>
+							<span class="itm_price">Rs. {{cart.price * cart.product_qty |number:'1.2-2' }}</span>
+						</div>
+					</div>
+					<div class="full_w">
+						<button class="btn medium assent full_w" (click)="onMobileSearchFocus()"> <i class="fa fa-plus" aria-hidden="true"></i>  Add More Items</button>
+					</div>
+					<!-- <div class="chemName_wrapper">
+							
+							
+								<div class="left_part">
+									<div class="med_name">
+										<span class="name">TESTOFIL 1000</span>
+										<span class="med_qty">VIAL of 1 INJECTION</span>
+										<span class="med_company">ZYDUS CADILA</span>
+									</div>
+								</div>
+								<div class="right_part">
+									<span class="itm_qty">02</span>
+									<span class="itm_price">Rs. 612.00</span>
+								</div>
+							</div> -->
+				</div>
+				<div class="section_2">
+					<div class="chem_order_title">
+						<h2>Estimates</h2>
+					</div>
+					<div class="estimate_details">
+						<div class="left_part">
+							<span class="estimate_title">Subtotal</span>
+						</div>
+						<div class="right_part">
+							<span class="price">Rs. {{cart.cart_amount}}</span>
+						</div>
+					</div>
+
+					<!-- <div class="estimate_details"  *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+								<div class="left_part">
+									<span class="estimate_title">APC Cashback</span>
+								</div>
+								<div class="right_part">
+									<span class="price discount_text">-Rs. {{state.cartdata.customer_discount_wallet_amount}}</span>
+								</div>
+							</div> -->
+
+					<div class="estimate_details">
+						<div class="left_part">
+							<span class="estimate_title">Discount</span>
+						</div>
+						<div class="right_part text-theme">
+							<span class="price text-theme">- Rs. {{state.cartdata.total_product_discount_amount}}</span>
+						</div>
+					</div>
+
+					
+
+
+					<div class="estimate_details" *ngIf="state.cartdata.apc_cash_used!=0">
+						<div class="left_part">
+							<span class="estimate_title">APC Cash Used</span>
+						</div>
+						<div class="right_part">
+							<span class="price">- Rs.{{state.cartdata.apc_cash_used}} </span>
+						</div>
+					</div>
+					<div class="estimate_details">
+							<div class="left_part">
+								<span class="estimate_title text-theme">Billing Amount</span>
+							</div>
+							<div class="right_part">
+								<span class="price">Rs.
+									{{cart.cart_amount - state.cartdata.total_product_discount_amount |number:'1.2-2'}}</span>
+							</div>
+						</div>
+					<!-- <div class="estimate_details">
+						<div class="left_part">
+							<span class="estimate_title">Delivery Charges</span>
+						</div>
+						<div class="right_part">
+							<span class="price">
+								<span>(CJM250)</span>
+								Rs. {{cart.delivery_amount}}</span>
+						</div>
+					</div> -->
+
+					<!-- <div class="estimate_details">
+								<div class="left_part">
+									<span class="estimate_title">Coupon Applied</span>
+								</div>
+								<div class="right_part">
+									<span class="price">Rs. 10.00</span>
+								</div>
+							</div> -->
+
+					<div class="estimate_details total_amount">
+						<div class="left_part">
+							<span class="estimate_title">Amount to Pay</span>
+						</div>
+						<div class="right_part">
+							<span class="price">Rs. {{cart.net_payble_amount}}</span>
+						</div>
+					</div>
+
+					<div class="estimate_details apc_cash" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+						<div class="left_part">
+							<span class="estimate_title">APC Cashback*</span>
+						</div>
+						<div class="right_part">
+							<span class="price">
+
+								Rs.{{state.cartdata.customer_discount_wallet_amount}}</span>
+						</div>
+					</div>
+
+
+					<div class="chem-enquiry_wrapper full-w">
+						<button class="btn primary large full_w" id="chem_enquiry" (click)="onNext()">proceed To Checkout</button>
+					</div>
+				</div>
+				<!-- <div class="section_3" *ngIf="state.cartdata.customer_discount_wallet_amount!=0">
+						<div class="estimate_details" >
+							<div class="left_part">
+								<span class="estimate_title">APC Cash Save</span>
+							</div>
+							<div class="right_part">
+								<span class="price">
+	
+									Rs.{{state.cartdata.customer_discount_wallet_amount}}</span>
+							</div>
+						</div>
+				</div> -->
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<app-footer></app-footer>

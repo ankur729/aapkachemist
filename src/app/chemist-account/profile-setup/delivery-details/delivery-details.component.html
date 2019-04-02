@@ -1,0 +1,226 @@
+<div class="DeliverySetupProfile">
+
+    <div class="fromGroup">
+        <div class="updateDetils-block">
+            <ul class="updateDetils-list">
+                <li>
+                    <div class="updateDetils-img">
+                        <img src="assets/images/user.png">
+                        <span class="removeimg">
+                            <button class="btn primary small">
+                                <img src="assets/images/icon/cross-icon.png">
+                                 </button>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="updateDetils-img">
+                            <img src="assets/images/photo-vivian-and-alyssa.jpg">
+                            <span class="removeimg">
+                                    <button class="btn primary small">
+                                            <img src="assets/images/icon/cross-icon.png">
+                                             </button>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="updateDetils-img">
+                        <img src="assets/images/user.png">
+                        <span class="removeimg">
+                                <button class="btn primary small">
+                                        <img src="assets/images/icon/cross-icon.png">
+                                         </button>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="updateDetils-img">
+                            <img src="assets/images/no-image.png">
+                        <span class="addimg">
+                            <button class="btn primary small">
+                                    <img src="assets/images/icon/plus-icon.png">
+                                 </button>
+                        </span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div class="fromGroup">
+      
+          <ul class="rangerGroups">
+            <li class="list">
+              <span class="title">Free Delivery Range</span>
+              <input type="hidden" name="free_delivery_range" id="delivery_range" class="flat-slider" [(ngModel)]="detail.free_delivery_range"/>
+            </li>
+            <li class="list">
+              <span class="title">Minimum  Amount for free delivery</span>
+              <input type="hidden" name="min_amt_free_delivery" id="free_delivery" class="flat-slider" [(ngModel)]="detail.min_amt_free_delivery"/>
+            </li>
+            <li class="list">
+              <span class="title">Per km delivery charge</span>
+              <input type="hidden" name="per_km_delivery_charge" id="per_km_delivery_charge" class="flat-slider" [(ngModel)]="detail.per_km_delivery_charge"/>
+            </li>
+            <li class="list">
+              <span class="title">Maximum delivery charge</span>
+              <input type="hidden" name="maximum_delivery_charge" id="max_delivery_charge" class="flat-slider" [(ngModel)]="detail.maximum_delivery_charge"/>
+            </li>
+            <div class="SectionHeading">
+              Timing Details
+             </div>
+      
+            <li class="" >
+        
+              <div class="workingOurModel">
+          
+     
+                  <form>
+                  <ul class="">
+                      <li class="">
+          
+                          <div class="right_data">
+                                  
+                              
+                      <div class="onlyIfOpen">
+                          <div class="multiOpen">  
+                              <ul class="form_group">
+                                  <li class="multiList list">
+                                      <div class="inputForm">
+                                          <label class="label">
+                                              <span  class="name">Opening Time</span>
+                                              <input type="text" name="openingstartTime" value="00" placeholder="Start Time " class="input_box ng-untouched ng-pristine ng-valid" id="openingstartTime" [(ngModel)]="detail.open_time">
+                                          </label>
+                                      </div>
+                                  </li>
+                                  <li class="multiList list">
+                                  <div class="inputForm">
+                                      <label class="label">
+                                      <span  class="name">Closing Time</span>
+                                      <input type="text" name="openingendTime" placeholder="End Time" class="input_box ng-untouched ng-pristine ng-valid" id="openingendTime" [(ngModel)]="detail.close_time">
+                                      </label>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+      
+                 
+                      </div>
+      
+                          </div>
+                      </li>
+                      
+      
+                  </ul>
+                  </form>
+      
+              </div>
+      
+          </li>
+      
+            <li class="" >
+      
+      
+      
+      
+      
+      
+            <div class="workingOurModel">
+          
+         
+                  <form>
+                  <ul class="">
+                      <li class="">
+          
+                          <div class="right_data">
+                                  
+      
+                              <div class="onlyIfOpen">
+                                  <div class="multiOpen">  
+                                      <ul class="form_group">
+                                      
+                                          <li class="multiList list">
+                                              <div class="inputForm">
+                                                  <label class="label">
+                                                      <span  class="name">Break Start Time</span>
+                                                      <input type="text" name="breakstartTime" placeholder="Start Time " class="input_box ng-untouched ng-pristine ng-valid" id="breakstartTime" [(ngModel)]="detail.break_start_time">
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          <li class="multiList list">
+                                              <div  class="inputForm">
+                                              <label class="label">
+                                              <span  class="name">Break End Time</span>
+                                                  <input type="text" name="breakendTime" placeholder="End Time" class="input_box ng-untouched ng-pristine ng-valid" id="breakendTime" [(ngModel)]="detail.break_close_time">
+                                                  </label>
+                                              </div>
+                                          </li>
+                                          
+                                      </ul>
+                                  </div>
+      
+                         
+                              </div>
+      
+      
+                          </div>
+                      </li>
+                      
+      
+                  </ul>
+                  </form>
+      
+              </div>
+      
+      
+      
+      
+      
+            </li>
+      
+          </ul>
+      
+      
+      <div class="SectionHeading">
+            Payment Details
+          </div>
+      
+            <ul class="form_group">
+              <li class="list">
+              <div class="inputForm">
+                  <label class="label">
+                  <span class="name">Best % Discount</span>
+                <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-1" name="discount_percent" [(ngModel)]="detail.discount_percent" placeholder="Discount"/>
+
+                 </label>
+                 </div>
+                 </li>
+            </ul>
+      
+      
+      
+      
+      
+      <ul class="payment_mode_select">
+      <li class="list" id="mode_{{mode.parameter_code}}" [ngClass]="(mode.is_checked ==true)?'active':''" *ngFor="let mode of detail.paymodes" (click)="onSelectPaymentMode(mode)">
+      <label class="choose_btn"> 
+          
+          <img src="{{mode.parameter_image_path}}" style="width:52px;height:52px;" >
+
+      
+      </label>
+      <span class="name">{{mode.parameter_name}}</span>
+      </li>
+
+      </ul>
+      
+      <div class="row margin-top-20px" (click)="onNext()">
+            <input type="submit" name="" value="Next" class="primary_btn margin-top-20px">
+      
+      </div>
+      
+            
+      
+        </div> -->
+</div>

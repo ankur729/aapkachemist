@@ -1,0 +1,780 @@
+<app-header  #child></app-header>
+<div class="enquiry_popup ProductEnquiryPopup" *ngIf="isenquiry">	
+    <div class="designBox">
+          
+    <!-- <span class="close_popup"></span> -->
+      <div class="enquiry_box">
+        <div class="enquiry_left_section">
+          <!-- <div class="form_logo row">
+            <img src="images/form_logo.png">
+          </div> -->
+          <div class="enquiry_form_icon row">
+            <img src="assets/images/icon/form_icon.png">
+          </div>
+          <div class="enquiry_form_content row">
+            <h3>Enquiry now</h3>
+            <p>We're very approachable and Would Love to speak to you.</p>
+          </div>
+        </div>
+        
+        <div  class="enquiry_right_section right">
+          <div class="product_name">	
+            <span><img src="assets/images/icon/product_icon.png"></span><span>{{enquiry.product_name}}</span>
+          </div>
+          
+          <form class="enquiry_fild_wrapper row">
+            <div class="user_enquiry_details_wrapper" *ngIf="!enquiry.is_show_otp">
+              <div class="input_field row">
+                <textarea type="text" name="edesc"  id="edesc" placeholder="Description" [(ngModel)]="enquiry.product_description"></textarea>
+                
+                <div class="qty_unit_wrapper row">
+                  <input type="text" placeholder="Quantity" id="eqty" placeholder="Enter Quantity" [(ngModel)]="enquiry.product_quantity">
+                  <div class="select_unit right">
+                      <select name="punit"  [(ngModel)]="enquiry.product_unit">
+                          <option *ngFor="let unit of unitlist" value="{{unit.id}}">{{unit.parameter_code}}</option>
+                        </select>
+      
+                  </div>
+                </div>
+              </div>
+              
+              <!-- <div class="input_field full_w qty_input float_l">
+                <input type="number" placeholder="Quantity">
+              </div> -->
+              
+              
+              
+              <!-- <div class="input_field row">
+                <input type="text" name="ename" id="ename" placeholder="Name" [(ngModel)]="enquiry.name">
+              </div>
+              
+              <div class="input_field row">
+                <input type="email" name="eemail"   id="eemail" placeholder="Email" [(ngModel)]="enquiry.email_id">
+              </div>
+              
+              <div class="input_field row">
+                <input type="text" name="emobile"  id="emobile" placeholder="Mobile" [(ngModel)]="enquiry.mobile_no">
+              </div>
+             -->
+            </div>
+            
+            <div class="enquiry_otp_wrapper" *ngIf="enquiry.is_show_otp">
+              <span class="edit_info_btn" (click)="onEditEnquiryDetails()"><a href="javascript:void(0)"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>    Edit</a></span>
+              <div class="input_field row">
+                  <input type="text" name="" id="eotpenter" class="text_box" placeholder="Enter Your OTP" [(ngModel)]="enquiry.otpenter">
+              </div>
+              <span class="resend_otp" (click)="onResendOTP()"><a href="javascript:void(0)">Click to Resend OTP</a></span>
+              
+            </div>
+            
+            <div class="btn_field row">
+              <input type="submit" value="submit" (click)="onSubmitEnquiry()" *ngIf="!enquiry.is_show_otp" class="primary_btn submit_form ">
+              <input type="submit" value="submit1" (click)="onFinalSubmitEnquiry()" *ngIf="enquiry.is_show_otp" class="primary_btn submit_form ">
+              <input type="submit" value="Close" (click)="toggleEnquiryPopup('list',0)"  class="primary_btn close_form ">
+              
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  
+<div class="Chemistlisting_Page bodySetting">
+
+  <!-- <div class="pagesNamePart">
+    <div class="container">
+      <div class="headPart">
+        <h1 class="pageName">Chemist Listing</h1>
+        <ul class="breadCrubs">
+          <li class="list"><a href="#0" class="link">Home</a></li>
+          <li class="list"><span class="current">Cart</span></li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- <button class="filter_icon primary btn medium"><img src="assets/images/icon/filter_icon.png"></button> -->
+  <div class="container"  >
+    
+    <div class="pageSetting">
+        
+    <div class="main_design">
+      
+      <div class="leftPanel" >
+        <div class="filter_part">
+
+
+          <div class="panel_heading">
+            <h2><img src="assets/images/icon/filter_icon.png">Filter by</h2>
+            <button class="lightbtn primary btn medium"><img src="assets/images/left_arrowWhite.png"></button>
+          </div>
+          <div class="filter_section_1">
+                <ul class="discount_sorting section full_w"> 
+                
+                        <div class="checkBox_wrapper">
+                          <div class="filter_title_wrapper">
+                            <div class="left_part"> <h2>Discount</h2></div>
+                            <div class="right_part"><button class="btn primary small  yellow" (click)="onResetFilter()">Clear</button></div>
+                           </div>
+                            <ul class="filter_listing full_w">
+                                <!-- <li class="list" (click)="onSetDiscountFilter()">
+                                  <label class="Vcheckbox">
+                                      <span class="filterdata">Less than 5%</span>
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                  </label>
+                                </li> -->
+
+                                <li class="home_delivery"  (click)="onSetDiscountFilter('0','10')">
+                                    <label class="radio btn" > <span class="filterdata">0% to 10%</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark discfilter" id="disc0to5"></span>
+                                      </label>
+                                </li>
+                                <li class="home_delivery"  (click)="onSetDiscountFilter('11','15')">
+                                    <label class="radio btn" ><span class="filterdata">11% to 15%</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark discfilter" id="disc10to15"></span>
+                                      </label>
+                                </li>
+                                <li class="home_delivery"  (click)="onSetDiscountFilter('16','20')">
+                                    <label class="radio btn" ><span class="filterdata">16% to 20%</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark discfilter" id="disc15to20"></span>
+                                      </label>
+                                </li>
+                                <li class="home_delivery"  (click)="onSetDiscountFilter('20','50')">
+                                    <label class="radio btn" ><span  class="filterdata">More than 20%</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark discfilter" id="disc20toinfinity"></span>
+                                      </label>
+                                </li>
+
+                                <!-- <li class="list">
+                                    <label class="Vcheckbox">
+                                        <span class="filterdata">10% to 15%</span>
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                  </li>
+
+                                  <li class="list">
+                                      <label class="Vcheckbox">
+                                          <span class="filterdata">15% to 20%</span>
+                                          <input type="checkbox">
+                                          <span class="checkmark"></span>
+                                      </label>
+                                    </li>
+
+                                    <li class="list">
+                                        <label class="Vcheckbox">
+                                            <span class="filterdata">More than 20%</span>
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                      </li>  -->
+                            </ul>
+                        </div>
+                </ul>
+
+                <ul class="pac_trusted section full_w"> 
+                   
+                        <div class="checkBox_wrapper">
+                          <div class="filter_title_wrapper">
+                            <div class="left_part"> <h2>APC Trusted</h2></div>
+                           
+                           </div>
+                            <ul class="filter_listing full_w">
+                                <li class="list">
+                                  <label class="Vcheckbox">
+                                      <span class="filterdata"><img src="assets/images/icon/apc_trusted.png" alt="Apc Trusted"> APC Trusted </span>
+                                      <input type="checkbox" (change)="onChangeApcTrustedStatus()" [(ngModel)]="filter.apc_status">
+                                      <span class="checkmark"></span>
+                                  </label>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                   
+                </ul>
+
+                <ul class="ChemOpen_status section full_w"> 
+                        <div class="checkBox_wrapper">
+                          <div class="filter_title_wrapper">
+                            <div class="left_part"> <h2>Shop Open</h2></div>
+                            <div class="right_part">
+                              
+                              <!-- <button class="btn primary small yellow">Clear</button> -->
+                            
+                            </div>
+                           </div>
+                            <ul class="filter_listing full_w">
+
+                                <li class="home_delivery"  (click)="onSetShopStatus('1')">
+                                    <label class="radio btn" ><span class="filterdata">Open Now</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark openclose" id="opennow"></span>
+                                      </label>
+                                </li>
+                                <li class="home_delivery"  (click)="onSetShopStatus('0')">
+                                    <label class="radio btn" ><span class="filterdata">Close Now</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark openclose" id="closenow"></span>
+                                      </label>
+                                </li>
+
+                                <!-- <li class="list">
+                                  <label class="Vcheckbox">
+                                      <span class="filterdata">Open Now</span>
+                                      <input type="checkbox">
+                                      <span class="checkmark"></span>
+                                  </label>
+                                </li>
+                                <li class="list">
+                                    <label class="Vcheckbox">
+                                        <span class="filterdata">Close Now</span>
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                  </li> -->
+
+                                 
+                            </ul>
+                        </div>
+                </ul>
+                <div class="apply_btn full_w">
+                    <button class="btn primary large" (click)="onApplyFilter()">Apply</button>
+                </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+      <div class="rightPanel">
+        
+          <ul class="breadCrubs">
+              <li class="list"><a href="javascript:void(0)" routerLink="/home" class="link">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+              <li class="list"><span class="current">Chemist listing</span></li>
+            </ul>
+          
+            
+          
+          <div class="headingStyle">
+              <div class="left_part">
+                <div class="namePart">
+
+                  <div class="pagesNamePart">
+                      <div class="headPart">
+                        
+                            <h1 class="name" *ngIf="keywords.keywordname==undefined">{{keywords.keywordname}} </h1>
+                        
+                        
+                          
+                    
+                      </div>
+                  </div>
+                  
+                  <h1 class="name" *ngIf="keywords.keywordname==undefined">Chemist Listing 
+                    
+                    <!-- <span class="result">(Showing 1 – 40 products of 87,909 products)</span> -->
+                    <!-- <span>1 - 40 of 6,105 result for chemist</span> -->
+                    <!-- <span>120 result for chemist</span> -->
+                  </h1>
+                  <h1 class="name" *ngIf="keywords.keywordname!=undefined">{{keywords.keywordname}} <span class="result">(Showing 1 – 40 products of 87,909 products)</span> </h1>
+                </div>
+              </div>
+
+              <div class="enquiryBtnDiv" (click)="toggleEnquiryPopup('all',0)" *ngIf="keywords.keywordid!=undefined">
+                <a href="javascript:void(0)" class="primary_btn">Enquiry All</a>
+              </div>
+
+              <div class="sortPart">
+                <span>Sort By</span>
+                  <select class="sortBy_name" [(ngModel)]="filter.sort_by" (change)="onChangeDiscount()">
+                    <option value="">Select option</option>
+                    <option value="discount_percent~DESC">Discount High to Low</option>
+                    <option value="discount_percent~ASC">Discount Low to High</option>
+                    <option value="shopname~DESC">Name Z to A</option>
+                    <option value="shopname~ASC">Name A to Z</option>
+                  </select>
+                  <span _ngcontent-c2="" class="arrow_down_icon"><img _ngcontent-c2="" src="assets/images/icon/errow_down.png"></span>
+              </div>
+            </div>
+            <div class="mobile_filter_wrapper">
+                <!-- <div class="left_part">
+                    <h2><img src="assets/images/icon/filter_icon.png">Filter by</h2>
+                </div> -->
+                <div class="right_part">
+                  
+                    <select class="sortBy_name" [(ngModel)]="filter.sort_by" (change)="onChangeDiscount()">
+                        <option value="">Sort By</option> 
+                      <option value=""> Name A-Z</option>
+                        <option value="discount_percent~DESC">Discount High to Low</option>
+                        <option value="discount_percent~ASC">Discount Low to High</option>
+                        <option value="shopname~DESC">Name Z to A</option>
+                        <option value="shopname~ASC">Name A to Z</option>
+                      </select>
+                      <span class="arrow_down_icon"><img src="assets/images/icon/errow_down.png"></span>
+                </div>
+            </div>
+<!--   
+        <div class="headingStyle">
+          <div class="namePart">
+            
+            <h1 class="name" *ngIf="keywords.keywordname!=undefined" style="color:#0c74ab"></h1>
+          </div>
+          <div class="FullbuttonDiv" (click)="toggleEnquiryPopup('all',0)">
+              <a href="javascript:void(0)" class="ViewmoreBtn">Enquiry All</a>
+            </div>
+          <div class="sortPart">
+            <select class="select_option">
+              <option>--Sort By--</option>
+              <option>Discount High to Low</option>
+              <option>Name Z to A</option>
+              <option>Name A to Z</option>
+            </select>
+          </div>
+        </div> -->
+  
+        <!-- <div class="list_pagetabs full_w" *ngIf="usertypes.length>0">
+          <ul class="BusinessTypeTabs">
+            <li class="list" *ngFor="let type of usertypes" (click)="onTabsClick(type)"> 
+              <a href="javascript:void(0)" class="link"  id="tab_{{type.id}}">{{type.parameter_name}}</a>
+            
+            </li>
+       
+          </ul>
+        </div> -->
+
+
+
+
+
+
+
+        
+        <ul class="chemist_list_wrapper full_w">
+            <li class="chamListing full_w" *ngFor="let list of listing">
+                <div class="style full_w" [routerLink]="['/chemist-detail/'+list.seo_url]">
+                  <div class="chemist_dtls full_w">
+                      <div class="section1 full_w">
+                        <!-- <div class="imageSet right_section">
+                          
+                            <div class="thumb">
+                              <img src="{{list.vendor_image_path}}" alt="Medical Device">
+                             
+                            </div>
+                          </div>
+                          
+                          <div class=" left_section">
+                           
+
+                              <span class="shop_location">{{list.area}}</span>
+                              <span class="vendorType">
+                                
+                                  <span *ngIf="list.trusted_status ==1 && list.status!='5'">
+                                    <img src="assets/images/icon/apc_trusted.png" alt="Apc Trusted"> APC Trusted
+                                  </span>
+                                  <span *ngIf="list.status ==5">
+                                    <img src="assets/images/icon/unverified.png"> 
+                                  </span>
+                                  <span>{{list.vendor_type}}</span>
+                                  
+                                </span>
+                          </div> -->
+                          <div class="left_section">
+                              <div class="chemName">
+                                <span class="name" *ngIf="list.vendor_shopname!=''">
+    
+                                    {{list.vendor_shopname | titlecase}}
+                                 
+                                </span>
+    
+                                <span class="vendorType">
+                                        
+                                    <span *ngIf="list.trusted_status ==1 && list.status!='5'">
+                                      <img src="assets/images/icon/apc_trusted.png" alt="Apc Trusted"> APC Trusted 
+                                    </span>
+                                    <span *ngIf="list.status ==5">
+                                      <img src="assets/images/icon/unverified.png"> 
+                                    </span>
+                                    <span>{{list.vendor_type}}</span>
+                                    
+                                  </span>
+                              </div>
+                            </div>
+                            <div class="right_section">
+                              <span class="rating" >{{list.vendor_rating}}</span>
+                            </div>
+
+                      </div>
+                      <div class="section2 full_w">
+                          <span class="shop_location">{{list.area}}</span>
+                          <span class="chem-add" *ngIf="list.vendor_address !=''">
+                            
+                            {{ (list.vendor_address.length>40)? (list.vendor_address |
+                            slice:0:40)+'..':(list.vendor_address) }}
+                          </span>
+                          <div class="open_status_distance">
+                           
+
+                              <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time!=''"><span>Open</span>
+                                  {{list.open_time}} to {{list.close_time}}</span>
+                                
+                              <div class="right_content" *ngIf="list.open_close_status==0"><span>Close</span></div>
+                              <span class="area" *ngIf="list.distance_in_km >= 1">{{list.distance_in_km }} km Away</span>
+  
+                              <span class="area" *ngIf="list.distance_in_km < 1">{{list.distance_in_km *1000}} m Away</span>
+                          </div>
+                          <!-- <div class="primium">
+                         
+                          <span class="primium_icon">
+                              <img src="assets/images/icon/premium.png" alt="Premium">
+                            </span>
+                        </div>
+
+                          
+                            <div class="chemAdd_chemName">
+                                <span class="name"  *ngIf="list.vendor_shopname!=''">
+
+                                    <a href="javascript:void(0)">
+                                      {{list.vendor_shopname | titlecase}}
+                                    </a>
+                                  </span>
+
+                              <span class="chem-add" *ngIf="list.vendor_address !=''">
+
+                                 
+          
+                                  {{ (list.vendor_address.length>40)? (list.vendor_address |
+                                  slice:0:40)+'..':(list.vendor_address) }}
+          
+          
+                                </span>
+                            </div>
+
+                            <div class="chem_rating">
+                            
+                            <span class="rating" *ngIf="list.vendor_rating!=0 || list.vendor_rating!=0.0">{{list.vendor_rating}}</span>
+                          </div> -->
+                      </div>
+
+                      <div class="section3 full_w">
+                          <div class="discount">
+                              <span class="">{{list.discount_percent}}% Discount</span>
+                          </div>
+                         
+
+                       
+                      </div>
+
+                   
+                  </div>
+                
+
+
+
+                </div>
+              </li>
+          <!-- <li class="chamList" *ngFor="let list of listing">
+            <div class="style" [routerLink]="['/chemist-detail/'+list.seo_url]">
+                <div class="chemist_dtls">
+                <div class="imageSet" >
+
+                  <div class="thumb">
+                      <img src="{{list.vendor_image_path}}" alt="">
+                     <span class="rating" *ngIf="list.vendor_rating!=0 || list.vendor_rating!=0.0">{{list.vendor_rating}}</span> 
+                  </div>
+
+                </div>
+
+                <div class="chemis_name_area_location">
+                   
+                    <span class="name" *ngIf="list.vendor_shopname!=''">
+                      
+                        <a href="javascript:void(0)" >
+                        {{list.vendor_shopname }}
+                      </a>
+                      </span>
+
+                      <span class="vendorType">
+                        <span *ngIf="list.trusted_status ==1 && list.status!='5'">
+                          <img src="assets/images/icon/apctrusted.png"> 
+                        </span>
+                        <span *ngIf="list.status ==5">
+                          <img src="assets/images/icon/unverified.png"> 
+                        </span>
+                        <span>{{list.vendor_type}}</span>
+                      </span>
+
+                      <span class="shop_location">{{list.area}}</span>
+                      
+                      
+
+                      <span class="chem-add" *ngIf="list.vendor_address.length!=0"><img src="assets/images/icon/chemist_location.png">
+
+                        {{ (list.vendor_address.length>40)? (list.vendor_address |
+                          slice:0:40)+'..':(list.vendor_address) }} 
+
+           
+                      </span>
+                      <span class="chem-add" *ngIf="list.vendor_address.length==0">
+                        
+                        
+
+                        &nbsp; 
+
+           
+                      </span>
+                      <div class="locationArea">
+
+                          <span class="area" *ngIf="list.distance_in_km >= 1">{{list.distance_in_km }} km Away</span>
+
+                          <span class="area" *ngIf="list.distance_in_km < 1">{{list.distance_in_km *1000}} m Away</span>
+                        </div>
+
+                      <span class="rating" *ngIf="list.prime_status == 1"><img src="assets/images/icon/premium.png"></span>
+                </div>
+              </div>
+              <div class="chemist_other_dtls">
+                  <div class="opening_time">
+                    <div class="full_width">
+                      <div class="open_closeStatus">
+                        <div class="left_content"><img src="assets/images/icon/clock-ico.png">&nbsp;</div>
+                        <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time!=''">Open {{list.open_time}} to {{list.close_time}}</span>
+                        <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time==''">Open
+                          
+                          
+                        
+                        </span>
+                        <div class="right_content" *ngIf="list.open_close_status==0">Close</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="discount" *ngIf="list.discount_percent!=0">
+                    <div class="full_width">
+                    <div class="open_closeStatus">
+                    <span class="left_content"><img src="assets/images/icon/discount_ico.png">&nbsp;</span>
+                    <span class="right_content">{{list.discount_percent}}% Discount</span>
+                    </div>
+                    </div>
+                  </div>
+                  
+                  <div class="chemist_Type">
+                  <div class="full_width">
+                  <div class="discount">
+                  
+                  <span class="trustedSeal" *ngIf="list.trusted_status ==1"> </span>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+
+                
+
+
+              
+            </div>
+          </li> -->
+
+
+            <!-- <li class="chamList" *ngFor="let list of listing"
+            >
+              <div class="style">
+                  <div class="chemist_dtls">
+                  <div class="imageSet" [routerLink]="['/chemist-detail']" [queryParams]="{ id: list.vendor_id,typeid:list.vendor_type_id }">
+                    <div class="thumb" >
+                        <img src="{{list.vendor_image_path}}" alt="">
+                    </div>
+                  </div>
+  
+  
+  
+                  <div class="chemis_name_area_location"><span class="discount"> {{list.vendor_type}}</span>
+                    <span class="name" *ngIf="list?.vendor_shopname.length>0">{{ (list?.vendor_shopname.length>20)? (list?.vendor_shopname |
+                      slice:0:20)+'..':(list?.vendor_shopname) }}   </span>
+
+                      <span class="name" *ngIf="list?.vendor_shopname.length==0"> Anonymous Retailer  </span>
+
+
+                    <span class="shop_location">{{list.area}}</span>
+                    <div class="locationArea">
+                      <span class="area">{{list.distance_in_km}} km away</span>
+                    </div><span class="rating">{{list.vendor_rating}}</span>
+                  </div>
+  
+  
+                </div>
+                  <div class="chemist_other_dtls">
+                      <div class="opening_time">
+                          <span class="left_content">Availability :</span>
+                          <span class="right_content" *ngIf="list.open_close_status==1">Open</span>
+                          <span class="right_content" *ngIf="list.open_close_status==0">Closed</span>
+
+                      </div>
+                      <div class="discount" *ngIf="list.discount_percent!=0">
+                          <span class="left_content">Discount :</span>
+                          <span class="right_content">{{list.discount_percent}}%</span>
+                      </div>
+                  </div>
+  
+                  <div class="chemist_contact_dtls">
+                      <ul class="contact_enquiry">
+                          <li><a href="tel:1234567890" class="call_us_btn"><i class="fa fa-phone" aria-hidden="true"></i> Call</a></li>
+                          <li><a href="javascript:void(0)" class="view_details_btn" [routerLink]="['/chemist-detail']" [queryParams]="{ id: list.vendor_id,typeid:list.vendor_type_id }"><i class="fa fa-file-text" aria-hidden="true"></i> View Details</a></li> 
+                          <li> 
+                            <a href="javascript:void(0)" class="enquiry_btn"><i class="fa fa-info" aria-hidden="true"></i>  Enquiry</a> 
+                            <a href="javascript:void(0)" class="enquiry_btn ready_for_enquiry_btn"><i class="fa fa-check" aria-hidden="true"></i> Enquiry</a> 
+                          </li> 
+                      </ul>
+                  </div>
+  
+                
+              </div>
+            </li>
+   -->
+          </ul>
+
+
+
+
+
+
+
+          <!--
+          <ul class="chemist_listing"   >
+        <li class="chamList" *ngFor="let list of listing" >
+          <div class="style">
+            <div class="imageSet">
+              <span class="thumb">
+               
+                <img src="{{list.vendor_image_path}}"  >
+              </span>
+              <div class="locationArea">
+                <span class="area">{{list.distance_in_km}} km away</span>
+                
+              </div>
+              <span class="chemist_descount"  *ngIf="list.discount_percent!=0">{{list.discount_percent}}% Discount</span>
+            </div>
+            <div class="infoData">
+              <div class="shopInfo">
+                <div class="leftPart">
+                  <span class="name">{{ (list?.vendor_shopname.length>20)? (list?.vendor_shopname |
+                      slice:0:20)+'..':(list?.vendor_shopname) }}   </span>
+                      <span class="discount"> {{list.vendor_type}}</span>
+                      <span class="rating" *ngIf="list.vendor_rating == 0">
+
+
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+
+                        </span>
+                        <span class="rating" *ngIf="list.vendor_rating == 1">
+
+
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+
+                        </span>
+                        <span class="rating" *ngIf="list.vendor_rating == 2">
+
+
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+
+                        </span>
+                        <span class="rating" *ngIf="list.vendor_rating == 3">
+
+
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons">star_border</i>
+                          <i class="material-icons">star_border</i>
+
+                        </span>
+                        <span class="rating" *ngIf="list.vendor_rating == 4">
+
+
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons selected">star_border</i>
+                          <i class="material-icons">star_border</i>
+
+                        </span>
+                        <span  class="rating" *ngIf="list.vendor_rating == 5">
+                          
+                        
+                            <i class="material-icons selected">star_border</i>
+                            <i class="material-icons selected">star_border</i>
+                            <i class="material-icons selected">star_border</i>
+                            <i class="material-icons selected">star_border</i>
+                            <i class="material-icons selected">star_border</i>
+                            
+                          </span>
+
+                </div>
+
+       
+              </div>
+              <div class="bottom_actions">
+                <div class="leftPart">
+                  <div class="buttonsList">
+                    <i class="icon"><img src="assets/images/icon/call.png"></i>
+                    <span class="name">Get Contact</span>
+                  </div>
+                  <div class="buttonsList">
+                    <i class="icon"><img src="assets/images/icon/order.png"></i>
+                    <span class="name">Order Now</span>
+                  </div>
+                </div>
+                <div class="rightPart">
+                  <div class="starsRate">
+                    <i><img src="assets/images/icon/startFill.png"></i>
+                    <i><img src="assets/images/icon/startFill.png"></i>
+                    <i><img src="assets/images/icon/startFill.png"></i>
+                    <i><img src="assets/images/icon/startunFill.png"></i>
+                    <i><img src="assets/images/icon/startunFill.png"></i>
+                  </div>
+                  <span class="totalNumber">403 People Give</span>
+                </div>
+              </div>
+              <div class="list_overlay">
+                <div class="view_detls_wrapr"  [routerLink]="['/chemist-detail']" [queryParams]="{ id: list.vendor_id,typeid:list.vendor_type_id }">
+                  <a href="javascript:void(0)" class="primary_btn">View Details</a>
+                </div>
+                <div class="view_detls_wrapr" *ngIf="keywords.keywordid!=undefined"> 
+                  <a href="javascript:void(0)"   (click)="toggleEnquiryPopup(list,1)"  class=" primary_btn">Enquiry Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+     
+      </ul> -->
+  
+  
+      </div>
+    </div>
+    </div>
+  
+  </div>
+  
+  </div>
+
+  
+<app-footer *ngIf="is_show_footer"></app-footer>

@@ -1,0 +1,235 @@
+<div class="main_container my_accountPages my_wallet_page apcCash">
+
+        <!-- <div class="AddMoneyPopup">
+          <div class="designBox">
+            <div class="vAlign">
+              <div class="insideDesign">
+        
+                  <span class="heading">Bid Coin Cash</span>
+                  <span class="caption">This amount only can be use in buying</span>
+                          <div class="fromGroup">
+                            <ul class="form_group">
+                            <li class="list">
+                              <div class="inputForm">
+                                <label class="label">
+                                    <span class="name">Enter Amount in Rs.</span>
+                                <input class="input_box ng-untouched ng-pristine ng-valid" name="addedamt" type="text" id="input-1"  [(ngModel)]="wallet.added_amt" placeholder="ADD BID COIN CASH"/>
+                               </label>
+                  </div>
+                              </li>
+                            
+                          </ul>
+                
+                           
+                          
+      
+                  <ul class="buttons">
+                    <li class="list"><a href="javascript:void(0)" (click)="togglePopup()" class="scndry_btn">Cancel</a></li>
+                    <li class="list"><a href="javascript:void(0)" (click)="onAddingMoneyHandler()" class="primary_btn">Add Bid Coin Cash</a></li>
+                  </ul>
+                
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <div class="AddMoneyPopup">
+            <div class="designBox">
+              <div class="vAlign">
+                <div class="insideDesign">
+          
+                    <div class="heading"><h2>Request Payment Amount</h2></div>
+                    
+                            <div class="fromGroup">
+                                <p class="caption">Enter Amount</p>
+                    <div class="add_amount form_wrapper full_w">
+                        <ul class="form_listing full_w">
+                            <li class="form_list  full_w">
+                                    
+                                    <!-- <div class="input_wrapper">
+                                        <label class="label">Add Money</label>
+                                        <input class="input_box" type="text" [(ngModel)]="wallet.added_amt">
+                                    </div> -->
+                                    <div class="style">
+                                      <span  class="lable">Enter Amount in Rs.</span>
+                                      <input class="input ng-pristine ng-valid ng-touched" placeholder="" type="number" [(ngModel)]="wallet.added_amt">
+                                    </div>
+                            </li>
+                            <li class="form_list full_w">
+                               <button class="btn primary large" (click)="onAddingMoneyHandler()">Submit</button>
+                                <button class="btn secondary large" (click)="togglePopup()">Cancel</button>
+                            </li>
+                        </ul>
+                    </div>
+                  
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <app-header></app-header>
+          
+         <div class="my_accountSetting">
+            <!--    <div class="sending_enquiry_popup" *ngIf="payment.status!=undefined && payment.status=='success'">
+                  <div class="enquiry_popup_msg">
+                    <div class="sending_msg_gif">
+                        <img  src="assets/images/form_icon.png">
+                     
+                    </div>
+                    <div class="sending_msg_content">
+                        
+                        <span> Amount added to your wallet</span>
+                    </div>
+                    <ul  class="noCartbuttons"  >
+                      <li class="list" (click)="onClosePaymentPopup()"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+                 
+                    </ul>
+                  </div>
+                </div>
+       
+                <div class="sending_enquiry_popup" *ngIf="payment.status!=undefined && payment.status=='failure'">
+                    <div class="enquiry_popup_msg">
+                      <div class="sending_msg_gif">
+                          <img  src="assets/images/error.png">
+                       
+                      </div>
+                      <div class="sending_msg_content">
+                          
+                          <span  >Transaction Failed</span>
+                      </div>
+                      <ul  class="noCartbuttons"  >
+                        <li class="list" (click)="onClosePaymentPopup()"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+                   
+                      </ul>
+                    </div>
+                  </div>
+          -->
+          <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+            <div class="container">
+              <div class="main_dataPage">
+          
+                <app-chemist-account-left-panel #child></app-chemist-account-left-panel>
+          
+                <div class="right_pannel">
+                    <div class="pannelSTyle">
+      
+                   
+                  <div class="account_page_title">
+                      <div class="left_part">
+                        <div class="heading">
+                          <h2>Transfer APC Cash to your bank account</h2>
+                          <h6 class="mt10 text-grey fontsize-14">You can transfer your apc cash to your bank account by generating this request, process may take 3-7 working days.</h6>
+                        </div>
+                      </div>
+                      <div class="right_part">
+                        
+                      </div>
+                      
+                    </div>
+      
+      
+      
+                  <!-- <h1 class="page_name">
+                    <div class="leftData">
+                      <span class="Pagename">Bid Coin Cash</span>
+                    </div>
+                  </h1> -->
+          
+                  <div class="account_content">
+                      <div class="total_amount_wrapper">
+                          <div class="left_part">
+                          <button class="btn assent large" (click)="togglePopup()">Genereate Request</button>
+                          </div>
+                          <div class="right_part">
+                          <!-- <div class="total_amount">
+                          <span class="title">Total Amount</span>
+                          <span class="amount">Rs. {{wallet.balance}}</span>
+                          </div> -->
+                          </div>
+                          </div> 
+                    <!-- <div class="btn_wrapper">
+                          <button class="btn assent large"  (click)="togglePopup()">Add Bid Coin</button>
+                        </div> -->
+                        <div class="notification_wrapper">
+                            <div class="notification_date" *ngIf="wallet.lists.length>0"><span>{{wallet.lists[0].created_date | date:'yyyy'}} </span></div>
+                            <ul class="notification_listing">
+                              <li class="notification_list" *ngFor="let list of wallet.lists">
+                                <div class="date_wrapper">
+                                  <span class="date">{{list.created_date | date:'dd'}}</span>
+                                  <span class="month">{{list.created_date | date:'MMM'}} </span>
+                                </div>
+                                <div class="enquiry_details">
+                                
+                                    <span class="enquiry_id" >Status:
+                                        <span class="title" *ngIf="list.status ==0" > Pending</span>
+                                        <span class="title" *ngIf="list.status ==1" > Approved</span>
+                                        <span class="title" *ngIf="list.status ==2" > Cancel</span>
+                                    </span>
+
+                                <span class="enquiry_id" *ngIf="list.reference_no!=''"><span class="title" >Reff No: {{list.reference_no}}</span> </span>
+                                  <span class="enquiry_id" *ngIf="list.payment_mode!=''"><span class="title" >Payment Mode: {{list.payment_mode}}</span> </span>
+                                  <span class="enquiry_items">{{list.remarks}}</span>
+                            </div>
+                                  <div class="view_more_wrapper">
+                                      
+            
+                                  <span class="price text_green">{{list.created_date | date:'hh:mm a'}}  
+                                    <span  class="added_amount"> Rs. {{list.amount}}</span>
+                                  </span>
+                                  <button class="btn assent small mt10" *ngIf="list.status==0" (click)="onCancelPayment(list)">
+                                    Cancel Request</button>
+                                
+            
+                                      
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                    <!-- <div class="MywalletPage">
+                      <div class="AddingOption">
+                        <div class="leftPart">
+                          <span class="Label">Balance</span>
+                          <span class="Amount">Rs. {{wallet.balance}}</span>
+                        </div>
+                        <div class="rightPart">
+                          <a href="javascript:void(0)"  (click)="togglePopup()" class="AddBTN primary_btn">Bid Coin Cash</a>
+                        </div> 
+                      </div>
+                      <ul class="walletList"  >
+                        <li class="list" *ngFor="let list of wallet.lists">
+                          <div class="style">
+                            <div class="leftPart">
+                              <span class="title">Wallet TXN Id : {{list.transaction_number}}</span>
+                              <span class="msg">{{list.transaction_msg}}</span>
+                              <span class="date">{{list.transaction_date | date:'dd-MM-yyyy'}}  {{list.transaction_date | date:'hh:mm a'}} </span>
+                            </div>
+                            <div class="rightPart">
+                              <span class="price cr" *ngIf="list.credit_amount !=0">+ Rs. {{list.credit_amount}}</span>
+                              <span class="price"  *ngIf="list.debit_amount !=0">- Rs. {{list.debit_amount}}</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+          
+                    </div> -->
+                  </div>
+          
+                </div>
+              </div>
+          
+              </div>
+            </div>
+          
+          </div>
+          
+          <app-paytm-gateway *ngIf="wallet.is_pay_model_set" [pay_model]="payu_model"></app-paytm-gateway>
+          <!-- <app-payumoney-gateway *ngIf="wallet.is_pay_model_set" [pay_model]="payu_model"></app-payumoney-gateway> -->
+          </div>
+      
+      
+          <app-footer></app-footer>
+      

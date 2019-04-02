@@ -1,0 +1,194 @@
+<div class="DeliverySetupProfile">
+
+  
+
+
+    
+    <div class="fromGroup">
+  
+        <section class="content bgcolor-1">
+        
+      <!-- <div class="SectionHeading">
+            Connect with Social Media
+        </div>
+   -->
+              <!-- <ul class="socialMeidaEnter">
+                <li class="list">
+                  <span class="left_icon">
+                    <img src="assets/images/icon/social/twitter.png">
+                  </span>
+                  <div class="right_Data">
+                    <span class="name">Twitter Link</span>
+            <div class="socialmedia_url">
+            <span class="social_icon_wrapper twitter_"> <i class="fa fa-twitter" aria-hidden="true"></i></span>
+            <input type="text" name="" class="input_box" [(ngModel)]="detail.social_data.twitter_url" placeholder="Twitter URL">
+            
+            </div>
+                  </div>
+                </li>
+                <li class="list">
+                  <span class="left_icon">
+                    <img src="assets/images/icon/social/facebook.png">
+                  </span>
+                  <div class="right_Data">
+                    <span class="name">Facebook Link</span>
+            <div class="socialmedia_url">
+            <span class="social_icon_wrapper facebook_"> <i class="fa fa-facebook" aria-hidden="true"></i></span>
+                    <input type="text" name="" class="input_box" [(ngModel)]="detail.social_data.facebook_url" placeholder="Facebook URL">
+                  </div>
+                  </div>
+                </li>
+          
+                <li class="list">
+                  <span class="left_icon">
+                    <img src="assets/images/icon/social/linkedin.png">
+                  </span>
+                  <div class="right_Data">
+                    <span class="name">Linkedin Link</span>
+            <div class="socialmedia_url">
+            <span class="social_icon_wrapper linkedin_"> <i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                    <input type="text" name="" class="input_box" [(ngModel)]="detail.social_data.linkedin_url" placeholder="Linkedin URL">
+                  </div>
+                  </div>
+                </li>
+          
+                <li class="list">
+                  <span class="left_icon">
+                    <img src="assets/images/icon/social/gplus.png">
+                  </span>
+                  <div class="right_Data">
+                    <span class="name">Google Plus</span>
+            <div class="socialmedia_url">
+            <span class="social_icon_wrapper googleplus_"><i class="fa fa-google-plus" aria-hidden="true"></i></span>
+                    <input type="text" name="" class="input_box" [(ngModel)]="detail.social_data.google_plus_url" placeholder="Gmail URL"> 
+                  </div>
+                  </div>
+                </li>
+          
+                <li class="list">
+                    <span class="left_icon">
+                      <img src="assets/images/icon/social/pinterest.png">
+                    </span>
+                    <div class="right_Data">
+                      <span class="name">Pinterest</span>
+            <div class="socialmedia_url">
+            <span class="social_icon_wrapper pinterest_"> <i class="fa fa-pinterest-p" aria-hidden="true"></i></span>
+                      <input type="text" name="" class="input_box" [(ngModel)]="detail.social_data.pinterest_url" placeholder="Pinterest URL">
+                    </div>
+                    </div>
+                  </li>
+          
+                  <li class="list">
+                      <span class="left_icon">
+                        <img src="assets/images/icon/social/instagram.png">
+                      </span>
+                      <div class="right_Data">
+              <span class="name">Instagram</span>
+              <div class="socialmedia_url">
+                <span class="social_icon_wrapper instagram_"> <i class="fa fa-instagram" aria-hidden="true"></i></span>
+                <input type="text" name="" class="input_box" [(ngModel)]="detail.social_data.instagram_url" placeholder="Instagram URL">
+              </div>
+                      </div>
+                    </li>
+              </ul>
+   -->
+  
+          <div class="SectionHeading">
+            Upload Shop Images
+          </div>
+
+          <div class="">
+              <div class="updateDetils-block">
+                  <ul class="updateDetils-list">
+                      <li  *ngFor="let image of detail.gallery_img">
+                          <div class="updateDetils-img">
+                              <img src="{{image.image_path}}">
+                              <span class="removeimg">
+                                  <button class="btn primary small" (click)="onRemoveImage(image)">
+                                      <img src="assets/images/icon/cross-icon.png">
+                                       </button>
+                              </span>
+                          </div>
+                      </li>
+                      
+                      <li>
+                        <div class="updateDetils-img">
+                        <img src="assets/images/no-image.png">
+                        <input type="file" (change)="onChangeImage($event)">
+                        <span class="addimg">
+                        <button class="btn primary small" >
+                        <img src="assets/images/icon/plus-icon.png">
+                        </button>
+                        </span>
+                        </div>
+                        </li>
+
+                      <!-- <li>
+                          <div class="updateDetils-img">
+                                  <img src="assets/images/no-image.png">
+                                      <span class="addimg">
+                                          
+                                          <button class="btn primary small" (change)="onChangeImage($event)">
+                                                  <input type="file">
+                                                  <img src="assets/images/icon/plus-icon.png">
+                                              </button>
+                                      </span>
+                          </div>
+                      </li> -->
+                      <!-- <li>
+                          <div class="updateDetils-img">
+                                  <img src="assets/images/photo-vivian-and-alyssa.jpg">
+                                  <span class="removeimg">
+                                          <button class="btn primary small">
+                                                  <img src="assets/images/icon/cross-icon.png">
+                                                   </button>
+                              </span>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="updateDetils-img">
+                              <img src="assets/images/user.png">
+                              <span class="removeimg">
+                                      <button class="btn primary small">
+                                              <img src="assets/images/icon/cross-icon.png">
+                                               </button>
+                              </span>
+                          </div>
+                      </li> -->
+                   
+      
+                  </ul>
+              </div>
+          </div>
+
+  
+                  <!-- <ul class="updateShopPhotos">
+                    <li class="list">
+                      <div class="style">
+                        <label class="uploadFile">
+                          <input type="file" name="" class="inputFile" (change)="onChangeImage($event)">
+                        </label>
+                      </div>
+                    </li>
+                    <li class="list" *ngFor="let image of detail.gallery_img" >
+                        <div class="style">
+                          <span class="thumb"><img src="{{image.image_path}}"></span>
+                          <span class="remove" (click)="onRemoveImage(image)"></span>
+                        </div>
+                      </li>
+  
+                 
+                  </ul> -->
+                
+  
+          </section>
+  
+              <!-- <span class="input input--nao">
+                  <input type="submit" name="" value="Save" class="primary_btn margin-top-20px" (click)="onSubmit()">
+              </span>
+   -->
+              <div class="btn_wrapper full_w mt20">
+                  <button class="btn primary large"  (click)="onSubmit()" >SAVE</button>
+               </div>
+    </div>
+  </div>  

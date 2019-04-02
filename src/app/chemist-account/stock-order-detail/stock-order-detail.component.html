@@ -1,0 +1,647 @@
+<div class="main_container my_accountPages order_details cartpage_1">
+    
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+ 
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+          
+          <div class="right_pannel">
+            
+              <div class="enquiry-id-section pannelSTyle no-border">
+                  <h1 class="page_name account_content">
+                    <div class="leftData">
+                      <span class="Pagename">Order Id - #{{respdata.order_data.order_no}}</span>
+                    </div>
+                  </h1>
+                  <div class="account_content pt0">
+                    <div class="notification_wrapper">
+                      <ul class="notification_listing">
+                        <!-- <li class="notification_list chem_details" *ngIf="respdata.ordertype=='Order'">
+                          <div class="enquiryDetail-wrapper">
+                          <div class="enquiry_details no-border pd0">
+                            <div class="enquiry_id">
+                               <div class="text-theme fontbold fontsize-17">Chemist Details</div>
+                            </div>
+                            <div class="name_wrapper mb5 mt10">
+                               <span class="name">{{respdata.order_data.vendor_name}}</span>
+                            </div>
+                            <span class="chem_address">{{respdata.order_data.vendor_address}}- ({{respdata.order_data.vendor_mobile_number}}</span>
+                          </div>
+                          </div>
+                          </li> -->
+                        <li class="notification_list mb0">
+                          <div class="enquiryDetail-wrapper">
+                            <div class="date_wrapper">
+                              <span class="date">{{respdata.order_data.order_date | date:'dd'}}</span>
+                              <span class="month">{{respdata.order_data.order_date | date:'MMM'}}</span>
+                            </div>
+                            <div class="enquiry_details">
+                              <span class="enquiry_id">
+                                <span class="title ">
+                               
+                                  {{respdata.order_data.order_date | date:'MMM'}} {{respdata.order_data.order_date | date:'yyyy'}}
+                                </span>
+                              </span>
+                              <span class="enquiry_items text-theme">{{respdata.order_data.order_date | date:'hh:mm a'}}</span>
+                            </div>
+                            <!-- <div class="enquiry_details no-border">
+                              <span class="enquiry_id"><span class="title">
+                                
+                               <span *ngIf="respdata.order_data.delivery_type==0"> Home Delivery</span> 
+                               <span *ngIf="respdata.order_data.delivery_type==1"> Self Pickup</span> 
+                                By
+                                </span> </span>
+                              <span class="enquiry_items text-theme">{{respdata.order_data.delivery_date | date:'dd'}} {{respdata.order_data.delivery_date | date:'MMM'}} {{respdata.order_data.delivery_date | date:'yyyy'}}| {{respdata.order_data.delivery_time}} </span>
+                            </div> -->
+                            <div class="enquiry_details no-border text-align-right">
+                              <span class="enquiry_id"><span class="title">Order Amount </span> </span>
+                              <span class="text-theme enquiry_items"> Rs.{{respdata.order_data.net_payble_amount}}</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- <div class="btn_wrapper full_w mt10 mb0">
+                          <div class="payBtn">
+                              <button class="btn assent large">paynow</button>
+                          </div>
+                      </div> -->
+                    </div>
+                    <!-- <div class="action_wrapper full_w">
+                      <div class="heading">
+                          <h2>Order Action</h2>
+                      </div>
+                        <ul class="action_listing full_w">
+                            <li class="order_list">
+                                <div class="style">
+                                    <span class="icon_wrapper"><img src="assets/images/icon/pay.png"></span>
+                                    <span class="text_part">Paynow</span>
+                                </div>
+                            </li>
+                            <li class="order_list">
+                                <div class="style">
+                                    <span class="icon_wrapper"><img src="assets/images/icon/modify.png"></span>
+                                    <span class="text_part">Modify order</span>
+                                </div>
+                            </li>
+                            <li class="order_list">
+                                <div class="style">
+                                    <span class="icon_wrapper"><img src="assets/images/icon/bill.png"></span>
+                                    <span class="text_part">View Bill</span>
+                                </div>
+                            </li>
+                            <li class="order_list">
+                                <div class="style">
+                                    <span class="icon_wrapper"><img src="assets/images/icon/prescription.png"></span>
+                                    <span class="text_part">View prescription</span>
+                                </div>
+                            </li>
+                            <li class="order_list">
+                                <div class="style">
+                                    <span class="icon_wrapper"><img src="assets/images/icon/cancel.png"></span>
+                                    <span class="text_part">Calcel Order</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <div class="address_wrapper full_w">
+                        <ul class="address_listing full_w"   *ngIf="respdata.ordertype=='Order'">
+                          <!-- <li class="address_list full_w mb10"  *ngIf="respdata.ordertype=='Order'">
+                            <div class="left_part">
+                              <div class="text-theme fontbold fontsize-17">Chemist Details</div>
+                              <div class="name_wrapper mb5 mt10">
+                                <span class="name">{{respdata.order_data.vendor_name}}
+                                 
+                                
+                                </span>
+                              </div>
+      
+                              <div class="address_wrapper full_w">
+                                <span class="address d-text-block">{{respdata.order_data.vendor_address}}- ({{respdata.order_data.vendor_mobile_number}}</span>
+                               
+      
+      
+                              </div>
+                              <div class="number mt10 f-left pt0">
+                                <span class="fontbold">+91 - {{respdata.address_data.mobile}}</span>
+                              </div>
+                            </div>
+                          </li> -->
+                          <li class="address_list full_w">
+                            <div class="style">
+  
+                            
+                            <div class="left_part address_wrapper">
+                              <div class="text-theme fontbold fontsize-17">Chemist Details</div>
+                              <div class="name_wrapper mb5 mt10">
+                                <span class="name">{{respdata.order_data.vendor_name}}
+                                 
+                                
+                                </span>
+                              </div>
+      
+                              <div class="address_wrapper full_w pd0">
+                                <span class="address d-text-block" *ngIf="respdata.address_data.area!=''">{{respdata.order_data.vendor_address}}</span>
+                               
+                               
+      
+      
+                              </div>
+                              <div class="number mt10 f-left pt0">
+                                <span class="fontbold">+91 - {{respdata.order_data.vendor_mobile_number}}</span>
+                              </div>
+                            </div>
+                            <div class="delivery_timing">
+                              <span class="title">Home Delivery by</span>
+                              <span class="delivery_time">05 dec 2019 | 14:00 PM</span> 
+                            </div>
+                          </div>
+                          </li>
+  
+                          
+                        </ul>
+                       
+                      </div>
+                    <!-- <div class="btn_wrapper full_w mb0 mt10">
+                        <button class="btn assent large">view bill</button>
+                        <button class="btn primary large">modify order</button>
+                    </div> -->
+                  </div>
+      
+      
+                </div>
+  
+                <div class="mainPage">
+                    <div  class="orderDetailPage">
+                       
+  
+                          <section class="section table_wrapper common-pd cart_details">
+                              <div class="rate_quantity-block left_section">
+                                <ul class="rate_quantity-listing  cart_dtails_wrapper">
+                                  
+                                    <li class="heading">
+                                        <div class="d-text-flex justify-content-btw product_details_wrapper ">
+                                          <div class="med-details mrgn0">
+                                            <div class="text-black fontbold"><span>Items</span></div>
+                                          </div>
+                                          <div class="product_discount mrgn0">
+                                            <div class="discount_wrappe">
+                                              <div class="discount">
+                                                  <div  class="text-black fontbold text-center"><span>Discount</span></div>
+                                                  
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="med-rating mrgn0 text-align-right">
+                                            <div class="text-black fontbold amount"><span>Amount</span></div>
+                                            
+                                          </div>
+                                        </div>
+                                      </li>
+  
+                                  <li *ngFor="let item of respdata.product_data">
+                                    <div class="d-text-flex justify-content-btw product_details_wrapper ">
+                                      <div class="med-details mrgn0">
+                                        <div class="text-black fontbold">{{item.product_name}}</div>
+                                        <div class="text-grey ">{{item.product_variant}}</div>
+                                        <div class="text-theme fontbold">MRP Rs.{{item.rate}} X {{item.quantity}}</div>
+                                      </div>
+                                      <div class="product_discount mrgn0">
+                                        <div class="discount_wrappe">
+                                          <div class="discount">
+                                              <div  class="text-black fontbold text-center">{{item.discounted_precent}}%</div>
+                                             
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="med-rating mrgn0 text-align-right">
+                                          <div class="text-black fontbold">Rs. {{ (item.quantity * item.rate)   | number:'1.2-2'}}</div>
+                                        <!-- <div class="text-black fontbold">Rs. {{ (item.quantity * item.rate)-item.discounted_amount   | number:'1.2-2'}}</div> -->
+                                        <!-- <div class="text-grey"><del>Rs. {{ item.quantity * item.rate  | number:'1.2-2'}}</del></div> -->
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <!-- <li>
+                                      <div class="d-text-flex justify-content-btw product_details_wrapper align-content-center">
+                                        <div class="med-details mrgn0">
+                                          <div class="text-black fontbold">YAMINI</div>
+                                          <div class="text-grey ">kit of 24 Tablet</div>
+                                          <div class="text-theme fontbold">MRP Rs.30 X 20</div>
+                                        </div>
+                                        <div class="product_discount mrgn0">
+                                          <div class="discount_wrappe">
+                                            <div class="discount">
+                                                <div  class="text-black fontbold text-center">15%</div>
+                                                <div class="text-grey text-center">Discount</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="med-rating mrgn0 text-align-right">
+                                          <div class="text-black fontbold">Rs. 126</div>
+                                          <div class="text-grey"><del>Rs. 150</del></div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-text-flex justify-content-btw product_details_wrapper align-content-center">
+                                          <div class="med-details mrgn0">
+                                            <div class="text-black fontbold">YAMINI</div>
+                                            <div class="text-grey ">kit of 24 Tablet</div>
+                                            <div class="text-theme fontbold">MRP Rs.30 X 20</div>
+                                          </div>
+                                          <div class="product_discount mrgn0">
+                                            <div class="discount_wrappe">
+                                              <div class="discount">
+                                                  <div  class="text-black fontbold text-center">15%</div>
+                                                  <div class="text-grey text-center">Discount</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="med-rating mrgn0 text-align-right">
+                                            <div class="text-black fontbold">Rs. 126</div>
+                                            <div class="text-grey"><del>Rs. 150</del></div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                  -->
+                                </ul>
+                              </div>
+                              <div class="right_section total_amount-section clearfix">
+                              <div class="section_2">
+                                  <div class="estimate_details">
+                                    <div class="left_part">
+                                      <!-- <span class="estimate_title">Subtotal</span> -->
+                                      <span class="estimate_title">Sub Total</span>
+                                    </div>
+                                    <div class="right_part">
+                                      <span class="price">Rs. {{respdata.order_data.grand_total}}</span>
+                                    </div>
+                                  </div>
+                                  <div class="estimate_details">
+                                    <div class="left_part">
+                                      <span class="estimate_title">Discount</span>
+                                    </div>
+                                    <div class="right_part">
+                                      <span class="price text-theme">-Rs. {{respdata.order_data.total_discount}}</span>
+                                    </div>
+                                  </div>
+                                    <div class="estimate_details total_amount">
+                                      <div class="left_part">
+                                        <span class="estimate_title">Billing Amount</span>
+                                      </div>
+                                      <div class="right_part">
+                                        <span class="price text-theme">Rs. {{respdata.order_data.vendor_billing_amount}}</span>
+                                      </div>
+                                    </div>
+                                 
+  
+                                    <div class="estimate_details" *ngIf="respdata.order_data.apc_cash_used !=0 || respdata.order_data.apc_cash_used !=0.00">
+                                        <div class="left_part">
+                                          <span class="estimate_title">APC Cash Used</span>
+                                        </div>
+                                        <div class="right_part">
+                                          <span class="price text-theme">-Rs. {{respdata.order_data.apc_cash_used}}</span>
+                                        </div>
+                                      </div>
+                                    
+                                    <div class="estimate_details" *ngIf="respdata.order_data.delivery_charge !=0 || respdata.order_data.delivery_charge !=0.00">
+                                      <div class="left_part">
+                                        <span class="estimate_title">Delivery Charges</span>
+                                      </div>
+                                      <div class="right_part">
+                                        <span class="price">Rs. {{respdata.order_data.delivery_charge}}</span>
+                                      </div>
+                                    </div>
+                      
+                                    <!-- <div class="estimate_details">
+                                      <div class="left_part">
+                                        <span class="estimate_title">Coupon Applied</span>
+                                      </div>
+                                      <div class="right_part">
+                                        <span class="price">(CJM250) - <span class="text-red"> 250.00 </span> </span>
+                                      </div>
+                                    </div> -->
+                      
+                                    <div class="estimate_details total_amount">
+                                      <div class="left_part">
+                                        <!-- <span class="estimate_title text-black">Amount to collect - <span class="text-theme">Cash </span></span> -->
+                                        <span class="estimate_title text-black">
+                                          
+                                           Amount to Pay
+                                        </span>
+                                      
+                                      </div>
+                                      <div class="right_part">
+                                        <span class="price">Rs. {{respdata.order_data.net_payble_amount}}</span>
+                                      </div>
+                                    </div>
+                                    <div class="chem-enquiry_wrapper full-w">
+                                      <button class="btn secondary medium mr10"  (click)="onCancelOrder(enquiry)" *ngIf="respdata.order_data.order_status=='OS01' || respdata.order_data.order_status=='OS02'">Cancel Order</button>
+                                      <button class="btn assent medium mr10"  *ngIf="respdata.order_data.modify_access==3" (click)="viewModifiedOrder()">View Modified Order</button>
+                                      <button class="btn assent medium mt10" *ngIf="respdata.order_data.modify_access==0 && respdata.order_data.vendor_id !=undefined" (click)="onAllowOrderModification()">Allow Order Modification</button>
+                                    </div>
+                                </div>
+                              </div>
+                              <!-- <div class="btn_wrapper mb0">
+                                  <button class="btn assent large">view prescription</button>
+                              </div> -->
+                           
+                              <ng-container *ngIf="respdata.order_data.total_apc_discount_amount !=0">
+                                  <div class="apc_contribution_wrapper">
+                                    <div class="contribution_discount">
+                                        <div class="left_part">
+                                            <span>APC Cashback*</span>
+                                        </div>
+                                        <div class="right_part">
+                                          <span>Rs.{{respdata.order_data.total_apc_discount_amount | number:'1.2-2'}}</span>
+                                        </div>
+                                    </div>
+                  
+                                    <!-- <div class="apc_cashback">
+                                        <div class="left_part">
+                                          <span>APC Cashback*</span>
+                                        </div>
+                                        <div class="right_part">
+                                            <span>Rs.{{enquiry.enquiry_detail.vendor_cashback_amount}}</span>
+                                        </div>
+                                    </div> -->
+                                 </div>
+                  
+                                 <div class="payment_descr">
+                                    <p>* Amount will be credited to wallet after order process completion.</p>
+                                 </div>
+                                </ng-container>
+                             
+                            </section>
+  
+                            <section class="section common-pd">
+  
+                                <div class="address_wrapper full_w">
+                                  <ul class="address_listing full_w">
+                                    <!-- <li class="address_list full_w mb10"  *ngIf="respdata.ordertype=='Order'">
+                                      <div class="left_part">
+                                        <div class="text-theme fontbold fontsize-17">Chemist Details</div>
+                                        <div class="name_wrapper mb5 mt10">
+                                          <span class="name">{{respdata.order_data.vendor_name}}
+                                           
+                                          
+                                          </span>
+                                        </div>
+                
+                                        <div class="address_wrapper full_w">
+                                          <span class="address d-text-block">{{respdata.order_data.vendor_address}}- ({{respdata.order_data.vendor_mobile_number}}</span>
+                                         
+                
+                
+                                        </div>
+                                        <div class="number mt10 f-left pt0">
+                                          <span class="fontbold">+91 - {{respdata.address_data.mobile}}</span>
+                                        </div>
+                                      </div>
+                                    </li> -->
+                                    <li class="address_list full_w">
+                                      <div class="style">
+      
+                                      
+                                      <div class="left_part address_wrapper">
+                                        <div class="text-theme fontbold fontsize-17">Delivery Address</div>
+                                        <div class="name_wrapper mb5 mt10">
+                                          <span class="name">{{respdata.address_data.full_name}}
+                                            <span class="gender" *ngIf="respdata.address_data.user_relation_name!=''">({{respdata.address_data.user_relation_name}})</span>
+                                          
+                                          </span>
+                                        </div>
+                
+                                        <div class="address_wrapper full_w pd0">
+                                          <span class="address d-text-block" *ngIf="respdata.address_data.area!=''">{{respdata.address_data.area}},</span>
+                                          <span class="address d-text-block">{{respdata.address_data.address}}, </span>
+                                          <span class="address d-text-block"> {{respdata.address_data.city}} {{respdata.address_data.pincode}}</span>
+                
+                
+                                        </div>
+                                        <div class="number mt10 f-left pt0">
+                                          <span class="fontbold">+91 - {{respdata.address_data.mobile}}</span>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
+                                    </li>
+      
+                                    
+                                  </ul>
+                                 
+                                </div>
+                                
+                                
+                              </section>
+                              <section class="section common-pd theme-border" *ngIf="respdata.order_data.delivery_pin!=undefined && respdata.order_data.delivery_pin !=''">
+                                  <div class="confirmation_pin-block">
+                                  <h5>Confirmation Pin</h5>
+                                  <span class="d-text-block mt10">{{respdata.order_data.delivery_pin}}</span>
+                                  </div> 
+                                  </section>
+                                <!-- <div class="confirmation_wrapper">
+                                    <span class="title">Confirmation PIN</span>
+                                    <span class="pin">057639</span>
+                                </div> -->
+                              
+                    </div>
+                </div>
+            <!-- <div class="right_pannel">
+              
+              <div class="enquiry-id-section">
+                <h1 class="page_name">
+                  <div class="leftData">
+                  
+                    <span class="Pagename">ORDER ID - {{respdata.order_data.order_no}}</span>
+                  </div>
+                </h1>
+              </div>
+  
+              <div class="mainPage">
+                <div class="orderDetailPage">	
+                  
+              
+      
+                  <section class="section">
+                    <div class="headingPart">
+                      <div class="leftPart" *ngIf="respdata.ordertype=='Order'">
+                        <span class="name">{{respdata.order_data.vendor_name}}</span>
+                        <br>
+                        <span style="font-size:12px">{{respdata.order_data.vendor_address}}- ({{respdata.order_data.vendor_mobile_number}})</span>
+                      </div>
+                      <div class="rightPart">
+                        <span class="price">Rs.{{respdata.order_data.net_payble_amount}}</span>
+                      </div>
+                    </div>
+      
+                    <div class="MainOrder">
+                      <div class="leftPart">
+                          <span class="itemsCount">Order Placed on</span>
+                        <span class="orderTime">{{respdata.order_data.order_date |date:'dd-MM-yyyy' }}, {{respdata.order_data.order_date | date:'hh:mm a'}}</span>
+                     
+                      </div>
+                      <div class="rightPart">
+                        <span class="itemsCount">Delivery Details</span>
+                        <span class="price">{{respdata.order_data.delivery_date | date:'dd-MM-yyyy'}}, {{respdata.order_data.delivery_time}}</span>
+                      </div>
+                    </div>
+      
+                    <ul class="Downloadbuttons" style="display:none">
+                      <li class="list right"> <a href="#0" class="Download">Re Order</a> </li>
+                      <li class="list"> <a href="#0" class="Download">Download Invoice</a> </li>
+                      <li class="list"> <a href="#0" class="Email">Email Invoice</a> </li>
+                    </ul>
+      
+                  </section>
+  
+                  <section class="section">
+                    <div class="headingPart">
+                      <div class="leftPart">
+                        <span class="name">Shipping Address</span>
+                      </div>
+                    </div>
+                    <ul class="familyTreeListing">
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">{{respdata.address_data.full_name}}
+                            
+                         
+                          
+                          </span>
+                     
+                          <div class="Address">
+                              {{respdata.address_data.address}} <br>
+                              {{respdata.address_data.state}} - {{respdata.address_data.pincode}}
+                          </div>
+                         
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+      
+  
+                  <section class="section table_wrapper">
+                  <table class="my_table" cellspacing="0" cellpadding="0">
+                   
+                      <tr>
+                        <tr class="row_head">
+                        <th class="text-left col-md-50">Items</th>
+                        <th class="center">MRP</th>
+                        <th class="center">Discount</th>
+                        <th class="center">QTY</th>
+                        <th class="center">Amount</th>
+                      </tr>
+                
+      
+      
+                      <tr *ngFor="let item of respdata.product_data">
+                        <td class="text-left">
+                          <span class="name">{{item.product_name}}</span>
+                          <span class="data">{{item.product_variant}}</span>
+                          <span class="shopName">MRP- Rs.{{item.rate}}</span>
+                        </td>
+                        <td class="center"><span class="amount">Rs. {{item.rate}}</span></td>
+                        <td class="center">
+                          
+                          <span class="caption"> <i class="green"> {{item.discounted_precent}}%</i></span>
+                        </td>
+                        <td class="center"><span class="amount">{{item.quantity}}</span></td>
+                        <td class="center">
+                          <span class="time">Rs. {{item.quantity * item.rate  | number:'1.2-2'}}</span>
+                        </td>
+                      </tr>
+      
+  
+                      <tr>
+                        <td class="text-left" colspan="4">
+                          <span class="name b">Total MRP</span>
+                        </td>
+                        <td class="center">
+                          <span class="time b">Rs.{{respdata.order_data.grand_total}}</span>
+                        </td>
+                      </tr>
+                      <tr style="display:none">
+                        <td class="text-left" colspan="4">
+                          <span class="name b">Total Delivery Charges</span>
+                        </td>
+                        <td class="center">
+                          <span class="time b">Rs.{{respdata.order_data.delivery_charge}}</span>
+                        </td>
+                      </tr>
+      
+                      <tr>
+                        <td class="text-left" colspan="4">
+                          <span class="name b">  Discount</span>
+                        </td>
+                        <td class="center">
+                          <span class="time b green">( - ) Rs.{{respdata.order_data.total_discount}}</span>
+                        </td>
+                      </tr>
+                      <tr *ngIf="respdata.order_data.grand_total >500">
+                        <td class="text-left" colspan="4">
+                          <span class="name b">  APC Cash</span>
+                        </td>
+                        <td class="center">
+                          <span class="time b green"> Rs.{{respdata.order_data.total_apc_discount_amount}}</span>
+                        </td>
+                      </tr>
+      
+                     
+                      <tr>
+                        <td class="text-left" colspan="4">
+                          <span class="name b">Payble Amount</span>
+                        </td>
+                        <td class="center">
+                          <span class="time b">Rs.{{respdata.order_data.net_payble_amount}}</span>
+                        </td>
+                      </tr>
+                  </table>
+                  <div class="btn_wrapper mt10" (click)="onCancelOrder(enquiry)" *ngIf="respdata.order_data.order_status=='OS01' || respdata.order_data.order_status=='OS02'">
+                      <button class="btn assent medium">Cancel Order</button>
+                  </div>
+                </section>
+      
+                  <section class="section" style="display:none">
+                    <div class="headingPart">
+                      <div class="leftPart">
+                        <span class="name">Shipping Address</span>
+                      </div>
+                    </div>
+                    <ul class="familyTreeListing">
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Pankaj Bakshi <i>(Brother)</i></span>
+                          <span class="age">25 Year <i>(Male)</i></span>
+                          <div class="Address">
+                            G-11, Ground Floor, Preet Vihar, <br>
+                            Delhi - 110091
+                          </div>
+                          <span class="Phone">+91 7838414681</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+          
+      
+      
+                </div>
+              </div>
+      
+          </div> -->
+  
+          </div>
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer></app-footer>

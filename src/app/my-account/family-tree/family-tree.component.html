@@ -1,0 +1,138 @@
+<div class="main_container my_accountPages familyTree">
+
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+    <app-my-account-top-panel></app-my-account-top-panel>
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-my-account-left-panel></app-my-account-left-panel>
+    
+          <div class="right_pannel">
+            <div class="pannelSTyle">
+
+                <div class="account_page_title">
+                    <div class="left_part">
+                      <div class="heading" >
+                        <h2>My Family <span>{{addresses.length}}</span></h2>
+                      </div>
+                    </div>
+                    <div class="right_part">
+                      
+                    </div>
+                    
+                  </div>
+
+                  <div class="account_content">
+                      <div class="btn_wrapper">
+                        <button class="btn assent large" routerLink="/my-account/add-member">Add New Member</button>
+                      </div>
+                      <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+                      <div class="address_wrapper full_w" *ngIf="addresses.length>0">
+                          <ul class="address_listing full_w">
+                              <li class="address_list full_w"  *ngFor="let address of addresses">
+                                  <div class="left_part">
+                                      <div class="name_wrapper">
+                                          <span class="name">{{address.full_name}}
+                                            
+                                            <span class="gender">({{address.user_relation_name}})</span>
+                                          </span>
+                                      </div>
+                                      <div class="name_wrapper">
+                                          <span class="gender">{{address.date_of_birth | date:'dd-MM-yyyy'}}
+                                            
+                                            <span class="gender" *ngIf="address.gender == 0">(Male)</span>
+                                            <span class="gender" *ngIf="address.gender == 1">(Female)</span>
+                                          </span>
+                                      </div>
+                                      <div class="address_wrapper full_w">
+                                          <span class="location">{{address.area | titlecase}}</span>
+                                          
+                                          <span class="address">{{address.address}},<br>{{address.city}} - {{address.pincode}}</span>
+                                      </div>
+                                      <div class="number">
+                                          <span>+91 - {{address.mobile}}</span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="right_part">
+                                    <div class="manage_address_wrapper">
+                                      <ul class="ellipse_wrapper">
+                                          <li class="ellipse"></li>
+                                          <li class="ellipse"></li>
+                                          <li class="ellipse"></li>
+  
+                                         
+                                      </ul>
+                                      <div class="address_options">
+                                          <!-- <div class="address_btn">
+                                              <button class="btn primary small" routerLink="/my-account/edit-member" [queryParams]="{addressid:address.address_id}">Edit</button>
+                                              <button class="btn secondary small" (click)="removeAddressById(address.address_id)">Delete</button>
+                                          </div> -->
+                                          <ul class="action_list">
+                                              <li>
+                                              <a href="javascript:void(0)"  routerLink="/my-account/edit-member" [queryParams]="{addressid:address.address_id}"><i class="fa fa-edit"></i> Edit</a>
+                                              <a href="javascript:void(0)" (click)="removeAddressById(address.address_id)"><i class="fa fa-trash"></i> Delete</a>
+                                              </li>
+                                              </ul>
+
+                                      </div>
+                                    </div>
+                                  </div>
+                              </li>
+                              
+                          </ul>
+                      </div>
+                    </div>   
+
+            <!-- <h1 class="page_name"> 
+              <div class="leftData"> 
+                 
+                <span class="Pagename">Family Tree</span> 
+              </div> 
+              <div class="rightData"> 
+                <a href="javascript:void(0)" routerLink="/my-account/add-member" class="AddBtn primary_btn">Add Member</a> 
+              </div> 
+            
+            </h1> 
+            <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+            <div class="mainPage"> 
+              <div class="addresspage">
+                <ul class="familyTreeListing"> 
+                    <li class="list" *ngFor="let address of addresses"> 
+                      <div class="style"> 
+                        <span class="name">{{address.full_name}}  <i>({{address.user_relation_name}})</i></span> 
+                        <span class="age">25 Year <i>(Male)</i></span> 
+                        <div class="Address"> 
+                         {{address.address}} <br> 
+                         {{address.city}} -  {{address.pincode}}
+                        </div>
+                        <span class="Phone">+91 {{address.mobile}}</span> 
+                        <div class="buttons">
+                          <a href="javascript:void(0)"  routerLink="/my-account/edit-member" [queryParams]="{addressid:address.address_id}" class="">Edit</a>
+                          <a href="javascript:void(0)" (click)="removeAddressById(address.address_id)" class="">Delete</a>
+                        </div>
+        
+                      </div>
+                    </li>
+               
+            
+                  </ul>
+                </div>
+             
+            </div> -->
+    
+          </div>
+        </div>
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+    <app-footer></app-footer>

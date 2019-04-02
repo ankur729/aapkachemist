@@ -1,0 +1,559 @@
+<div class="main_container my_accountPages chemist-stock-enquiry stack_orderpage order_details cartpage_1">
+
+  <app-header></app-header>
+  <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+    <div class="my_accountSetting retailer_order_tracking">
+            <div class="popup_design " *ngIf="respdata.is_confirm_delivery" style="display: block;">
+                    <div class="designBox">
+                      <div class="vAlign">
+                        <div class="insideDesign">
+                          <div class="heading">
+                            <h2>Confirmation PIN</h2>
+                          </div>
+                          <div class="fromGroup form_wrapper ">
+                            
+                            <p class="caption">Enter Delivery Confirmation PIN</p>
+                            
+                            <div class="add_amount  full_w">
+                              <ul class="form_listing full_w">
+                                <li class="form_list  full_w">
+                                  <div class="style">
+                                    <!-- <span class="lable">Enter Confirmation code</span> -->
+                                    <input  class="input " placeholder="" type="text"  id="confirm_otp">
+                                  </div>
+                                </li>
+                                <li  class="form_list full_w">
+                                  <button  class="btn primary large" (click)="onConfirmOTP()"> Confirm PIN</button>
+                                  <button  class="btn secondary large cancel" (click)="onConfirmDelivery(order)">Cancel</button>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel></app-chemist-account-left-panel>
+          
+        
+          <div class="right_pannel">
+
+              <div class="enquiry-id-section pannelSTyle no-border pd0">
+                  <h1 class="page_name account_content">
+                            <div class="leftData">
+                              <span class="Pagename">Order Id - #{{respdata.order_data.order_no}}</span>
+                            </div>
+                          </h1>
+                  <div class="account_content pt0">
+                      <div class="notification_wrapper">
+                          <ul class="notification_listing">
+                              <li class="notification_list mb0">
+                                  <div class="enquiryDetail-wrapper">
+                                      <div class="date_wrapper">
+                                          <span class="date">{{respdata.order_data.order_date | date:'dd'}}</span>
+                                          <span class="month">{{respdata.order_data.order_date | date:'MMM'}}</span>
+                                      </div>
+                                      <div class="enquiry_details">
+                                          <span class="enquiry_id">
+                                        <span class="title ">
+          
+                                            Feb {{respdata.order_data.order_date | date:'yyyy'}}
+                                        </span>
+                                          </span>
+                                          <span class="enquiry_items text-theme">{{respdata.order_data.order_date | date:'hh:mm a'}}</span>
+                                      </div>
+                                      <div class="enquiry_details no-border text-align-right">
+                                          <span class="enquiry_id"><span class="title">Billing Amount </span> </span>
+                                          <span class="text-theme enquiry_items"> Rs.{{respdata.order_data.net_payble_amount}}</span>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+
+                      <div class="action_buttons_block w-100 f-left" *ngIf="respdata.order_data.order_status !='OS07'">
+                            <ul class="w-100">
+                            
+    
+                                  <li routerLink="/chemist-account/add-view-bill" [queryParams]="{'id':respdata.order_data.order_id}" *ngIf="respdata.order_data.delivery_confirmation =='0'" >
+                                    <div class="action_buttons_images">
+                                        <img src="assets/images/icon/view-bill-icon.png" class="w-100">
+                                    </div>
+                                    <div class="mt10 actions_link">
+                                        <a href="javascript:void(0)" >Upload/View bill</a>
+                                    </div>
+                                </li>
+                                 
+                                <li *ngIf="respdata.order_data.order_status == 'OS04' && respdata.order_data.delivery_confirmation ==0"  (click)="onConfirmDelivery(order)" >
+                                    <div class="action_buttons_images">
+                                        <img src="assets/images/icon/confirm-bill-icon.png" class="w-100">
+                                    </div>
+                                    <div class="mt10 actions_link" >
+                                        <a href="javascript:void(0)">Confirm delivery pin</a>
+                                    </div>
+                                </li>
+                                <li *ngIf="respdata.order_data.prescription_status ==1 || respdata.order_data.prescription_status ==2" (click)="getOrderPrescription()">
+                                    <div class="action_buttons_images">
+                                        <img src="assets/images/icon/view-prescription-icon.png" class="w-100">
+                                    </div>
+                                    <div class="mt10 actions_link" >
+                                        <a href="javascript:void(0)" >View prescription</a>
+                                    </div>
+                                </li>
+                                <li (click)="onUpdateOrderStatus('OS04')" *ngIf="respdata.order_data.invoice_file ==1 && respdata.order_data.order_status == 'OS01'">
+                                        <div class="action_buttons_images" >
+                                            <img src="assets/images/icon/confirm-bill-icon.png" class="w-100">
+                                        </div>
+                                        <div class="mt10 actions_link">
+                                            <a href="javascript:void(0)">Dispatch Order</a>
+                                        </div>
+                                    </li>
+
+                                    <li (click)="onModifyOrder()" *ngIf="respdata.order_data.modify_access ==1 && respdata.order_data.order_status != 'OS04' ">
+                                        <div class="action_buttons_images" >
+                                            <img src="assets/images/icon/confirm-bill-icon.png" class="w-100">
+                                        </div>
+                                        <div class="mt10 actions_link">
+                                            <a href="javascript:void(0)">Modify Order</a>
+                                        </div>
+                                    </li>
+                                <!-- <li>
+                                    *ngIf="respdata.order_data.modify_access ==1"
+                                    <div class="action_buttons_images">
+                                        <img src="assets/images/icon/upload-bill-icon.png" class="w-100">
+                                    </div>
+                                    <div class="mt10 actions_link">
+                                        <a href="javascript:void(0)">Upload bill</a>
+                                    </div>
+                                </li>   -->
+                            </ul>
+                    </div>
+
+                    <div class="prescription_gallery" style="display:none">
+                        <div class="flax-boxcontainer p-3" >
+                        <div class="fg-gallery">
+                        <img src="{{prescription.file_path}}" alt="" *ngFor="let prescription of respdata.order_data.prescription_arr ">
+                        <!-- <img src="assets/images/dummy_prescription.png" alt="">
+                        <img src="assets/images/dummy_prescription.png" alt=""> -->
+                        </div>
+                        </div>
+                        </div>
+
+                      <div class="address_wrapper full_w">
+                          <ul class="address_listing full_w">
+                              <li class="address_list full_w">
+                                  <div class="style">
+          
+                                  
+                                      <div class="delivery_timing">
+                                          <span class="title">Home Delivery by</span>
+                                          <span class="delivery_time">{{respdata.order_data.delivery_date | date:'dd-MMM-yyyy'}} | {{respdata.order_data.delivery_time}}</span>
+                                      </div>
+                                  </div>
+                              </li>
+          
+                          </ul>
+          
+                      </div>
+
+                      <div class="address_wrapper full_w mt10">
+                          <ul class="address_listing full_w">
+                              <li class="address_list full_w">
+                                  <div class="style">
+          
+                                      <div class="left_part address_wrapper">
+                                          <div class="text-theme fontbold fontsize-17">Difference of Rs.{{respdata.order_data.total_vendor_cashback_recieved | number:'1.2-2'}} will be paid by APC After Delivery</div>
+                                          
+          
+                                           
+                                      </div>
+                                     
+                                  </div>
+                              </li>
+          
+                          </ul>
+          
+                      </div>
+                  </div>
+          
+              </div>
+                      <!-- <section class="section">
+      
+                    <div class="headingPart">
+                      <div class="leftPart">
+                        <span class="name">Update Order Status</span>
+                      </div>
+                    </div>
+      
+                    <ul class="updateStatus  form_group">
+
+                      <li class="list">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span class="name">Select Status</span>
+                            <select class="select_option ng-untouched ng-pristine ng-valid">
+                              <option>Select Status</option>
+                              <option>Order Received</option>
+                              <option>Order Packing</option>
+                            </select>
+                          </label>
+                        </div>
+                      </li>
+      
+                      <li class="input input--nao list">
+                          <div class="inputForm">
+                            <label class="label">
+                              <span class="name">Your Comment</span>
+                          <input class="input_box ng-untouched ng-pristine ng-valid" placeholder="Your Comment" type="text" id="input-1" />
+                        </label>
+                        </div>
+                        </li>
+      
+                                    <div class="FullbuttonDiv"><input type="submit" name="" value="UPdate Status" class="primary_btn left"></div>
+      
+                    </ul>
+      
+                    <ul class="order_track_sys">
+                      <li class="list done">
+                        <span class="line"></span>
+                        <span class="tracker"></span>
+                        <div class="data">
+                          <span class="status">Your Order has been Pending</span>
+                          <span class="date">At 13-04-2018  | 14:00</span>
+                        </div>
+                      </li>
+                      <li class="list done">
+                        <span class="line"></span>
+                        <span class="tracker"></span>
+                        <div class="data">
+                          <span class="status">Your Order has been Received</span>
+                          <span class="date">At 13-04-2018  | 14:00</span>
+                        </div>
+                      </li>
+                      <li class="list done">
+                        <span class="line"></span>
+                        <span class="tracker"></span>
+                        <div class="data">
+                          <span class="status">Your Order has been Packed</span>
+                          <span class="date">At 13-04-2018  | 14:00</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <span class="line"></span>
+                        <span class="tracker"></span>
+                        <div class="data">
+                          <span class="status">Your Order has been Shipped</span>
+                          <span class="date">At 13-04-2018  | 14:00</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </section> -->
+              <div class="mainPage">
+                  <div class="orderDetailPage">
+          
+                      <section class="section table_wrapper common-pd cart_details">
+                          <div class="rate_quantity-block left_section">
+                              <ul class="rate_quantity-listing  cart_dtails_wrapper">
+          
+                                  <li class="heading">
+                                      <div class="d-text-flex justify-content-btw product_details_wrapper ">
+                                          <div class="med-details mrgn0">
+                                              <div class="text-black fontbold"><span>Items</span></div>
+                                          </div>
+                                          <div class="product_discount mrgn0">
+                                              <div class="discount_wrappe">
+                                                  <div class="discount">
+                                                      <div class="text-black fontbold text-center"><span>Units</span></div>
+          
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="product_discount mrgn0">
+                                              <div class="discount_wrappe">
+                                                  <div class="discount">
+                                                      <div class="text-black fontbold text-center"><span>Discount</span></div>
+          
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          
+                                          <div class="med-rating mrgn0 text-align-right">
+                                              <div class="text-black fontbold amount"><span>Amount</span></div>
+          
+                                          </div>
+                                      </div>
+                                  </li>
+          
+                                  <li *ngFor="let item of respdata.product_data">
+                                      <div class="d-text-flex justify-content-btw product_details_wrapper ">
+                                          <div class="med-details mrgn0">
+                                              <div class="text-black fontbold">{{item.product_name}}</div>
+                                              <div class="text-grey ">{{item.product_variant}}</div>
+                                              <div class="text-theme fontbold">MRP Rs.{{item.rate}}
+                                                
+                                                <!-- X {{item.quantity}} -->
+                                              
+                                              </div>
+                                          </div>
+                                          <div class="product_discount mrgn0 text-align-center">
+                                              <div class="text-black fontbold">{{item.quantity}}</div>
+                                          </div>
+
+                                          <div class="product_discount mrgn0"  >
+                                            <div class="product_qty">
+
+                                              
+                                                <div class="qty_wrappe no-border pd0">
+                                                  <div class="qtyController" >
+                                             
+                                                    <div class="qty">
+                                                      <input name="" class="fontbold fontsize-17" readonly maxlength="2" 
+                                                      name="" value="{{item.discounted_precent}}%">
+                                                    </div>
+                                                    
+                              
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+
+
+                                          <!-- <div class="product_discount mrgn0">
+                                              <div class="product_qty">
+                                                  <div class="qty_wrappe">
+                                                    <div class="qtyController">
+                                                      <div class="minus">
+                                                        <img alt="" src="assets/images/icon/qty_minus.png">
+                                                      </div>
+                                                      <div class="qty">
+                                                        <input name="" readonly="" type="text" value="1">
+                                                      </div>
+                                                      <div class="plus">
+                                                        <img alt="" src="assets/images/icon/qty_plus.png">
+                                                      </div>
+                                
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          </div> -->
+                                          <div class="med-rating mrgn0 text-align-right">
+                                              <div class="text-black fontbold">Rs. {{item.quantity * item.rate | number:'1.2-2'}}</div>
+                                              <!-- <div class="text-grey"><del>Rs.300</del></div> -->
+                                          </div>
+                                      </div>
+                                  </li>
+          
+                              </ul>
+                          </div>
+                          <div class="right_section total_amount-section clearfix">
+                              <div class="section_2">
+                                  <div class="estimate_details">
+                                      <div class="left_part">
+          
+                                          <span class="estimate_title">Sub Total</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price">Rs. {{respdata.order_data.grand_total}}</span>
+                                      </div>
+                                  </div>
+                                  <div class="estimate_details">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Discount</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme">-Rs. {{ respdata.order_data.total_discount}}</span>
+                                      </div>
+                                  </div>
+                                  <div class="estimate_details total_amount">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Billing Amount</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme">Rs. {{respdata.order_data.vendor_billing_amount}}</span>
+                                      </div>
+                                  </div>
+                                  <div class="estimate_details" *ngIf="respdata.order_data.apc_cash_used !=0 || respdata.order_data.apc_cash_used !=0.00">
+                                        <div class="left_part">
+                                            <span class="estimate_title">Customer APC Cash Used</span>
+                                        </div>
+                                        <div class="right_part">
+                                            <span class="price text-theme">-Rs. {{ respdata.order_data.apc_cash_used}}</span>
+                                        </div>
+                                    </div>
+                                  <div class="estimate_details total_amount">
+                                        <div class="left_part">
+                                            <span class="estimate_title">User Payable Amount</span>
+                                        </div>
+                                        <div class="right_part">
+                                            <span class="price text-theme">Rs. {{respdata.order_data.net_payble_amount}}</span>
+                                        </div>
+                                    </div>
+                                  <!-- <div class="estimate_details">
+                                      <div class="left_part">
+                                          <span class="estimate_title">APC Cash Used</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price text-theme">-Rs. 645</span>
+                                      </div>
+                                  </div>
+          
+                                  <div class="estimate_details">
+                                      <div class="left_part">
+                                          <span class="estimate_title">Delivery Charges</span>
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price">Rs. 3</span>
+                                      </div>
+                                  </div>
+          
+                                  <div class="estimate_details total_amount">
+                                      <div class="left_part">
+                                          <span class="estimate_title text-black">
+          
+                                                   Amount to Pay
+                                                </span>
+          
+                                      </div>
+                                      <div class="right_part">
+                                          <span class="price">Rs. 46</span>
+                                      </div>
+                                  </div> -->
+                                  <!-- <div class="chem-enquiry_wrapper full-w">
+                                      <button class="btn assent medium">Cancel Order</button>
+                                  </div> -->
+                              </div>
+                          </div>
+          
+                          <div class="apc_contribution_wrapper">
+                                <div class="payment_descr">
+                                        <p>Amount you get from APC after deilvery*</p>
+                                    </div>
+                              <div class="contribution_discount">
+                                  <div class="left_part">
+                                      <span>APC Contribution to Discount*</span>
+                                  </div>
+                                  <div class="right_part">
+                                      <span>Rs. {{respdata.order_data.difference_amount | number:'1.2-2'}}</span>
+                                  </div>
+                              </div>
+                              <div class="contribution_discount" *ngIf="respdata.order_data.vendor_cashback_amount!=0 || respdata.order_data.vendor_cashback_amount!=0.00">
+                                <div class="left_part">
+                                    <span>APC Cashback*</span>
+                                </div>
+                                <div class="right_part">
+                                    <span>Rs. {{respdata.order_data.vendor_cashback_amount | number:'1.2-2'}}</span>
+                                </div>
+                            </div>
+                              <div class="contribution_discount" *ngIf="respdata.order_data.apc_cash_used!=0 || respdata.order_data.apc_cash_used!=0.00">
+                                  <div class="left_part">
+                                      <span>Customer APC Cash Used*</span>
+                                  </div>
+                                  <div class="right_part">
+                                      <span>Rs. {{respdata.order_data.apc_cash_used}}</span>
+                                  </div>
+                              </div>
+                              <div class="contribution_discount">
+                                  <div class="left_part">
+                                      <span class="text-theme">Total Cashback*</span>
+                                  </div>
+                                  <div class="right_part">
+                                      <span>Rs. {{respdata.order_data.total_vendor_cashback_recieved}}</span>
+                                  </div>
+                              </div>
+                          </div>
+          
+                          <div class="payment_descr">
+                              <p>* Amount will be credited to wallet after order process completion.</p>
+                          </div>
+          
+                      </section>
+          
+                      <section class="section common-pd">
+                        
+
+                          <div class="address_wrapper full_w">
+                              <ul class="address_listing full_w">
+                                  <li class="address_list full_w">
+                                      <div class="style">
+              
+                                          <div class="left_part address_wrapper">
+                                              <div class="text-theme fontbold fontsize-17">Shipping Address</div>
+                                              <div class="name_wrapper mb5 mt10">
+                                                  <span class="name">{{respdata.address.full_name}}
+              
+                                            </span>
+                                              </div>
+              
+                                              <div class="address_wrapper full_w pd0">
+                                                  <span class="address d-text-block"> {{respdata.address.address}}  {{respdata.address.state}} {{respdata.address.pincode}} </span>
+                                                 
+                                              </div>
+                                              <div class="number mt10 f-left pt0">
+                                                  <span class="fontbold" *ngIf="respdata.order_data.customer_mobile_number!=''">+91 - {{respdata.order_data.customer_mobile_number}}</span>
+                                              </div>
+                                          </div>
+                                      
+                                      </div>
+                                  </li>
+              
+                              </ul>
+              
+                          </div>
+
+
+                          <!-- <div class="address_wrapper full_w">
+                              <ul class="address_listing full_w">
+          
+                                  <li class="address_list full_w">
+                                      <div class="style">
+          
+                                          <div class="left_part address_wrapper">
+                                              <div class="text-theme fontbold fontsize-17">Delivery Address</div>
+                                              <div class="name_wrapper mb5 mt10">
+                                                  <span class="name">fawff
+                                                    <span class="gender">bothert</span>
+          
+                                                  </span>
+                                              </div>
+          
+                                              <div class="address_wrapper full_w pd0">
+                                                  <span class="address d-text-block">fgddhh</span>
+                                                  <span class="address d-text-block">dhdhd </span>
+                                                  <span class="address d-text-block"> drfhdh</span>
+          
+                                              </div>
+                                              <div class="number mt10 f-left pt0">
+                                                  <span class="fontbold">+91 - 909800078</span>
+                                              </div>
+                                          </div>
+          
+                                      </div>
+                                  </li>
+          
+                              </ul>
+          
+                          </div> -->
+          
+                      </section>
+
+                  
+          
+                  </div>
+              </div>
+          
+          </div>
+  
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+	</div>
+	
+	<app-footer></app-footer>

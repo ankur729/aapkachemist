@@ -1,0 +1,219 @@
+<footer>
+	<div class="popup_design">
+		<div class="designBox">
+			<div class="vAlign">
+				<div class="insideDesign">
+					<div class="heading">
+						<h2>Newsletter</h2>
+					</div>
+					<div class="fromGroup form_wrapper ">
+						<!-- <p class="caption">Subscribe for latest offers and discounts</p> -->
+						<p class="caption">Subscribe for latest offers and discounts</p>
+						
+						<div class="add_amount  full_w">
+							<ul class="form_listing full_w">
+								<li class="form_list  full_w">
+									<div class="style">
+										<span class="lable">Enter Your Email</span>
+										<input  class="input " placeholder="" type="text"  [(ngModel)]="email_subscribe">
+									</div>
+								</li>
+								<li  class="form_list full_w">
+									<button  class="btn primary large" (click)="onSubscribe()">Subscribe</button>
+									<button  class="btn secondary large cancel" (click)="toggleSubscribePopup()">Close</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container">
+		<ul class="sectionLinks">
+		<li class="list newsletter">
+				<span class="title">Newsletter</span>
+				<ul class="newsletter_form full_w">
+					
+						<li class="mainList">
+							<!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> -->
+							<p>Now subscribe to our newsletters to get the latest in health and medicine sent straight to your inbox. Just enter your email address to sign up.</p>
+							<!-- <p>To get regular updates about the new medicines & offers, subscribe to our newsletters. </p> -->
+							<!-- <input type="text" placeholder="Enter Your Email" class="input_box" [(ngModel)]="email_subscribe">	 -->
+ 
+
+							<button class="btn assent large lightbtn" (click)="toggleSubscribePopup()">Subscribe  here</button>
+						</li>
+					
+						
+				</ul>
+			</li>
+
+			<li class="list">
+				<span class="title">Get To Know Us</span>
+				<ul class="usefull">
+					<li class="mainList"><a href="javascript:void(0)" routerLink="/about-us" class="link">About Us</a></li>
+					<!-- <li class="mainList"><a href="javascript:void(0)" routerLink="/privacy-policy" class="link">Privacy Policy</a></li>
+					<li class="mainList"><a href="javascript:void(0)" routerLink="/terms-conditions" class="link">Terms & Conditions</a></li> -->
+
+					<li class="mainList"><a href="javascript:void(0)" routerLink="/media" class="link">Media Center</a></li>
+					<li class="mainList"><a href="javascript:void(0)" routerLink="/how-it-works" class="link">How It Works</a></li>
+					<li class="mainList"><a href="javascript:void(0)" routerLink="/sitemap" class="link">Site Map</a></li>
+					<li class="mainList"><a href="https://www.aapkachemist.com/blog/" target="_blank" class="link">Blog</a></li>
+					<!-- <li class="mainList"><a href="javascript:void(0)" class="link">Success Stories</a></li> -->
+
+				</ul>
+			</li>
+
+			<li class="list">
+				<span class="title">Connect With Us</span>
+				<ul class="usefull ">
+					<li class="mainList"><a href="https://www.facebook.com/AapkaChemist" target="_blank" class="link">Facebook</a></li>
+					<li class="mainList"><a href="https://www.instagram.com/aapkachemist" target="_blank"
+						 class="link">Instagram</a></li>
+					<li class="mainList"><a href="https://twitter.com/AapkaChemist" target="_blank" class="link">Twitter</a></li>
+					<li class="mainList"><a href="https://www.linkedin.com/company/aapkachemist" target="_blank"
+						 class="link">LinkedIn</a></li>
+					<li class="mainList"><a href="https://www.youtube.com/channel/UCukIgSRqjKGGfdTlU1Vxwpw" target="_blank"
+					class="link">YouTube</a></li>
+					<!-- <li class="mainList"><a href="https://www.youtube.com/channel/UCukIgSRqjKGGfdTlU1Vxwpw" target="_blank" class="link"> Youtube</a></li> -->
+				</ul>
+			</li>
+
+
+			<li class="list">
+				<span class="title">Let Us Help You</span>
+			
+				<ul class="usefull">
+				 
+						<li class="mainList"><a href="javascript:void(0)" routerLink="/faq" class="link">Help and FAQ</a></li>
+						<li class="mainList"><a href="javascript:void(0)" routerLink="/jobs-and-careers" class="link"> Jobs & Careers</a></li>
+						<li class="mainList"><a href="javascript:void(0)" routerLink="/contact-us" class="link"> Contact Us</a></li>
+						<!-- <li class="mainList"><a href="javascript:void(0)"  [routerLink]= " [ '/category']" class="link">All categories</a></li> -->
+					 
+				</ul>
+
+				
+				
+			</li>
+			
+
+			<!-- <li class="list">
+				<span class="title">Quick Links</span>
+				<ul class="usefull">
+					<li class="mainList"><a href="javascript:void(0)" class="link"> My Orders</a></li>
+					<li class="mainList"><a href="javascript:void(0)" class="link">Track Inquiries/Orders</a></li>
+					<li class="mainList"><a href="javascript:void(0)" class="link"> Offers and Discounts</a></li>
+					<li class="mainList"><a href="javascript:void(0)" routerLink="/contact-us" class="link"> Contact Us</a></li>
+					<li class="mainList"><a href="javascript:void(0)" class="link"> Complaints</a></li>
+					<li class="mainList"><a href="javascript:void(0)" class="link"> Advertise with Us</a></li>
+				</ul>
+			</li> -->
+
+
+			 <!-- <li class="list socialMedia_links">
+				
+				<ul class="socialMeida">
+					<li class="list"> <a href="https://www.facebook.com/AapkaChemist" target="_blank" class="link">
+							<i class="fa fa-facebook"></i> </a> </li>
+					<li class="list"> <a href="https://www.instagram.com/aapkachemist" target="_blank"
+						 class="link"> <i class="fa fa-instagram"></i> </a> </li>
+					<li class="list"> <a href="https://twitter.com/AapkaChemist" target="_blank" class="link">
+							<i class="fa fa-twitter"></i> </a> </li>
+					<li class="list"> <a href="https://www.linkedin.com/company/aapkachemist" target="_blank"
+						 class="link"> <i class="fa fa-linkedin" aria-hidden="true"></i> </a> </li>
+				</ul>
+
+			</li>  -->
+
+
+		</ul>
+
+	</div>
+
+	<div class="container">
+		<ul class="contact_with">
+			<li class="list">
+				<span class="title">Connect With Us</span>
+				<ul class="socialMeida">
+					<li class="list"> <a href="https://www.facebook.com/AapkaChemist" target="_blank" class="link">
+					<i class="fa fa-facebook"></i> </a> </li>
+					<li class="list"> <a href="https://www.instagram.com/aapkachemist" target="_blank"
+					class="link"> <i class="fa fa-instagram"></i> </a> </li>
+					<li class="list"> <a href="https://twitter.com/AapkaChemist" target="_blank" class="link">
+					<i class="fa fa-twitter"></i> </a> </li>
+					<li class="list"> <a href="https://www.linkedin.com/company/aapkachemist" target="_blank"
+					class="link"> <i class="fa fa-linkedin" aria-hidden="true"></i> </a> </li>
+					<li class="list"> <a href="https://www.youtube.com/channel/UCukIgSRqjKGGfdTlU1Vxwpw" target="_blank"
+						class="link"> <i class="fa fa-youtube" aria-hidden="true"></i> </a> </li>
+				</ul> 
+			</li>
+			<li class="list">
+				<div class="mayment_options">
+					<ul>
+						<li><img src="assets/images/icon/paymentMode/visa.png" alt="Visa"></li>
+						<li><img src="assets/images/icon/paymentMode/master.png" alt="Master Card">	</li>
+						<li><img src="assets/images/icon/paymentMode/net-bank.png"  alt="NET Banking"></li>
+					</ul>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+	
+<!-- <div class="siteMapSection">
+	<div class="container">
+		<ul>
+			<li class="list" *ngFor="let footer of categories">
+				<ul class="catList">
+					
+
+					<li class="nList"><a href="javascript:void(0)" class="link" >
+
+							<span class="title" >{{footer.name}} :</span>
+
+						</a>
+					</li>
+
+					<li class="nList" *ngFor="let children of footer.children" >
+
+							<a href="javascript:void(0)" class="link" (click)="navigateCategory(children)">
+								{{children.name}}
+							</a>
+	
+						</li>
+					
+				</ul>
+			</li>
+			
+		</ul>
+
+
+	</div>
+</div> -->
+
+
+	<div class="copywrightDiv">
+		<div class="container">
+				<div class="left_part">
+					<ul>
+						<li><p>© 2019 All Rights Reserved.</p></li>
+						<li><a href="javascript:void(0)" routerLink="/privacy-policy">Privacy Policy</a></li>
+						<li><a href="javascript:void(0)" routerLink="/terms-conditions">Terms & Conditions</a></li>
+					</ul>
+					<p>In compliance with drugs and cosmetics act and rules, we don't process requests for schedule X and other habit forming drugs. </p>
+				</div>
+
+				<div class="right_part">
+					
+					<ul>
+						<li><button class="btn assent large lightbtn" routerLink="/help-center" [queryParams]="{type:'feedback'}">Feedback</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+</footer>

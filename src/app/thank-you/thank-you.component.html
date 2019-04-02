@@ -1,0 +1,22 @@
+
+<!-- <app-home></app-home> -->
+<!-- <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup> -->
+
+ 
+<div class="thankyou-body">
+        <div class="thankyou_content_wrapper">
+            <div class="w-100 text-center">
+                <div class="logo_wrap">
+                    <img src="assets/images/logo.png">
+                </div>
+                <h5>Thank You For Your Order</h5>
+                <!-- <p>Your order is being Proccessed by our delivery team and you should receive a confirmation from us shortly.</p> -->
+                <p>Thank you for placing order with us, we are sharing the details with your nearby chemist, you will receive confirmation soon.</p>
+                
+                <div class="mt20">
+                    <button class="btn assent large mr10" routerLink="/home">GO HOME</button>
+                    <button class="btn primary large" (click)="onRedirect()">VIEW ORDER</button>
+                </div>
+            </div>
+        </div>
+    </div>

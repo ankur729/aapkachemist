@@ -1,0 +1,375 @@
+<div class="main_container my_accountPages user_account_page add_address_page">
+
+  <div class="mapLocationSet mapLocation_block">
+    <div class="designBox">
+      <div class="vAlign">
+        <div class="insideDesign">
+          <agm-map [latitude]="lat" [longitude]="lng" [mapDraggable]="true" [zoom]="15">
+            <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="true" (dragEnd)="placeMarker($event)"></agm-marker>
+          </agm-map>
+         
+          <div class="search_location_wrapper">
+            <input class="search_location" placeholder="Search Location" #search />
+          </div>
+          <ul class="buttons">
+            <li class="list"><a href="javascript:void(0)" (click)="toggleMapView()" class="btn secondary medium">Cancel</a></li>
+            <li class="list"><a href="javascript:void(0)" class="btn primary medium" (click)="setLocation()">Pick Location</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <app-header></app-header>
+
+  <div class="my_accountSetting">
+
+    <app-my-account-top-panel ></app-my-account-top-panel>
+
+    <div class="container">
+      <div class="main_dataPage">
+
+        <app-my-account-left-panel></app-my-account-left-panel>
+
+
+        <div class="right_pannel">
+          <div class="pannelSTyle">
+            <!-- <h1 class="page_name">
+              <div class="leftData">
+               
+                <span class="Pagename">Add Member</span>
+              </div>
+            </h1> -->
+
+            <!-- <div class="mainPage">
+
+              <div class="form_pages">
+                <div class="DeliverySetupProfile">
+                  <div class="fromGroup">
+                    <ul class="form_group">
+                      <li class="list">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c10="" class="name">Member Name</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-1"
+                              [(ngModel)]="address.full_name" placeholder="Member Name">
+
+                          </label>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c10="" class="name">Select Relation in</span>
+                            <select class="select_option ng-untouched ng-pristine ng-valid" id="input-2" [(ngModel)]="address.relation_id">
+                              <option value="">Select Relation in</option>
+                              <option *ngFor="let relation of relations" [value]="relation.id">
+                                {{relation.parameter_name}}
+                              </option>
+
+                            </select>
+
+                          </label>
+                        </div>
+                      </li>
+
+                      <li class="list full_width">
+                        <div class="inputForm">
+                          <label class="label">
+
+                            <span _ngcontent-c10="" class="name">Select Gender</span>
+                            <label class="Vradio_btn">Male
+                              <input type="radio" checked="checked" name="radio" value="0" [(ngModel)]="address.gender">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="Vradio_btn">Female
+                              <input type="radio" name="radio" value="1" [(ngModel)]="address.gender">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="Vradio_btn">Other
+                              <input type="radio" name="radio" value="2" [(ngModel)]="address.gender">
+                              <span class="checkmark"></span>
+                            </label>
+                          </label>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c10="" class="name">Mobile</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" type="number" onKeyPress="if(this.value.length==10) return false;" id="input-3"
+                              [(ngModel)]="address.mobile" placeholder="Mobile" />
+
+                          </label>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c10="" class="name">Date of Birth</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="datepicker"
+                              placeholder="" [(ngModel)]="address.date_of_birth" placeholder="Date of Birth" />
+                            
+
+                          </label>
+                        </div>
+                      </li>
+                      <li class="list" >
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c10="" class="name">Address</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-3"
+                              [(ngModel)]="address.address" placeholder="Address" />
+                          </label>
+                        </div>
+                        <a href="javascript:void(0)" (click)="toggleMapView()" class="locationPopuptrigger">Add
+                          Location in Map View</a>
+                      </li>
+                      <li class="list">
+                          <div class="inputForm">
+                            <label class="label">
+                              <span _ngcontent-c10="" class="name">Area</span>
+                              <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-3"
+                                [(ngModel)]="address.area" placeholder="Area" />
+                            </label>
+                          </div>
+  
+                        </li>
+
+                        <li class="list">
+                            <div class="inputForm">
+                              <label class="label">
+                                <span _ngcontent-c10="" class="name">Locality / Landmark</span>
+                                <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-3"
+                                  [(ngModel)]="address.landmark" placeholder="Locality Or Landmark" />
+                              </label>
+                            </div>
+    
+                          </li>
+
+
+                          
+                        <li class="list">
+                            <div class="inputForm">
+                              <label class="label">
+                                <span _ngcontent-c10="" class="name">City</span>
+                                <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-3"
+                                  [(ngModel)]="address.city" placeholder="City" />
+                              </label>
+                            </div>
+    
+                          </li>
+                     
+                            <li class="list">
+                                <div class="inputForm">
+                                  <label class="label">
+                                    <span _ngcontent-c10="" class="name">Pincode</span>
+                                    <input class="input_box ng-untouched ng-pristine ng-valid" type="number" onKeyPress="if(this.value.length==10) return false;" id="input-3"
+                                      [(ngModel)]="address.pincode" placeholder="Pincode" />
+                                  </label>
+                                </div>
+        
+                              </li>
+                      <li class="list">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c10="" class="name">State</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-2"
+                              [(ngModel)]="address.state" placeholder="State" />
+
+
+                          </label>
+                        </div>
+
+                      </li>
+
+                    
+
+     
+                   
+                      <li class="list full_width">
+
+                        <label class="Vradio_btn" (click)="addressTypeCheck('0')">Home
+                          <input type="radio" name="radio2" value="0" [(ngModel)]="address.address_type">
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="Vradio_btn" (click)="addressTypeCheck('1')">Office
+                          <input type="radio" name="radio2" value="1" [(ngModel)]="address.address_type">
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="Vradio_btn" id="OtherBtn" (click)="addressTypeCheck('2')">Other
+                          <input type="radio" name="radio2" value="2" [(ngModel)]="address.address_type">
+                          <span class="checkmark"></span>
+                        </label>
+                      </li>
+                     
+                      <li class="list" id="otherFieldOpen" *ngIf="address.is_other_option">
+                        <div class="inputForm">
+                          <label class="label">
+                            <span _ngcontent-c9="" _ngcontent-c10="" class="name">Other</span>
+                            <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="input-4" />
+
+                          </label>
+                        </div>
+                      </li>
+                    </ul>
+
+
+
+                    <li class="list">
+                      <input type="submit" name="" value="Add Member" class="primary_btn" (click)="onSubmit()">
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="account_page_title">
+                <div class="left_part">
+                  <div class="heading">
+                    <h2>Add Member</h2>
+                  </div>
+                </div>
+                <div class="right_part">
+                  
+                </div>
+                
+              </div>
+
+              <div class="account_content">
+                  <div class="form_wrapper full_w">
+                      <ul class="form_listing full_w">
+                          <li class="form_list full_w">
+                              <h2 class="form_title">Select Gender</h2>
+                              <label class="radio btn"  (click)="onSetGender('m')">Male
+                                  <input type="radio" checked="checked" name="radio">
+                                  <span class="checkmark" id="addrmale"></span>
+                                </label>
+                                <label class="radio btn" id="dropathome" (click)="onSetGender('f')">Female
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark" id="addrfemale"></span>
+                                  </label>
+                          </li>
+                         
+                          <li class="form_list">
+                              <div class="style">
+                                  <span class="lable" >Contact person name</span>
+                                  <input type="text" placeholder="" class="input" [(ngModel)]="address.full_name">
+                              </div>
+                          </li>
+                          <li class="form_list">
+                                  <div class="style">
+                                      
+                                      <select class="select_option"  id="input-2" [(ngModel)]="address.relation_id" >
+                                              <option value="">Select Relation</option>
+                                              <option *ngFor="let relation of relations" [value]="relation.id">
+                                                  {{relation.parameter_name}}
+                                              </option>
+                                             
+                                          </select>
+                                  </div>
+                              </li>
+                          <!-- <li class="form_list">
+                                  <div class="style">
+                                          <span class="lable">Shop Name</span>
+                                      <input id="input-1" [(ngModel)]="address.full_name" type="text"  name="person name" class="input">
+                                     
+                                    
+                                  </div>
+                              </li> -->
+                          <li class="form_list">
+                              <div class="style">
+                                  <span class="lable" >Mobile no.</span>
+                                  <input type="text" placeholder="" class="input" onKeyPress="if(this.value.length==10) return false;"  [(ngModel)]="address.mobile">
+                                  
+                              </div>
+                          </li>
+                          <li class="form_list">
+                              <div class="style" id="datepickeractive">
+                                  <span class="lable" >DOB</span>  
+                                  <input type="text"  id="datepicker" placeholder="" class="input"   [(ngModel)]="address.date_of_birth">
+                                  
+                              </div>
+                          </li>
+                          <!-- <li class="list">
+                              <div class="inputForm">
+                                <label class="label">
+                                  <span _ngcontent-c10="" class="name">Date of Birth</span>
+                                  <input class="input_box ng-untouched ng-pristine ng-valid" type="text" id="datepicker"
+                                    placeholder="" [(ngModel)]="address.date_of_birth" placeholder="Date of Birth" />
+                                  
+      
+                                </label>
+                              </div>
+                            </li> -->
+                      </ul>
+                    
+                      
+                   <ul class="form_listing full_w">
+                       <div class="full_w">
+                              <button class="btn assent large" (click)="toggleMapView()">Location on Map</button>
+                       </div>
+                          
+                       <li class="form_list">
+                              <div class="style">
+                                  <span class="lable" >Address</span>
+                                  <input type="text" placeholder="" class="input" [(ngModel)]="address.address">
+                              </div>
+                          </li>    
+                          <li class="form_list">
+                              <div class="style">
+                                  <span class="lable" >Area</span>
+                                  <input type="text" placeholder="" class="input" [(ngModel)]="address.area">
+                              </div>
+                          </li>
+                          <li class="form_list">
+                              <div class="style">
+                                  <input type="text" placeholder="" class="input" [(ngModel)]="address.city">
+                                  <label for="City" class="lable">City</label>
+                              </div>
+                          </li>
+                       <li class="form_list">
+                         
+                              <div class="style">
+                                  <span class="lable" >State</span>
+                                  <input type="text" placeholder="" class="input" [(ngModel)]="address.state">
+                              </div>
+                          </li> 
+                      
+                          <li class="form_list">
+                                  <div class="style">
+                                      <span class="lable" >PIN Code</span>
+                                      <input type="text" placeholder="" class="input" [(ngModel)]="address.pincode" onKeyPress="if(this.value.length==10) return false;" >
+                                  </div>
+                              </li>
+                        
+                          <li class="form_list">
+                              <div class="style">
+                                  <span class="lable" >Landmark</span>
+                                  <input type="text" placeholder="" class="input" [(ngModel)]="address.landmark">
+                              </div>
+                          </li>
+                      </ul>
+                      <div class="btn_wrapper full_w">
+                          <button class="btn primary large"  (click)="onSubmit()">Save</button>
+                          <button class="btn secondary large"  (click)="onClose()">Cancel</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+        
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

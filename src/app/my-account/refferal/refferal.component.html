@@ -1,0 +1,132 @@
+ 
+                  <!-- <div class="mainPage"> -->
+                      <div class="main_container my_accountPages user_account_page change_password apcCash notificationPage">
+
+                          <app-header></app-header>
+                            
+                            <div class="my_accountSetting">
+                            
+                            <app-my-account-top-panel></app-my-account-top-panel>
+                            
+                              <div class="container">
+                                <div class="main_dataPage">
+                            
+                                  <app-my-account-left-panel #leftpanel></app-my-account-left-panel>
+                            
+                                  <div class="right_pannel">
+                                    <div class="pannelSTyle">
+
+                                      
+
+
+                      <div class="invite_friends_popup">
+                          <div class="designBox">
+                          <div class="vAlign">
+                          <div class="insideDesign">
+                          <div class="heading">
+                          <div class="left_part">
+                          <h2>Invite Friends</h2>
+                          </div>
+                          <div class="right_part">
+                          <span class="icon_wrapper"><img src="assets/images/icon/share_icon.png"></span>
+                          <div class="media_sharing">
+                              <h3 class="socialMedia_heading">Share With</h3>
+                              <ul class="spcialMedia_listing">
+                              <li class="spcialMedia_list"><a href="https://api.whatsapp.com/send?text={{encodeURIText}}"><img src="assets/images/icon/whatsapp.png"><span>Whtasapp</span></a></li>
+                              <li class="spcialMedia_list"><a href="https://plus.google.com/share?url='{{share_url}}{{sharecontent}}"><img src="assets/images/icon/google-plus.png"><span>Googl Plus</span></a></li>
+                              <li class="spcialMedia_list"><a href="https://twitter.com/intent/tweet/?text={{sharecontent}}"><img src="assets/images/icon/twitter.png"><span>Twitter</span></a></li>
+                              <li class="spcialMedia_list"><a  href="https://www.facebook.com/sharer/sharer.php?u={{share_url}}&amp;src=sdkpreparse" ><img src="assets/images/icon/facebook.png"><span>facebook</span></a></li>
+                              </ul>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="content_part">
+                          <div class="icon_wrapper">
+                          <img src="assets/images/icon/reffer_earn.png">
+                          </div>
+                          <div class="txt_part">
+                          <h2>{{data.referral_heading}}</h2>
+                          <p>{{data.referral_body}}</p>
+                          <div class="refereal_code_wrapper">
+                          <span class="title">Referal Code</span>
+                          <span class="referal_code">{{data.code_link}}</span>
+                          </div>
+                          </div>
+                          <div class="btn_wrapper">
+                          <button class="btn primary large" (click)="switchRefferButton()">{{data.button.msg}}</button>
+                          <button class="btn secondary large" (click)="toggleRefferPopup('hide')">Cancel</button>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  
+                    
+                  </div>
+                  <!-- </div> -->
+
+                      <!-- <div class="referral_page">
+      
+                        
+                        
+
+
+
+                          <div class="reffer_img_wrapper section_1">
+                              <img src="assets/images/icon/reffer_earn.png">
+                          </div>
+                          <div class="section_2">
+                              <div class="heading">
+                                  <h2>Refer and earn 250 APC Cash </h2>
+                                  <p>{{data.referral_description}}</p>
+                              </div>
+      
+                              <div class="get_referal_code">
+                                  <span>REFERAL CODE</span>
+                               
+                                 <span class="referal_code">{{data.code_link}}</span>
+                              </div>
+                              <div class="genrate_referal_code">
+                                  <button class="btn large assent " (click)="switchRefferButton()">{{data.button.msg}}</button>
+                              </div>
+      
+                              <ul class="share_option">
+                                  <li class="list">
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{share_url}}&amp;src=sdkpreparse" class="link">
+                                      <span class="icon"><img src="assets/images/icon/facebook.png"></span>
+                                      <span class="name">Facebook</span>
+                                    </a>
+                                  </li>
+                                  <li class="list">
+                                    <a href="https://twitter.com/intent/tweet/?text={{sharecontent}}" class="link">
+                                      <span class="icon"><img src="assets/images/icon/twitter.png"></span>
+                                      <span class="name">Twitter</span>
+                                    </a>
+                                  </li>
+                                  <li class="list">
+                                    <a href="https://plus.google.com/share?url='{{share_url}}{{sharecontent}}" class="link">
+                                      <span class="icon"><img src="assets/images/icon/google-plus.png"></span>
+                                      <span class="name">Google+</span>
+                                    </a>
+                                  </li>
+                                
+                                  <li class="list">
+                                    <a   href="https://api.whatsapp.com/send?text={{encodeURIText}}" class="link">
+                                      <span class="icon"><img src="assets/images/icon/whatsapp.png"></span>
+                                      <span class="name">Whatsapp</span>
+                                    </a>
+                                  </li>
+                                  
+                                </ul>
+                          </div>
+                     
+                        </div> -->
+          

@@ -1,0 +1,98 @@
+<div class="main_container my_accountPages chemist_account_page apcCash notificationPage">
+
+  <!-- <div class="AddMoneyPopup  Broadcast-popup">
+      <div class="designBox">
+        <div class="vAlign">
+          <div class="insideDesign">
+  
+            <div class="heading">
+              <span class="great-deal-img">
+                <img src="assets/images/icon/boardcast_popupimg.png">
+              </span>
+            </div>
+            <div class="deal-body">
+                <div class="content_part full_w">
+                      <h5 class="text-black fontbold">Broadcast message title </h5>
+                      <label class="d-text-block text-grey"> Today, 1:30 PM <span class="text-theme"> 14 Minutes Before </span> </label> 
+                    <div class="fromGroup pd0">
+                      <p class="caption">Smartphones have changed the way business is conducted these. Companies from all industries are converging on digital platforms.</p>
+                      
+                    </div>
+                </div>
+              
+              <div class="text-align-center mt20 full_w">
+                <button class="btn primary large mr10" >Visit Now </button>
+                <button class="btn secondary large" >Visit LATER</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+ 
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-chemist-account-left-panel #leftpanel></app-chemist-account-left-panel>
+          
+          
+      <div class="right_pannel">
+        <div class="pannelSTyle">
+            <app-no-data-found   *ngIf="isnodatafound==true"  [nodataobj]=nodataobj></app-no-data-found>
+        <!-- <h1 class="page_name">
+          <div class="leftData">
+            <span class="Pagename">Notifications</span>
+          </div>
+        </h1> -->
+        <div class="account_page_title">
+            <div class="left_part">
+              <div class="heading">
+              <h2>Broadcast Detail</h2>
+              </div>
+            </div>
+            <div class="right_part">
+              
+            </div>
+            
+            </div>
+             <div class="account_content">
+              
+              <div class="broadcastDetail_block">
+                <div class="time_date text-grey fontsize-14">
+                  <span>{{broadcast.date_time | date:'dd-MM-yyyy'}}</span>
+                  <span class="pl5">{{broadcast.date_time | date:'hh:mm a'}}</span>
+                </div>
+                <h6 class="text-black fontbold">{{broadcast.title}}</h6>
+                <div class="boardcast_detail mt20">
+                    <img *ngIf="broadcast.blogtype==1" src="{{broadcast.image_file}}" class="w-100" >
+                    <img *ngIf="broadcast.blogtype==2" src="{{broadcast.url_link}}" class="w-100" >
+                    <!-- <iframe *ngIf="broadcast.blogtype==2" width="100%" height="100%" [src]="broadcast.url" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen safe></iframe> -->
+                </div>
+                <p class="boardcast_about">
+                  {{broadcast.description}}
+                </p>
+              </div>
+        
+             
+              </div>
+
+
+      </div>
+      </div>
+    
+  
+    
+        </div>
+      </div>
+    
+    </div>
+    
+      
+  </div>
+  
+  <app-footer></app-footer>

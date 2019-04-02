@@ -1,0 +1,21 @@
+<form name="payuForm" id="payuForm" action="https://test.payu.in/_payment" method="post">
+
+  <input name="key" id="mkey1" class="input-box" placeholder="Your Name" type="hidden"
+    [(ngModel)]="pay_model.merchant_id">
+  <input name="hash"  id="hash" class="input-box" placeholder="Your Name" type="hidden"  [(ngModel)]="pay_model.CHECKSUMHASH">
+  <input name="txnid"  id="txnid" class="input-box" placeholder="Your Name" type="hidden"  [(ngModel)]="pay_model.paramlist.txnid">
+  <input name="amount" id="amount" class="input-box" placeholder="Your Name"  [(ngModel)]="pay_model.paramlist.amount"
+    type="hidden">
+  <input name="firstname"  id="firstname" class="input-box" placeholder="Your Name" type="hidden" 
+    [(ngModel)]="pay_model.paramlist.firstname">
+  <input name="email"  id="email" class="input-box" placeholder="Your Name" type="hidden"  [(ngModel)]="pay_model.paramlist.email">
+  <input name="phone"  id="phone" class="input-box" placeholder="Your Name" type="hidden" [(ngModel)]="pay_model.paramlist.phone">
+  <input name="productinfo"  id="productinfo" class="input-box" placeholder="Your Name" type="hidden" 
+    [(ngModel)]="pay_model.paramlist.productinfo">
+  <input name="surl"  id="surl" class="input-box" placeholder="Your Name" type="hidden"  [(ngModel)]="pay_model.paramlist.surl">
+  <input name="furl"  id="furl" class="input-box" placeholder="Your Name" type="hidden"  [(ngModel)]="pay_model.paramlist.furl">
+  <input name="service_provider"  id="service_provider" size="64" class="input-box" placeholder="Your Name" type="hidden" 
+    [(ngModel)]="pay_model.paramlist.service_provider">
+
+
+</form>

@@ -1,0 +1,319 @@
+<!-- <div class="view_details_popup" *ngIf="showdetail">
+    <div class="designBOx">
+        <div class="vAlign" >
+            <div class="innerDesign">
+              <a href="javascript:void(0)" (click)="toggleViewDetail()" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <div class="insideBox">
+                    <div class="table_wrapper">
+                        <table class="my_table">
+                            <tbody>
+                                <tr class="row_head">
+                                    <th class="text-left col-md-50">Product name</th>
+                                    <th class="center">MRP</th>
+                                    <th class="center">Qty</th>
+                                    <th class="center">Amount </th>
+                                </tr>
+
+                                <tr *ngFor="let item of itemdetail">
+                                  <td class="text-left">
+                                    <label class="">
+                                      <span class="name">{{item.product_name}}</span>
+                                      <span class="data"> {{item.product_variant}}</span>
+                                      <span class="data"> {{item.company_name}}</span>
+                                    </label>
+                                  </td>
+
+                                  <td class="center">
+                                      <span class="time">Rs.{{item.mrp}}</span>
+                                  </td>
+
+                                  <td class="center">
+                                      <span class="time"> {{item.quantity}}</span>
+                                  </td>
+
+                                  <td  class="center">
+                                    <span class="time">Rs.{{item.sub_total}}</span>
+                                  </td>
+                                </tr>
+ 
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+<!-- <div class="sending_enquiry_popup" *ngIf="confirm_pin.is_process==true">
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img *ngIf="confirm_pin.is_sent==false && status.is_error==false" src="assets/images/sendloader.gif">
+      <img *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false" src="assets/images/form_icon.png">
+      <img *ngIf="confirm_pin.is_error==true" src="assets/images/error.png">
+    </div>
+    <div class="sending_msg_content">
+      <span *ngIf="confirm_pin.is_sent==false && status.is_error==false">{{confirm_pin.process_txt}}</span>
+      <span *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false">{{confirm_pin.sent_txt}}</span>
+      <span *ngIf="confirm_pin.is_error==true">{{confirm_pin.error_txt}}</span>
+    </div>
+    <ul class="noCartbuttons" *ngIf="confirm_pin.is_sent==true && confirm_pin.is_error==false">
+      <li class="list" (click)="handlePinPopupButtons('close')"><a _ngcontent-c2="" class="scndry_btn" href="javascript:void(0)">Close</a></li>
+     
+    </ul>
+    <ul class="noCartbuttons" *ngIf="confirm_pin.is_error==true">
+      <li class="list" (click)="handlePinPopupButtons('retry')"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Retry Again</a></li>
+      <li class="list" (click)="handlePinPopupButtons('close')"><a class="scndry_btn" href="javascript:void(0)">Close</a></li>
+    </ul>
+  </div>
+</div> -->
+<!-- <div class="sending_enquiry_popup" *ngIf="status.is_confirm_popup==true">
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+      <img src="assets/images/sure.png">
+  
+    </div>
+    <div class="sending_msg_content">
+
+      <span style="font-size: 19px;font-weight: bold">{{status.confirm_txt}}</span>
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list" (click)="onClose('confirmprocess','confirm')"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">Yes,
+          I am Sure</a></li>
+      <li class="list" (click)="onClose('confirmprocess','cancel')"><a class="scndry_btn" href="javascript:void(0)">No,
+          Cancel It</a></li>
+    </ul>
+  </div>
+</div> -->
+<div class="popup_design " *ngIf="respdata.is_confirm_delivery" style="display: block;">
+  <div class="designBox">
+    <div class="vAlign">
+      <div class="insideDesign">
+        <div class="heading">
+          <h2>Confirmation PIN</h2>
+        </div>
+        <div class="fromGroup form_wrapper ">
+          
+          <p class="caption">Enter Delivery Confirmation PIN</p>
+          
+          <div class="add_amount  full_w">
+            <ul class="form_listing full_w">
+              <li class="form_list  full_w">
+                <div class="style">
+                  <!-- <span class="lable">Enter Confirmation code</span> -->
+                  <input  class="input " placeholder="" type="text"  id="confirm_otp">
+                </div>
+              </li>
+              <li  class="form_list full_w">
+                <button  class="btn primary large" (click)="onConfirmOTP()"> Confirm PIN</button>
+                <button  class="btn secondary large cancel" (click)="onConfirmDelivery(order)">Cancel</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="sending_enquiry_popup" *ngIf="respdata.is_confirm_delivery" >
+  <div class="enquiry_popup_msg">
+  
+    <div class="sending_msg_content">
+
+      <span style="font-size: 19px;font-weight: bold">Enter Delivery Confirmation PIN</span>
+      <br/>
+      <input type="text" placeholder="Enter Confirmation code" id="confirm_otp" style="
+      padding: 10px;
+      margin: 15px 0px;
+  ">
+    </div>
+    <ul class="noCartbuttons">
+      <li class="list" (click)="onConfirmOTP()"><a _ngcontent-c2="" class="primary_btn" href="javascript:void(0)">
+
+         Confirm PIN</a></li>
+      <li class="list" (click)="onConfirmDelivery(order)"><a class="scndry_btn" href="javascript:void(0)">No,
+          Cancel It</a></li>
+    </ul>
+  </div>
+</div> -->
+<div class="main_container my_accountPages chemist_account_page retailer_enquiry order_history">
+
+  <app-header></app-header>
+
+
+
+ 
+
+  <div class="my_accountSetting">
+
+
+    <div class="container">
+      <div class="main_dataPage">
+
+        <app-chemist-account-left-panel></app-chemist-account-left-panel>
+
+        <div class="right_pannel">
+              
+             
+            <div class="pannelSTyle" >
+                <div  class="account_page_title">
+                  <div class="left_part">
+                    <div class="heading"><h2 >Order History</h2>
+                    
+                    </div>
+                  </div>
+                  <div class="right_part sorting">
+                      <span >Sort By</span>
+                      <select class="sortBy_name ng-untouched ng-pristine ng-valid" (change)="onChangeFilter()" [(ngModel)]="respdata.filter.type">
+                          <option value="">All</option>
+                          <option value="ready_to_del">Ready To Deliver</option>
+                      <option value="on_the_way">On the Way </option>
+                      <option value="delivered">Delivered</option>
+                      <option value="cancelled">Cancelled</option>
+                      </select>
+                      </div>
+                </div>
+                <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+
+                <div class="account_content" *ngIf="respdata.orders.length>0">
+                    <div class="notification_wrapper">
+                      <!-- <div class="notification_date">
+                          <span>Year 2019</span>
+                      </div> -->
+                      <ul class="notification_listing">
+
+                          <ng-container *ngFor="let order of respdata.orders" >
+
+                          <li class="notification_list" *ngIf="order.depend_on=='' || order.depend_on=='Enquiry' ">
+                              <div class="enquiryDetail-wrapper">
+                                  <div class="date_wrapper">
+                                      <span class="date">{{order.day}}</span>
+                                      <span class="month">{{order.monthname}}</span>
+                                  </div>
+                                  <div class="enquiry_details orderId-wt">
+                                    <span  class="enquiry_id">
+                                      <span  class="title">Order ID : <span class="text-theme">#{{order.order_no}}</span>
+                                    </span>
+                                  </span>
+                                  <!-- <span  class="enquiry_items">Karol Bagh</span> -->
+                                </div>
+                                <div class="enquiry_details no-border">
+                                  <span class="enquiry_id">
+                                    <span class="title">Amount </span>
+                                  </span>
+                                  <span class="enquiry_items">Rs.{{order.net_payble_amount}}</span>
+                                </div>
+                                <div  class="enquiry_details no-border text-align-right">
+                                  <span class="enquiry_id">
+                                    <span class="title">{{order.total_items}} items </span>
+                                  </span>
+                                </div>
+    
+    
+                              </div>
+                              <div class="d-text-flex">
+                                <span class="order_status">Order Status :
+                                  
+                                  <span class="status text-theme" *ngIf="order.entry_type=='Enquiry' && order.order_status=='OS01'">Order Received</span>
+                                  <span class="status text-theme" *ngIf="order.entry_type=='Order' && order.order_status=='OS01'">Order Confirmed
+
+                                      <span class="text-red" *ngIf="order.modify_access==3">[Modified]</span>
+                                  </span>
+
+                                  <!-- <span class="status text-theme" *ngIf="order.entry_type=='Order' && order.order_status=='OS01'">Order Confirmed
+
+                                      <span class="text-red" *ngIf="order.modify_access==2">[Modified]</span>
+                                    </span> -->
+
+
+                                  <span class="status text-black" *ngIf="order.entry_type=='Order' && order.order_status!='OS01' && order.order_status!='OS05' && order.order_status!='OS07' && order.order_status!='OS04' && order.modify_access!=2">Processing</span>
+                                  
+                                  <span class="status text-red" *ngIf="order.order_status=='OS07'">Order Dropped</span>
+                                  <span class="status text-black" *ngIf="order.order_status=='OS04' && order.delivery_confirmation==0 ">On The Way</span>
+                                  <span class="status text-theme" *ngIf="order.order_status=='OS04' && order.delivery_confirmation==1">Order Delivered</span>
+                                  <span class="status text-red" *ngIf="order.order_status=='OS05'">Order Cancelled</span>
+                                  <!-- <span class="status">Confirm</span>
+                                  <span class="status">On the way</span>
+                                  <span class="status">Deliverd</span>
+                                  <span class="status">Cancled</span> -->
+                                
+                                </span>
+                                <div  class="mrgn0">
+                                 
+                                  <button class="btn assent small ml8" (click)="onViewDetail(order)" >View Detail </button>
+                                </div>
+                              </div>
+                            </li>
+
+                            </ng-container>
+                        </ul>
+    
+                    </div>
+                </div>
+              
+            <!-- <h1 class="page_name">
+              <div class="leftData">
+ 
+                <span class="Pagename">My Orders</span>
+              </div>
+            </h1>
+    
+            <div class="mainPage">
+              <div class="form_pages">
+                <div class="profileStepsMeter">
+              <div class="myOrderListingPage">
+               
+                <div class="myOrderListingPage">
+                  
+              </div>
+              <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+                <ul class="orderListing" *ngIf="isnodatafound==false">
+                 
+                
+
+                      <ng-container *ngFor="let order of respdata.orders" >
+
+                          <li class="list" *ngIf="order.depend_on=='' || order.depend_on=='Enquiry' " >
+                          <div class="style">
+                              <div class="leftPart">
+                                <span class="orderId">ORDER ID - {{order.order_no}}</span>
+                                <span class="orderTime">{{order.order_date | date:'dd-MM-yyyy'}}, {{order.order_date | date:'hh:mm a'}}</span>
+                                <span class="orderTime" *ngIf="order.delivery_confirmation==0 && respdata.type=='OS04'"> DELIVERY CONFIRMATION PIN : {{order.delivery_pin}}</span>
+                              </div>
+                              <div class="rightPart">
+                                <span class="price">Rs. {{order.net_payble_amount}}</span>
+                                <span class="itemsCount">{{order.total_items}} Items inside</span>
+                              </div>
+                              <div class="orderStatus">
+                                <span class="title blue">Delivery Date :</span>
+                                <span class="data">{{order.delivery_date}},{{order.delivery_time}}</span>
+                              
+        
+                                <a  routerLink="/my-account/order-detail" [queryParams]="{'id':order.order_id,'type':order.entry_type}" href="javascript:void(0)" class="trackBtn">View Details</a>
+                              </div>
+                            </div>
+                          </li>
+                        </ng-container>
+
+         
+                </ul>
+    
+              </div>
+            </div>
+          </div>
+          </div> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

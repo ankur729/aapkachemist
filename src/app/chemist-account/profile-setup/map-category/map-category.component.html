@@ -1,0 +1,99 @@
+
+
+
+<div class="DeliverySetupProfile bussiness_maping">
+
+
+
+
+    <div class="content">
+      <div class="fromGroup">
+      <div class="content">
+      
+        <div class="formRow">
+          <div class="SectionHeading">Business Mapping</div>
+    
+    
+          <ul class="mapKeywordList form_group">
+            <li class="list" *ngFor="let list of respdata.mapping_type_list" (click)="onSelectCategory(list)"> 
+              <label class="Vradio_btn">
+                <span class="filterdata">{{list.mapping_type}}</span>
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <!-- <li class="list">
+              <label class="Vradio_btn">
+                <span class="filterdata">Company</span>
+                <input type="radio">
+                <span class="checkmark"></span>
+              </label>
+            </li>
+            <li class="list">
+              <label class="Vradio_btn">
+                <span class="filterdata">Generic</span>
+                <input type="radio">
+                <span class="checkmark"></span>
+              </label>
+            </li> -->
+          </ul>
+    
+    
+        </div>
+      <section class="content cat_" style="display:none">
+        <ul class="form_group" *ngIf="respdata.categories.length>0">
+        <li class="list">
+        <div class="inputForm">
+        <label class="label">
+            <span class="name">Select Category</span>
+            <select class="select_option ng-untouched ng-pristine ng-valid" [(ngModel)]="respdata.selected_category" (change)="onSelectCategory(respdata.selected_category)">
+              <option  value="0">Select Category</option>
+    
+            <option *ngFor="let category of respdata.categories" value="{{category.id}}">{{category.category_name}}</option>
+            </select>
+          </label>  
+        </div>
+          </li>
+        </ul>
+        </section>
+      
+        
+        <ul class="form_group" *ngIf="respdata.keywords.length>0">
+            <li class="list">
+                <div  class="inputForm">
+                    <label class="label">
+                      <span class="name">Select Keyword</span>
+                       <input type="text" name="" class="input_box" placeholder="Please Search Here"   (input)="onInputChange($event.target.value)">
+                 
+                    </label>
+                  </div>
+            </li>
+
+            
+          </ul>
+    
+          <ul class="mapKeywordList">
+              <li class="list" *ngFor="let keyword of respdata.keywords">
+                <label class="Vcheckbox">
+                  <span class="filterdata">{{keyword.keyword_name}}</span>
+                  <input type="checkbox" (click)="onCheckKeyword(keyword)" [checked]="keyword.selected=='1'"  >
+                  <span class="checkmark"></span>
+                </label>
+              </li>
+          
+            </ul>
+         
+         
+          	<span class="input input--nao" routerLink="/chemist-account/dashboard" *ngIf="respdata.keywords.length>0">
+              <input type="submit" name="" value="Finish" class="primary_btn margin-top-20px">
+            </span>
+        
+        <!-- <span class="row">
+          <input type="submit" name="" value="Save" class="primary_btn">
+        </span> -->
+    
+      </div>
+      </div>
+      </div>
+    
+    </div>

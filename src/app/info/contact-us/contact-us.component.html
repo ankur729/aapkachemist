@@ -1,0 +1,355 @@
+<app-header></app-header>
+
+<!-- <div class="sending_enquiry_popup" *ngIf="is_sent_success" >
+  <div class="enquiry_popup_msg">
+    <div class="sending_msg_gif">
+       
+        <img    src="assets/images/form_icon.png">
+        
+    </div>
+    <div class="sending_msg_content">
+        <span  >Thank You for Contacting Us.</span>
+        
+    </div>
+    <ul  class="noCartbuttons"  >
+      <li class="list" (click)="onClosePopup()"><a  class="Download scndry_btn" href="javascript:void(0)">Close</a></li>
+
+    </ul>
+  </div>
+</div> -->
+
+<app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+
+<div class="bodySetting contactus_page">
+  <div class="banner_wrapper">
+
+    <div class="contact_us_banner">
+      <h2 style="text-align: center;">Just call +91 {{data.meta_data.mobile}}</h2>
+      <ul>
+        <li><span class="fa fa-envelope email"></span> <span> {{data.meta_data.email}}</span></li>
+        <!-- <li><span class="fa fa-envelope email"></span><span> info@aapkachemist.com</span></li> -->
+      </ul>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+
+
+
+
+  <div class="form_contact">
+    <div class="container">
+      <div class="form_row">
+
+        <h3>Contact Us</h3>
+
+        <div class="form_sec">
+          <div class="form_wrapper full_w">
+              <ul class="form_listing full_w">
+                  <li class="form_list ">
+                    <div class="style">
+                        <span  class="lable">Name</span>
+                        <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" [(ngModel)]="data.postdata.name">
+                    </div>
+                  </li>
+
+                  <li class="form_list ">
+                      <div class="style">
+                          <span  class="lable">Email</span>
+                          <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="mail" [(ngModel)]="data.postdata.email">
+                      </div>
+                    </li>
+                    
+                    <li class="form_list ">
+                        <div class="style">
+                            <span  class="lable">Mobile</span>
+                            <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text" maxlength="10"  [(ngModel)]="data.postdata.mobile">
+                        </div>
+                      </li>
+
+                      <li class="form_list">
+                          <div class="style">
+                              
+                              <select class="select_option" [(ngModel)]="data.postdata.typeid">
+                                  <option value="{{type.id}}" *ngFor="let type of data.types">{{type.type_name}}</option>
+                                  </select>
+                          </div>
+                      </li>
+                      <li class="form_list full text-area">
+                        <div class="style">
+                            <span  class="lable">Your message here</span>
+                            <textarea  class="input text_area"  [(ngModel)]="data.postdata.message">  </textarea>
+                        </div>
+                      </li>
+
+                      <li class="form_list">
+                          <div class="style">
+                              <span  class="lable">Enter Security Code</span>
+                              <input class="input ng-untouched ng-pristine ng-valid" placeholder="" type="text"  [(ngModel)]="data.postdata.captcha_code">
+                              
+                          </div>
+                        </li>
+                        <div class="captcha_code">
+                            <img src="{{global.captchaurl}}" id="logincaptcha" alt="">
+                            <span class="refresh_captcha"  (click)="onRefreshCaptcha('logincaptcha')"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                          </div>
+
+              </ul>
+              
+
+          <!-- <div class="form_group">
+            <div class="name">
+              <label>Name*</label>
+              <input type="text" placeholder="Name" class="contact_input" [(ngModel)]="data.postdata.name">
+            </div>
+
+          </div>
+          <div class="form_group">
+            <div class="subject_">
+              <label>Email*</label>
+              <input type="email" placeholder="Email" class="contact_input" [(ngModel)]="data.postdata.email">
+            </div>
+          </div>
+          <div class="form_group">
+            <div class="subject_">
+              <label>Moblie*</label>
+              <input type="mobile" placeholder="Mobile" class="contact_input" [(ngModel)]="data.postdata.mobile">
+            </div>
+          </div>
+
+          <div class="form_group">
+            <div class="contact_type">
+              <label>Contact Us Type</label>
+              <select class="contact_input" [(ngModel)]="data.postdata.typeid">
+                <option value="{{type.id}}" *ngFor="let type of data.types">{{type.type_name}}</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="form_group_text">
+            <div class="text-area ">
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:120px"
+                class="tett-are contact_input" [(ngModel)]="data.postdata.message"></textarea>
+            </div>
+          </div> -->
+          <!-- <div class="clearfix"></div>
+          <div class="captcha">
+            <li class="form_list forms_div full_w">
+              <div class="style">
+                <span class="lable">Enter Security Code</span>
+                <input type="text" class="contact_input" placeholder="" [(ngModel)]="data.postdata.captcha_code">
+              </div>
+            </li>
+            <div class="captcha_code" (click)="onRefreshCaptcha('logincaptcha')">
+              <img src="{{global.captchaurl}}" id="logincaptcha" alt="">
+              <span class="refresh_captcha"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+            </div>
+          </div> -->
+          <!-- <div class="form_group_text">
+            <div class="text-area ">
+              <a href="javascript:void(0)" class="btn assent medium  lightbtn" (click)="onSubmit()">Submit</a>
+            </div>
+          </div> -->
+          <div class="btn_wrapper mt10 full_w">
+              <button class="btn assent large"  (click)="onSubmit()">submit</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="contact_udp">
+    <div class=" container">
+
+      <h1>Our USP</h1>
+      <!-- <ul class="display_block">
+      <li class="list">
+        <div class="style">
+          <span><img src="assets/images/NEAR-BY.png"></span>
+          <span><p>Get Medicines</p></span>
+          <span class="sub_text">Get medicines from your trusted nearby chemist</span>
+       </div>
+      </li>
+
+      <li class="list">
+          <div class="style">
+         <span><img src="assets/images/discount.png"></span>
+  <span><p>Discount & Offers</p></span>
+  <span  class="sub_text">20% Instant + 10% APC Cash</span>
+  </div>
+</li>
+<li class="list">
+    <div class="style">
+         <span><img src="assets/images/fast-delivery.png"></span>
+  <span><p>Quick Delivery</p></span>
+  <span  class="sub_text">4 to 8 hrs super fast delivery</span>
+  </div>
+</li>
+<li class="list">
+    <div class="style">
+         <span><img src="assets/images/med-return.png"></span>
+  <span><p>Easy Returns</p></span>
+  <span  class="sub_text">Return unused & unpacked medicines</span>
+  </div>
+</li>
+    </ul> -->
+
+      <ul class="MedicinTypeList">
+        <li class="list">
+          <div class="style">
+            <div class="insideDesign">
+              <span class="icon"><img src="assets/images/NEAR-BY.png"></span>
+              <span class="title">
+                <p>Get Medicines</p>
+              </span>
+              <span class="text">Get medicines from your trusted nearby chemist</span>
+            </div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="style">
+            <div class="insideDesign">
+              <span class="icon"><img src="assets/images/discount.png"></span>
+              <span class="title">
+                <p>Discount & Offers</p>
+              </span>
+              <span class="text">20% Instant + 10% APC Cash</span>
+            </div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="style">
+            <div class="insideDesign">
+              <span class="icon"><img src="assets/images/fast-delivery.png"></span>
+              <span class="title">
+                <p>Quick Delivery</p>
+              </span>
+              <span class="text">4 to 8 hrs super fast delivery</span>
+            </div>
+          </div>
+        </li>
+        <li class="list">
+          <div class="style">
+            <div class="insideDesign">
+              <span class="icon"><img src="assets/images/med-return.png"></span>
+              <span class="title">
+                <p>Easy Returns</p>
+              </span>
+              <span class="text">Return unused medicines</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<!-- <div class="bodySetting">
+
+
+
+<div class="banner_wrapper">
+  <div class="contact_us_banner">		
+    <h2 style="text-align: center;">Just call +91 {{data.meta_data.mobile}}</h2>
+    <ul>
+      <li><span class="fa fa-envelope email"></span> <span>{{data.meta_data.email}}</span></li>
+     
+    </ul>
+
+  </div>
+</div>
+
+
+<div class="contact_us_wrapper">
+  <div class="contact_wrapper">
+    <div class="contact_us_content">
+      <h1>Our USP</h1>
+      <ul>
+        <li>
+            <span><img src="assets/images/contactus/NEAR-BY.png"></span>
+            <span>Get Medicines</span>
+            <span class="sub_text">Get medicines from your trusted nearby chemist</span>
+        </li>
+        <li>
+          <span><img src="assets/images/contactus/discount.png"></span>
+          <span>Discount & Offers</span>
+          <span  class="sub_text">20% Instant + 10% APC Cash</span>
+        </li>	
+      <li>
+          <span><img src="assets/images/contactus/fast-delivery.png"></span>
+          <span>Quick Delivery</span>
+          <span  class="sub_text">4 to 8 hrs super fast delivery</span>
+        </li>	
+
+      <li>
+          <span><img src="assets/images/contactus/med-return.png"></span>
+          <span>Easy Returns</span>
+          <span  class="sub_text">Return unused & unpacked medicines</span>
+        </li>	
+
+      </ul>
+    </div>		
+
+
+
+
+  </div>	
+</div>
+
+
+<div class="clear_fix"></div>
+<div class="contact_form_main">
+
+<div class="form_wrapper">
+        
+
+<div class="image_section">
+  <img src="assets/images/contactus/cont_pro.png" alt="">
+</div>
+
+
+
+
+        <div class="form_section">  
+          <form action="action_page.php">
+            <div class="left_form">
+            <label for="fname" class="name">Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." [(ngModel)]="data.postdata.name">
+          </div>
+            <div class="right_form">
+            <label for="lname" class="name_first">Email</label>
+            <input type="email" id="lname" name="lastname" placeholder="Email.." [(ngModel)]="data.postdata.email">
+            </div>
+            <div class="left_form">
+              <label for="mobile" class="name">Mobile</label>
+              <input type="text" id="mobile" name="mobile" placeholder="Mobile" [(ngModel)]="data.postdata.mobile">
+            </div>
+            <div class="right_form">
+              <label for="country" class="name_first">Contact Us Types </label>
+              <select id="country" name="country" class="name_first"  [(ngModel)]="data.postdata.typeid">
+                <option value="{{type.id}}" *ngFor="let type of data.types">{{type.type_name}}</option>
+              
+              </select>
+            </div>
+           
+
+            <label for="subject" class="name_first">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:120px" [(ngModel)]="data.postdata.message"></textarea>
+
+            <input type="submit" value="Submit" (click)="onSubmit()">
+
+          </form>
+        </div>
+</div>
+  
+</div>
+</div> -->
+<app-footer></app-footer>

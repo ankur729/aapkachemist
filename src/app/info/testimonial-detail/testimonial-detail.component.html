@@ -1,0 +1,58 @@
+<!-- <app-header #child></app-header>
+  <div class="bodySetting testimonial_detail_page">
+    <div class="section">
+
+    
+      <div class="container">
+          <div class="testimonial_detail">
+              <div class="content">
+                  <h2 class="heading">{{testimonial.title}}</h2>
+
+                  <div class="review">
+                    
+                      <span class="left_quote quote"><img src="assets/images/icon/left-quotes-sign.png"></span> 
+                      <p class="text"> 
+                  {{testimonial.description}}
+                        
+                        </p><span class="right_quote quote"><img src="assets/images/icon/right-quotes-symbol.png"></span>
+                     
+                      <div class="auth_details">
+                          <span class="pic"><img src="{{testimonial.auther_img}}"></span>
+                          <span class="auth_name">{{testimonial.auther_name}}  <span class="auth_designation">{{testimonial.auther_city}}</span></span>
+                          
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer> -->
+
+<app-header #child></app-header>
+  <div class="bodySetting testimonial_detail_page">
+    <div class="section">
+
+    
+      <div class="container">
+          <div class="testimonial_detail">
+              <div class="content">
+                  
+                  <div class="auth_details">
+                      <span class="pic"><img src="{{testimonial.auther_img}}"></span>
+                      <span class="auth_designation"><span class="quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>{{testimonial.auther_city}}</span>
+                      <span class="auth_name">{{testimonial.auther_name}}</span>
+                      
+                    </div>
+                  <div class="review">
+                    
+                    
+                       <p class="text">  {{testimonial.description}} </p>
+              
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

@@ -1,0 +1,393 @@
+<app-header></app-header>
+
+
+
+<div class="sending_enquiry_popup" *ngIf="success==true">
+    <div class="enquiry_popup_msg">
+      <div class="sending_msg_gif">
+        <!-- <img   src="assets/images/sendloader.gif"> -->
+        <img  src="assets/images/form_icon.png">
+        <!-- <img *ngIf="popup.downloadapp.is_success==false" src="assets/images/error.png"> -->
+      </div>
+      <div class="sending_msg_content">
+        <span>Thank you for reaching us, we will get back to you soon.</span>
+  
+      </div>
+      <ul class="noCartbuttons">
+        <li class="list" (click)="onClosePopup()"><a class="Download scndry_btn" href="javascript:void(0)">Close</a></li>
+  
+      </ul>
+    </div>
+  </div>
+
+<div class="career_page bodySetting">
+
+<div class="Banner_wrapper section_1 section">
+  <div class="container">
+        <div class="content_wrapper">
+            <h3>Aapka Chemist Careers</h3>
+            <h2>Do Somthing Big</h2>
+        </div>
+  </div>
+</div>
+
+<div class="section_2 section">
+    <div class="container">
+        <div class="job_Fields-wrapper">
+              <h3 class="career_heading">WE ARE HIRING!</h3>
+              <ul class="job_Field_listing">
+                  <li class="list" id="cat_{{category.id}}" *ngFor="let category of postdata.job_categories" (click)="onSelectJobCategory(category)">
+                    <div class="style">
+                        <div class="insideDesign">
+                            <span class="icon">
+                                <img src="{{category.img_url}}">
+                            </span>
+                            <span class="title">{{category.job_title}}</span>
+
+                        </div>
+                    </div>
+                  </li>
+                  
+              </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="my_custom_form section_3 section">
+      <div class="splash">
+          <div class="centered-unit">
+            <div class="container">
+              <!-- Main header -->
+              
+              <!-- Sub header --><!-- 
+              <p class="lead">Raise your query</p> -->
+            
+
+              <div class="row">
+                <div class="career_form">
+                  <div class="left_part">
+                    <ul class="form_steps">
+                      <li class="list active">
+                        <div class="step_name">Candidate Name</div>
+                        <div class="next_btn_div" (click)="onNext('name')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <input type="text" name="" class="input_box get_val cand_name" placeholder="Candidate Name" [(ngModel)]="postdata.name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                      <li class="list">
+                        <div class="step_name">Email</div>
+                        <div class="next_btn_div" (click)="onNext('email')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <input type="text" name="" class="input_box get_val" placeholder="Email" [(ngModel)]="postdata.email">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Higher Education</div>
+                        <div class="next_btn_div" (click)="onNext('education')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <div class="select">
+                                <select class="get_val s-hidden" [(ngModel)]="postdata.education">
+                                    <option value="">Select Education</option>
+                                    <option value="B.A">B.A</option>
+                           
+                                    <option value="B.Tech">B.Tech</option>
+                                
+                                    <option value="BCA">BCA</option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="B.Sc">B.Sc</option>
+                                    <option value="Other">Other</option>
+                                    
+                                </select>
+                              
+                            
+                            
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <!-- <li class="list">
+                        <div class="step_name">Select Job Caegory</div>
+                        <div class="next_btn_div"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <div class="select"><select class="get_val cand_post s-hidden" [(ngModel)]="postdata.name">
+                                <option>Select Category</option>
+                                <option>Web Designer</option>
+                                <option>UI/UX Designer</option>
+                                <option>Graphic Designer</option>
+                                <option>PHP Developer</option>
+                                <option>Android Developer</option>
+                                <option>IOS Developer</option>
+                              </select></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li> -->
+
+
+                      <li class="list">
+                        <div class="step_name">Applying for your first job ?</div>
+                        <div class="next_btn_div" (click)="onNext('starting_first_job')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <label class="radioLabels"><input type="radio" name="radio" value="Fresher" class="get_val" (click)="setExperienceType('fresher')"  >Yes</label>
+                              <label class="radioLabels"><input type="radio" name="radio" value="Experience" class="get_val" (click)="setExperienceType('experience')"  >No</label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Present Company Name</div>
+                        <div class="next_btn_div" (click)="onNext('compnay_name')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <input type="text" name="" class="input_box get_val" placeholder="Company Name" [(ngModel)]="postdata.compnay_name">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Company Location</div>
+                        <div class="next_btn_div" (click)="onNext('company_location')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <input type="text" name="" class="input_box get_val" placeholder="Location" [(ngModel)]="postdata.company_location">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Presnet Job Title</div>
+                        <div class="next_btn_div" (click)="onNext('present_job_titile')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <input type="text" name="" class="input_box get_val" placeholder="Job Title" [(ngModel)]="postdata.present_job_titile">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Total Year of Experience in
+                           <!-- <span>Designing</span> -->
+                          
+                          </div>
+                        <div class="next_btn_div" (click)="onNext('total_year_experience')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <input type="text" name="" class="input_box get_val" placeholder="Your total experience count" [(ngModel)]="postdata.total_year_experience">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Joining Time Duration</div>
+                        <div class="next_btn_div" (click)="onNext('notice_period')"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <div class="select">
+                                
+                                <select class="get_val s-hidden" [(ngModel)]="postdata.notice_period">
+                                <option value="">Select Time</option>
+                                <option value="1">Instant</option>
+                                <option value="2">With in 1 Week</option>
+                                <option value="3">More Then 1 Week</option>
+                                <option value="4">With in Month</option>
+                              </select></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+                      <li class="list">
+                        <div class="step_name">Upload Your Resume</div>
+                        <div class="next_btn_div" (click)="onSubmit()"> <span class="next_btn">Submit</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              <label class="radioLabels">
+                                <input type="file" id="res_doc" name="" class="get_val" (change)="onChangeImage($event)" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" >
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+
+          <!--            <li class="list">
+                        <div class="step_name">Clear This Question Before Submit</div>
+                        <div class="next_btn_div"> <span class="next_btn">Next</span></div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              Testing
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+  -->
+
+                      <li class="list">
+                        <div class="step_name">Thankyou</div>
+                        <div class="inside_design">
+                          <div class="set_content">
+                            <div class="max_width">
+                              Hey, <span id="cand_name">Name</span>
+                              We are Happy to see you soon as <span id="cand_post">Post</span>.
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+                  <div class="right_part">
+                    <ul class="steps_count_display">
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Name</span>
+                          <span class="number">1</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Email</span>
+                          <span class="number">2</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Education</span>
+                          <span class="number">3</span>
+                        </div>
+                      </li>
+                      <!-- <li class="list">
+                        <div class="style">
+                          <span class="name">Job</span>
+                          <span class="number">4</span>
+                        </div>
+                      </li> -->
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Experience</span>
+                          <span class="number">5</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Company</span>
+                          <span class="number">6</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Location</span>
+                          <span class="number">7</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Job Title</span>
+                          <span class="number">8</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Total Year</span>
+                          <span class="number">9</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Joining from</span>
+                          <span class="number">10</span>
+                        </div>
+                      </li>
+                      <li class="list">
+                        <div class="style">
+                          <span class="name">Upload</span>
+                          <span class="number">11</span>
+                        </div>
+                      </li>
+                      <!-- <li class="list">
+                        <div class="style">
+                          <span class="name">Questionar</span>
+                          <span class="number">12</span>
+                        </div>
+                      </li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>  
+          </div>
+        </div>
+</div>
+
+<div class="section_4 section">
+    <div class="container">
+      <div class="content_wrapper">
+        <div class="left_section">
+          <h3 class="career_heading">Working At Aapka Chemist</h3>
+          <p class="career_text">“AapKa Chemist” is a unique pharmacy enquiry platform which deals with listing and marketing for customer, chemist and distributors.
+            To continue our success as a leading company, we are constantly looking for the talents of today and tomorrow.
+
+Are you looking for a company where you’ll utilize your talent, expertise and experience to realize even greater opportunities? Then search no further. At Aapka Chemist, you’ll find that more than 280 people are working daily to innovate and improve upon our services.
+
+Every day we help our customers get their medicines and also and our pharmacies solve their toughest problems in competition with better and greater business opportunity.
+          </p>
+        </div>
+        <div class="right_section">
+            <div class="img_wrapper">
+              <img src="../assets/images/career/first.png" alt="">
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+</div>
+
+<app-footer></app-footer>
+
+
+
+

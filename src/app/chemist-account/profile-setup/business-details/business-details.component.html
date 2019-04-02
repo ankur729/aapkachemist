@@ -1,0 +1,180 @@
+        
+   
+
+<div class="DeliverySetupProfile">
+
+        <div class="mapLocationSet mapLocation_block">
+                <div class="designBox">
+                  <div class="vAlign">
+                    <div class="insideDesign">
+                        <agm-map [latitude]="lat" [longitude]="lng" [mapDraggable]="true" [zoom]="15" >
+                            <agm-marker   [latitude]="lat" [longitude]="lng" [markerDraggable]="true"  (dragEnd)="placeMarker($event)"></agm-marker>
+                          </agm-map>
+                      
+                      <div class="search_location_wrapper">
+                        <input class="search_location" placeholder="Search Location" #search/>
+                      </div>
+                      <ul class="buttons">
+                        <li class="list" ><a href="javascript:void(0)" (click)="toggleMapView()" class="btn secondary medium">Cancel</a></li>
+                        <li class="list"><a href="javascript:void(0)" class="btn primary medium" (click)="setLocation()">Pick Location</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+        </div>
+
+       
+
+
+
+
+
+  <div class="fromGroup">
+      
+
+        <section class="form_wrapper full_w">
+            <div class="SectionHeading">Business Details</div>                     
+            <ul class="form_listing full_w">
+                <li class="form_list ">
+                    <div class="style">
+                           
+                            <select class="select_option"  [(ngModel)]="business_details.business_type">
+                         
+                                <option  *ngFor="let type of businesstypes;let i=index" [value]="type.id"  [selected]="type.id == 27" >{{type.parameter_name}}</option>
+                            </select>
+                    </div>
+                </li>
+                <li class="form_list ">
+                    <div class="style">
+                            <span class="lable">Business Name</span>
+                           <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.business_name" >
+                    </div>
+                </li>
+                <li class="form_list ">
+                    <div class="style text_field">
+                            <span class="lable">About Your Business</span>
+                            <textarea  placeholder="" class="input text_area ng-untouched ng-pristine ng-valid" maxlength="200"  [(ngModel)]="business_details.summary" ></textarea>
+                            <!-- <span class="writeUP">Please write upto 200 Character</span> -->
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+        
+        <section class="form_wrapper full_w">
+            <div class="SectionHeading">Business Location</div>                     
+            <ul class="form_listing full_w">
+                <li class="form_list">
+                    <div class="style">
+                       
+                            <span class="lable">Address</span>
+                            <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.address" >
+                     
+                    </div>
+                    
+                </li>
+                <li class="form_list ">
+                        <div class="style">
+                                <span class="lable">Area</span>
+                                <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.area" >
+                           
+                        </div>
+                    </li>
+                <div class="full_w mt20 mb20">
+                        <button class="btn assent large" (click)="toggleMapView()">Location on Map</button>
+                 </div>
+                 <li class="form_list ">
+                        <div class="style">
+                                <span class="lable">Latitude</span>
+                                <input type="text" placeholder="" readonly class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.lat" >
+                        </div>
+                    </li>
+                    <li class="form_list ">
+                            <div class="style">
+                                    <span class="lable">Longitude</span>
+                                    <input type="text" placeholder="" readonly class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.long" >
+                            </div>
+                        </li>
+
+                 <li class="form_list ">
+                        <div class="style">
+                                <span class="lable">State</span>
+                                <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.state" >
+                        </div>
+                    </li>
+                    <li class="form_list ">
+                            <div class="style">
+                                    <span class="lable">City</span>
+                                    <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.city" >
+                            </div>
+                        </li>
+                        <li class="form_list ">
+                                <div class="style">
+                                        <span class="lable">Country</span>
+                                        <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  readonly [(ngModel)]="business_details.country" >
+                                </div>
+                            </li>
+                <li class="form_list ">
+                    <div class="style">
+                            <span class="lable">Locality / Landmark</span>
+                            <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.landmark" >
+                    </div>
+                </li>
+                <li class="form_list ">
+                    <div class="style">
+                            <span class="lable">Pincode</span>
+                            <input type="number" placeholder="" onKeyPress="if(this.value.length==10) return false;" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.pincode" >
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        
+        
+        <section class="form_wrapper full_w">
+                <div class="SectionHeading">Business Contact Details</div>                     
+                <ul class="form_listing full_w">
+                    <li class="form_list">
+                        <div class="style">
+                            
+                                <span class="lable">Contact Person</span>
+                                <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.contact_person" >
+                        </div>
+                    </li>
+                    <li class="form_list">
+                        <div class="style">
+                           
+                                <span class="lable">Landline Number</span>
+                                <input type="number" placeholder="" onKeyPress="if(this.value.length==20) return false;" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.landline" >
+                         
+                        </div>
+                    </li>
+                    <li class="form_list">
+                        <div class="style">
+                            
+                                <span class="lable">Whats App No</span>
+                                <input type="number" placeholder="" onKeyPress="if(this.value.length==10) return false;" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.whatsapp_no" maxlength="11">
+                         
+                        </div>
+                    </li>
+                    <li class="form_list">
+                        <div class="style">
+                            
+                                <span class="lable">Locality / Landmark</span>
+                                <input type="text" placeholder="" class="input ng-untouched ng-pristine ng-valid"  [(ngModel)]="business_details.business_name" >
+                            
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <div class="btn_wrapper full_w">
+                    <button class="btn primary large"  (click)="onSubmit()">Next</button>
+                   
+                </div>
+
+           
+
+  </div>
+</div>  

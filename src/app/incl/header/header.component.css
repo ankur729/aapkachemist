@@ -1,0 +1,28 @@
+name_part:hover{
+    cursor: pointer;
+}
+.launch_popup  {position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;background: rgba(0,0,0, 0.75);z-index: 99;}
+
+.launch_popup .designBox {display:table; width: 100%; height: 100%; max-width: 1000px;}
+.launch_popup .designBox .vAlign {display: table-cell;vertical-align: middle;}
+
+.launch_popup .designBox .vAlign .innerDesign{    text-align: center;background: #98b4b5;max-width: 450px;border-radius: 5px 5px 0 0;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_img-wrapper img{    height: 320px;    margin-top: -130px;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_img-wrapper{   width: 100%;max-height: 190px;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper{    max-width: 450px;width: 100%;background: #fbc302;border-radius: 5px 5px 0 0;padding: 20px;    position: relative;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper .btn_field{position: absolute;float: left;max-width: 410px;text-align: center;width: 100%;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper .btn_field input.submit_btn{    background: #fff;border: 2px solid #0a5e44;width: 150px;padding: 10px;border-radius: 3px;font-size: 16px;color: #0a5e44;font-weight: bold;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper .heading span{    font-weight: bold;font-size: 17px;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper  .subheading span{font-size: 14px;color: #675206;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper  .launch_date_wrapper{    margin: 30px 0;}
+
+.launch_popup .designBox .vAlign .innerDesign .launch_content_wrapper  .launch_date_wrapper span{    padding: 10px 20px;font-size: 19px;font-weight: bold;border-top: 2px solid #000;border-bottom: 2px solid #000;}
+

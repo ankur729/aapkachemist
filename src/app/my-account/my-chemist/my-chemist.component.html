@@ -1,0 +1,239 @@
+<div class="main_container my_accountPages my_chemist_page">
+
+  <app-header></app-header>
+    
+    <div class="my_accountSetting">
+    
+    <app-my-account-top-panel></app-my-account-top-panel>
+    
+      <div class="container">
+        <div class="main_dataPage">
+    
+          <app-my-account-left-panel></app-my-account-left-panel>
+          
+          <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+
+          <div class="right_pannel">
+
+           
+
+
+
+            <div class="pannelSTyle" >
+
+            <div class="account_page_title">
+                <div class="left_part">
+                  <div class="heading">
+                    <h2>My Chemist</h2>
+                  </div>
+                </div>
+                <div class="right_part">
+                  
+                </div>
+                
+              </div>
+
+              <app-no-data-found *ngIf="isnodatafound==true" [nodataobj]=nodataobj></app-no-data-found>
+              <div class="account_content" *ngIf="isnodatafound==false">
+                
+              <ul class="chemist_list_wrapper full_w" >
+                  <li class="chamListing full_w"  *ngFor="let list of lists">
+                    <div class="style full_w" >
+                      <div class="chemist_dtls full_w">
+                          <div class="section1 full_w">
+                            
+                              <div class="left_section">
+                              <div class="chemName">
+                                <span class="name" [routerLink]="['/chemist-detail/'+list.seo_url]">
+    
+                                    {{list.vendor_shopname | titlecase }}
+                                 
+                                </span>
+    
+                                <span class="vendorType">
+                                        
+                                    <span *ngIf="list.prime_status == 1">
+                                      <img src="assets/images/icon/apc_trusted.png" alt="Apc Trusted"> APC Trusted 
+                                    </span>
+                                    <span *ngIf="list.status ==5">
+                                      <img src="assets/images/icon/unverified.png"> 
+                                    </span>
+                                    <span>{{list.vendor_type}}</span>
+                                    
+                                  </span>
+                              </div>
+                            </div>
+                            <div class="right_section">
+                              <span class="rating" >{{list.vendor_rating}}</span>
+                            </div>
+    
+                          </div>
+                          <div class="section2 remove_fav full_w">
+                            <div class="left_part">
+                                <span class="shop_location">{{list.area}}</span>
+                              <span class="chem-add" >
+    
+                                     
+              
+                                      {{ (list.vendor_address.length>40)? (list.vendor_address |
+                                  slice:0:40)+'..':(list.vendor_address) }}
+              
+              
+                                    </span>
+                            </div>
+                            <div class="right_part right_part text-center">
+                                <span class="remove_fav_btn" (click)="onRemoveFromFavHander(list)"><i class="fa fa-heart" aria-hidden="true"></i></span>
+                            </div>  
+                            
+                           
+                          </div>
+    
+                          <div class="section3 full_w">
+                              <div class="discount">
+                                  <span class="">{{list.discount_percent}}% Discount</span>
+                              </div>
+                             
+    
+                            <div class="open_status_distance">
+                                
+    
+                               
+    
+                                <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time!=''"><span>Open</span>
+                                    {{list.open_time}} to {{list.close_time}}</span>
+                                  
+                                <div class="right_content" *ngIf="list.open_close_status==0"><span>Close</span></div>
+                                <span class="area" *ngIf="list.distance_in_km >= 1">{{list.distance_in_km }} km Away</span>
+                                <span class="area" *ngIf="list.distance_in_km < 1">{{list.distance_in_km *1000}} m Away</span>
+                            </div>
+                          </div>
+    
+                       
+                      </div>
+                    
+    
+    
+    
+                    </div>
+                  </li>
+    
+                 
+    
+                </ul>
+              </div>
+            <!-- <div class="mainPage">
+              
+    
+              <div class="my_chemist_list_wapper">
+    
+            <ul class="chemist_listing">
+            
+                <li class="chamList"  *ngFor="let list of lists">
+                    <div class="style">
+                        <div class="chemist_dtls">
+                        <div class="imageSet" [routerLink]="['/chemist-detail']" [queryParams]="{ id: list.vendor_id,typeid:list.vendor_type_id }">
+
+                          <div class="thumb">
+                              <img src="{{list.vendor_image_path}}" alt="">
+                             <span class="rating" *ngIf="list.vendor_rating!=0 || list.vendor_rating!=0.0">{{list.vendor_rating}}</span> 
+                          </div>
+
+                        </div>
+    
+                        <div class="chemis_name_area_location">
+                           
+                            <span class="name" *ngIf="list.vendor_shopname!=''">
+                              
+                                <a href="javascript:void(0)" [routerLink]="['/chemist-detail/'+list.seo_url]">
+                                {{list.vendor_shopname }}
+                              </a>
+                              </span>
+
+                              <span class="vendorType">
+                                <span *ngIf="list.prime_status == 1">
+                                  <img src="assets/images/icon/apctrusted.png"> 
+                                </span>
+                                <span>{{list.vendor_type}}</span>
+                              </span>
+
+                              <span class="shop_location">{{list.area}}</span>
+                              
+                              
+    
+                              <span class="chem-add"><img src="assets/images/icon/chemist_location.png">
+
+                                {{ (list.vendor_address.length>40)? (list.vendor_address |
+                                  slice:0:40)+'..':(list.vendor_address) }} 
+
+                   
+                              </span>
+                              <div class="locationArea">
+
+                                  <span class="area" *ngIf="list.distance_in_km >= 1">{{list.distance_in_km }} km Away</span>
+
+                                  <span class="area" *ngIf="list.distance_in_km < 1">{{list.distance_in_km *1000}} m Away</span>
+                                </div>
+    
+                              <span class="rating" *ngIf="list.trusted_status == 1"><img src="assets/images/icon/premium.png"></span>
+                              <span class="remove_fav"><i class="fa fa-heart" aria-hidden="true"></i></span>
+                        </div>
+                      </div>
+                      <div class="chemist_other_dtls">
+                          <div class="opening_time">
+                            <div class="full_width">
+                              <div class="open_closeStatus">
+                                <div class="left_content"><img src="assets/images/icon/clock-ico.png">&nbsp;</div>
+                                <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time!=''">Open {{list.open_time}} to {{list.close_time}}</span>
+                                <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time==''">Open
+                                  
+                                
+                                
+                                </span>
+                                <div class="right_content" *ngIf="list.open_close_status==0">Close</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="discount" *ngIf="list.discount_percent!=0">
+                            <div class="full_width">
+                            <div class="open_closeStatus">
+                            <span class="left_content"><img src="assets/images/icon/discount_ico.png">&nbsp;</span>
+                            <span class="right_content">{{list.discount_percent}}% Discount</span>
+                            </div>
+                            </div>
+                          </div>
+                          
+                          <div class="chemist_Type">
+                          <div class="full_width">
+                          <div class="discount">
+                          
+                          <span class="trustedSeal" *ngIf="list.trusted_status ==1"> </span>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+
+                        
+    
+    
+                      
+                    </div>
+                  </li>
+
+                  
+            </ul>
+          </div>
+    
+            </div> -->
+    
+          </div>
+    
+        </div>
+        </div>
+      </div>
+    
+    </div>
+    
+      
+    </div>
+
+    <app-footer></app-footer>

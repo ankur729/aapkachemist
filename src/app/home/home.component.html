@@ -1,0 +1,779 @@
+<!-- <div class="sending_enquiry_popup" *ngIf="popup.downloadapp.status==true">
+  <div class="enquiry_popup_msg">
+  <div class="sending_msg_gif">
+ 
+  <img *ngIf="popup.downloadapp.is_success==true" src="assets/images/form_icon.png">
+  <img *ngIf="popup.downloadapp.is_success==false" src="assets/images/error.png">
+  </div>
+  <div class="sending_msg_content">
+  <span>{{popup.downloadapp.sent_txt}}</span>
+ 
+  </div>
+  <ul class="noCartbuttons">
+  <li class="list" (click)="onClosePopup()"><a class="Download" href="javascript:void(0)">Close</a></li>
+ 
+  </ul>
+  </div>
+ </div> -->
+ <app-popup #popupchild (onPopupActionPerformed)="onPopupActionReceived($event)"></app-popup>
+ 
+ <app-launch-popup [launchdata]='launchdata' (onCloseLaunchPopup)="onCloseLaunchPopup()" *ngIf="state.maintenance.maintenance_status==1 && state.maintenance.is_closed_on_home==0"></app-launch-popup>
+
+ <!-- <div class="popup_design popup_msgs" >
+
+    <div class="designBox">
+        <div class="vAlign">
+          <div class="insideDesign">
+           <div class="insideDesign">
+              <div  class="heading  success"><h2>Please wait..</h2></div>
+          </div> 
+          <div class="popup_content">
+              <div class="error-wrp"> 
+            <div class="sending_msg_gif">
+                <img src="assets/images/ScooterAnimation.gif">
+              </div> 
+              <div class="left-error"> 
+                <p>asasdfasd</p>
+                 </div> 
+
+
+              </div>
+          
+             
+          </div>  
+        </div> 
+        </div> 
+    </div> 
+ </div> -->
+
+ <div class="mapLocationSet" >
+    <div class="designBox">
+      <div class="vAlign">
+        <div class="insideDesign" *ngIf="data.map_view"> 
+          <agm-map #gm [latitude]="data.center_lat" [longitude]="data.center_lng " [usePanning]='true' [zoom]="11">
+            <agm-marker [latitude]="map.latitude" [longitude]="map.longitude" [iconUrl]="{
+                  url: './assets/images/marker.png',
+                  scaledSize: {
+                      width: 32,
+                      height: 32
+                  }
+              }" [markerDraggable]="true" (mouseOver)="onMouseOver(infoWindow,gm)" *ngFor="let map of data.map_arr" (markerClick)="onClickMarker(map)">
+              <agm-info-window [disableAutoPan]="false" #infoWindow>
+                <strong>{{map.vendor_shopname}}</strong>
+              </agm-info-window>
+  
+            </agm-marker>
+  
+            <agm-circle [latitude]="data.center_lat" [longitude]="data.center_lng" [radius]="5000" [fillColor]="'#f8c302'">
+            </agm-circle>
+  
+          </agm-map>
+          <ul class="buttons">
+  
+            <li class="list"><a href="javascript:void(0)" (click)="onToggleMapView('close')"
+                class="btn primary medium">Close</a></li>
+  
+  
+          </ul>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+ <div class="navigation_wrapper">
+  <div class="container">
+  <ul class="menus" *ngIf="is_cat_slider_valid" style="display:none">
+  <li class="menu_list" *ngFor="let category of data.top_categories_list" [ngClass]="category.no_link == '1' ? 'no_link_search' : ''"
+  (click)="navigateCategory(category)">
+ 
+  <a href="javascript:void(0)">
+ 
+  <span class="icon">
+ 
+  <img src="{{category.category_image_path}}" alt="{{category.category_name}}">
+ 
+  </span> {{ (category.category_name.length>17)? (category.category_name |
+  slice:0:17)+'..':(category.category_name) }}
+  </a>
+ 
+  </li>
+  <li class="menu_list list"><a href="javascript:void(0)" routerLink="/category">
+  
+  <span class="icon"><img src="assets/images/icon/vision.png" alt="view all" ></span>
+  
+  <span
+  class="catName">View All</span> 
+</a></li>
+  <!--
+  
+ 
+  <li class="menu_list list"><a href="#0"><span _ngcontent-c2="" class="icon"><img _ngcontent-c2="" src="assets/images/icon/vision.png"></span><span class="catName">View All</span> </a></li> -->
+ 
+  </ul>
+  </div>
+ </div>
+ <div class="main_container">
+ 
+  <!-- <div class="prelaunchPopup" *ngIf="is_user_type_popup==true">
+  <div class="designBox">
+  <div class="insideBox">
+  <div class="headPart">
+  <span class="skipBtn" (click)="setUserType('user')">Skip</span>
+  <span class="title">Welcome to app ka chemist</span>
+  <span class="caption">Get every medicine. On time. Everytime.</span>
+  </div>
+  <ul class="chooseBusiness">
+  <li class="list" (click)="setUserType('user')">
+  <div class="style">
+  <a href="javascript:void(0)" class="link">
+  <span class="icon"><img src="assets/images/user_icon.png"></span>
+  <span class="name">As User</span>
+  </a>
+  </div>
+  </li>
+  <li class="list or">
+  <div class="style">
+  <span class="name">OR</span>
+  </div>
+  </li>
+  <li class="list" (click)="setUserType('business')">
+  <div class="style">
+  <a href="javascript:void(0)" class="link">
+  <span class="icon"><img src="assets/images/business_icon.png"></span>
+  <span class="name">Business</span>
+  </a>
+  </div>
+  </li>
+  </ul>
+  
+  <div class="scanMobile">
+  <span class="icon"><img src="assets/images/barcode.jpg"></span>
+  <span class="caption">Scan this bar code to get app in your mobile phone</span>
+  </div>
+  
+  </div>
+  </div>
+  </div> -->
+ 
+ 
+ 
+ 
+  <!-- header start here -->
+  <app-header #child (locupdateevent)="onLocationUpdate($event)"></app-header>
+  <!-- header end here -->
+  <!-- <div class="wrapper">
+  <div class="animated-background">
+  <?xml version="1.0" encoding="UTF-8"?>
+  <svg width="100%" height="898px" viewBox="0 0 980 898" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+  <title>Combined Shape Copy 2</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="1">
+  <path d="M4.57231726,58.4240539 L978.983929,58.4240539 L978.983929,110.751685 L4.57231726,110.751685 L4.57231726,58.4240539 Z M14.224987,85.8579575 C14.224987,93.1546446 20.1407061,99.066874 27.4381154,99.066874 L503.458722,99.066874 C510.767558,99.066874 516.671851,93.1530407 516.671851,85.8579575 C516.671851,78.5612703 510.756132,72.649041 503.458722,72.649041 L27.4381154,72.649041 C20.1292799,72.649041 14.224987,78.5628743 14.224987,85.8579575 Z M4.57231726,128.532919 L978.983929,128.532919 L978.983929,769.673406 L4.57231726,769.673406 L4.57231726,128.532919 Z M21.8455158,178.383879 L21.8455158,285.96034 C21.8455158,301.434769 34.3821604,313.965785 49.8468953,313.965785 L384.015209,313.965785 C399.476804,313.965785 412.016589,301.427321 412.016589,285.96034 L412.016589,178.383879 C412.016589,162.909451 399.479944,150.378434 384.015209,150.378434 L49.8468953,150.378434 C34.3853008,150.378434 21.8455158,162.916899 21.8455158,178.383879 Z M44.1990669,448.595127 C44.1990669,455.891814 50.109986,461.804044 57.4014742,461.804044 L109.742124,461.804044 C117.025823,461.804044 122.944531,455.89021 122.944531,448.595127 C122.944531,441.29844 117.033612,435.38621 109.742124,435.38621 L57.4014742,435.38621 C50.1177752,435.38621 44.1990669,441.300044 44.1990669,448.595127 Z M44.1990669,397.283567 C44.1990669,404.580254 50.1118023,410.492483 57.405531,410.492483 L170.702297,410.492483 C177.994846,410.492483 183.908761,404.57865 183.908761,397.283567 C183.908761,389.986879 177.996026,384.07465 170.702297,384.07465 L57.405531,384.07465 C50.1129822,384.07465 44.1990669,389.988483 44.1990669,397.283567 Z M601.513738,448.595127 C601.513738,455.891814 607.429915,461.804044 614.727889,461.804044 L677.205756,461.804044 C684.500404,461.804044 690.419907,455.89021 690.419907,448.595127 C690.419907,441.29844 684.50373,435.38621 677.205756,435.38621 L614.727889,435.38621 C607.43324,435.38621 601.513738,441.300044 601.513738,448.595127 Z M692.960083,448.595127 C692.960083,455.891814 698.877089,461.804044 706.176086,461.804044 L743.248487,461.804044 C750.547175,461.804044 756.464489,455.89021 756.464489,448.595127 C756.464489,441.29844 750.547483,435.38621 743.248487,435.38621 L706.176086,435.38621 C698.877397,435.38621 692.960083,441.300044 692.960083,448.595127 Z M859.08761,448.595127 C859.08761,455.891814 865.003311,461.804044 872.300698,461.804044 L929.700339,461.804044 C937.002269,461.804044 942.913427,455.89021 942.913427,448.595127 C942.913427,441.29844 936.997726,435.38621 929.700339,435.38621 L872.300698,435.38621 C864.998768,435.38621 859.08761,441.300044 859.08761,448.595127 Z M424.209435,492.286159 C424.209435,499.582846 430.12623,505.495075 437.424967,505.495075 L545.623244,505.495075 C552.923853,505.495075 558.838777,499.581242 558.838777,492.286159 C558.838777,484.989471 552.921981,479.077242 545.623244,479.077242 L437.424967,479.077242 C430.124358,479.077242 424.209435,484.991075 424.209435,492.286159 Z M709.217211,556.2986 C709.217211,563.595287 715.132912,569.507517 722.430299,569.507517 L779.829939,569.507517 C787.13187,569.507517 793.043027,563.593683 793.043027,556.2986 C793.043027,549.001913 787.127326,543.089684 779.829939,543.089684 L722.430299,543.089684 C715.128369,543.089684 709.217211,549.003517 709.217211,556.2986 Z M470.948678,601.513738 C470.948678,608.810425 476.862939,614.722654 484.158549,614.722654 L780.341191,614.722654 C787.641447,614.722654 793.551063,608.808821 793.551063,601.513738 C793.551063,594.217051 787.636802,588.304821 780.341191,588.304821 L484.158549,588.304821 C476.858294,588.304821 470.948678,594.218655 470.948678,601.513738 Z M859.08761,556.2986 C859.08761,563.595287 865.003311,569.507517 872.300698,569.507517 L929.700339,569.507517 C937.002269,569.507517 942.913427,563.593683 942.913427,556.2986 C942.913427,549.001913 936.997726,543.089684 929.700339,543.089684 L872.300698,543.089684 C864.998768,543.089684 859.08761,549.003517 859.08761,556.2986 Z M859.08761,602.021773 C859.08761,609.31846 865.003311,615.230689 872.300698,615.230689 L929.700339,615.230689 C937.002269,615.230689 942.913427,609.316856 942.913427,602.021773 C942.913427,594.725086 936.997726,588.812856 929.700339,588.812856 L872.300698,588.812856 C864.998768,588.812856 859.08761,594.72669 859.08761,602.021773 Z M638.600311,166.635562 C638.600311,171.967757 642.924934,176.288232 648.259627,176.288232 L761.030161,176.288232 C766.369731,176.288232 770.689476,171.966585 770.689476,166.635562 C770.689476,161.303368 766.364853,156.982893 761.030161,156.982893 L648.259627,156.982893 C642.920056,156.982893 638.600311,161.30454 638.600311,166.635562 Z M776.277864,166.381545 C776.277864,177.747538 785.493927,186.956973 796.862516,186.956973 L937.061797,186.956973 C948.434341,186.956973 957.646449,177.74504 957.646449,166.381545 C957.646449,155.015551 948.430386,145.806117 937.061797,145.806117 L796.862516,145.806117 C785.489972,145.806117 776.277864,155.01805 776.277864,166.381545 Z M621.835148,219.471229 C621.835148,224.803423 626.15652,229.123898 631.487203,229.123898 L761.037422,229.123898 C766.375171,229.123898 770.689476,224.802251 770.689476,219.471229 C770.689476,214.139034 766.368104,209.818559 761.037422,209.818559 L631.487203,209.818559 C626.149453,209.818559 621.835148,214.140206 621.835148,219.471229 Z M776.277864,219.217211 C776.277864,230.583204 785.493927,239.792639 796.862516,239.792639 L937.061797,239.792639 C948.434341,239.792639 957.646449,230.580706 957.646449,219.217211 C957.646449,207.851218 948.430386,198.641783 937.061797,198.641783 L796.862516,198.641783 C785.489972,198.641783 776.277864,207.853716 776.277864,219.217211 Z M664.002074,273.322965 C664.002074,278.65516 668.325195,282.975635 673.658035,282.975635 L761.033515,282.975635 C766.375067,282.975635 770.689476,278.653988 770.689476,273.322965 C770.689476,267.990771 766.366355,263.670295 761.033515,263.670295 L673.658035,263.670295 C668.316483,263.670295 664.002074,267.991943 664.002074,273.322965 Z M776.277864,273.068948 C776.277864,284.434941 785.493927,293.644375 796.862516,293.644375 L937.061797,293.644375 C948.434341,293.644375 957.646449,284.432443 957.646449,273.068948 C957.646449,261.702954 948.430386,252.49352 937.061797,252.49352 L796.862516,252.49352 C785.489972,252.49352 776.277864,261.705453 776.277864,273.068948 Z M655.87351,327.174702 C655.87351,332.506896 660.195392,336.827372 665.526703,336.827372 L761.036283,336.827372 C766.363493,336.827372 770.689476,332.505724 770.689476,327.174702 C770.689476,321.842507 766.367594,317.522032 761.036283,317.522032 L665.526703,317.522032 C660.199493,317.522032 655.87351,321.84368 655.87351,327.174702 Z M776.277864,326.920684 C776.277864,338.286678 785.493927,347.496112 796.862516,347.496112 L937.061797,347.496112 C948.434341,347.496112 957.646449,338.284179 957.646449,326.920684 C957.646449,315.554691 948.430386,306.345257 937.061797,306.345257 L796.862516,306.345257 C785.489972,306.345257 776.277864,315.557189 776.277864,326.920684 Z M14.224987,684.831519 C14.224987,692.128206 20.1381997,698.040435 27.4325171,698.040435 L71.1263217,698.040435 C78.4168317,698.040435 84.3338517,692.126602 84.3338517,684.831519 C84.3338517,677.534832 78.4206391,671.622602 71.1263217,671.622602 L27.4325171,671.622602 C20.142007,671.622602 14.224987,677.536436 14.224987,684.831519 Z M14.224987,713.281493 C14.224987,720.57818 20.1353894,726.49041 27.4262401,726.49041 L360.712692,726.49041 C368.007992,726.49041 373.913945,720.576576 373.913945,713.281493 C373.913945,705.984806 368.003543,700.072576 360.712692,700.072576 L27.4262401,700.072576 C20.1309404,700.072576 14.224987,705.98641 14.224987,713.281493 Z M4.06428201,787.962675 L978.475894,787.962675 L978.475894,840.290306 L4.06428201,840.290306 L4.06428201,787.962675 Z M14.224987,813.872473 C14.224987,821.16916 20.1380033,827.081389 27.4320786,827.081389 L76.715148,827.081389 C84.0139328,827.081389 89.9222395,821.167556 89.9222395,813.872473 C89.9222395,806.575786 84.0092232,800.663556 76.715148,800.663556 L27.4320786,800.663556 C20.1332937,800.663556 14.224987,806.57739 14.224987,813.872473 Z M-1.13686838e-13,20.3214101 C-1.13686838e-13,13.306907 5.6803008,7.62052877 12.6951977,7.62052877 L171.213563,7.62052877 C178.224927,7.62052877 183.908761,13.3053647 183.908761,20.3214101 C183.908761,27.3359131 178.22846,33.0222913 171.213563,33.0222913 L12.6951977,33.0222913 C5.68383361,33.0222913 -1.13686838e-13,27.3374554 -1.13686838e-13,20.3214101 Z M623.867289,20.5754277 C623.867289,9.21193275 633.085545,0 644.451659,0 L718.606921,0 C729.975354,0 739.191291,9.20943423 739.191291,20.5754277 C739.191291,31.9389226 729.973035,41.1508554 718.606921,41.1508554 L644.451659,41.1508554 C633.083225,41.1508554 623.867289,31.9414211 623.867289,20.5754277 Z M749.860031,20.5754277 C749.860031,9.21193275 759.077324,0 770.435242,0 L959.424789,0 C970.788164,0 980,9.20943423 980,20.5754277 C980,31.9389226 970.782707,41.1508554 959.424789,41.1508554 L770.435242,41.1508554 C759.071867,41.1508554 749.860031,31.9414211 749.860031,20.5754277 Z M623.867289,876.614826 C623.867289,865.251331 633.085545,856.039399 644.451659,856.039399 L718.606921,856.039399 C729.975354,856.039399 739.191291,865.248833 739.191291,876.614826 C739.191291,887.978321 729.973035,897.190254 718.606921,897.190254 L644.451659,897.190254 C633.083225,897.190254 623.867289,887.98082 623.867289,876.614826 Z M749.860031,876.614826 C749.860031,865.251331 759.077324,856.039399 770.435242,856.039399 L959.424789,856.039399 C970.788164,856.039399 980,865.248833 980,876.614826 C980,887.978321 970.782707,897.190254 959.424789,897.190254 L770.435242,897.190254 C759.071867,897.190254 749.860031,887.98082 749.860031,876.614826 Z" id="Combined-Shape-Copy-2" fill="#FFF"></path>
+  </g>
+  </svg>
+  </div>
+  </div> -->
+  <!-- <div class="loader">
+  <div class="loader_inner_section">
+  
+  </div>
+  </div> -->
+  <div id="topcontainer" style="display:none">
+ 
+ 
+ 
+ 
+ 
+  <div class="home_Page bodySetting">
+  <!-- 
+  <ul class="slider">
+  <li class="list"> <div class="image"><img src="images/slider/1.jpg"></div> </li>
+  <li class="list"> <div class="image"><img src="images/slider/8.jpg"></div> </li>
+  <li class="list"> <div class="image"><img src="images/slider/1.jpg"></div> </li>
+  </ul>
+  -->
+ 
+  <div class="sliding_banner_wrapper">
+  <ul class="main_slider" *ngIf="data.slider_data.length>0">
+  <li class="list" *ngFor="let slider of data.slider_data">
+  <span class="img"><img src="{{slider.image_path}}"></span>
+  </li>
+  <!-- <li class="list"><span class="img"><img src="assets/images/slider/15.jpg"></span></li>
+  <li class="list"><span class="img"><img src="assets/images/slider/16.jpg"></span></li>
+  <li class="list"><span class="img"><img src="assets/images/slider/17.jpg"></span></li> -->
+  </ul>
+  </div>
+ 
+ 
+  <div class="how_its_work">
+  <div class="container">
+  <!-- <div class="Sectionheading"><span> how does it work</span></div> -->
+ 
+  <ul class="its_work_list">
+ 
+  <li class="list">
+  <div href="javascript:void(0)" class="style">
+  <span class="work_icon"><img src="assets/images/icon/NEAR-BY.png" alt="Near By"></span>
+  <div class="work_content_section">
+  <h3 class="work_heading">Get Medicines</h3>
+  <span class="work_description">Get medicines from your trusted nearby chemist</span>
+  <!---<span class="work_subdescrition">10% APC Cash</span>-->
+  </div>
+  </div>
+  </li>
+  <li class="list">
+  <div href="javascript:void(0)" class="style">
+  <span class="work_icon"><img src="assets/images/icon/discount.png" alt="Discount"></span>
+  <div class="work_content_section">
+  <h3 class="work_heading">Discount & Offers</h3>
+  <span class="work_description">20% Instant + 10% APC Cash</span>
+  <!--<span class="work_subdescrition"></span>-->
+  </div>
+  </div>
+  </li>
+ 
+  <li class="list">
+  <div href="javascript:void(0)" class="style">
+  <span class="work_icon"><img src="assets/images/icon/fast-delivery.png" alt="Fast Delievery"></span>
+  <div class="work_content_section">
+  <h3 class="work_heading">Quick Delivery</h3><span class="work_description">4 to 8 hrs super fast
+  delivery </span>
+  <!--<span class="work_subdescrition">10% APC Cash</span>-->
+  </div>
+  </div>
+  </li>
+ 
+  <li class="list">
+  <div href="javascript:void(0)" class="style">
+  <span class="work_icon"><img src="assets/images/icon/med-return.png" alt="Med Return"></span>
+  <div class="work_content_section">
+  <h3 class="work_heading">Easy Returns</h3>
+  <span class="work_description">Return unused <br>medicines</span>
+  <!---<span class="work_subdescrition">10% APC Cash</span>-->
+  </div>
+  </div>
+  </li>
+  </ul>
+  </div>
+  </div>
+  <section class="section_1">
+ 
+  <!-- <div class="special_offerPage" routerLink="/help-center">
+  
+  <img src="{{data.homediscount_banner}}">
+  </div> -->
+ 
+ 
+  <div class="container">
+ 
+  <!-- left structure start here -->
+  <!-- <div class="leftstructure">
+  <div class="design_part">
+ 
+ 
+  <ul class="cateList">
+ 
+ 
+  <li class="list">
+  <h2 class="main_title">Categories</h2>
+  <ul class="catSpList">
+  <li class="subList" *ngFor="let topcategory of data.top_categories_list" (click)="navigateCategory(topcategory)">
+  <a href="javascript:void(0)" class="link">
+  <span class="icon"><img src="{{topcategory.category_image_path}}" alt="{{topcategory.category_name}}"></span>
+  <span class="name">
+ 
+  {{ (topcategory.category_name.length>17)? (topcategory.category_name |
+  slice:0:17)+'..':(topcategory.category_name) }}
+  </span>
+  </a>
+  </li>
+  <li class="subList">
+  <a href="javascript:void(0)" routerLink="/category" class="link allCat">
+  <span class="icon"><img src="assets/images/icon/vision.png" alt="view all" ></span>
+  
+  <span class="name">View All Categories</span>
+  </a>
+  </li>
+  
+  </ul>
+  </li>
+  <li class="list main_cat_wrapper">
+  <h2 class="main_title">Quick Links</h2>
+  <ul class="main_catlist">
+  <li class="main_cat"><a href="https://www.aapkachemist.com/blog" target="_blank">Blog</a></li>
+  <li class="main_cat"><a href="https://www.aapkachemist.com/blog" target="_blank">News & Updates</a></li>
+  <li class="list saleOnBtn"><button routerLink="/login" [queryParams]="{usertype:'retailer'}" *ngIf="state?.is_logged_in==false">Free
+  Listing for Chemists</button></li>
+  </ul>
+  </li>
+  </ul>
+ 
+ 
+ 
+ 
+  <div class="barCode">
+  <span class="icon"><img src="assets/images/barcode.png" alt="Medical Device"></span>
+  <div class="textForm">
+  <span class="title">Enjoy Convenience</span>
+  <span class="caption">Scan to Download App</span>
+  </div>
+  </div>
+ 
+  </div>
+  </div> -->
+  <!-- left structure end here -->
+ 
+ 
+  <div class="nearest_chemistList full_w">
+  <div class="heading_wrapper full_w">
+  <h2 class="heading">Top Chemists in {{state.userloc.area | titlecase}}</h2>
+  <h4 class="sub_heading">Aapka Chemist connects you with your nearby chemists online with  best discounts and offers to help you save more.</h4>
+  </div>
+ 
+  <ul class="BusinessTypeTabs" *ngIf="data.login_type_list.length>0 && state.user_type==1">
+  <li class="list" *ngFor="let types of data.login_type_list;let i=index" (click)="getUserListByType(types)">
+ 
+  <a href="javascript:void(0)" class="link" id="type_{{types.id}}" [ngClass]="i == 0 ? 'active' : ''">
+ 
+  {{ (types.parameter_name.length>8)? (types.parameter_name |
+  slice:0:8)+'..':(types.parameter_name) }}
+  </a>
+ 
+  </li>
+  
+  </ul>
+ 
+  
+  <ul class="chemist_list_wrapper full_w" *ngIf="data.user_data.length>0">
+  <li class="chamListing full_w" *ngFor="let list of data.user_data |slice:0:12">
+  <div class="style full_w" [routerLink]="['/chemist-detail/'+list.seo_url]">
+  <div class="chemist_dtls full_w">
+  <div class="section1 full_w">
+  <!-- <div class="imageSet right_section">
+  
+  <div class="thumb">
+  <img src="{{list.vendor_image_path}}" alt="Medical Device">
+  
+  </div>
+  </div>
+  
+  <div class=" left_section">
+  
+ 
+  <span class="shop_location">{{list.area}}</span>
+  <span class="vendorType">
+  
+  <span *ngIf="list.trusted_status ==1 && list.status!='5'">
+  <img src="assets/images/icon/apc_trusted.png" alt="Apc Trusted"> APC Trusted 
+  </span>
+  <span *ngIf="list.status ==5">
+  <img src="assets/images/icon/unverified.png"> 
+  </span>
+  <span>{{list.vendor_type}}</span>
+  
+  </span>
+  </div> -->
+  <div class="left_section">
+  <div class="chemName">
+  <span class="name" *ngIf="list.vendor_shopname!=''">
+ 
+  {{list.vendor_shopname | titlecase}}
+  
+  </span>
+ 
+  <span class="vendorType">
+  
+  <span *ngIf="list.trusted_status ==1 && list.status!='5'">
+  <img src="assets/images/icon/apc_trusted.png" alt="Apc Trusted"> APC Trusted 
+  </span>
+  <span *ngIf="list.status ==5">
+  <img src="assets/images/icon/unverified.png"> 
+  </span>
+  <span>{{list.vendor_type}}</span>
+  
+  </span>
+  </div>
+  </div>
+  <div class="right_section">
+  <span class="rating" >{{list.vendor_rating}}</span>
+  </div>
+ 
+  </div>
+  <div class="section2 full_w">
+  <span class="shop_location">{{list.area}}</span>
+  <span class="chem-add" *ngIf="list.vendor_address !=''">
+ 
+  
+  
+  {{ (list.vendor_address.length>40)? (list.vendor_address |
+  slice:0:40)+'..':(list.vendor_address) }}
+  
+  
+  </span>
+  
+  <div class="open_status_distance">
+  
+ 
+  
+ 
+      <span class="right_content" *ngIf="list.open_close_status==1 && list.open_time!=''"><span>Open</span>
+      {{list.open_time}} to {{list.close_time}}</span>
+      
+      <div class="right_content" *ngIf="list.open_close_status==0"><span>Close</span></div>
+      <span class="area" *ngIf="list.distance_in_km >= 1">{{list.distance_in_km }} km Away</span>
+      <span class="area" *ngIf="list.distance_in_km < 1">{{list.distance_in_km *1000}} m Away</span>
+      </div>
+  <!-- <div class="primium">
+  
+  <span class="primium_icon">
+  <img src="assets/images/icon/premium.png" alt="Premium">
+  </span>
+  </div>
+ 
+  
+  <div class="chemAdd_chemName">
+  <span class="name" *ngIf="list.vendor_shopname!=''">
+ 
+  <a href="javascript:void(0)">
+  {{list.vendor_shopname | titlecase}}
+  </a>
+  </span>
+ 
+  <span class="chem-add" *ngIf="list.vendor_address !=''">
+ 
+  
+  
+  {{ (list.vendor_address.length>40)? (list.vendor_address |
+  slice:0:40)+'..':(list.vendor_address) }}
+  
+  
+  </span>
+  </div>
+ 
+  <div class="chem_rating">
+  
+  <span class="rating" >{{list.vendor_rating}}</span>
+  </div> -->
+  </div>
+ 
+  <div class="section3 full_w">
+  <div class="discount"  *ngIf="list.discount_percent!=0">
+  <span class="">{{list.discount_percent}}% Discount</span>
+  </div>
+  
+ 
+  </div>
+ 
+  
+  </div>
+  
+ 
+ 
+ 
+  </div>
+  </li>
+ 
+  
+ 
+  </ul>
+  <!-- <div class="listinheading">
+  
+  <div class="right_part" *ngIf='data.user_data.length>=6'>
+  <button class="view_all_btn primary_btn" routerLink="/chemist-listing" [queryParams]="{'lat':this.state.userloc.lat,'long':this.state.userloc.long}">View
+  All Chemists</button>
+  </div>
+  </div> -->
+  <div class="listinheading full_w">
+  
+  <button class="btn primary large mr10" routerLink="/chemist-listing" [queryParams]="{'lat':this.state.userloc.lat,'long':this.state.userloc.long}">View All</button>
+
+  <button class="btn assent large" (click)="onToggleMapView('open')">VIEW ON MAP </button>
+  </div>
+ 
+ 
+  <div class="videoSection">
+ <!-- 
+  <div class="headingPart">
+  <h3 class="Heading"><span>Media Center</span></h3>
+  </div> -->
+ 
+  <ul class="videoList">
+  <li class="list">
+  <div class="about_video">
+  <h3 class="heading">Watch the latest concept through our videos</h3>
+  <!-- <p>Health articles that keep you informed about good health practices and achieve your goals.</p> -->
+  <!-- <p>If you are a customer or chemist you can watch our videos and know more about the process & get help to use our application & website.</p> -->
+  <p>Your health matters to us the most. Here we bring you the latest in health & medicine through video content to help you stay fit and fine, all the time. Watch now!</p>
+  <a href="https://www.youtube.com/channel/UCukIgSRqjKGGfdTlU1Vxwpw" target="_blank"> <button class="btn primary large">Watch All Videos</button></a>
+  </div>
+  </li> 
+  <li class="list">
+  <div class="sizeFix">
+  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/h2jo_EjSEB0" frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  </li>
+  </ul>
+  </div>
+ 
+  </div>
+ 
+ 
+  </div>
+  </section>
+ 
+ 
+ 
+ 
+ 
+ 
+  <section class="section_2">
+  <div class="container">
+  <div class="heading_wrapper full_w">
+  <!-- <h2 class="heading"> Our USP</h2> -->
+  <h2 class="heading"> How It Helps</h2>
+  <!-- <h4 class="sub_heading">Explore deal & offers in aapka chemist and enjoy the great health.</h4> -->
+  </div>
+  <ul class="MedicinTypeList">
+  <li class="list">
+  <div class="style">
+  <div class="insideDesign">
+  <span class="icon"><img src="assets/images/icon/product/usp-17.png" alt="All Medcines"></span>
+  <span class="title">All Medicines at One Place</span>
+  <span class="text"> Many desktop publishing packages and.</span>
+  </div>
+  </div>
+  </li>
+  <li class="list">
+  <div class="style">
+  <div class="insideDesign">
+  <span class="icon"><img src="assets/images/icon/product/15.png" alt="Best Discounts"></span>
+  <span class="title">Best Discount & Offers</span>
+  <span class="text"> Many desktop publishing packages and.</span>
+  </div>
+  </div>
+  </li>
+ 
+  <li class="list">
+  <div class="style">
+  <div class="insideDesign">
+  <span class="icon"><img src="assets/images/icon/product/sup-20.png" alt="Trusted Licenced Pharmacies"></span>
+  <span class="title">Trusted Licenced Pharmacies</span>
+  <span class="text"> Many desktop publishing packages and.</span>
+  </div>
+  </div>
+  </li>
+ 
+  <li class="list">
+  <div class="style">
+  <div class="insideDesign">
+  <span class="icon"><img src="assets/images/icon/product/ups-18.png" alt="Pickup and Home Delivery"></span>
+  <span class="title">Pickup/Home Delivery</span>
+  <span class="text"> Many desktop publishing packages and.</span>
+  </div>
+  </div>
+  </li>
+ 
+ 
+  <li class="list">
+  <div class="style">
+  <div class="insideDesign">
+  <span class="icon"><img src="assets/images/icon/product/upc-19.png" alt="Refill Prescriptions"></span>
+  <span class="title">Refill Prescriptions</span>
+  <span class="text">Within 3 hrs home delivery &nbsp; </span>
+  </div>
+  </div>
+  </li>
+ 
+  <li class="list">
+  <div class="style">
+  <div class="insideDesign">
+  <span class="icon"><img src="assets/images/icon/product/upc-20.png" alt="Medicine Reminders"></span>
+  <span class="title">Medicine Reminders</span>
+  <span class="text">Within 3 hrs home delivery</span>
+  </div>
+  </div>
+  </li>
+ 
+ 
+ 
+  </ul>
+  </div>
+  </section>
+ 
+ 
+ 
+ 
+ 
+  <section class="section_4" *ngIf="data.brands.length>0">
+      <div class="container">
+      <div class="heading_wrapper full_w">
+      <h2 class="heading"> Popular Brands</h2>
+      <h4 class="sub_heading">Explore deals & offers at Aapka Chemist and enjoy great health.</h4>
+      </div>
+      <div>
+      <ul class="OurBrands">
+        
+        <li class="list" *ngFor="let brand of data.brands | slice:0:20">
+          <div class="inner_wrapper">
+    
+            <div class="style">
+              <div class="insideDesign">
+                <span class="icon">
+                <img src="{{brand.image_path}}" onError="this.src='assets/images/icon/no-img.png'">
+    
+                </span>
+                <span class="name">{{brand.name}}</span>
+              </div>
+            </div>
+          </div>
+        </li>
+     
+        <li class="list" *ngFor="let brand of data.brands | slice:0:20">
+            <div class="inner_wrapper">
+              <div class="style">
+                <div class="insideDesign">
+                  <span class="icon">
+                    <img src="{{brand.image_path}}" onError="this.src='assets/images/icon/no-img.png'">
+                  </span>
+                  <span class="name">{{brand.name}}</span>
+                </div>
+              </div>
+            </div>
+        </li>
+      
+      </ul>
+      
+      
+      
+      </div>
+      
+     
+     
+      </div>
+      </section>
+
+  <section class="testimonials" *ngIf="data.testimonial_lists.length>0">
+    <div class="container">
+        <div class="our_testimonial full_w">
+            <div class="heading_wrapper full_w">
+                <h2 class="heading">Testimonial</h2>
+                <h4 class="sub_heading">Welcome to our testimonial, What Consumers are saying about Aapkachemist </h4>
+            </div>
+        <ul class="testimonial_listing full_w">
+            <li class="list" *ngFor="let testimonial of data.testimonial_lists">
+                <div class="style"  routerLink="/testimonial-detail" [queryParams]="{'id':testimonial.id}">
+                  <span class="quote_icon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+                    <div class="inner_wrapper">
+                        <div class="testimonial_content">
+                            <h2><i class="fa fa-quote-left" aria-hidden="true"></i>{{testimonial.title}} -</h2>
+                            <!-- <h2>{{testimonial.description}}</h2> -->
+                        </div>
+                        <div class="testimonial_auth">    
+                            <div class="left_part">
+                              <span><img src="{{testimonial.auther_img_path}}"></span>
+                            </div>
+                            <div class="right_part">
+                                <span class="name">{{testimonial.auther_name}}</span>
+                                <span class="info">{{testimonial.auther_city}}</span>  
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </li>
+
+ 
+        </ul>
+        
+    </div>
+    </div>
+  </section>
+ 
+ 
+  <section class="section_5" id="download_section">
+  <div class="container">
+  <div class="download_section">
+  <!-- <div class="left_section">
+  <div class="text_part">
+  <h4>Download the App</h4>
+  <span class="text">Download the app now and connect with your local pharmacy today and <br> get the
+  best offers with medicines at your doorstep.
+  </span>
+  </div>
+ 
+  <div class="input_section">
+  <span class="title">Get the link via SMS to install the app</span>
+  <label><input type="text" name="" class="input_text" [(ngModel)]="data.applink_no"></label>
+  <input type="submit" name="" class="primary_btn" value="Send App Link" (click)="getAppLink()">
+  </div>
+ 
+  <ul class="button">
+  <li class="list"><a href="javascript:void(0)" class="link"><img src="assets/images/icon/apple.png" alt="Apple Store"></a></li>
+  <li class="list"><a href="https://play.google.com/store/apps/details?id=com.aapkachemist" target="_blank"
+  class="link"><img src="assets/images/icon/playstore.png" alt="Playstore"></a></li>
+  </ul>
+  <span class="mobile_slider"><img src="assets/images/icon/mobile_app.png" alt="Mobile App"></span>
+  </div> -->
+ 
+  <div class="left_section">
+  <img src="assets/images/icon/mobile_app.png" alt="Mobile App">
+  </div>
+  <div class="right_section">
+    <div class="text_part">
+    <h4 class="heading large">Download the App</h4>
+    <p>Download the app now and connect with your local pharmacy today and get the
+    best offers with medicines at your doorstep.</p>
+    </div>
+   
+    <div class="input_section form_wrapper full_w">
+    <label class="title">Get the link via SMS to install the app</label>
+    <div class="input_field full_w form_listing">
+  
+    <div class="numbe_input form_list">
+        <div class="style">
+            <p>+91</p>
+            <span class="lable">Enter phone number</span>
+            <input type="number" name="" class="input" [(ngModel)]="data.applink_no">
+        </div>
+    <!-- <p>+91</p>
+    <input type="text" name="" class="input_text" [(ngModel)]="data.applink_no"> -->
+  
+    </div>
+    <div class="submit_input">
+   
+    <button class="btn large primary"  (click)="getAppLink()"> Send App Link</button>
+    </div>
+    </div> 
+    </div> 
+   
+    <ul class="button full_w">
+    <li class="list">
+    <a href="https://itunes.apple.com/us/app/aapkachemist/id1453029064?mt=8&ign-mpt=uo%3D2" target="_blank" class="link"><img src="assets/images/icon/apple.png" alt="Apple Store">
+    </a>
+    </li>
+    <li class="list">
+    <a href="https://play.google.com/store/apps/details?id=com.aapkachemist" target="_blank"
+    class="link"><img src="assets/images/icon/playstore.png" alt="Playstore">
+    </a>
+    </li>
+    </ul>
+    </div>
+ 
+ 
+  </div>
+  </div>
+ 
+  
+  </section>
+ 
+ 
+  </div>
+  <app-footer></app-footer>
+  </div>
+ 
+ </div>
+

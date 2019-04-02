@@ -1,0 +1,730 @@
+<div class="mobile_leftstructure">
+  
+    <div class="overlay"></div>
+    <div class="leftstructure">
+    <div class="design_part">
+      <div class="sidebar_logo_wrapper">
+          <img src="assets/images/logo.png">
+      </div>
+   <div class="top_headerLinks">
+     
+      <div class="need_help_wrapper">
+          <span routerLink="/help-center" [queryParams]="{'type':'help'}">Need Help</span>
+          <a href="tel:+918858688586">
+            <i _ngcontent-c6="" aria-hidden="true" class="fa fa-phone"></i>  +91 88586 88586
+          </a>
+      </div>
+   </div>
+   <!-- <div class="free_listing_wrapper">
+  <button class="btn primary small" (click)="navigate('chemist-account')" *ngIf="state?.is_logged_in==false">Free listing for chemist</button>
+  </div> -->
+    <ul class="cateList full_w">
+        <h5>Quick Links</h5>
+        <li class="list">
+          <a href="javascript:void(0)" class="link" routerLink="/faq">
+           
+           <span><img src="assets/images/icon/faq-icon.png"></span> Help and FAQ
+          </a>
+        </li>
+        <li class="list">
+          <a href="javascript:void(0)" class="link" routerLink="/about-us">
+            
+            <span><img src="assets/images/icon/aboutus-icon.png"></span> About Us  
+          </a>
+        </li>
+        <li class="list">
+          <a href="javascript:void(0)" class="link" routerLink="/privacy-policy">
+            
+            <span><img src="assets/images/icon/privacy-icon.png"></span> Privacy Policy
+          </a>
+        </li>
+        <li class="list">
+          <a href="javascript:void(0)" class="link" routerLink="/terms-conditions">
+           
+            <span><img src="assets/images/icon/terms-icon.png"></span> Terms & Condtions
+          </a>
+        </li>
+        <li class="list">
+            <a href="javascript:void(0)" class="link" routerLink="/jobs-and-careers">
+             
+              <span><img src="assets/images/icon/career-icon.png"></span> Jobs & Careers
+            </a>
+          </li>
+          <li class="list">
+              <a href="javascript:void(0)" class="link" routerLink="/media">
+               
+                <span><img src="assets/images/icon/press-icon.png"></span> Press Releases
+              </a>
+            </li>
+            <li class="list">
+                <a href="javascript:void(0)" class="link" routerLink="/sitemap">
+                 
+                  <span><img src="assets/images/icon/sitemap-icon.png"></span> Site Map
+                </a>
+              </li>
+            
+              
+       
+    </ul>
+  
+    <ul class="mobile_app_link full_w">
+      
+      <li class="list">
+        <a href="https://itunes.apple.com/us/app/aapkachemist/id1453029064?mt=8&ign-mpt=uo%3D2" target="_blank" class="link"><img src="assets/images/icon/apple.png" alt="Apple Store">
+        </a>
+        </li>
+        <li class="list">
+        <a href="https://play.google.com/store/apps/details?id=com.aapkachemist" target="_blank"
+        class="link"><img src="assets/images/icon/playstore.png" alt="Playstore">
+        </a>
+        </li>
+    </ul>
+      
+    </div>
+    </div>
+   </div>
+  
+  
+  
+  <div class="vender_launch_popup" *ngIf="vendor_confirm_popup">
+    <div class="designBox">
+      <div class="vAlign">
+        <div class="innerDesign">
+  
+  
+          <div class="launch_img-wrapper">
+            <img src="assets/images/launch_popup_for_venders.png">
+          </div>
+          <div class="launch_content_wrapper">
+            <div class="heading">
+              <span>Registration are open for chemist and Distributors</span>
+            </div>
+  
+            <div class="btns_wrapper">
+              <span (click)="toggleVendorConfirmPopup()"><button class="primary_btn">Close</button></span>
+              <span routerLink="/sign-up" [queryParams]="{'usertype':'retailer'}"> <button
+                  class="primary_btn fill_green">Register Now</button></span>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="enquiryPopup2">
+    <div class="designBOx">
+      <div class="vAlign">
+        <div class="innerDesign">
+          <div class="insideBox">
+            <div class="leftPart">
+              <div class="enquiry_popup_form_fields">
+  
+                <div class="headPart">
+                  <h1 class="name">
+                    <span class="title">Enquiry Now</span>
+                    <span class="caption">Manish Store</span>
+                  </h1>
+                </div>
+                <div class="form_part">
+                  <ul class="formGroup">
+                    <li class="list">
+                      <label class="label">
+                        <span class="name">Enter Item Name</span>
+                        <input type="text" name="" placeholder="Enter Item Name" class="inputBox">
+                      </label>
+                    </li>
+                    <li class="list">
+                      <label class="label">
+                        <span class="name">Enter Quantity</span>
+                        <input type="text" name="" placeholder="Enter Quantity" class="inputBox">
+                        <select class="select_option">
+                          <option>Unit</option>
+                        </select>
+                      </label>
+                    </li>
+                    <li class="list">
+                      <label class="label">
+                        <span class="name">Enter Discription</span>
+                        <textarea class="textarea" placeholder="Enter Discription"></textarea>
+                      </label>
+                    </li>
+                  </ul>
+                  <ul class="buttons">
+                    <li class="list"><a href="#0" class="closeBtn">Close</a></li>
+                    <li class="list"><input type="submit" value="Submit" class="submitBtn" name=""></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  
+            <div class="rightPart">
+              <div class="enquiry_popup_title">
+                <h3 class="">Enquiry Now</h3>
+              </div>
+  
+              <div class="enquiry_popup_description">
+                <p>We're very approachable and Would Love to speak to you</p>
+              </div>
+              <div class="enquiry_form_image">
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="MobileSearch_filter">
+    <ul class="Search_filterListing_wrapper">
+      <li class="Search_filterList search_filter" (click)="onMobileSearchFocus()">
+        <div class="icon_wrapper">
+          <img src="assets/images/icon/white_search.png">
+        </div>
+      </li>
+      <li class="Search_filterList filter" >
+          <div class="icon_wrapper">
+            <img src="assets/images/icon/whitefilter_icon.png">
+          </div>
+        </li>
+     
+    </ul>
+  </div>
+  <div class="body_overlay"></div>
+  
+  <div class="remove_search_overlay"></div>
+  <div class="menu_Popup" *ngIf="state.user.user_type_id=='1'">
+      <span class="overlay"></span>
+    
+    
+      <div class="aside-bar">
+        <div class="loginprofile-block">
+          <div class="userDetail mrgn0">
+            <div class="userimg">
+    
+              <img src="{{state.user.profile_image_path}}" onError="this.src='assets/images/icon/chem_icons.png'" />
+            </div>
+            <h5>{{state.user.first_name}}</h5>
+            <label>+91 - {{state.user.mobile_number}}</label>
+          </div>
+          <div class="help-btn mrgn0 d-text-flex">
+            <a href="javascript:void(0)"  routerLink="/help-center" [queryParams]="{'type':'help'}" class="btn assent medium lightbtn">Need Help ?</a>
+          </div>
+        
+        </div>
+        <div class="aside-menuList">
+         
+    
+          <div class="asideMenu-wrapper">
+            <div class="asideMenu-category">
+              <!-- <h5>Exclusive</h5> -->
+              <ul class="category-menuList">
+                  <li>
+                      <a href="javascript:void(0)" class="" routerLink="/my-account/orders">
+                        <span> <img src="assets/images/icon/order-icon.png"></span>
+                        <span>My Orders</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" routerLink="/my-account/family-tree">
+                        <span> <img src="assets/images/icon/family_tree.png"></span>
+                        <span>My Family Tree</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" routerLink="/my-account/reffer-earn">
+                        <span> <img src="assets/images/icon/share_earn2.png"></span> 
+                        <span>Share and Earn</span>
+                      </a>
+                    </li>
+                <li>
+                  <a href="javascript:void(0)" routerLink="/my-account/change-password">
+                    <span> <img src="assets/images/icon/4.png"></span> 
+                    <span>Change Password</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="javascript:void(0)" routerLink="/my-account/wallet">
+                    <span> <img src="assets/images/icon/apc_wallet.png"></span> 
+                    <span>Wallet</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="javascript:void(0)" routerLink="/my-account/apc-cash">
+                    <span> <img src="assets/images/icon/apccash-icon.png"></span>
+                    <span> APC Cash</span>
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="javascript:void(0)" routerLink="/my-account/notification">
+                    <span> <img src="assets/images/icon/notification-icon.png"></span> 
+                    <span>My Notifications</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" routerLink="/my-account/chemist">
+                    <span> <img src="assets/images/icon/chemist-icon.png"></span> 
+                    <span>My Chemists</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" routerLink="/my-account/update-profile">
+                    <span> <img src="assets/images/icon/updatepro-icon.png"></span> 
+                    <span>Update Profile</span>
+                  </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" routerLink="/my-account/complaint">
+                      <span> <img src="assets/images/icon/complaint.png"></span> 
+                      <span>Report Issue</span>
+                    </a>
+                  </li>
+                  <li (click)="onLogout()">
+                    <a href="javascript:void(0)">
+                      <span> <img src="assets/images/icon/logout-icon.png"></span>
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                <!-- <li (click)="onLogout()" class="logout_link">
+                  <a href="javascript:void(0)">
+                    <span> <img src="assets/images/icon/logout-icon.png"></span>Log Out
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  
+  
+  <div class="menu_Popup chemist_menu_Popup" *ngIf="state.user.user_type_id!='1' && state.user.user_type_id!='0'">
+      <span class="overlay"></span>
+    
+      <div class="aside-bar">
+        <div class="loginprofile-block">
+          <div class="userDetail mrgn0">
+            <div class="userimg" [style.background-image]="'url(' +state.user.profile_image_path + ')'"
+              [style.background-size]="'cover'"></div>
+            <h5>{{state.user.first_name}}</h5>
+            <label>+91 - {{state.user.mobile_number}}</label>
+          </div>
+          <div class="help-btn mrgn0 d-text-flex">
+            <a href="javascript:void(0)"  routerLink="/help-center" [queryParams]="{'type':'help'}" class="btn assent medium lightbtn">Need Help?</a>
+          </div>
+          <a href="javascript:void(0)" class="asidemenu-arrow">
+            <img src="assets/images/icon/errow_down.png">
+          </a>
+        </div>
+        <div class="aside-menuList">
+          
+    
+          <div class="asideMenu-wrapper">
+            <div class="asideMenu-category">
+              <!-- <h5>Exclusive</h5> -->
+              <ul class="category-menuList">
+                  <li routerLink="/chemist-account/retailer-enquiry" [queryParams]="{'type':'new'}">
+                    <a href="javascript:void(0)" class="">
+                      <span> <img src="assets/images/icon/order-icon.png"></span> 
+                      <span>Orders</span>
+                    </a>
+                  </li>
+    
+                <li routerLink="/chemist-account/my-wallet">
+                  <a href="javascript:void(0)" class="lastchild_border">
+                    <span> <img src="assets/images/icon/apccash-icon.png"></span>
+                    <span> APC Cash</span>
+                  </a>
+                </li>
+           
+                <!-- <li routerLink="/chemist-account/buy-plan" [queryParams]="{ type: 'monthly'}">
+                  <a href="javascript:void(0)">
+                    <span> <img src="assets/images/icon/buy_plan.png"></span>
+                    <span> Buy Plans</span>
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+            <div class="asideMenu-category">
+              <!-- <h5>Management</h5> -->
+              <ul class="category-menuList">
+                  <li routerLink="/chemist-account/dashboard">
+                    <a href="javascript:void(0)">
+                      <span> <img src="assets/images/icon/dashboard_icon.png"></span> 
+                      <span>Dashboard</span>
+                    </a>
+                  </li>
+                  <li routerLink="/chemist-account/update-profile">
+                    <a href="javascript:void(0)">
+                      <span> <img src="assets/images/icon/business_setting.png"></span>
+                      <span> Business Settings</span>
+                    </a>
+                  </li>
+                <li routerLink="/chemist-account/package-history">
+                  <a href="javascript:void(0)">
+                    <span> <img src="assets/images/icon/plan_history.png"></span>
+                    <span> Plan History</span>
+                  </a>
+                </li>
+                <li routerLink="/chemist-account/search-distributor">
+                  <a href="javascript:void(0)">
+                    <span> <img src="assets/images/icon/find_distributor.png"></span> 
+                    <span>Find Distributor</span>
+                  </a>
+                </li>
+                <li routerLink="/chemist-account/update-profile">
+                  <a href="javascript:void(0)">
+                    <span> <img src="assets/images/icon/my_addess.png"></span>
+                    <span> My Address</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" routerLink="/chemist-account/my-offers">
+                    <span> <img src="assets/images/icon/manage_offers.png"></span> 
+                    <span>Manage Offers</span>
+                  </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" routerLink="/chemist-account/payment">
+                      <span> <img src="assets/images/icon/payment_request.png"></span> 
+                      <span>Payment Request</span>
+                    </a>
+                  </li>
+                  <li>
+                      <a href="javascript:void(0)" routerLink="/chemist-account/package-history">
+                        <span> <img src="assets/images/icon/plan_history.png"></span>
+                        <span> Plan History</span>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" routerLink="/chemist-account/update-bank-details">
+                          <span> <img src="assets/images/icon/bank_details.png"></span>
+                          <span> Bank Details</span>
+                        </a>
+                      </li>
+                      <li>
+                          <a href="javascript:void(0)" routerLink="/chemist-account/invoice">
+                            <span> <img src="assets/images/icon/invoice_history.png"></span>
+                            <span>Invoice History</span>
+                          </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0)" routerLink="/chemist-account/buy-plan" [queryParams]="{'type':'monthly'}">
+                              <span> <img src="assets/images/icon/buy_plan.png"></span>
+                              <span>Buy Plan</span>
+                            </a>
+                          </li>
+
+                          <li>
+                              <a href="javascript:void(0)" routerLink="/chemist-account/complaint">
+                                <span> <img src="assets/images/icon/complaint.png"></span>
+                                <span>Report Issue</span>
+                              </a>
+                            </li>
+                            <li (click)="onLogout()">
+                              <a href="javascript:void(0)">
+                                <span> <img src="assets/images/icon/logout-icon.png"></span>
+                                <span>Log Out</span>
+                              </a>
+                            </li>
+                <!-- <li (click)="onLogout()" class="logout_link">
+                  <a href="javascript:void(0)">
+                    <span> <img src="assets/images/icon/logout-icon.png"></span>Log Out
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  
+  
+  
+  <header>
+  
+  
+  
+    <div class="topHeader">
+      <div class="container">
+        <div class="leftPart">
+  
+          <span class="promotionContent">
+            <button (click)="onMobileSearchFocus()" class="btn primary small">Order now!</button>
+            <span class="desktop_top"> upto 30%<b> Discount</b>
+            </span>
+          </span>
+  
+        </div>
+        <div class="rightPart">
+  
+          <ul class="help_center app_link">
+            <li class="list call_"><a href="javascript:void(0)" routerLink="/help-center" [queryParams]="{'type':'help'}"><span class="text_part">Need Help ?</span></a><span class="number_wrapper"><span class="icon_wrapper"></span> <span class="number"><img src="assets/images/icon/tell.png"  class="icon_wrapper"> +91 88586 88586</span></span></li>
+            
+  
+            <li class="list saleOnBtn" (click)="navigate('chemist-account')" *ngIf="state?.is_logged_in==false"><button
+                class="btn assent small">Free Listing for Chemists</button></li>
+            
+            <li class="list download_applink" (click)="onScrollToDownloadApp()"><a href="javascript:void(0)"
+                class="link"><img src="assets/images/icon/mobile-phone.png" alt="Aapkachemsit MObile App Download">
+              </a></li>
+            <li class="list" (click)="onScrollToDownloadApp()"><a href="javascript:void(0)" class="link">Download App</a>
+            </li>
+          </ul>
+  
+        </div>
+  
+      </div>
+    </div>
+  
+    <div class="mainHeader">
+      <div class="container">
+        <div class="insideDesign">
+          <div class="left_part">
+            <span class="logo">
+              <i class="menuMobileToggle"></i>
+              <a href="javascript:void(0)" *ngIf="state.user.user_type_id!=undefined &&  state.user.user_type_id !=1" routerLink="/chemist-account/dashboard" class="link"><img src="assets/images/logo.png"
+                  alt="Aapka chemist"></a>
+                <a href="javascript:void(0)" *ngIf="state.user.user_type_id==undefined ||  state.user.user_type_id ==1" routerLink="/home" class="link"><img src="assets/images/logo.png"
+                    alt="Aapka chemist"></a>
+            </span>
+            <ul class="mobile_login_cart_wrapper">
+              <div class="mobile_login_cartInner_wrapper">
+                <li class="list login_btn" *ngIf="state.is_logged_in==false">
+  
+  
+                  <a href="javascript:void(0)" class="btn primary medium" routerLink="/login">
+  
+                    <span routerLink="/login">Login</span>
+  
+                    |
+                    <span routerLink="/sign-up">Sign Up</span>
+  
+  
+                  </a>
+  
+  
+  
+                </li>
+  
+                <li class="list mobile_viewProfileMenu_btn">
+                  <a href="javascript:void(0)" class="cart" *ngIf="state.is_logged_in">
+                    <ul class="menuBtn">
+                      <li class="MList" style="opacity: 0.5"></li>
+                      <li class="MList" style="opacity: 0.5"></li>
+                      <li class="MList"></li>
+                      <li class="MList" style="opacity: 0.5"></li>
+                      <li class="MList"></li>
+                      <li class="MList"></li>
+                      <li class="MList"></li>
+                      <li class="MList"></li>
+                      <li class="MList"></li>
+                    </ul>
+                  </a>
+                </li>
+              </div>
+            </ul>
+          </div>
+  
+          <div class="right_part">
+  
+            <ul class="icon_menu">
+              <div class="mobile_searchLocation">
+                <div class="MviewLocation_wrapper">
+                  <div class="left_part">
+                    <span class="location_icon"><img src="assets/images/icon/select_location.png"></span>
+                    <span class="header-location-text">{{state.userloc.area}}</span>
+                    <i class="icon-ic_dropdown"><img src="assets/images/icon/errow_down.png"></i>
+                  </div>
+                </div>
+                <li class="list viewcart_btn">
+                  <a href="javascript:void(0)" class="cart" (click)="navigate('cart')">
+                    <span class="number">{{state.cartdata.cartcount}}</span>
+                    <img src="assets/images/icon/cart-icon.png" alt="Medical Device"></a>
+                </li>
+              </div>
+              <li class="list location_search_wrapper">
+  
+                <div class="searchLocation_wrapper">
+                  <span class="close"><img src="assets/images/icon/close_icon.png"></span>
+                  <div class="searchLocation">
+                    <h2>Search Location</h2>
+                    <span class="location_icon"><img src="assets/images/icon/select_location.png"></span>
+                    <input type="text" (click)="onSearchFocus()" autocomplete="off" name="" *ngIf="state.userloc.area==''"
+                      id="locsearch" class="input_box" placeholder="Search your location" #search>
+                    <input (click)="onSearchInputFocus()" (blur)="onBlurSearchInputFocus()" type="text" (click)="onSearchFocus()" autocomplete="off" name="" *ngIf="state.userloc.area!=''"
+                      value="{{state.userloc.area}}" id="locsearch" class="input_box" placeholder="Search your location"
+                      #search>
+                   
+                    <span class="caret_icon location_target" (click)="autoDetectLocation()"> <img
+                        src="assets/images/icon/target1.png" alt="Medical Device"></span>
+  
+  
+                  </div>
+                </div>
+                <div class="search_design">
+  
+                  <input type="text" autocomplete="off" id="headersearch" name="" class="input_box"
+                    placeholder="Search Medicine/Generic/Distributor" (input)="onSearchChangeHandler($event.target.value,$event)"
+                    value="" (click)="onSearchInputFocus()" (blur)="onBlurSearchInputFocus()" *ngIf="state.is_logged_in && state.user.user_type_id !=1 ">
+                  
+                    <input type="text" autocomplete="off" id="headersearch" name="" class="input_box"
+                    placeholder="Search Medicine/Generic/Chemist" (input)="onSearchChangeHandler($event.target.value,$event)"
+                    value="" (click)="onSearchInputFocus()" (blur)="onBlurSearchInputFocus()" *ngIf="!state.is_logged_in ||  state.user.user_type_id ==1 ">
+
+                  <div class="searchResultdiv" *ngIf="is_result_get==true">
+                    <div class="search_input_overlay"></div>
+                    <div class="insideBox">
+  
+                      <ul class="searchListing">
+                        <li class="list" *ngF or="let product of generic_data | slice:0:10">
+                          <div class="container" (click)="navigateSearch('chemistlist',product)">
+                            <div class="displayStyle">
+                              <div class="iconPart">
+                                <span class="icon"><img src="assets/images/icon/product/1.png"></span>
+                              </div>
+                              <div class="name_part" style="cursor:pointer">
+                                <span class="Name">{{product.keyword_name}}</span>
+  
+  
+  
+  
+                              </div>
+  
+                            </div>
+                          </div>
+                        </li>
+  
+                        <li class="list " *ngFor="let product of company_data | slice:0:10">
+                          <div class="container" (click)="navigateSearch('chemistlist',product)">
+                            <div class="displayStyle">
+                              <div class="iconPart">
+                                <span class="icon"><img src="assets/images/icon/product/1.png"></span>
+                              </div>
+                              <div class="name_part" style="cursor:pointer">
+                                <span class="Name">{{product.keyword_name}}</span>
+  
+                              </div>
+  
+                            </div>
+                          </div>
+                        </li>
+  
+                        <li class="list" *ngFor="let product of productresp | slice:0:10">
+                          <div class="container" (click)="navigateSearch('product',product)">
+                            <div class="displayStyle">
+                              <div class="iconPart">
+                                <span class="icon"><img src="{{product.product_img_path}}"></span>
+                              </div>
+                              <div class="name_part" style="cursor:pointer">
+                                <span class="Name">{{product.product_name}}</span>
+                                <span class="descr">{{product.option_val}}</span>
+  
+                              </div>
+                              <div class="price">
+                                <span class="amount">Rs.{{product.price}}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+  
+                        <li class="list" *ngFor="let search of searchresp | slice:0:10">
+                          <div class="container" (click)="navigateSearch('chemist',search)">
+                            <div class="displayStyle">
+                              <div class="iconPart">
+                                <span class="icon"><img src="{{search.shop_image}}"></span>
+                              </div>
+                              <div class="name_part" style="cursor:pointer">
+                                <span class="Name">{{search.shopname}}</span>
+                                <span class="Caption">{{search.address}}</span>
+                              </div>
+                              <div class="price">
+  
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+  
+  
+                      </ul>
+  
+  
+                    </div>
+                  </div>
+  
+  
+                </div>
+              </li>
+              <li class="list desktop_login_btn" *ngIf="state.is_logged_in==false">
+  
+  
+                <a href="javascript:void(0)" class="btn primary medium" routerLink="/login">
+  
+                  <span >Login</span>
+  
+                  |
+                  <span   >Sign Up</span>
+  
+  
+                </a>
+  
+  
+  
+              </li>
+            
+              <li class="list mobile_viewProfileMenu_btn account-option list desktop_login_btn" *ngIf="state.is_logged_in">
+                  <a href="javascript:void(0)" class="cart" *ngIf="state.is_logged_in">
+                      <ul class="menuBtn">
+                        <li class="MList" style="opacity: 0.5"></li>
+                        <li class="MList" style="opacity: 0.5"></li>
+                        <li class="MList"></li>
+                        <li class="MList" style="opacity: 0.5"></li>
+                        <li class="MList"></li>
+                        <li class="MList"></li>
+                        <li class="MList"></li>
+                        <li class="MList"></li>
+                        <li class="MList"></li>
+                      </ul>
+                    </a>
+  
+  
+  
+              </li>
+  
+  
+              <li class="list desktop_cart_btn">
+                <a href="javascript:void(0)" class="cart" (click)="navigate('cart')">
+                  <span class="number">{{state.cartdata.cartcount}}</span>
+                  <img src="assets/images/icon/cart-icon.png"></a>
+              </li>
+  
+             
+            </ul>
+          </div>
+  
+        </div>
+  
+  
+  
+  
+      </div>
+  
+  
+  
+    </div>
+  
+  
+  
+  </header>

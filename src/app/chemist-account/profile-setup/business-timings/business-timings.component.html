@@ -1,0 +1,101 @@
+<div class="DeliverySetupProfile">
+        <div class="fromGroup">
+      
+            <div class="workingOurModel">
+                <div class="profile_step_heading">
+                    <h2 class="heading">Working Days</h2>
+                </div>
+            <!-- 
+                  <h4 class="main_heading">Hours</h4> -->
+                  <form class="full_w">
+                  <ul class="timeList" >
+                      <li class="list" *ngFor="let slot of timingslots">
+                          <div class="left_label">
+                              
+                            
+                              <span> {{slot.day}}</span>
+                             
+                          </div>
+                          <div class="right_data">
+                                <label class="switch left ">
+                                        <input type="checkbox" id="slot_{{slot.id}}" [checked]="slot.open_close_status=='1'"  (click)="onToggle(slot)">
+                                        <span class="slider round"></span>
+                                    </label>
+                              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect radioSwicher" for="switch-2">
+                                 
+                                  <span class="mdl-switch__label" *ngIf="slot.open_close_status=='1'"> Open</span>
+                                  <span class="mdl-switch__label closed" *ngIf="slot.open_close_status=='0'"> Closed</span>
+                              </label>
+                 
+        
+                          
+        
+                          <!-- <div class="onlyIfOpen">
+                              <div class="multiOpen">  
+                                  <ul class="OpenShutList">
+                                      <li class="multiList">
+                                          <input type="text" name="" placeholder="Opens at" class="inputBox">
+                                      </li>
+                                      <li class="multiList">
+                                          <input type="text" name="" placeholder="Closes at" class="inputBox">
+                                      </li>
+                                  </ul>
+                              </div>
+      
+                          <span class="AddBtn">Add More</span>
+                          </div> -->
+      
+      
+                          </div>
+                      </li>
+             
+                  </ul>
+
+                  
+
+                  </form>
+
+                  <!-- <ul class="form_group">
+                    <li class="multiList list">
+                        <div class="inputForm">
+                            <label class="label">
+                                <span  class="name">Opening Time</span>
+                                <input type="text" name="openingstartTime" value="00" placeholder="Start Time " class="input_box ng-untouched ng-pristine ng-valid" id="openingstartTime" [(ngModel)]="detail.open_time">
+                            </label>
+                        </div>
+                    </li>
+                    <li class="multiList list">
+                    <div class="inputForm">
+                        <label class="label">
+                        <span  class="name">Closing Time</span>
+                        <input type="text" name="openingendTime" placeholder="End Time" class="input_box ng-untouched ng-pristine ng-valid" id="openingendTime" [(ngModel)]="detail.close_time">
+                        </label>
+                        </div>
+                    </li>
+                </ul> -->
+                  <div class="working_time_btn full_w">
+                        <div class="profile_step_heading">
+                            <h2 class="heading">Working Days</h2>
+                        </div>
+
+                        <ul class="timiings full_w">
+                            <li class="timing openning">
+                                <input type="text"  name="openingstartTime" placeholder="Open Time" id="openingstartTime" [(ngModel)]="business_delivery.open_time">
+                            </li>
+                            <li class="timing closing">
+                                    <input type="text"  name="openingendTime" placeholder="Close Time" id="openingendTime" [(ngModel)]="business_delivery.close_time">
+                                </li>
+                        </ul>
+                  </div>
+      
+                <div class="btn_wrapper full_w mt20">
+                    <button class="btn primary large"  (click)="onNext()">Next</button>
+                    
+                </div>
+      
+              </div>
+      
+        </div>
+      </div>  
+      
+      

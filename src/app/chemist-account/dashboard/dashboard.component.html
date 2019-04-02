@@ -1,0 +1,420 @@
+<div class="main_container my_accountPages dashboard_page chem_offers dashboard">
+
+    <app-header></app-header>
+
+    <div class="my_accountSetting">
+
+        <div class="sliding_banner_wrapper">
+            <ul class="main_slider">
+                <li class="list" *ngFor="let slider of data.vendor_webslider_data">
+                    <span class="img"><img src="{{slider.image_path}}"></span>
+                </li>
+                <!-- <li class="list">
+                    <span class="img"><img src="assets/images/banner/web/web_banner_02.jpg"></span>
+                </li>
+                <li class="list">
+                    <span class="img"><img src="assets/images/banner/web/web_banner_03.jpg"></span>
+                </li> -->
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="main_dataPage">
+                <div class="dashboard_wrapper">
+                
+                    <app-chemist-account-left-panel></app-chemist-account-left-panel>
+
+                    <div class="right_pannel">
+                        <div  class="dashboard-cover-body">
+                            <div class="dashboard-head">
+                                    <span class="greetings d-text-block">Hello,</span>
+                                    <span class="name d-text-block">{{state.user.name}}</span>
+                                    <span class="number d-text-block">+91 {{state.user.mobile_number}}</span>
+                            </div>
+                        <div class="section_1 section full_w">
+                            <ul class="dashboard_listing">
+                                <li class="dashboard_list">
+                                    <div class="style">
+
+                                        <div class="icon-wrapper">
+                                            <img src="assets/images/icon/1.png">
+                                        </div>
+                                        <div class="lead_content">
+                                            <div class="leads_info">
+                                                <h3 class="lead_title">New Leads</h3>
+                                                <!-- <span class="lead_date" *ngIf="data.new_lead_date!=''">Latest by
+                                                    {{data.new_lead_date | date:'dd'}}
+                                                    {{data.new_lead_date | date:'MMM'}},
+                                                    {{data.new_lead_date | date:'yyyy'}}</span> 
+                                                <span class="lead_date" *ngIf="data.new_lead_date==''">&nbsp;</span>-->
+                                            </div>
+
+                                            <div class="lead_qty">
+                                                <h2>{{data.new_lead}}</h2>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_wrapper">
+                                            <button class="btn assent medium"
+                                                routerLink="/chemist-account/retailer-enquiry"
+                                                [queryParams]="{type:'new'}">View</button>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="dashboard_list">
+                                    <div class="style">
+
+                                        <div class="icon-wrapper">
+                                            <img src="assets/images/icon/2.png">
+                                        </div>
+                                        <div class="lead_content">
+                                            <div class="leads_info">
+                                                <h3 class="lead_title">Active</h3>
+                                                <!-- <span class="lead_date" *ngIf="data.active_lead_date!=''">Latest by
+                                                    {{data.active_lead_date | date:'dd'}}
+                                                    {{data.active_lead_date | date:'MMM'}},
+                                                    {{data.active_lead_date | date:'yyyy'}}</span> 
+                                                <span class="lead_date" *ngIf="data.active_lead_date==''">&nbsp;</span>-->
+                                            </div>
+
+                                            <div class="lead_qty">
+                                                <h2>{{data.ongoinglead}}</h2>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_wrapper">
+                                            <button class="btn assent medium"
+                                                routerLink="/chemist-account/retailer-enquiry"
+                                                [queryParams]="{type:'active'}">View</button>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="dashboard_list">
+                                    <div class="style">
+
+                                        <div class="icon-wrapper">
+                                            <img src="assets/images/icon/3.png">
+                                        </div>
+                                        <div class="lead_content">
+                                            <div class="leads_info">
+                                                <h3 class="lead_title">Awarded</h3>
+                                                <!-- <span class="lead_date" *ngIf="data.awarded_lead_date!=''">Latest by
+                                                    {{data.awarded_lead_date | date:'dd'}}
+                                                    {{data.awarded_lead_date | date:'MMM'}},
+                                                    {{data.awarded_lead_date | date:'yyyy'}}</span> 
+                                                <span class="lead_date" *ngIf="data.awarded_lead_date==''">&nbsp;</span>-->
+                                            </div>
+
+                                            <div class="lead_qty">
+                                                <h2>{{data.order_forpacking}}</h2>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_wrapper">
+                                            <button class="btn assent medium"
+                                                routerLink="/chemist-account/retailer-enquiry"
+                                                [queryParams]="{type:'awarded'}">View</button>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="dashboard_list">
+                                    <div class="style">
+
+                                        <div class="icon-wrapper">
+                                            <img src="assets/images/icon/delivered_icon.png">
+                                        </div>
+                                        <div class="lead_content">
+                                            <div class="leads_info">
+                                                <h3 class="lead_title">Delivered</h3>
+                                                <!-- <span class="lead_date" *ngIf="data.delivered_lead_date!=''">Latest by
+                                                    {{data.delivered_lead_date | date:'dd'}}
+                                                    {{data.delivered_lead_date | date:'MMM'}},
+                                                    {{data.delivered_lead_date | date:'yyyy'}}</span> 
+                                                <span class="lead_date"
+                                                    *ngIf="data.delivered_lead_date==''">&nbsp;</span>-->
+                                            </div>
+
+                                            <div class="lead_qty">
+                                                <h2>{{data.order_delivered}}</h2>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn_wrapper">
+                                            <button class="btn assent medium"
+                                                routerLink="/chemist-account/retailer-enquiry"
+                                                [queryParams]="{type:'delivered'}">View</button>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                            <div class="section_2 section full_w" *ngIf="data.get_offer_data.length>0" style="display:none">
+
+                            <div class="offer_wrapper full_w">
+                                <div class="offer_heading">
+                                    <div class="left_part">
+                                        <h2 class="heading">Brands we are dealing with</h2>
+                                        <p>Explore deal & offers in aapka chemist and enjoy the great health.</p>
+                                    </div>
+                                    <div class="right_part">
+                                        <button class="btn primary medium" routerLink="/chemist-account/offers">View
+                                            All</button>
+                                    </div>
+                                </div>
+                                <!-- address: null
+                    area: null
+                    created_date: "2019-01-28 17:39:17"
+                    deal_price: "800.00"
+                    discount: "20"
+                    email: null
+                    id: "15"
+                    latitude: null
+                    longitude: null
+                    mobile_number: null
+                    mobile_whatsup: null
+                    name: null
+                    offer_description: "Test Offer By Nagendra"
+                    offer_duration_days: "5"
+                    offer_end_date: "2019-01-30"
+                    offer_expire_status: "1"
+                    offer_img_path: "https://www.anitbrain.in/demo/admin/public/uploads/images/offers/1443c3e571da33b6026739d56482cf52.png"
+                    offer_start_date: "2019-01-25"
+                    offer_title: "Test Offer"
+                    picture: "1443c3e571da33b6026739d56482cf52.png"
+                    ptr: "700.00"
+                    save_amount: "200"
+                    shopname: null
+                    status: "1"
+                    stock_quantity: "500"
+                    target_amount: "1000.00"
+                    user_id: "541"
+                    vendor_type: null -->
+                                <ul class="offer_listing full_w">
+                                       
+                                         <li class="offer_list" *ngFor="let offer of data.get_offer_data">
+                                        <div class="style">
+                                            <div class="section_1">
+                                                <div class="left_part">
+                                                    <div class="offer_icon">
+                                                        <img src="assets/images/icon/offer_icon.png">
+                                                    </div>
+                                                    <div class="offerName">
+                                                            <span class="name">{{offer.offer_title}}</span>
+                                                         
+                                                            <span class="med_qty_wrapper">
+                                                                {{offer.offer_description}}
+    
+                                                            </span>
+                                                            <!-- <span class="med_qty_wrapper">
+                                                                 Include <span class="text-theme">120 Meds</span>
+     
+                                                             </span> -->
+                                                        </div>
+                                                </div>
+
+                                                <div class="right_part">
+                                                    <div class="full_w">
+                                                        <div class="offer_price_wrapper">
+                                                            <div class="left_part">
+                                                                <span class="title">MRP</span>
+                                                                <span class="price">Rs. {{offer.target_amount}} </span>
+                                                           
+                                                            </div>
+                                                            <!-- <div class="right_part">
+                                                    <button class="btn assent medium">Buy</button>
+                                                </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="section_2">
+                                                <div class="left_part">
+                                                    <ul class="offer_info_listing">
+                                                        <li class="offer_info_list">
+                                                            <span class="info-title">Deal Price</span>
+                                                            <span class="price">Rs. {{offer.deal_price}}</span>
+                                                           
+                                                        </li>
+                                                        <li class="offer_info_list">
+                                                            <span class="info-title">PTR</span>
+                                                            <span class="price">Rs. {{offer.ptr}}</span>
+                                                       
+                                                        </li>
+                                                        <li class="offer_info_list">
+                                                            <span class="info-title">Expire In</span>
+                                                            <span class="price">{{offer.offer_duration_days}}
+                                                                Days</span>
+                                                               
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="right_part">
+                                                    <div class="discount">
+                                                        <span class="">{{offer.discount}}% Discount</span>
+                                               
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+  
+                                </ul>
+                            </div>
+                            <!-- <div class="heading_wrapper full_w">
+                      <h2  class="heading">Brands we are dealing with</h2>
+                      <h4  class="sub_heading">Explore deal & offers in aapka chemist and enjoy the great health.</h4>
+                  </div>
+                  <ul class="manageoffer-list">
+                          <li >
+                            <div class="manageoffer-block">
+                              <div class="offerLeft-part mrgn0">
+                                <h5>Offer name</h5>
+                                <label class="d-text-block">Include <span class="meds text-theme" (click)="togglePopup()">200
+                                    Meds</span></label>
+                                <span class="text-theme d-text-block mt10">10% Discount</span>
+                                <label class="d-text-block">MRP <del>Rs. 25</del> <span
+                                    class="text-black fontbold pl10">Rs.
+                                    50 </span></label>
+                              </div>
+                              <div class="offerRight-part mrgn0 text-align-right">
+                                <span class="text-red d-text-block">Expire in</span>
+                                <span class="d-text-block text-black fontbold">8 days</span>
+                                <button class="btn primary medium mt10">Update</button>
+                              </div>
+                            </div>
+                          </li>
+                        <li>
+                            <div class="manageoffer-block">
+                            <div class="offerLeft-part mrgn0">
+                                <h5>Offer name</h5>
+                                <label class="d-text-block">Include <span class="meds text-theme" (click)="togglePopup()">200
+                                    Meds</span></label>
+                                <span class="text-theme d-text-block mt10">10% Discount</span>
+                                <label class="d-text-block">MRP <del>Rs. 25</del> <span
+                                    class="text-black fontbold pl10">Rs.
+                                    50 </span></label>
+                            </div>
+                            <div class="offerRight-part mrgn0 text-align-right">
+                                <span class="text-red d-text-block">Expire in</span>
+                                <span class="d-text-block text-black fontbold">8 days</span>
+                                <button class="btn primary medium mt10">Update</button>
+                            </div>
+                            </div>
+                        </li>
+                        </ul> -->
+                        </div>
+                        </div>
+                    </div>
+                    <!-- <app-chemist-account-left-panel></app-chemist-account-left-panel> -->
+
+                    <!-- <div class="right_pannel">
+              <div class="pannelSTyle">
+                <h1 class="page_name">
+                  <div class="leftData">
+                      <span class="Pagename">Welcome to your dashboard</span>
+                  </div>
+                </h1>
+  
+                <div class="mainPage">
+                  
+                    <div class=meterBar_wrapper>
+  
+  
+                      
+                          <ul class="dashboard_Widgets">
+                                  <li class="list active" routerLink="/chemist-account/retailer-enquiry" [queryParams]="{ type: ''}">
+                                      <div class="style">
+                                          <span class="icon"><img src="assets/images/icon/category/green/new_leads.png"></span>
+                                          <span class="number">{{data.new_lead}}</span>
+                                          <span class="title">New Leads <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                      </div>
+                                  </li>
+                                  <li class="list" routerLink="/chemist-account/retailer-enquiry" [queryParams]="{ type: '0'}">
+                                      <div class="style">
+                                          <span class="icon"><img src="assets/images/icon/category/green/ongoinLeads.png"></span>
+                                          <span class="number">{{data.ongoinglead}}</span>
+                                          <span class="title">On Going Leads <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                      </div>
+                                  </li>
+                                  <li class="list " routerLink="/chemist-account/retailer-orders" [queryParams]="{ type: 'OS01'}">
+                                      <div class="style">
+                                          <span class="icon"><img src="assets/images/icon/category/green/send_order.png"></span>
+                                          <span class="number">{{data.order_forpacking}}</span>
+                                          <span class="title">Orders <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                      </div>
+                                  </li>
+                                  <li class="list " routerLink="/chemist-account/retailer-orders" [queryParams]="{ type: 'OS02'}">
+                                      <div class="style">
+                                          <span class="icon"><img src="assets/images/icon/category/green/pending_order.png"></span>
+                                          <span class="number">{{data.order_fordelivery}}</span>
+                                          <span class="title">Pending Packing <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                      </div>
+                                  </li>
+                                  <li class="list " routerLink="/chemist-account/retailer-orders" [queryParams]="{ type: 'OS02'}">
+                                      <div class="style">
+                                          <span class="icon"><img src="assets/images/icon/category/green/pending_delivery.png"></span>
+                                          <span class="number">{{data.order_fordelivery}}</span>
+                                          <span class="title">Pending Delivery <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                      </div>
+                                  </li>
+                                  <li class="list " routerLink="/chemist-account/retailer-orders" [queryParams]="{ type: 'OS04'}">
+                                      <div class="style">
+                                          <span class="icon"><img src="assets/images/icon/category/green/completed_orders.png"></span>
+                                          <span class="number">{{data.order_delivered}}</span>
+                                          <span class="title">Completed Order <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                      </div>
+                                  </li>
+                                 
+                                  <li class="list " routerLink="/chemist-account/retailer-orders" [queryParams]="{ type: 'OS03'}">
+                                          <div class="style">
+                                              <span class="icon"><img src="assets/images/icon/category/green/ontheway_delivery.png"></span>
+                                              <span class="number">{{data.order_forpacking}}</span>
+                                              <span class="title">On The Way <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                                          </div>
+                                      </li>
+                                  
+                                 
+                              
+                              </ul>
+                       
+      
+                                
+  
+                    </div>
+  
+  
+                </div>
+              </div>
+              
+                <div class="mainPage" style="display:none">
+  
+                  <div class="dashboard_content">
+                      <div class="dashboard_inner_content">
+                          <div class="SectionHeading">total Sale</div>
+                          <div id="barChart"></div> 
+                        
+                      </div>
+                  </div>
+  
+                </div>
+  
+              
+            </div> -->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<app-footer></app-footer>
